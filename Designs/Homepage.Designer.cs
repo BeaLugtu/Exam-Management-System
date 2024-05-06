@@ -1,6 +1,6 @@
-﻿namespace Exam_Management_System
+﻿namespace Exam_Management_System.Designs
 {
-    partial class Form1
+    partial class Homepage
     {
         /// <summary>
         /// Required designer variable.
@@ -31,10 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Text = "Homepage";
         }
 
         #endregion
     }
 }
-
