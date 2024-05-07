@@ -17,12 +17,6 @@ namespace Exam_Management_System.Designs
             InitializeComponent();
         }
 
-        private void teacherAccountOptionBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Designs.SignupFormTeacher signupFormTeacher = new Designs.SignupFormTeacher();
-            signupFormTeacher.Show();
-        }
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
@@ -31,16 +25,27 @@ namespace Exam_Management_System.Designs
             login.Show();
         }
 
-        private void studentAccountOptionBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Designs.SignupFormStudent signupFormStudent = new Designs.SignupFormStudent();
-            signupFormStudent.Show();
-        }
-
         private void confirmBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void teacherAccountOptionBtn_MouseClick(object sender, MouseEventArgs e)
+        {
+            // Change the image of the button to the selected image
+            teacherAccountOptionBtn.Image = Properties.Resources.StudentAccountOption;
+
+            // Revert the studentAccountOptionBtn to its default image
+            studentAccountOptionBtn.Image = Properties.Resources.TeacherAccountOption;
+        }
+
+        private void studentAccountOptionBtn_MouseClick(object sender, MouseEventArgs e)
+        {
+            // Change the image of the button to the selected image
+            studentAccountOptionBtn.Image = Properties.Resources.StudentAccountOption;
+
+            // Revert the studentAccountOptionBtn to its default image
+            teacherAccountOptionBtn.Image = Properties.Resources.TeacherAccountOption;
         }
     }
 }

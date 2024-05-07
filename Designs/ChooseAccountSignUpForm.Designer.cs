@@ -92,7 +92,7 @@
             this.studentAccountOptionBtn.Size = new System.Drawing.Size(343, 114);
             this.studentAccountOptionBtn.TabIndex = 14;
             this.studentAccountOptionBtn.UseVisualStyleBackColor = false;
-            this.studentAccountOptionBtn.Click += new System.EventHandler(this.studentAccountOptionBtn_Click);
+            this.studentAccountOptionBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.studentAccountOptionBtn_MouseClick);
             // 
             // teacherAccountOptionBtn
             // 
@@ -107,7 +107,7 @@
             this.teacherAccountOptionBtn.Size = new System.Drawing.Size(342, 116);
             this.teacherAccountOptionBtn.TabIndex = 15;
             this.teacherAccountOptionBtn.UseVisualStyleBackColor = false;
-            this.teacherAccountOptionBtn.Click += new System.EventHandler(this.teacherAccountOptionBtn_Click);
+            this.teacherAccountOptionBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.teacherAccountOptionBtn_MouseClick);
             // 
             // ChooseAccountSignUpForm
             // 
