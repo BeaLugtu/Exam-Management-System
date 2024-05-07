@@ -6,7 +6,7 @@ namespace Exam_Management_System
 {
     class DBAccess
     {
-        private readonly string MySqlCon = "server=26.96.197.206; user=root; database=exam.io; password=admin";
+        private readonly string MySqlCon = "server=26.96.197.206; user=admin; database=exam.io; password=admin";
         private readonly MySqlConnection mySqlConnection = new MySqlConnection();
         private readonly MySqlCommand command = new MySqlCommand();
         private readonly MySqlDataAdapter adapter = new MySqlDataAdapter();
