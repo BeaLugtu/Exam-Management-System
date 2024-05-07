@@ -12,11 +12,13 @@ namespace Exam_Management_System.Designs
 {
     public partial class ChooseAccountSignUpForm : Form
     {
+        private bool isTeacherSelected = false;
+        private bool isStudentSelected = false;
+
         public ChooseAccountSignUpForm()
         {
             InitializeComponent();
         }
-
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
@@ -27,11 +29,76 @@ namespace Exam_Management_System.Designs
 
         private void confirmBtn_Click(object sender, EventArgs e)
         {
+            if (isTeacherSelected)
+            {
+                // Hide the current form
+                this.Hide();
 
+                // Show the student signup form
+                Designs.SignupFormTeacher signupFormTeacher = new Designs.SignupFormTeacher();
+                signupFormTeacher.Show();
+            }
+            else if (isStudentSelected)
+            {
+                // Hide the current form
+                this.Hide();
+
+                // Show the teacher signup form
+                Designs.SignupFormStudent signupFormStudent = new Designs.SignupFormStudent();
+                signupFormStudent
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    .Show();
+            }
+            else
+            {
+                // Handle the case when neither button is selected
+                MessageBox.Show("Please select an account type before confirming.");
+            }
         }
 
         private void teacherAccountOptionBtn_MouseClick(object sender, MouseEventArgs e)
         {
+            isTeacherSelected = true;
+            isStudentSelected = false;
+
             // Change the image of the button to the selected image
             teacherAccountOptionBtn.Image = Properties.Resources.StudentAccountOption;
 
@@ -41,11 +108,16 @@ namespace Exam_Management_System.Designs
 
         private void studentAccountOptionBtn_MouseClick(object sender, MouseEventArgs e)
         {
+            isTeacherSelected = false;
+            isStudentSelected = true;
+
             // Change the image of the button to the selected image
             studentAccountOptionBtn.Image = Properties.Resources.StudentAccountOption;
 
             // Revert the studentAccountOptionBtn to its default image
             teacherAccountOptionBtn.Image = Properties.Resources.TeacherAccountOption;
         }
+
     }
+
 }
