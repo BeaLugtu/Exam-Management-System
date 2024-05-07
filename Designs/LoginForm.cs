@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace Exam_Management_System
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
 
         DBAccess objDABAccess = new DBAccess();
         DataTable dtUsers = new DataTable();
 
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -56,6 +56,13 @@ namespace Exam_Management_System
                 }
             }
 
+        }
+
+        private void SignupBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Designs.ChooseAccountSignUpForm chooseAccountSignUpForm = new Designs.ChooseAccountSignUpForm();
+            chooseAccountSignUpForm.Show();
         }
     }
 }

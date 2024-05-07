@@ -126,5 +126,29 @@ namespace Exam_Management_System
                 throw;
             }
         }
+
+        // Executes a SQL command and returns the first column of the first row in the result set
+        public object executeScalar(MySqlCommand dbCommand)
+        {
+            try
+            {
+                if (mySqlConnection.State != ConnectionState.Open)
+                {
+                    createConn(); // Ensure connection is open
+                }
+
+                dbCommand.Connection = mySqlConnection; // Assign mySqlConnection
+                dbCommand.CommandType = CommandType.Text;
+
+                return dbCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                // Log or handle the exception
+                throw;
+            }
+        }
+
     }
+
 }
