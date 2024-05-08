@@ -47,44 +47,6 @@ namespace Exam_Management_System.Designs
                 Designs.SignupFormStudent signupFormStudent = new Designs.SignupFormStudent();
                 signupFormStudent
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     .Show();
             }
             else
@@ -100,10 +62,10 @@ namespace Exam_Management_System.Designs
             isStudentSelected = false;
 
             // Change the image of the button to the selected image
-            teacherAccountOptionBtn.Image = Properties.Resources.StudentAccountOption;
+            teacherAccountOptionBtn.Image = Properties.Resources.Group_21;
 
             // Revert the studentAccountOptionBtn to its default image
-            studentAccountOptionBtn.Image = Properties.Resources.TeacherAccountOption;
+            studentAccountOptionBtn.Image = Properties.Resources.Group_22;
         }
 
         private void studentAccountOptionBtn_MouseClick(object sender, MouseEventArgs e)
@@ -112,10 +74,10 @@ namespace Exam_Management_System.Designs
             isStudentSelected = true;
 
             // Change the image of the button to the selected image
-            studentAccountOptionBtn.Image = Properties.Resources.StudentAccountOption;
+            teacherAccountOptionBtn.Image = Properties.Resources.TeacherAccountOption;
 
             // Revert the studentAccountOptionBtn to its default image
-            teacherAccountOptionBtn.Image = Properties.Resources.TeacherAccountOption;
+            studentAccountOptionBtn.Image = Properties.Resources.StudentAccountOption;
         }
 
     }

@@ -85,7 +85,7 @@
             this.studentAccountOptionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.studentAccountOptionBtn.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentAccountOptionBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.studentAccountOptionBtn.Image = ((System.Drawing.Image)(resources.GetObject("studentAccountOptionBtn.Image")));
+            this.studentAccountOptionBtn.Image = global::Exam_Management_System.Properties.Resources.Group_22;
             this.studentAccountOptionBtn.Location = new System.Drawing.Point(95, 350);
             this.studentAccountOptionBtn.Margin = new System.Windows.Forms.Padding(0);
             this.studentAccountOptionBtn.Name = "studentAccountOptionBtn";
