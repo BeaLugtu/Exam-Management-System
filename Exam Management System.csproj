@@ -183,8 +183,13 @@
     <Content Include="assets\Student Sign up Form.png" />
     <Content Include="assets\StudentAccountOption.png" />
     <Content Include="assets\TeacherAccountOption.png" />
-    <None Include="Resources\Group 21.png" />
-    <None Include="Resources\Group 22.png" />
+    <None Include="Resources\icons8-eye-15.png" />
+    <None Include="Resources\darkStudentOption.png" />
+    <None Include="Resources\lightTeacherOption.png" />
+    <None Include="Resources\lightStudentOption.png" />
+    <None Include="Resources\darkTeacherOption.png" />
+    <None Include="Resources\Rectangle 114.png" />
+    <None Include="Resources\icons8-invisible-15.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

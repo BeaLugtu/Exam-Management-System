@@ -29,193 +29,222 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.EmailTB = new Krypton.Toolkit.KryptonTextBox();
+            this.PasswordTB = new Krypton.Toolkit.KryptonTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.EmailTB = new System.Windows.Forms.TextBox();
-            this.PasswordTB = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.LoginBtn = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.SignupBtn = new System.Windows.Forms.Label();
+            this.timeDateLbl = new System.Windows.Forms.Label();
+            this.kryptonBorderEdge1 = new Krypton.Toolkit.KryptonBorderEdge();
+            this.LoginBtn = new Krypton.Toolkit.KryptonButton();
+            this.forgotPassBtn = new Krypton.Toolkit.KryptonLabel();
+            this.SignupBtn = new Krypton.Toolkit.KryptonLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.invisiblePassBtn = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // EmailTB
+            // 
+            this.EmailTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EmailTB.Location = new System.Drawing.Point(117, 269);
+            this.EmailTB.Name = "EmailTB";
+            this.EmailTB.Size = new System.Drawing.Size(286, 41);
+            this.EmailTB.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.EmailTB.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.EmailTB.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.EmailTB.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.EmailTB.StateCommon.Border.Rounding = 10F;
+            this.EmailTB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailTB.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
+            this.EmailTB.TabIndex = 14;
+            this.EmailTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailTB_KeyPress);
+            // 
+            // PasswordTB
+            // 
+            this.PasswordTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.PasswordTB.Location = new System.Drawing.Point(117, 352);
+            this.PasswordTB.Name = "PasswordTB";
+            this.PasswordTB.Size = new System.Drawing.Size(286, 41);
+            this.PasswordTB.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.PasswordTB.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.PasswordTB.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.PasswordTB.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.PasswordTB.StateCommon.Border.Rounding = 10F;
+            this.PasswordTB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordTB.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7, 7, 34, 7);
+            this.PasswordTB.TabIndex = 15;
+            this.PasswordTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasswordTB_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(60, 109);
+            this.label1.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.label1.Location = new System.Drawing.Point(774, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(358, 51);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome Back to";
+            this.label1.Size = new System.Drawing.Size(13, 19);
+            this.label1.TabIndex = 18;
+            this.label1.Text = " ";
             // 
-            // label2
+            // timeDateLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(60, 160);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(187, 51);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Exam.io";
+            this.timeDateLbl.AutoSize = true;
+            this.timeDateLbl.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeDateLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.timeDateLbl.Location = new System.Drawing.Point(774, 50);
+            this.timeDateLbl.Name = "timeDateLbl";
+            this.timeDateLbl.Size = new System.Drawing.Size(165, 19);
+            this.timeDateLbl.TabIndex = 19;
+            this.timeDateLbl.Text = "11:44 pm - Tue, May 6";
             // 
-            // EmailTB
+            // kryptonBorderEdge1
             // 
-            this.EmailTB.BackColor = System.Drawing.Color.Silver;
-            this.EmailTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 29F);
-            this.EmailTB.Location = new System.Drawing.Point(69, 241);
-            this.EmailTB.Name = "EmailTB";
-            this.EmailTB.Size = new System.Drawing.Size(349, 51);
-            this.EmailTB.TabIndex = 2;
-            // 
-            // PasswordTB
-            // 
-            this.PasswordTB.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.PasswordTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 29F);
-            this.PasswordTB.Location = new System.Drawing.Point(69, 301);
-            this.PasswordTB.Name = "PasswordTB";
-            this.PasswordTB.Size = new System.Drawing.Size(349, 51);
-            this.PasswordTB.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(313, 373);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "forgot password?";
+            this.kryptonBorderEdge1.Location = new System.Drawing.Point(261, 14);
+            this.kryptonBorderEdge1.Name = "kryptonBorderEdge1";
+            this.kryptonBorderEdge1.Size = new System.Drawing.Size(50, 1);
+            this.kryptonBorderEdge1.Text = "kryptonBorderEdge1";
             // 
             // LoginBtn
             // 
-            this.LoginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.LoginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LoginBtn.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginBtn.ForeColor = System.Drawing.Color.White;
-            this.LoginBtn.Location = new System.Drawing.Point(69, 405);
+            this.LoginBtn.Location = new System.Drawing.Point(117, 437);
             this.LoginBtn.Name = "LoginBtn";
-            this.LoginBtn.Size = new System.Drawing.Size(349, 54);
-            this.LoginBtn.TabIndex = 7;
-            this.LoginBtn.Text = "Log in";
-            this.LoginBtn.UseVisualStyleBackColor = false;
-            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
+            this.LoginBtn.Size = new System.Drawing.Size(286, 39);
+            this.LoginBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.LoginBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("LoginBtn.StateCommon.Back.Image")));
+            this.LoginBtn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.LoginBtn.StateCommon.Border.Rounding = 10F;
+            this.LoginBtn.StateCommon.Content.LongText.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Bold);
+            this.LoginBtn.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
+            this.LoginBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Inter", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginBtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.LoginBtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.LoginBtn.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("LoginBtn.StateTracking.Back.Image")));
+            this.LoginBtn.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.LoginBtn.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.LoginBtn.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.LoginBtn.TabIndex = 16;
+            this.LoginBtn.Values.Text = "";
+            this.LoginBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LoginBtn_MouseClick);
             // 
-            // label5
+            // forgotPassBtn
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 10F);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(128, 482);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 16);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Don’t have an account? ";
+            this.forgotPassBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.forgotPassBtn.Location = new System.Drawing.Point(117, 403);
+            this.forgotPassBtn.Name = "forgotPassBtn";
+            this.forgotPassBtn.Size = new System.Drawing.Size(107, 17);
+            this.forgotPassBtn.StateCommon.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.forgotPassBtn.StateCommon.LongText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.forgotPassBtn.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.forgotPassBtn.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.forgotPassBtn.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 8.25F);
+            this.forgotPassBtn.TabIndex = 22;
+            this.forgotPassBtn.ToolTipValues.Description = "Forgotttt???????";
+            this.forgotPassBtn.UseMnemonic = false;
+            this.forgotPassBtn.Values.Text = "Forgot Password?";
+            this.forgotPassBtn.MouseLeave += new System.EventHandler(this.forgotPassBtn_MouseLeave);
+            this.forgotPassBtn.MouseHover += new System.EventHandler(this.forgotPassBtn_MouseHover);
             // 
             // SignupBtn
             // 
-            this.SignupBtn.AutoSize = true;
             this.SignupBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SignupBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignupBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.SignupBtn.Location = new System.Drawing.Point(283, 482);
+            this.SignupBtn.Location = new System.Drawing.Point(300, 483);
             this.SignupBtn.Name = "SignupBtn";
-            this.SignupBtn.Size = new System.Drawing.Size(56, 16);
-            this.SignupBtn.TabIndex = 9;
-            this.SignupBtn.Text = "Sign up";
+            this.SignupBtn.Size = new System.Drawing.Size(56, 19);
+            this.SignupBtn.StateCommon.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SignupBtn.StateCommon.LongText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SignupBtn.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SignupBtn.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SignupBtn.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignupBtn.TabIndex = 24;
+            this.SignupBtn.Values.Text = "Sign up";
             this.SignupBtn.Click += new System.EventHandler(this.SignupBtn_Click);
+            this.SignupBtn.MouseLeave += new System.EventHandler(this.SignupBtn_MouseLeave);
+            this.SignupBtn.MouseHover += new System.EventHandler(this.SignupBtn_MouseHover);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(460, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(-2, -1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(495, 608);
-            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.Size = new System.Drawing.Size(1002, 601);
+            this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
-            // checkBox1
+            // invisiblePassBtn
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.checkBox1.Location = new System.Drawing.Point(71, 373);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(115, 20);
-            this.checkBox1.TabIndex = 11;
-            this.checkBox1.Text = "show password";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(170, 55);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(8, 8);
-            this.chart1.TabIndex = 12;
-            this.chart1.Text = "chart1";
+            this.invisiblePassBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.invisiblePassBtn.Location = new System.Drawing.Point(377, 365);
+            this.invisiblePassBtn.Name = "invisiblePassBtn";
+            this.invisiblePassBtn.Size = new System.Drawing.Size(16, 16);
+            this.invisiblePassBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.invisiblePassBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.invisiblePassBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("invisiblePassBtn.StateCommon.Back.Image")));
+            this.invisiblePassBtn.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.invisiblePassBtn.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.invisiblePassBtn.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.invisiblePassBtn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.invisiblePassBtn.StatePressed.Back.Image = ((System.Drawing.Image)(resources.GetObject("invisiblePassBtn.StatePressed.Back.Image")));
+            this.invisiblePassBtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.invisiblePassBtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.invisiblePassBtn.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("invisiblePassBtn.StateTracking.Back.Image")));
+            this.invisiblePassBtn.StateTracking.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.invisiblePassBtn.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.invisiblePassBtn.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.invisiblePassBtn.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.invisiblePassBtn.TabIndex = 21;
+            this.invisiblePassBtn.Values.Text = "";
+            this.invisiblePassBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.invisiblePassBtn_MouseClick);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(955, 611);
-            this.Controls.Add(this.chart1);
-            this.Controls.Add(this.checkBox1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.SignupBtn);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.forgotPassBtn);
+            this.Controls.Add(this.invisiblePassBtn);
+            this.Controls.Add(this.kryptonBorderEdge1);
+            this.Controls.Add(this.timeDateLbl);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.LoginBtn);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.PasswordTB);
             this.Controls.Add(this.EmailTB);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox EmailTB;
-        private System.Windows.Forms.TextBox PasswordTB;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button LoginBtn;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label SignupBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Krypton.Toolkit.KryptonTextBox EmailTB;
+        private Krypton.Toolkit.KryptonTextBox PasswordTB;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label timeDateLbl;
+        private Krypton.Toolkit.KryptonBorderEdge kryptonBorderEdge1;
+        private Krypton.Toolkit.KryptonButton LoginBtn;
+        private Krypton.Toolkit.KryptonLabel forgotPassBtn;
+        private Krypton.Toolkit.KryptonLabel SignupBtn;
+        private Krypton.Toolkit.KryptonButton invisiblePassBtn;
     }
 }
 

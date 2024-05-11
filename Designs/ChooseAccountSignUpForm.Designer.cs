@@ -29,110 +29,157 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChooseAccountSignUpForm));
+            this.timeDateLbl = new System.Windows.Forms.Label();
+            this.confirmBtn = new Krypton.Toolkit.KryptonButton();
+            this.cancelBtn = new Krypton.Toolkit.KryptonButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.confirmBtn = new System.Windows.Forms.Button();
-            this.cancelBtn = new System.Windows.Forms.Button();
             this.studentAccountOptionBtn = new System.Windows.Forms.Button();
             this.teacherAccountOptionBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // timeDateLbl
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -68);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(960, 671);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.timeDateLbl.AutoSize = true;
+            this.timeDateLbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.timeDateLbl.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeDateLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.timeDateLbl.Location = new System.Drawing.Point(785, 53);
+            this.timeDateLbl.Name = "timeDateLbl";
+            this.timeDateLbl.Size = new System.Drawing.Size(165, 19);
+            this.timeDateLbl.TabIndex = 20;
+            this.timeDateLbl.Text = "11:44 pm - Tue, May 6";
             // 
             // confirmBtn
             // 
-            this.confirmBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.confirmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.confirmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.confirmBtn.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmBtn.ForeColor = System.Drawing.Color.White;
-            this.confirmBtn.Location = new System.Drawing.Point(220, 481);
+            this.confirmBtn.Location = new System.Drawing.Point(224, 479);
             this.confirmBtn.Name = "confirmBtn";
-            this.confirmBtn.Size = new System.Drawing.Size(109, 45);
-            this.confirmBtn.TabIndex = 13;
-            this.confirmBtn.Text = "Confirm";
-            this.confirmBtn.UseVisualStyleBackColor = false;
+            this.confirmBtn.Size = new System.Drawing.Size(103, 29);
+            this.confirmBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.confirmBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("confirmBtn.StateCommon.Back.Image")));
+            this.confirmBtn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.confirmBtn.StateCommon.Border.Rounding = 10F;
+            this.confirmBtn.StateCommon.Content.LongText.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Bold);
+            this.confirmBtn.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
+            this.confirmBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Inter", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmBtn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.confirmBtn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.confirmBtn.StatePressed.Back.Image = ((System.Drawing.Image)(resources.GetObject("confirmBtn.StatePressed.Back.Image")));
+            this.confirmBtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.confirmBtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.confirmBtn.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("confirmBtn.StateTracking.Back.Image")));
+            this.confirmBtn.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.confirmBtn.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.confirmBtn.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.confirmBtn.TabIndex = 23;
+            this.confirmBtn.Values.Text = "";
             this.confirmBtn.Click += new System.EventHandler(this.confirmBtn_Click);
             // 
             // cancelBtn
             // 
-            this.cancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancelBtn.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cancelBtn.Location = new System.Drawing.Point(96, 481);
+            this.cancelBtn.Location = new System.Drawing.Point(115, 479);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(115, 45);
-            this.cancelBtn.TabIndex = 12;
-            this.cancelBtn.Text = "Cancel";
-            this.cancelBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.Size = new System.Drawing.Size(103, 29);
+            this.cancelBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.cancelBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.cancelBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("cancelBtn.StateCommon.Back.Image")));
+            this.cancelBtn.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.cancelBtn.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.cancelBtn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cancelBtn.StateCommon.Border.Rounding = 10F;
+            this.cancelBtn.StateCommon.Content.LongText.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Bold);
+            this.cancelBtn.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
+            this.cancelBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Inter", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.cancelBtn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.cancelBtn.StatePressed.Back.Image = ((System.Drawing.Image)(resources.GetObject("cancelBtn.StatePressed.Back.Image")));
+            this.cancelBtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.cancelBtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.cancelBtn.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("cancelBtn.StateTracking.Back.Image")));
+            this.cancelBtn.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.cancelBtn.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.cancelBtn.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cancelBtn.TabIndex = 24;
+            this.cancelBtn.Values.Text = "";
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            this.cancelBtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cancelBtn_KeyPress);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1002, 606);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // studentAccountOptionBtn
             // 
-            this.studentAccountOptionBtn.BackColor = System.Drawing.Color.Transparent;
-            this.studentAccountOptionBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.studentAccountOptionBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.studentAccountOptionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.studentAccountOptionBtn.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentAccountOptionBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.studentAccountOptionBtn.Image = global::Exam_Management_System.Properties.Resources.Group_22;
-            this.studentAccountOptionBtn.Location = new System.Drawing.Point(95, 350);
-            this.studentAccountOptionBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.studentAccountOptionBtn.FlatAppearance.BorderSize = 0;
+            this.studentAccountOptionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.studentAccountOptionBtn.Image = ((System.Drawing.Image)(resources.GetObject("studentAccountOptionBtn.Image")));
+            this.studentAccountOptionBtn.Location = new System.Drawing.Point(115, 287);
             this.studentAccountOptionBtn.Name = "studentAccountOptionBtn";
-            this.studentAccountOptionBtn.Size = new System.Drawing.Size(343, 114);
-            this.studentAccountOptionBtn.TabIndex = 14;
-            this.studentAccountOptionBtn.UseVisualStyleBackColor = false;
-            this.studentAccountOptionBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.studentAccountOptionBtn_MouseClick);
+            this.studentAccountOptionBtn.Size = new System.Drawing.Size(295, 75);
+            this.studentAccountOptionBtn.TabIndex = 25;
+            this.studentAccountOptionBtn.UseVisualStyleBackColor = true;
+            this.studentAccountOptionBtn.Click += new System.EventHandler(this.studentAccountOptionBtn_Click);
+            this.studentAccountOptionBtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.teacherAccountOptionBtn_KeyPress);
             // 
             // teacherAccountOptionBtn
             // 
-            this.teacherAccountOptionBtn.BackColor = System.Drawing.Color.Transparent;
             this.teacherAccountOptionBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.teacherAccountOptionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.teacherAccountOptionBtn.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teacherAccountOptionBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.teacherAccountOptionBtn.FlatAppearance.BorderSize = 0;
+            this.teacherAccountOptionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.teacherAccountOptionBtn.Image = ((System.Drawing.Image)(resources.GetObject("teacherAccountOptionBtn.Image")));
-            this.teacherAccountOptionBtn.Location = new System.Drawing.Point(95, 223);
+            this.teacherAccountOptionBtn.Location = new System.Drawing.Point(115, 368);
             this.teacherAccountOptionBtn.Name = "teacherAccountOptionBtn";
-            this.teacherAccountOptionBtn.Size = new System.Drawing.Size(342, 116);
-            this.teacherAccountOptionBtn.TabIndex = 15;
-            this.teacherAccountOptionBtn.UseVisualStyleBackColor = false;
-            this.teacherAccountOptionBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.teacherAccountOptionBtn_MouseClick);
+            this.teacherAccountOptionBtn.Size = new System.Drawing.Size(295, 75);
+            this.teacherAccountOptionBtn.TabIndex = 26;
+            this.teacherAccountOptionBtn.UseVisualStyleBackColor = true;
+            this.teacherAccountOptionBtn.Click += new System.EventHandler(this.teacherAccountOptionBtn_Click);
+            this.teacherAccountOptionBtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.studentAccountOptionBtn_KeyPress);
             // 
             // ChooseAccountSignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 595);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.teacherAccountOptionBtn);
             this.Controls.Add(this.studentAccountOptionBtn);
-            this.Controls.Add(this.confirmBtn);
             this.Controls.Add(this.cancelBtn);
+            this.Controls.Add(this.confirmBtn);
+            this.Controls.Add(this.timeDateLbl);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ChooseAccountSignUpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChooseAccountSignUpForm";
+            this.Load += new System.EventHandler(this.ChooseAccountSignUpForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
+        private System.Windows.Forms.Label timeDateLbl;
+        private Krypton.Toolkit.KryptonButton confirmBtn;
+        private Krypton.Toolkit.KryptonButton cancelBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button confirmBtn;
-        private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Button studentAccountOptionBtn;
         private System.Windows.Forms.Button teacherAccountOptionBtn;
     }
