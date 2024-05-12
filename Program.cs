@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Exam_Management_System.Designs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,8 @@ namespace Exam_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            LoadingScreen loadingScreen = new LoadingScreen();
+            Application.Run(loadingScreen);
         }
     }
 }
