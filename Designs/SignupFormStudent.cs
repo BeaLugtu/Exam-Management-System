@@ -15,11 +15,20 @@ namespace Exam_Management_System.Designs
     {
         DBAccess objDBAccess = new DBAccess();
 
+
         public SignupFormStudent()
         {
             InitializeComponent();
+            // Set focus to the studentIDTB textbox when the form loads
+            this.Load += SignupFormStudent_Load;
+            studentIDTB.Focus();
         }
 
+        private void SignupFormStudent_Load(object sender, EventArgs e)
+        {
+            // Set focus to the studentIDTB textbox when the form loads
+            studentIDTB.TextBox.Focus();
+        }
 
         private void confirmBtn_Click(object sender, EventArgs e)
         {
@@ -92,5 +101,117 @@ namespace Exam_Management_System.Designs
             Designs.ChooseAccountSignUpForm chooseAccountSignUp = new Designs.ChooseAccountSignUpForm();
             chooseAccountSignUp.Show();
         }
+
+        private void studentIDTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is Enter and studentIDTB is empty
+            if (e.KeyChar == (char)Keys.Enter && string.IsNullOrEmpty(studentIDTB.Text))
+            {
+                // Display a message to enter info in studentIDTB
+                MessageBox.Show("Please enter your student ID before proceeding.");
+
+                // Prevent the Enter key from being processed further
+                e.Handled = true;
+            }
+            // Check if the pressed key is Enter and studentIDTB is not empty
+            else if (e.KeyChar == (char)Keys.Enter && !string.IsNullOrEmpty(studentIDTB.Text))
+            {
+                // Move focus to fnameTB
+                fnameTB.Focus();
+
+                // Prevent the Enter key from being processed further
+                e.Handled = true;
+            }
+        }
+
+        private void fnameTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is Enter and fnameTB is empty
+            if (e.KeyChar == (char)Keys.Enter && string.IsNullOrEmpty(fnameTB.Text))
+            {
+                // Display a message to enter info in fnameTB
+                MessageBox.Show("Please enter your first name before proceeding.");
+
+                // Prevent the Enter key from being processed further
+                e.Handled = true;
+            }
+            // Check if the pressed key is Enter and fnameTB is not empty
+            else if (e.KeyChar == (char)Keys.Enter && !string.IsNullOrEmpty(fnameTB.Text))
+            {
+                // Move focus to lnameTB
+                lnameTB.Focus();
+
+                // Prevent the Enter key from being processed further
+                e.Handled = true;
+            }
+        }
+
+        private void lnameTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is Enter and lnameTB is empty
+            if (e.KeyChar == (char)Keys.Enter && string.IsNullOrEmpty(lnameTB.Text))
+            {
+                // Display a message to enter info in lnameTB
+                MessageBox.Show("Please enter your last name before proceeding.");
+
+                // Prevent the Enter key from being processed further
+                e.Handled = true;
+            }
+            // Check if the pressed key is Enter and lnameTB is not empty
+            else if (e.KeyChar == (char)Keys.Enter && !string.IsNullOrEmpty(lnameTB.Text))
+            {
+                // Move focus to passwordTB
+                passwordTB.Focus();
+
+                // Prevent the Enter key from being processed further
+                e.Handled = true;
+            }
+        }
+
+        private void passwordTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is Enter and passwordTB is empty
+            if (e.KeyChar == (char)Keys.Enter && string.IsNullOrEmpty(passwordTB.Text))
+            {
+                // Display a message to enter info in passwordTB
+                MessageBox.Show("Please enter your password before proceeding.");
+
+                // Prevent the Enter key from being processed further
+                e.Handled = true;
+            }
+            // Check if the pressed key is Enter and passwordTB is not empty
+            else if (e.KeyChar == (char)Keys.Enter && !string.IsNullOrEmpty(passwordTB.Text))
+            {
+                // Move focus to confirmPassTB
+                confirmPassTB.Focus();
+
+                // Prevent the Enter key from being processed further
+                e.Handled = true;
+            }
+        }
+
+        private void confirmPassTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is Enter and confirmPassTB is empty
+            if (e.KeyChar == (char)Keys.Enter && string.IsNullOrEmpty(confirmPassTB.Text))
+            {
+                // Display a message to enter info in confirmPassTB
+                MessageBox.Show("Please confirm your password before proceeding.");
+
+                // Prevent the Enter key from being processed further
+                e.Handled = true;
+            }
+            // Check if the pressed key is Enter and confirmPassTB is not empty
+            else if (e.KeyChar == (char)Keys.Enter && !string.IsNullOrEmpty(confirmPassTB.Text))
+            {
+                // Perform the desired action here (e.g., activating a button)
+                confirmBtn.PerformClick();
+
+                // Prevent the Enter key from being processed further
+                e.Handled = true;
+            }
+        }
+
+
     }
 }

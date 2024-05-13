@@ -63,9 +63,9 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _440888854_1450875785801760_7207219617834654990_n {
+        internal static System.Drawing.Bitmap darkStudentOption {
             get {
-                object obj = ResourceManager.GetObject("440888854_1450875785801760_7207219617834654990_n", resourceCulture);
+                object obj = ResourceManager.GetObject("darkStudentOption", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _440888854_1450875785801760_7207219617834654990_n1 {
+        internal static System.Drawing.Bitmap darkTeacherOption {
             get {
-                object obj = ResourceManager.GetObject("440888854_1450875785801760_7207219617834654990_n1", resourceCulture);
+                object obj = ResourceManager.GetObject("darkTeacherOption", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Group_21 {
+        internal static System.Drawing.Bitmap icons8_eye_15 {
             get {
-                object obj = ResourceManager.GetObject("Group_21", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_eye_15", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Group_22 {
+        internal static System.Drawing.Bitmap icons8_invisible_15 {
             get {
-                object obj = ResourceManager.GetObject("Group_22", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_invisible_15", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap StudentAccountOption {
+        internal static System.Drawing.Bitmap lightStudentOption {
             get {
-                object obj = ResourceManager.GetObject("StudentAccountOption", resourceCulture);
+                object obj = ResourceManager.GetObject("lightStudentOption", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap TeacherAccountOption {
+        internal static System.Drawing.Bitmap lightTeacherOption {
             get {
-                object obj = ResourceManager.GetObject("TeacherAccountOption", resourceCulture);
+                object obj = ResourceManager.GetObject("lightTeacherOption", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
