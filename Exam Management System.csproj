@@ -192,6 +192,8 @@
     <Content Include="assets\Student Sign up Form.png" />
     <Content Include="assets\StudentAccountOption.png" />
     <Content Include="assets\TeacherAccountOption.png" />
+    <None Include="Resources\440888854_1450875785801760_7207219617834654990_n.png" />
+    <None Include="Resources\LoadingScreen.bmp" />
     <None Include="Resources\icons8-eye-15.png" />
     <None Include="Resources\darkStudentOption.png" />
     <None Include="Resources\lightTeacherOption.png" />

@@ -16,19 +16,20 @@ namespace Exam_Management_System.Designs
         DBAccess objDBAccess = new DBAccess();
 
 
-        public SignupFormStudent()
-        {
-            InitializeComponent();
-            // Set focus to the studentIDTB textbox when the form loads
-            this.Load += SignupFormStudent_Load;
-            studentIDTB.Focus();
+            public SignupFormStudent()
+            {
+                InitializeComponent();
+                // Set focus to the studentIDTB textbox when the form loads
+                this.Load += SignupFormStudent_Load;
+                studentIDTB.Focus();
         }
 
-        private void SignupFormStudent_Load(object sender, EventArgs e)
-        {
-            // Set focus to the studentIDTB textbox when the form loads
-            studentIDTB.TextBox.Focus();
-        }
+            private void SignupFormStudent_Load(object sender, EventArgs e)
+            {
+                // Set focus to the studentIDTB textbox when the form loads
+                studentIDTB.Focus();
+            }
+
 
         private void confirmBtn_Click(object sender, EventArgs e)
         {
@@ -212,6 +213,9 @@ namespace Exam_Management_System.Designs
             }
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

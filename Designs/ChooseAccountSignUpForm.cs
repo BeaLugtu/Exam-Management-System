@@ -24,16 +24,15 @@ namespace Exam_Management_System.Designs
         {
             InitializeComponent();
             this.Load += ChooseAccountSignUpForm_Load;
-
-            // Set KeyPreview to true
+            this.KeyDown += ChooseAccountSignUpForm_KeyDown; // Subscribe to KeyDown event
+                                                             // Set KeyPreview to true
             this.KeyPreview = true;
 
             originalWidth = cancelBtn.Width;
             originalHeight = cancelBtn.Height;
             // Set the teacher option as the default selection
             isTeacherSelected = false;
-            isStudentSelected = true ;
-
+            isStudentSelected = true;
 
             // Start a timer to update the time label every second
             Timer timer = new Timer();
@@ -41,6 +40,7 @@ namespace Exam_Management_System.Designs
             timer.Tick += Timer_Tick;
             timer.Start();
         }
+
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
@@ -99,6 +99,9 @@ namespace Exam_Management_System.Designs
 
             // Revert the studentAccountOptionBtn to its default image
             studentAccountOptionBtn.Image = Properties.Resources.lightStudentOption;
+
+            // Set focus to the confirm button
+            confirmBtn.Focus();
         }
 
         private void SelectStudentOption()
@@ -111,28 +114,29 @@ namespace Exam_Management_System.Designs
 
             // Revert the studentAccountOptionBtn to its default image
             studentAccountOptionBtn.Image = Properties.Resources.darkStudentOption;
+
+            // Set focus to the confirm button
+            confirmBtn.Focus();
         }
+
 
         private void teacherAccountOptionBtn_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Check if the pressed key is Enter
             if (e.KeyChar == (char)Keys.Enter)
             {
-                // Call the corresponding method based on the selected option
-                if (isTeacherSelected)
+                // Check if the teacher option button is visually selected
+                if (teacherAccountOptionBtn.Image == Properties.Resources.darkTeacherOption)
                 {
+                    // Call the corresponding method based on the selected option
                     SelectTeacherOption();
-                }
-                else if (isStudentSelected)
-                {
-                    SelectStudentOption();
-                }
 
-                // Perform the confirmation button click action
-                confirmBtn.PerformClick();
+                    // Perform the confirmation button click action
+                    confirmBtn.PerformClick();
 
-                // Prevent the Enter key from being processed further
-                e.Handled = true;
+                    // Prevent the Enter key from being processed further
+                    e.Handled = true;
+                }
             }
         }
 
@@ -141,23 +145,22 @@ namespace Exam_Management_System.Designs
             // Check if the pressed key is Enter
             if (e.KeyChar == (char)Keys.Enter)
             {
-                // Call the corresponding method based on the selected option
-                if (isTeacherSelected)
+                // Check if the student option button is visually selected
+                if (studentAccountOptionBtn.Image == Properties.Resources.darkStudentOption)
                 {
-                    SelectTeacherOption();
-                }
-                else if (isStudentSelected)
-                {
+                    // Call the corresponding method based on the selected option
                     SelectStudentOption();
+
+                    // Perform the confirmation button click action
+                    confirmBtn.PerformClick();
+
+                    // Prevent the Enter key from being processed further
+                    e.Handled = true;
                 }
-
-                // Perform the confirmation button click action
-                confirmBtn.PerformClick();
-
-                // Prevent the Enter key from being processed further
-                e.Handled = true;
             }
         }
+
+
 
 
         // Update the time label with the current time
@@ -220,6 +223,45 @@ namespace Exam_Management_System.Designs
                 // Prevent the Escape key from being processed further
                 e.Handled = true;
             }
+
+        }
+        private void ChooseAccountSignUpForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the pressed key is Enter
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Check which option is currently selected
+                if (isTeacherSelected)
+                {
+                    // If Teacher option is selected, perform the confirmation action for Teacher
+                    confirmBtn.PerformClick();
+                }
+                else if (isStudentSelected)
+                {
+                    // If Student option is selected, perform the confirmation action for Student
+                    confirmBtn.PerformClick();
+                }
+
+                // Prevent the Enter key from being processed further
+                e.Handled = true;
+            }
+
+            // Check if the pressed key is Esc
+            if (e.KeyCode == Keys.Escape)
+            {
+                // Perform the cancel button click action
+                cancelBtn.PerformClick();
+
+                // Prevent the Esc key from being processed further
+                e.Handled = true;
+            }
+        }
+
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

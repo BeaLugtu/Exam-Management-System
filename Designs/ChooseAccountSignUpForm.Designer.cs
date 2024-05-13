@@ -32,9 +32,9 @@
             this.timeDateLbl = new System.Windows.Forms.Label();
             this.confirmBtn = new Krypton.Toolkit.KryptonButton();
             this.cancelBtn = new Krypton.Toolkit.KryptonButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.studentAccountOptionBtn = new System.Windows.Forms.Button();
             this.teacherAccountOptionBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,11 +42,11 @@
             // 
             this.timeDateLbl.AutoSize = true;
             this.timeDateLbl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.timeDateLbl.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeDateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeDateLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.timeDateLbl.Location = new System.Drawing.Point(785, 53);
             this.timeDateLbl.Name = "timeDateLbl";
-            this.timeDateLbl.Size = new System.Drawing.Size(165, 19);
+            this.timeDateLbl.Size = new System.Drawing.Size(155, 18);
             this.timeDateLbl.TabIndex = 20;
             this.timeDateLbl.Text = "11:44 pm - Tue, May 6";
             // 
@@ -62,9 +62,9 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.confirmBtn.StateCommon.Border.Rounding = 10F;
-            this.confirmBtn.StateCommon.Content.LongText.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Bold);
+            this.confirmBtn.StateCommon.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.confirmBtn.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
-            this.confirmBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Inter", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmBtn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.confirmBtn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.confirmBtn.StatePressed.Back.Image = ((System.Drawing.Image)(resources.GetObject("confirmBtn.StatePressed.Back.Image")));
@@ -95,9 +95,9 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.cancelBtn.StateCommon.Border.Rounding = 10F;
-            this.cancelBtn.StateCommon.Content.LongText.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Bold);
+            this.cancelBtn.StateCommon.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.cancelBtn.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
-            this.cancelBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Inter", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBtn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.cancelBtn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.cancelBtn.StatePressed.Back.Image = ((System.Drawing.Image)(resources.GetObject("cancelBtn.StatePressed.Back.Image")));
@@ -113,16 +113,6 @@
             this.cancelBtn.Values.Text = "";
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             this.cancelBtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cancelBtn_KeyPress);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1002, 606);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // studentAccountOptionBtn
             // 
@@ -152,6 +142,17 @@
             this.teacherAccountOptionBtn.Click += new System.EventHandler(this.teacherAccountOptionBtn_Click);
             this.teacherAccountOptionBtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.studentAccountOptionBtn_KeyPress);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1002, 606);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // ChooseAccountSignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,8 +180,8 @@
         private System.Windows.Forms.Label timeDateLbl;
         private Krypton.Toolkit.KryptonButton confirmBtn;
         private Krypton.Toolkit.KryptonButton cancelBtn;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button studentAccountOptionBtn;
         private System.Windows.Forms.Button teacherAccountOptionBtn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

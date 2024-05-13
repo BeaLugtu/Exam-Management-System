@@ -229,5 +229,10 @@ namespace Exam_Management_System
             SignupBtn.StateCommon.ShortText.Font = new Font(SignupBtn.StateCommon.ShortText.Font.FontFamily, 9f, SignupBtn.StateCommon.ShortText.Font.Style); // Set font size to 9.4pt on hover
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

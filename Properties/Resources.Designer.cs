@@ -63,6 +63,16 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _440888854_1450875785801760_7207219617834654990_n {
+            get {
+                object obj = ResourceManager.GetObject("_440888854_1450875785801760_7207219617834654990_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap darkStudentOption {
             get {
                 object obj = ResourceManager.GetObject("darkStudentOption", resourceCulture);
