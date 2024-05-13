@@ -70,10 +70,12 @@ namespace Exam_Management_System.Designs
 
                 if (row == 1)
                 {
+                    // Pass teacher ID to the next form
+                    // For teacher signup
+                    SetUpAccount setupAccountForm = new SetUpAccount(TeacherID, UserType.Teacher);
                     MessageBox.Show("Account Created Successfully");
                     this.Hide();
-                    Designs.Homepage homePage = new Designs.Homepage();
-                    homePage.Show();
+                    setupAccountForm.Show();
                 }
                 else
                 {

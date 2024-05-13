@@ -1,4 +1,5 @@
-﻿using Krypton.Toolkit;
+﻿using Exam_Management_System.Designs;
+using Krypton.Toolkit;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,7 +45,7 @@ namespace Exam_Management_System
             // Display the current time
             UpdateTimeLabel();
             // Format the date and time string
-            string formattedDateTime = currentTime.ToString("h:mm tt - ddd, MMM d");
+            string formattedDateTime = currentTime.ToString("h:mm tt — ddd, MMM d");
 
             // Update the label text
             timeDateLbl.Text = formattedDateTime;
@@ -98,11 +99,16 @@ namespace Exam_Management_System
 
                 if (dtUsers.Rows.Count > 0)
                 {
+                    // Get the user ID and user type from the database
+                    string userID = dtUsers.Rows[0]["ID"].ToString();
+                    UserType userType = (UserType)Enum.Parse(typeof(UserType), dtUsers.Rows[0]["User_Type"].ToString());
+
                     MessageBox.Show("Successfully Log in.");
                     objDABAccess.closeConn();
                     this.Hide();
 
-                    Designs.Homepage homePage = new Designs.Homepage();
+                    // Pass user ID and user type to the homepage
+                    Designs.Homepage homePage = new Designs.Homepage(userID, userType);
                     homePage.Show();
                 }
                 else
@@ -111,7 +117,6 @@ namespace Exam_Management_System
                 }
             }
         }
-
 
 
 
@@ -230,9 +235,5 @@ namespace Exam_Management_System
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

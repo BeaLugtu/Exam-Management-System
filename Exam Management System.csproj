@@ -131,6 +131,12 @@
     <Compile Include="Designs\Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Designs\SetUpAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designs\SetUpAccount.Designer.cs">
+      <DependentUpon>SetUpAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Designs\SignupFormStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,11 +154,17 @@
     <EmbeddedResource Include="Designs\ChooseAccountSignUpForm.resx">
       <DependentUpon>ChooseAccountSignUpForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Designs\Homepage.resx">
+      <DependentUpon>Homepage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Designs\LoadingScreen.resx">
       <DependentUpon>LoadingScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\SetUpAccount.resx">
+      <DependentUpon>SetUpAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\SignupFormStudent.resx">
       <DependentUpon>SignupFormStudent.cs</DependentUpon>

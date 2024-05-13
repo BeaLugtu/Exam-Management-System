@@ -44,7 +44,7 @@
             this.timeDateLbl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.timeDateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeDateLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.timeDateLbl.Location = new System.Drawing.Point(785, 53);
+            this.timeDateLbl.Location = new System.Drawing.Point(774, 50);
             this.timeDateLbl.Name = "timeDateLbl";
             this.timeDateLbl.Size = new System.Drawing.Size(155, 18);
             this.timeDateLbl.TabIndex = 20;

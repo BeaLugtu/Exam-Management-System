@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.IDLbl = new Krypton.Toolkit.KryptonLabel();
+            this.SuspendLayout();
+            // 
+            // IDLbl
+            // 
+            this.IDLbl.Location = new System.Drawing.Point(148, 95);
+            this.IDLbl.Name = "IDLbl";
+            this.IDLbl.Size = new System.Drawing.Size(25, 20);
+            this.IDLbl.TabIndex = 0;
+            this.IDLbl.Values.Text = "ID: ";
+            // 
+            // Homepage
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.IDLbl);
+            this.Name = "Homepage";
             this.Text = "Homepage";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private Krypton.Toolkit.KryptonLabel IDLbl;
     }
 }

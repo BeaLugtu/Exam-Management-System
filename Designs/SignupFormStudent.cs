@@ -73,10 +73,12 @@ namespace Exam_Management_System.Designs
 
                 if (row == 1)
                 {
+                    // Pass student ID to the next form
+                    // For student signup
+                    SetUpAccount setupAccountForm = new SetUpAccount(StudentID, UserType.Student);
                     MessageBox.Show("Account Created Successfully");
                     this.Hide();
-                    Designs.Homepage homePage = new Designs.Homepage();
-                    homePage.Show();
+                    setupAccountForm.Show();
                 }
                 else
                 {
@@ -213,9 +215,5 @@ namespace Exam_Management_System.Designs
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
