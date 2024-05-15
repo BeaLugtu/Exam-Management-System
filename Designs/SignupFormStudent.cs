@@ -22,7 +22,7 @@ namespace Exam_Management_System.Designs
                 // Set focus to the studentIDTB textbox when the form loads
                 this.Load += SignupFormStudent_Load;
                 studentIDTB.Focus();
-        }
+            }
 
             private void SignupFormStudent_Load(object sender, EventArgs e)
             {

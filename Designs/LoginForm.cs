@@ -93,7 +93,7 @@ namespace Exam_Management_System
             }
             else
             {
-                string query = "Select * from Users Where Email= '" + UserEmail + "' AND Password = '" + Password + "'";
+                string query = "Select * from Users Where ID= '" + UserEmail + "' AND Password = '" + Password + "'";
 
                 objDABAccess.readDatathroughAdapter(query, dtUsers);
 
