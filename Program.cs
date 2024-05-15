@@ -17,10 +17,10 @@ namespace Exam_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            LoadingScreen loadingScreen = new LoadingScreen();
-            Application.Run(loadingScreen);
-            //SetUpAccount setUpAccountForm = new SetUpAccount();
-            //Application.Run(setUpAccountForm);
+            //LoadingScreen loadingScreen = new LoadingScreen();
+            //Application.Run(loadingScreen);
+            TeacherDashBoard teacherDashBoard = new TeacherDashBoard();
+            Application.Run(teacherDashBoard);
         }
     }
 }
