@@ -149,6 +149,18 @@
     <Compile Include="Designs\SignupFormTeacher.Designer.cs">
       <DependentUpon>SignupFormTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="Designs\TeacherDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designs\TeacherDashBoard.Designer.cs">
+      <DependentUpon>TeacherDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\teacherExamHistoCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\teacherExamHistoCard.Designer.cs">
+      <DependentUpon>teacherExamHistoCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Designs\ChooseAccountSignUpForm.resx">
@@ -171,6 +183,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\SignupFormTeacher.resx">
       <DependentUpon>SignupFormTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\TeacherDashBoard.resx">
+      <DependentUpon>TeacherDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\teacherExamHistoCard.resx">
+      <DependentUpon>teacherExamHistoCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
