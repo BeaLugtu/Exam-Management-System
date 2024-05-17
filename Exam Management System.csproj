@@ -249,14 +249,6 @@
     <Content Include="assets\Student Sign up Form.png" />
     <Content Include="assets\StudentAccountOption.png" />
     <Content Include="assets\TeacherAccountOption.png" />
-    <None Include="Resources\profile pic.jpeg" />
-    <None Include="Resources\Shag Haircuts_ Embracing Grey and Silver Strands in 2024.jpeg" />
-    <None Include="Resources\notification icon3.png" />
-    <None Include="Resources\notification %281%291.png" />
-    <None Include="Resources\notification %281%29.png" />
-    <None Include="Resources\notification icon2.png" />
-    <None Include="Resources\notification icon1.png" />
-    <None Include="Resources\notification icon.png" />
     <None Include="Resources\440888854_1450875785801760_7207219617834654990_n.png" />
     <None Include="Resources\LoadingScreen.bmp" />
     <None Include="Resources\icons8-eye-15.png" />
