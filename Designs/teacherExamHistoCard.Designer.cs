@@ -44,28 +44,29 @@
             // timeDateLbl
             // 
             this.timeDateLbl.AutoSize = true;
-            this.timeDateLbl.Font = new System.Drawing.Font("Inter", 9.75F);
+            this.timeDateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.timeDateLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.timeDateLbl.Location = new System.Drawing.Point(51, 18);
             this.timeDateLbl.Name = "timeDateLbl";
-            this.timeDateLbl.Size = new System.Drawing.Size(160, 16);
+            this.timeDateLbl.Size = new System.Drawing.Size(156, 16);
             this.timeDateLbl.TabIndex = 25;
             this.timeDateLbl.Text = "Embedded Programmi ...";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Inter", 9.75F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.label1.Location = new System.Drawing.Point(222, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 16);
+            this.label1.Size = new System.Drawing.Size(83, 16);
             this.label1.TabIndex = 26;
             this.label1.Text = "KLAJFA1234";
             // 
             // kryptonButton5
             // 
             this.kryptonButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.kryptonButton5.Enabled = false;
             this.kryptonButton5.Location = new System.Drawing.Point(335, 16);
             this.kryptonButton5.Name = "kryptonButton5";
             this.kryptonButton5.Size = new System.Drawing.Size(26, 19);
@@ -97,11 +98,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Inter", 9.75F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.label2.Location = new System.Drawing.Point(365, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.Size = new System.Drawing.Size(39, 16);
             this.label2.TabIndex = 44;
             this.label2.Text = "23/24";
             // 
@@ -109,11 +110,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Inter", 9.75F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.label3.Location = new System.Drawing.Point(440, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 16);
+            this.label3.Size = new System.Drawing.Size(135, 16);
             this.label3.TabIndex = 45;
             this.label3.Text = "10 May 2024 10:01AM";
             // 
@@ -121,11 +122,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Inter", 9.75F);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.label4.Location = new System.Drawing.Point(622, 18);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(143, 16);
+            this.label4.Size = new System.Drawing.Size(135, 16);
             this.label4.TabIndex = 46;
             this.label4.Text = "11 May 2024 10:00PM";
             // 
@@ -133,11 +134,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Inter", 9.75F);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.label5.Location = new System.Drawing.Point(800, 17);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 16);
+            this.label5.Size = new System.Drawing.Size(62, 16);
             this.label5.TabIndex = 47;
             this.label5.Text = "On-going";
             // 
