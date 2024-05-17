@@ -113,6 +113,18 @@
     <Compile Include="Designs\ChooseAccountSignUpForm.Designer.cs">
       <DependentUpon>ChooseAccountSignUpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Designs\dashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designs\dashboardForm.Designer.cs">
+      <DependentUpon>dashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\examSuccessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designs\examSuccessForm.Designer.cs">
+      <DependentUpon>examSuccessForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Designs\LoadingScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +142,12 @@
     </Compile>
     <Compile Include="Designs\Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\newBlankForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designs\newBlankForm.Designer.cs">
+      <DependentUpon>newBlankForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Designs\SetUpAccount.cs">
       <SubType>Form</SubType>
@@ -166,6 +184,12 @@
     <EmbeddedResource Include="Designs\ChooseAccountSignUpForm.resx">
       <DependentUpon>ChooseAccountSignUpForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Designs\dashboardForm.resx">
+      <DependentUpon>dashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\examSuccessForm.resx">
+      <DependentUpon>examSuccessForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Designs\Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\newBlankForm.resx">
+      <DependentUpon>newBlankForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\SetUpAccount.resx">
       <DependentUpon>SetUpAccount.cs</DependentUpon>

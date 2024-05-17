@@ -1,7 +1,13 @@
+
 ﻿
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+
+﻿using MySql.Data.MySqlClient;
+
+using System.Data;
+
 using System.Windows.Forms;
 using Krypton.Toolkit;
 
@@ -9,10 +15,14 @@ namespace Exam_Management_System.Designs
 {
     public partial class TeacherDashBoard : Form
     {
+
         private Size originalSize;
         private Size originalImageSize;
         private Image originalImage;
         private Size originalSizePictureBox6;
+
+
+        private readonly DBAccess dbAccess = new DBAccess();
 
 
         public TeacherDashBoard()
@@ -65,9 +75,19 @@ namespace Exam_Management_System.Designs
         // Method to populate the flowLayoutTablelistExam with teacherExamHistoCard controls
         private void PopulateFlowLayoutPanel()
         {
-            for (int i = 0; i < 10; i++) // For example, add 10 user controls
+            DataTable examData = new DataTable();
+            dbAccess.readDatathroughAdapter("SELECT * FROM examforms", examData);
+
+            foreach (DataRow row in examData.Rows)
             {
-                teacherExamHistoCard examCard = new teacherExamHistoCard();
+                teacherExamHistoCard examCard = new teacherExamHistoCard(DeleteExamCard);
+                examCard.SetTitle(row["examTitle"].ToString());
+                examCard.SetCode(row["examCode"].ToString());
+                examCard.SetTotalSubmittedStudents(Convert.ToInt32(row["examTotalStudents"]));
+                examCard.SetCreatedDateTime(Convert.ToDateTime(row["examCreated"]));
+                examCard.SetDeadlineDateTime(Convert.ToDateTime(row["examDeadlineDate"]));
+                examCard.SetStatus(row["examStatus"].ToString());
+
                 flowLayoutTablelistExam.Controls.Add(examCard);
             }
         }
@@ -85,6 +105,7 @@ namespace Exam_Management_System.Designs
         {
             UpdateTimeLabel();
         }
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -112,5 +133,40 @@ namespace Exam_Management_System.Designs
             // Restore the original image when the mouse leaves
             kryptonButton5.Values.Image = originalImage;
         }
+
+
+        private void DeleteExamCard(string examCode)
+        {
+            try
+            {
+                // Construct the SQL query to select the record to be archived
+                string selectQuery = $"SELECT * FROM examforms WHERE examCode = '{examCode}'";
+
+                // Read the data from the examforms table
+                DataTable examData = new DataTable();
+                dbAccess.readDatathroughAdapter(selectQuery, examData);
+
+                // Construct the SQL query to insert the record into the examFormsArchive table
+                string insertQuery = $"INSERT INTO examFormsArchive (examTitle, examCode, examTotalStudents, examCreated, examDeadlineDate, examStatus) " +
+                                     $"VALUES ('{examData.Rows[0]["examTitle"]}', '{examData.Rows[0]["examCode"]}', " +
+                                     $"'{examData.Rows[0]["examTotalStudents"]}', '{examData.Rows[0]["examCreated"]}', " +
+                                     $"'{examData.Rows[0]["examDeadlineDate"]}', '{examData.Rows[0]["examStatus"]}')";
+
+                // Execute the insert query to archive the record
+                dbAccess.executeQuery(new MySqlCommand(insertQuery));
+
+                // Construct the SQL query to delete the record from the examforms table
+                string deleteQuery = $"DELETE FROM examforms WHERE examCode = '{examCode}'";
+
+                // Execute the delete query
+                dbAccess.executeQuery(new MySqlCommand(deleteQuery));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while deleting the exam: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
     }
 }

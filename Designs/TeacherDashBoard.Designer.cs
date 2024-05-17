@@ -60,7 +60,9 @@
             this.kryptonPictureBox2 = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+
             this.kryptonButton5 = new Krypton.Toolkit.KryptonButton();
+
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
@@ -131,6 +133,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.confirmBtn.TabIndex = 28;
             this.confirmBtn.Values.Text = "";
+            this.confirmBtn.Click += new System.EventHandler(this.confirmBtn_Click);
             // 
             // kryptonLabel1
             // 
@@ -312,10 +315,13 @@
             this.kryptonButton4.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.kryptonButton4.StateTracking.Border.Color1 = System.Drawing.Color.Transparent;
             this.kryptonButton4.StateTracking.Border.Color2 = System.Drawing.Color.Transparent;
+
             this.kryptonButton4.StateTracking.Border.Draw = Krypton.Toolkit.InheritBool.False;
             this.kryptonButton4.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.None;
             this.kryptonButton4.StateTracking.Border.Rounding = 5F;
             this.kryptonButton4.StateTracking.Border.Width = 0;
+
+
             this.kryptonButton4.TabIndex = 38;
             this.kryptonButton4.Values.Text = "";
             // 
@@ -554,30 +560,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // kryptonButton5
-            // 
-            this.kryptonButton5.Location = new System.Drawing.Point(881, 56);
-            this.kryptonButton5.Name = "kryptonButton5";
-            this.kryptonButton5.Size = new System.Drawing.Size(38, 38);
-            this.kryptonButton5.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonButton5.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
-            this.kryptonButton5.StateCommon.Back.Image = global::Exam_Management_System.Properties.Resources.profile_pic;
-            this.kryptonButton5.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
-            this.kryptonButton5.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton5.StateCommon.Border.Rounding = 100F;
-            this.kryptonButton5.StateTracking.Border.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonButton5.StateTracking.Border.Color2 = System.Drawing.Color.Transparent;
-            this.kryptonButton5.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton5.TabIndex = 54;
-            this.kryptonButton5.Values.Image = global::Exam_Management_System.Properties.Resources.profile_pic;
-            this.kryptonButton5.Values.Text = "";
-            this.kryptonButton5.Click += new System.EventHandler(this.kryptonButton5_Click);
-            this.kryptonButton5.MouseEnter += new System.EventHandler(this.KryptonButton5_MouseEnter);
-            this.kryptonButton5.MouseLeave += new System.EventHandler(this.KryptonButton5_MouseLeave);
             // 
             // TeacherDashBoard
             // 
@@ -598,6 +580,7 @@
             this.Controls.Add(this.kryptonPanel3);
             this.Controls.Add(this.kryptonPanel2);
             this.Controls.Add(this.kryptonPanel1);
+
             this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.kryptonButton4);
             this.Controls.Add(this.kryptonButton3);
@@ -674,7 +657,9 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutTablelistExam;
         private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox5;
         private Krypton.Toolkit.KryptonPanel kryptonPanel9;
+
         private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox6;
         private Krypton.Toolkit.KryptonButton kryptonButton5;
+
     }
 }
