@@ -41,10 +41,10 @@ namespace Exam_Management_System.Designs
         private void goToProfileBtn_Click(object sender, EventArgs e)
         {
             // Hide the current form
-            this.Hide();
             // Pass user ID and user type to the homepage
-            Designs.Homepage homePage = new Designs.Homepage(userID, userType);
-            homePage.Show();
+            Designs.Profile profile = new Designs.Profile(userID, userType);
+            profile.Show();
+            this.Hide();
         }
     }
 

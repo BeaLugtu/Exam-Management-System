@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -48,9 +49,39 @@ namespace Exam_Management_System.Designs
             }
 
             // Check if password matches confirm password
+            if (string.IsNullOrWhiteSpace(Password) || Password.Length < 8)
+            {
+                MessageBox.Show("New password must be at least 8 characters long.");
+                return;
+            }
+
+            if (!Regex.IsMatch(Password, @"[A-Z]"))
+            {
+                MessageBox.Show("New password must contain at least one uppercase letter.");
+                return;
+            }
+
+            if (!Regex.IsMatch(Password, @"[a-z]"))
+            {
+                MessageBox.Show("New password must contain at least one lowercase letter.");
+                return;
+            }
+
+            if (!Regex.IsMatch(Password, @"[0-9]"))
+            {
+                MessageBox.Show("New password must contain at least one number.");
+                return;
+            }
+
+            if (!Regex.IsMatch(Password, @"[\W_]"))
+            {
+                MessageBox.Show("New password must contain at least one special character.");
+                return;
+            }
+
             if (Password != ConfirmPassword)
             {
-                MessageBox.Show("Password and Confirm Password do not match.");
+                MessageBox.Show("New password and confirm password do not match.");
                 return;
             }
 
@@ -62,7 +93,7 @@ namespace Exam_Management_System.Designs
             }
             else
             {
-                MySqlCommand insertCommand = new MySqlCommand("INSERT INTO Users(ID, First_Name, Last_Name, Password, User_Type) VALUES(@StudentID, @Fname, @Lname, @Password, 1)");
+                MySqlCommand insertCommand = new MySqlCommand("INSERT INTO Users(ID, First_Name, Last_Name, Password, User_Type) VALUES(@StudentID, @Fname, @Lname, @Password, 0)");
 
                 insertCommand.Parameters.AddWithValue("@StudentID", StudentID);
                 insertCommand.Parameters.AddWithValue("@Fname", Fname);
