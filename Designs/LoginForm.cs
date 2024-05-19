@@ -1,5 +1,6 @@
 ﻿using Exam_Management_System.Designs;
 using Krypton.Toolkit;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -80,10 +81,10 @@ namespace Exam_Management_System
 
         private void LoginBtn_MouseClick(object sender, MouseEventArgs e)
         {
-            string UserEmail = EmailTB.Text;
+            string UserID = IDTB.Text;
             string Password = PasswordTB.Text;
 
-            if (UserEmail.Equals(""))
+            if (UserID.Equals(""))
             {
                 MessageBox.Show("Please Enter Your Email");
             }
@@ -93,23 +94,39 @@ namespace Exam_Management_System
             }
             else
             {
-                string query = "Select * from Users Where ID= '" + UserEmail + "' AND Password = '" + Password + "'";
+                string query = "Select * from Users Where ID= '" + UserID + "' AND Password = '" + Password + "'";
 
+                DataTable dtUsers = new DataTable();
                 objDABAccess.readDatathroughAdapter(query, dtUsers);
 
                 if (dtUsers.Rows.Count > 0)
                 {
                     // Get the user ID and user type from the database
                     string userID = dtUsers.Rows[0]["ID"].ToString();
-                    UserType userType = (UserType)Enum.Parse(typeof(UserType), dtUsers.Rows[0]["User_Type"].ToString());
+                    int userType = Convert.ToInt32(dtUsers.Rows[0]["User_Type"]);
 
-                    MessageBox.Show("Successfully Log in.");
+                    MessageBox.Show("Successfully Logged in.");
                     objDABAccess.closeConn();
                     this.Hide();
 
-                    // Pass user ID and user type to the homepage
-                    Designs.Homepage homePage = new Designs.Homepage(userID, userType);
-                    homePage.Show();
+                    // Check the userType and open the appropriate form
+                    if (userType == 0)
+                    {
+                        // Open the homepage for students
+                        Designs.Homepage homePage = new Designs.Homepage(userID, UserType.Student);
+                        homePage.Show();
+                    }
+                    else if (userType == 1)
+                    {
+                        // Open the dashboard for teachers
+                        Designs.TeacherDashBoard teacherDashboard = new Designs.TeacherDashBoard(userID, UserType.Teacher);
+                        teacherDashboard.Show();
+                    }
+                    else
+                    {
+                        // If userType is neither 0 nor 1, show an error message or handle appropriately
+                        MessageBox.Show("Invalid user type. Please contact support.");
+                    }
                 }
                 else
                 {
@@ -120,10 +137,12 @@ namespace Exam_Management_System
 
 
 
+
+
         private void EmailTB_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Check if the pressed key is Enter and EmailTB is empty
-            if (e.KeyChar == (char)Keys.Enter && string.IsNullOrEmpty(EmailTB.Text))
+            if (e.KeyChar == (char)Keys.Enter && string.IsNullOrEmpty(IDTB.Text))
             {
                 // Display a message to enter info in EmailTB
                 MessageBox.Show("Please enter your email before proceeding.");
@@ -132,7 +151,7 @@ namespace Exam_Management_System
                 e.Handled = true;
             }
             // Check if the pressed key is Enter and EmailTB is not empty
-            else if (e.KeyChar == (char)Keys.Enter && !string.IsNullOrEmpty(EmailTB.Text))
+            else if (e.KeyChar == (char)Keys.Enter && !string.IsNullOrEmpty(IDTB.Text))
             {
                 // Move focus to PasswordTB
                 PasswordTB.Focus();

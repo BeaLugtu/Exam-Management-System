@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            this.EmailTB = new Krypton.Toolkit.KryptonTextBox();
+            this.IDTB = new Krypton.Toolkit.KryptonTextBox();
             this.PasswordTB = new Krypton.Toolkit.KryptonTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.timeDateLbl = new System.Windows.Forms.Label();
@@ -42,23 +42,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // EmailTB
+            // IDTB
             // 
-            this.EmailTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.EmailTB.Location = new System.Drawing.Point(117, 269);
-            this.EmailTB.Name = "EmailTB";
-            this.EmailTB.Size = new System.Drawing.Size(286, 39);
-            this.EmailTB.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.EmailTB.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.EmailTB.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.EmailTB.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.IDTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.IDTB.Location = new System.Drawing.Point(117, 269);
+            this.IDTB.Name = "IDTB";
+            this.IDTB.Size = new System.Drawing.Size(286, 39);
+            this.IDTB.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.IDTB.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.IDTB.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.IDTB.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.EmailTB.StateCommon.Border.Rounding = 10F;
-            this.EmailTB.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailTB.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
-            this.EmailTB.TabIndex = 14;
-            this.EmailTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailTB_KeyPress);
+            this.IDTB.StateCommon.Border.Rounding = 10F;
+            this.IDTB.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDTB.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
+            this.IDTB.TabIndex = 14;
+            this.IDTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailTB_KeyPress);
             // 
             // PasswordTB
             // 
@@ -221,7 +221,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LoginBtn);
             this.Controls.Add(this.PasswordTB);
-            this.Controls.Add(this.EmailTB);
+            this.Controls.Add(this.IDTB);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
@@ -236,7 +236,7 @@
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Krypton.Toolkit.KryptonTextBox EmailTB;
+        private Krypton.Toolkit.KryptonTextBox IDTB;
         private Krypton.Toolkit.KryptonTextBox PasswordTB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label timeDateLbl;

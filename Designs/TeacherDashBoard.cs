@@ -9,6 +9,23 @@ namespace Exam_Management_System.Designs
     public partial class TeacherDashBoard : Form
     {
         private readonly DBAccess dbAccess = new DBAccess();
+        private string userID;
+        private UserType userType;
+
+        // New constructor to accept userID and userType
+        public TeacherDashBoard(string userID, UserType userType)
+        {
+            InitializeComponent();
+            this.userID = userID;
+            this.userType = userType;
+            this.Load += teacherDashBoard_Load;
+
+            // Start a timer to update the time label every second
+            Timer timer = new Timer();
+            timer.Interval = 1000; // 1 second interval
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
 
         public TeacherDashBoard()
         {
@@ -116,6 +133,5 @@ namespace Exam_Management_System.Designs
                 MessageBox.Show("An error occurred while deleting the exam: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }
