@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
+using TeacherDashboard;
 
 namespace Exam_Management_System.Designs
 {
@@ -61,10 +62,15 @@ namespace Exam_Management_System.Designs
             UpdateTimeLabel();
         }
 
-        private void confirmBtn_Click(object sender, EventArgs e)
+        private void blankForm_BTN_Click(object sender, EventArgs e)
         {
-            // Pass teacher ID and other stuff to the next form
-            // then load specific form
+            // Create a new instance of the NewBlankForm and pass the instance of Form1
+            newBlankForm newForm = new newBlankForm();
+
+            // Show the new form
+            newForm.Show();
+
+            this.Hide();
         }
 
         private void LoginBtn_Click(object sender, EventArgs e)
