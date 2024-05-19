@@ -21,7 +21,6 @@ namespace Exam_Management_System.Designs
         private Dictionary<string, bool> fieldModified = new Dictionary<string, bool>(); // Track modified fields
         private string user_ID;
         private string accounttype;
-
         private bool hasUnsavedChanges = false;
 
         public Profile(string userID, UserType userType)
@@ -32,6 +31,8 @@ namespace Exam_Management_System.Designs
             accounttype = userType.ToString();
             PopulateProgramComboBox();
             loadkeypess();
+            StoreInitialValues(); // Store initial values after loading data
+            SubscribeToModificationEvents(); // Subscribe to events after initial values are stored
         }
         private void Profile_Load(object sender, EventArgs e)
         {
@@ -39,11 +40,37 @@ namespace Exam_Management_System.Designs
             SetLabels();
             MakePictureBoxCircular(pfpbox);
             GetUserInfo();
-            StoreInitialValues(); // Store initial values after loading data
-            SubscribeToModificationEvents(); // Subscribe to events after initial values are stored
-            InitializeControlTags();
+            
         }
-        private void InitializeControlTags()
+        private void loadkeypess()
+        {
+            ID.KeyPress += new KeyPressEventHandler(ID_KeyPress);
+            first_name.KeyPress += new KeyPressEventHandler(first_name_KeyPress);
+            last_name.KeyPress += new KeyPressEventHandler(last_name_KeyPress);
+            email.KeyPress += new KeyPressEventHandler(email_KeyPress);
+            Program_Combo_Box.KeyPress += new KeyPressEventHandler(Program_Combo_Box_KeyPress);
+            SaveBtn.KeyPress += new KeyPressEventHandler(SaveBtn_KeyPress);
+            password_cr.KeyPress += new KeyPressEventHandler(password_cr_KeyPress);
+            newpassword.KeyPress += new KeyPressEventHandler(newpassword_KeyPress);
+            newpassword2.KeyPress += new KeyPressEventHandler(newpassword2_KeyPress);
+            ChangePasswordButton.KeyPress += new KeyPressEventHandler(ChangePasswordButton_KeyPress);
+            UploadPfpBtn.KeyPress += new KeyPressEventHandler(UploadPfpBtn_KeyPress);
+            RemovePfpBtn.KeyPress += new KeyPressEventHandler(RemovePfpBtn_KeyPress);
+        }
+        private void SubscribeToModificationEvents()
+        {
+            first_name.TextChanged += Control_Modified;
+            last_name.TextChanged += Control_Modified;
+            email.TextChanged += Control_Modified;
+            Program_Combo_Box.SelectedIndexChanged += Control_Modified;
+            ID.TextChanged += Control_Modified;
+            password_cr.TextChanged += Control_Modified;
+            newpassword.TextChanged += Control_Modified;
+            newpassword2.TextChanged += Control_Modified;
+            pfpbox.Click += Control_Modified;
+        }
+
+        private void StoreInitialValues()
         {
             first_name.Tag = first_name.Text;
             last_name.Tag = last_name.Text;
@@ -53,11 +80,21 @@ namespace Exam_Management_System.Designs
             password_cr.Tag = password_cr.Text;
             newpassword.Tag = newpassword.Text;
             newpassword2.Tag = newpassword2.Text;
-            pfpbox.Tag = pfpbox.Image;
         }
         private void Backbtn_Click(object sender, EventArgs e)
         {
-            HandleUnsavedChanges();
+            {
+                if (hasUnsavedChanges)
+                {
+                    HandleUnsavedChanges();
+                }
+                else
+                {
+                    this.Close();
+                    LoginForm loginForm = new LoginForm();
+                    loginForm.Show();
+                }
+            }
         }
 
         private void HandleUnsavedChanges()
@@ -84,34 +121,6 @@ namespace Exam_Management_System.Designs
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
         }
-
-        private void SubscribeToModificationEvents()
-        {
-            first_name.TextChanged += Control_Modified;
-            last_name.TextChanged += Control_Modified;
-            email.TextChanged += Control_Modified;
-            Program_Combo_Box.SelectedIndexChanged += Control_Modified;
-            ID.TextChanged += Control_Modified;
-            password_cr.TextChanged += Control_Modified;
-            newpassword.TextChanged += Control_Modified;
-            newpassword2.TextChanged += Control_Modified;
-            pfpbox.Click += Control_Modified;
-        }
-
-        private void StoreInitialValues()
-        {
-                // Tags are being set only once during form initialization
-                first_name.Tag = first_name.Text;
-                last_name.Tag = last_name.Text;
-                email.Tag = email.Text;
-                Program_Combo_Box.Tag = Program_Combo_Box.SelectedIndex;
-                ID.Tag = ID.Text;
-                password_cr.Tag = password_cr.Text;
-                newpassword.Tag = newpassword.Text;
-                newpassword2.Tag = newpassword2.Text;
-                pfpbox.Tag = pfpbox.Image;
-        }
-
         private void Control_Modified(object sender, EventArgs e)
         {
             Control control = sender as Control;
@@ -138,23 +147,7 @@ namespace Exam_Management_System.Designs
                 }
             }
         }
-
-
-        private void loadkeypess()
-        {
-            ID.KeyPress += new KeyPressEventHandler(ID_KeyPress);
-            first_name.KeyPress += new KeyPressEventHandler(first_name_KeyPress);
-            last_name.KeyPress += new KeyPressEventHandler(last_name_KeyPress);
-            email.KeyPress += new KeyPressEventHandler(email_KeyPress);
-            Program_Combo_Box.KeyPress += new KeyPressEventHandler(Program_Combo_Box_KeyPress);
-            SaveBtn.KeyPress += new KeyPressEventHandler(SaveBtn_KeyPress);
-            password_cr.KeyPress += new KeyPressEventHandler(password_cr_KeyPress);
-            newpassword.KeyPress += new KeyPressEventHandler(newpassword_KeyPress);
-            newpassword2.KeyPress += new KeyPressEventHandler(newpassword2_KeyPress);
-            ChangePasswordButton.KeyPress += new KeyPressEventHandler(ChangePasswordButton_KeyPress);
-            UploadPfpBtn.KeyPress += new KeyPressEventHandler(UploadPfpBtn_KeyPress);
-            RemovePfpBtn.KeyPress += new KeyPressEventHandler(RemovePfpBtn_KeyPress);
-        }
+        
         //100% Working
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -483,6 +476,7 @@ namespace Exam_Management_System.Designs
                 }
             }
             hasUnsavedChanges = false; // Reset the flag after saving
+            MessageBox.Show("Saved Successfully!!");
         }
         // Function to check if a string contains only alphabetical characters
         private bool IsAlphabetical(string str)
