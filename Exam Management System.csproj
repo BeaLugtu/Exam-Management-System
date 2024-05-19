@@ -128,6 +128,12 @@
     <Compile Include="Designs\ChooseAccountSignUpForm.Designer.cs">
       <DependentUpon>ChooseAccountSignUpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Designs\examSuccessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designs\examSuccessForm.Designer.cs">
+      <DependentUpon>examSuccessForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Designs\LoadingScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,11 +152,25 @@
     <Compile Include="Designs\Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
     </Compile>
+
     <Compile Include="Designs\Profile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Designs\Profile.designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
+
+    <Compile Include="Designs\newBlankForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designs\newBlankForm.Designer.cs">
+      <DependentUpon>newBlankForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\PreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designs\PreviewForm.Designer.cs">
+      <DependentUpon>PreviewForm.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Designs\SetUpAccount.cs">
       <SubType>Form</SubType>
@@ -170,10 +190,31 @@
     <Compile Include="Designs\SignupFormTeacher.Designer.cs">
       <DependentUpon>SignupFormTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="Designs\TeacherDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designs\TeacherDashBoard.Designer.cs">
+      <DependentUpon>TeacherDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\teacherExamHistoCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\teacherExamHistoCard.Designer.cs">
+      <DependentUpon>teacherExamHistoCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\teacherPreviewCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\teacherPreviewCard.Designer.cs">
+      <DependentUpon>teacherPreviewCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Designs\ChooseAccountSignUpForm.resx">
       <DependentUpon>ChooseAccountSignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\examSuccessForm.resx">
+      <DependentUpon>examSuccessForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
@@ -184,8 +225,16 @@
     <EmbeddedResource Include="Designs\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="Designs\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
+
+    <EmbeddedResource Include="Designs\newBlankForm.resx">
+      <DependentUpon>newBlankForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\PreviewForm.resx">
+      <DependentUpon>PreviewForm.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\SetUpAccount.resx">
       <DependentUpon>SetUpAccount.cs</DependentUpon>
@@ -195,6 +244,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\SignupFormTeacher.resx">
       <DependentUpon>SignupFormTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\TeacherDashBoard.resx">
+      <DependentUpon>TeacherDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\teacherExamHistoCard.resx">
+      <DependentUpon>teacherExamHistoCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\teacherPreviewCard.resx">
+      <DependentUpon>teacherPreviewCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -228,6 +286,7 @@
     <Content Include="assets\Student Sign up Form.png" />
     <Content Include="assets\StudentAccountOption.png" />
     <Content Include="assets\TeacherAccountOption.png" />
+
     <None Include="Resources\profile_icon.png" />
     <None Include="Resources\profile_panel.png" />
     <None Include="Resources\profile_design.png" />
@@ -235,6 +294,9 @@
     <None Include="Resources\profile_header.png" />
     <None Include="Resources\Capture.PNG" />
     <None Include="Resources\Rectangle 282.png" />
+
+    <None Include="Resources\29fcb73947c2dc9944e828cb5c56c362.jpg" />
+
     <None Include="Resources\440888854_1450875785801760_7207219617834654990_n.png" />
     <None Include="Resources\LoadingScreen.bmp" />
     <None Include="Resources\icons8-eye-15.png" />

@@ -153,6 +153,7 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
         internal static System.Drawing.Bitmap profile_design {
             get {
                 object obj = ResourceManager.GetObject("profile_design", resourceCulture);
@@ -196,6 +197,11 @@ namespace Exam_Management_System.Properties {
         internal static System.Drawing.Bitmap Rectangle_282 {
             get {
                 object obj = ResourceManager.GetObject("Rectangle 282", resourceCulture);
+
+        internal static System.Drawing.Bitmap Sample {
+            get {
+                object obj = ResourceManager.GetObject("Sample", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
