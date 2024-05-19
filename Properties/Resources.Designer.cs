@@ -73,16 +73,6 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Capture {
-            get {
-                object obj = ResourceManager.GetObject("Capture", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap darkStudentOption {
             get {
                 object obj = ResourceManager.GetObject("darkStudentOption", resourceCulture);
@@ -96,16 +86,6 @@ namespace Exam_Management_System.Properties {
         internal static System.Drawing.Bitmap darkTeacherOption {
             get {
                 object obj = ResourceManager.GetObject("darkTeacherOption", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap dots_tight {
-            get {
-                object obj = ResourceManager.GetObject("dots tight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,55 +133,9 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-
-        internal static System.Drawing.Bitmap profile_design {
-            get {
-                object obj = ResourceManager.GetObject("profile_design", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap profile_header {
-            get {
-                object obj = ResourceManager.GetObject("profile_header", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap profile_icon {
-            get {
-                object obj = ResourceManager.GetObject("profile_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap profile_panel {
-            get {
-                object obj = ResourceManager.GetObject("profile_panel", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Rectangle_282 {
-            get {
-                object obj = ResourceManager.GetObject("Rectangle 282", resourceCulture);
-
         internal static System.Drawing.Bitmap Sample {
             get {
                 object obj = ResourceManager.GetObject("Sample", resourceCulture);
-
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -6,7 +6,6 @@ namespace Exam_Management_System
 {
     class DBAccess
     {
-        //private readonly string MySqlCon = "server=localhost; user= root ; database=examio; password= ";
         private readonly string MySqlCon = "server=26.96.197.206; user=admin; database=exam.io; password=admin";
         private readonly MySqlConnection mySqlConnection = new MySqlConnection();
         private readonly MySqlCommand command = new MySqlCommand();
@@ -149,5 +148,7 @@ namespace Exam_Management_System
                 throw;
             }
         }
+
     }
+
 }
