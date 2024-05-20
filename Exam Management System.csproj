@@ -212,7 +212,12 @@
     <Content Include="assets\Student Sign up Form.png" />
     <Content Include="assets\StudentAccountOption.png" />
     <Content Include="assets\TeacherAccountOption.png" />
+
     <None Include="Resources\Group 175.png" />
+
+    <None Include="Resources\notification icon.png" />
+    <None Include="Resources\profile pic.jpeg" />
+
     <None Include="Resources\profile_panel.png" />
     <None Include="Resources\profile_icon.png" />
     <None Include="Resources\profile_header.png" />
