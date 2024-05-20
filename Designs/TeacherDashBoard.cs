@@ -130,8 +130,10 @@ namespace Exam_Management_System.Designs
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            // Pass teacher ID and other stuff to the next form
-            // then load specific form ( gawa ni peralta )
+            // Hide the current form
+            Designs.Profile profile = new Designs.Profile(userID, userType);
+            profile.Show();
+            this.Hide();
         }
 
         private void notificationBtn_Click(object sender, EventArgs e)

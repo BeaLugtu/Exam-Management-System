@@ -32,6 +32,17 @@ namespace Exam_Management_System.Designs
             loadkeypess();
             StoreInitialValues(); // Store initial values after loading data
             SubscribeToModificationEvents(); // Subscribe to events after initial values are stored
+            this.Load += Profile_Load;
+
+            // Start a timer to update the time label every second
+            Timer timer = new Timer();
+            timer.Interval = 1000; // 1 second interval
+            timer.Tick += Timer_Tick;
+            timer.Start();
+
+
+
+
         }
         private void Profile_Load(object sender, EventArgs e)
         {
@@ -39,7 +50,21 @@ namespace Exam_Management_System.Designs
             SetLabels();
             MakePictureBoxCircular(pfpbox);
             GetUserInfo();
-            
+            UpdateTimeLabel();
+        }
+
+        private void UpdateTimeLabel()
+        {
+            DateTime currentTime = DateTime.Now;
+            string formattedDateTime = currentTime.ToString("h:mm tt - ddd, MMM d");
+            timelabel.Text = formattedDateTime;
+        }
+
+
+        // Timer tick event handler to update the time label
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            UpdateTimeLabel();
         }
         private void loadkeypess()
         {
@@ -80,21 +105,6 @@ namespace Exam_Management_System.Designs
             newpassword.Tag = newpassword.Text;
             newpassword2.Tag = newpassword2.Text;
         }
-        private void Backbtn_Click(object sender, EventArgs e)
-        {
-            {
-                if (hasUnsavedChanges)
-                {
-                    HandleUnsavedChanges();
-                }
-                else
-                {
-                    this.Close();
-                    LoginForm loginForm = new LoginForm();
-                    loginForm.Show();
-                }
-            }
-        }
 
         private void HandleUnsavedChanges()
         {
@@ -110,15 +120,21 @@ namespace Exam_Management_System.Designs
                 {
                     SaveBtn_Click(null, null);
                 }
+                else if (result == DialogResult.No)
+                {
+                    // Get the user ID and user type from the database
+                    user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
+                    UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
+
+                    this.Close();
+                    Designs.TeacherDashBoard teacherDashBoard = new Designs.TeacherDashBoard(user_ID, userType);
+                    teacherDashBoard.Show();
+                }
                 else if (result == DialogResult.Cancel)
                 {
                     return;
                 }
             }
-
-            this.Close();
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
         }
         private void Control_Modified(object sender, EventArgs e)
         {
@@ -784,5 +800,59 @@ namespace Exam_Management_System.Designs
             }
         }
 
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            // Show a confirmation dialog
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // If the user clicks 'Yes', perform the logout
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                LoginForm login = new LoginForm();
+                login.Show();
+            }
+        }
+
+        private void backToDashboardBtn_Click(object sender, EventArgs e)
+        {
+
+            {
+                if (hasUnsavedChanges)
+                {
+                    HandleUnsavedChanges();
+                }
+                else
+                {
+                    // Get the user ID and user type from the database
+                    user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
+                    UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
+
+                    this.Close();
+                    Designs.TeacherDashBoard teacherDashBoard = new Designs.TeacherDashBoard(user_ID, userType);
+                    teacherDashBoard.Show();
+                }
+            }
+        }
+
+
+        private void profileViewBtn_Click(object sender, EventArgs e)
+        {
+            // Hide the profilePanel
+            profilePanel.Visible = true;
+
+            // Change the image of the teacherAccountOptionBtn to the selected image
+            profileViewBtn.Values.Image = Properties.Resources.profileBtnActive;
+            archiveViewBtn.Values.Image = Properties.Resources.archiveBtnNotActive;
+        }
+
+        private void archiveViewBtn_Click(object sender, EventArgs e)
+        {
+            profilePanel.Visible = false;
+
+            // Change the image of the teacherAccountOptionBtn to the selected image
+            profileViewBtn.Values.Image = Properties.Resources.profileBtnNotActive;
+            archiveViewBtn.Values.Image = Properties.Resources.archiveBtnActive;
+        }
     }
 }

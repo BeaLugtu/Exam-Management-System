@@ -60,6 +60,7 @@
             this.kryptonPictureBox3 = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonPictureBox2 = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
+            this.kryptonPictureBox6 = new Krypton.Toolkit.KryptonPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
@@ -83,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // timeDateLbl
@@ -591,12 +593,21 @@
             this.kryptonPictureBox1.TabIndex = 21;
             this.kryptonPictureBox1.TabStop = false;
             // 
+            // kryptonPictureBox6
+            // 
+            this.kryptonPictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPictureBox6.Image")));
+            this.kryptonPictureBox6.Location = new System.Drawing.Point(0, -1);
+            this.kryptonPictureBox6.Name = "kryptonPictureBox6";
+            this.kryptonPictureBox6.Size = new System.Drawing.Size(1200, 753);
+            this.kryptonPictureBox6.TabIndex = 51;
+            this.kryptonPictureBox6.TabStop = false;
+            // 
             // TeacherDashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.ClientSize = new System.Drawing.Size(1136, 640);
+            this.ClientSize = new System.Drawing.Size(1200, 750);
             this.Controls.Add(this.kryptonPanel9);
             this.Controls.Add(this.kryptonPictureBox5);
             this.Controls.Add(this.kryptonPictureBox4);
@@ -619,6 +630,7 @@
             this.Controls.Add(this.kryptonPictureBox1);
             this.Controls.Add(this.timeDateLbl);
             this.Controls.Add(this.kryptonButton2);
+            this.Controls.Add(this.kryptonPictureBox6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TeacherDashBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -647,6 +659,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -684,5 +697,6 @@
         private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox5;
         private Krypton.Toolkit.KryptonPanel kryptonPanel9;
         private Krypton.Toolkit.KryptonButton notificationBtn;
+        private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox6;
     }
 }
