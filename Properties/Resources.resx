@@ -149,7 +149,7 @@
     <value>..\Resources\profile_panel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sample" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\29fcb73947c2dc9944e828cb5c56c362.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Group 175.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_440888854_1450875785801760_7207219617834654990_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\440888854_1450875785801760_7207219617834654990_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
