@@ -133,6 +133,16 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap notification_icon {
+            get {
+                object obj = ResourceManager.GetObject("notification icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap profile_design {
             get {
                 object obj = ResourceManager.GetObject("profile_design", resourceCulture);
@@ -166,6 +176,16 @@ namespace Exam_Management_System.Properties {
         internal static System.Drawing.Bitmap profile_panel {
             get {
                 object obj = ResourceManager.GetObject("profile_panel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap profile_pic {
+            get {
+                object obj = ResourceManager.GetObject("profile pic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
