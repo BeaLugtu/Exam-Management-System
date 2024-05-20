@@ -61,6 +61,7 @@ namespace Exam_Management_System.Designs
             this.Program_DropButtonPalette = new Krypton.Toolkit.KryptonCustomPaletteBase(this.components);
             this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             this.invisiblePassBtn = new Krypton.Toolkit.KryptonButton();
+            this.pfpbox = new Krypton.Toolkit.KryptonPictureBox();
             this.email = new Krypton.Toolkit.KryptonTextBox();
             this.last_name = new Krypton.Toolkit.KryptonTextBox();
             this.first_name = new Krypton.Toolkit.KryptonTextBox();
@@ -72,20 +73,21 @@ namespace Exam_Management_System.Designs
             this.LogoutBtn = new Krypton.Toolkit.KryptonButton();
             this.archiveViewBtn = new Krypton.Toolkit.KryptonButton();
             this.profileViewBtn = new Krypton.Toolkit.KryptonButton();
-            this.pfpbox = new Krypton.Toolkit.KryptonPictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.profilePanel)).BeginInit();
             this.profilePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Program_Combo_Box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pfpbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // user_id
             // 
             this.user_id.AutoSize = false;
             this.user_id.Enabled = false;
-            this.user_id.Location = new System.Drawing.Point(340, 119);
+            this.user_id.Location = new System.Drawing.Point(340, 101);
             this.user_id.Name = "user_id";
             this.user_id.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.user_id.Size = new System.Drawing.Size(190, 25);
@@ -99,10 +101,11 @@ namespace Exam_Management_System.Designs
             this.timelabel.AutoSize = true;
             this.timelabel.Font = new System.Drawing.Font("Inter", 12F);
             this.timelabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.timelabel.Location = new System.Drawing.Point(932, 72);
+            this.timelabel.Location = new System.Drawing.Point(936, 65);
+            this.timelabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.timelabel.Name = "timelabel";
-            this.timelabel.Padding = new System.Windows.Forms.Padding(10);
-            this.timelabel.Size = new System.Drawing.Size(196, 39);
+            this.timelabel.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.timelabel.Size = new System.Drawing.Size(192, 35);
             this.timelabel.TabIndex = 6;
             this.timelabel.Text = "11:44 pm - Tue, May 6";
             // 
@@ -114,7 +117,7 @@ namespace Exam_Management_System.Designs
             // 
             this.account_type.AutoSize = false;
             this.account_type.Enabled = false;
-            this.account_type.Location = new System.Drawing.Point(540, 119);
+            this.account_type.Location = new System.Drawing.Point(536, 101);
             this.account_type.Name = "account_type";
             this.account_type.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.account_type.Size = new System.Drawing.Size(190, 25);
@@ -376,10 +379,11 @@ namespace Exam_Management_System.Designs
             this.profilePanel.Controls.Add(this.LastNameLabel);
             this.profilePanel.Controls.Add(this.FirstNameLabel);
             this.profilePanel.Controls.Add(this.StudentIdLabel);
-            this.profilePanel.Location = new System.Drawing.Point(297, 159);
+            this.profilePanel.Location = new System.Drawing.Point(277, 150);
+            this.profilePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.profilePanel.Name = "profilePanel";
             this.profilePanel.PanelBackStyle = Krypton.Toolkit.PaletteBackStyle.FormCustom1;
-            this.profilePanel.Size = new System.Drawing.Size(683, 526);
+            this.profilePanel.Size = new System.Drawing.Size(721, 537);
             this.profilePanel.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.profilePanel.StateCommon.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.profilePanel.StateCommon.Image = global::Exam_Management_System.Properties.Resources.profile_panel;
@@ -537,6 +541,18 @@ namespace Exam_Management_System.Designs
             this.invisiblePassBtn.TabIndex = 32;
             this.invisiblePassBtn.Values.Text = "";
             // 
+            // pfpbox
+            // 
+            this.pfpbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pfpbox.Image = global::Exam_Management_System.Properties.Resources.profile_icon;
+            this.pfpbox.Location = new System.Drawing.Point(45, 32);
+            this.pfpbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pfpbox.Name = "pfpbox";
+            this.pfpbox.Size = new System.Drawing.Size(90, 98);
+            this.pfpbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pfpbox.TabIndex = 24;
+            this.pfpbox.TabStop = false;
+            // 
             // email
             // 
             this.email.Location = new System.Drawing.Point(60, 269);
@@ -643,7 +659,7 @@ namespace Exam_Management_System.Designs
             // newpassword2
             // 
             this.newpassword2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.newpassword2.Location = new System.Drawing.Point(450, 407);
+            this.newpassword2.Location = new System.Drawing.Point(470, 402);
             this.newpassword2.Name = "newpassword2";
             this.newpassword2.PasswordChar = '●';
             this.newpassword2.Size = new System.Drawing.Size(180, 26);
@@ -728,7 +744,8 @@ namespace Exam_Management_System.Designs
             // backToDashboardBtn
             // 
             this.backToDashboardBtn.ButtonStyle = Krypton.Toolkit.ButtonStyle.Custom2;
-            this.backToDashboardBtn.Location = new System.Drawing.Point(84, 153);
+            this.backToDashboardBtn.Location = new System.Drawing.Point(99, 150);
+            this.backToDashboardBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.backToDashboardBtn.Name = "backToDashboardBtn";
             this.backToDashboardBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.backToDashboardBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
@@ -744,7 +761,7 @@ namespace Exam_Management_System.Designs
             this.backToDashboardBtn.OverrideFocus.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.backToDashboardBtn.Size = new System.Drawing.Size(150, 38);
+            this.backToDashboardBtn.Size = new System.Drawing.Size(112, 31);
             this.backToDashboardBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.backToDashboardBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.backToDashboardBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("backToDashboardBtn.StateCommon.Back.Image")));
@@ -788,7 +805,8 @@ namespace Exam_Management_System.Designs
             // 
             this.LogoutBtn.ButtonStyle = Krypton.Toolkit.ButtonStyle.Custom2;
             this.LogoutBtn.Enabled = false;
-            this.LogoutBtn.Location = new System.Drawing.Point(93, 645);
+            this.LogoutBtn.Location = new System.Drawing.Point(115, 640);
+            this.LogoutBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LogoutBtn.Name = "LogoutBtn";
             this.LogoutBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.LogoutBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
@@ -804,7 +822,7 @@ namespace Exam_Management_System.Designs
             this.LogoutBtn.OverrideFocus.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.LogoutBtn.Size = new System.Drawing.Size(160, 40);
+            this.LogoutBtn.Size = new System.Drawing.Size(120, 32);
             this.LogoutBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.LogoutBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.LogoutBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("LogoutBtn.StateCommon.Back.Image")));
@@ -834,7 +852,8 @@ namespace Exam_Management_System.Designs
             // 
             this.archiveViewBtn.ButtonStyle = Krypton.Toolkit.ButtonStyle.Custom2;
             this.archiveViewBtn.Enabled = false;
-            this.archiveViewBtn.Location = new System.Drawing.Point(95, 252);
+            this.archiveViewBtn.Location = new System.Drawing.Point(106, 243);
+            this.archiveViewBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.archiveViewBtn.Name = "archiveViewBtn";
             this.archiveViewBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.archiveViewBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
@@ -850,7 +869,7 @@ namespace Exam_Management_System.Designs
             this.archiveViewBtn.OverrideFocus.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.archiveViewBtn.Size = new System.Drawing.Size(160, 40);
+            this.archiveViewBtn.Size = new System.Drawing.Size(120, 32);
             this.archiveViewBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.archiveViewBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.archiveViewBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("archiveViewBtn.StateCommon.Back.Image")));
@@ -879,7 +898,8 @@ namespace Exam_Management_System.Designs
             // 
             this.profileViewBtn.ButtonStyle = Krypton.Toolkit.ButtonStyle.Custom2;
             this.profileViewBtn.Enabled = false;
-            this.profileViewBtn.Location = new System.Drawing.Point(92, 200);
+            this.profileViewBtn.Location = new System.Drawing.Point(106, 196);
+            this.profileViewBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.profileViewBtn.Name = "profileViewBtn";
             this.profileViewBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.profileViewBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
@@ -895,7 +915,7 @@ namespace Exam_Management_System.Designs
             this.profileViewBtn.OverrideFocus.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.profileViewBtn.Size = new System.Drawing.Size(160, 40);
+            this.profileViewBtn.Size = new System.Drawing.Size(120, 32);
             this.profileViewBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.profileViewBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.profileViewBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("profileViewBtn.StateCommon.Back.Image")));
@@ -921,26 +941,25 @@ namespace Exam_Management_System.Designs
             this.profileViewBtn.Values.Text = "";
             this.profileViewBtn.Click += new System.EventHandler(this.profileViewBtn_Click);
             // 
-            // pfpbox
-            // 
-            this.pfpbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pfpbox.Image = global::Exam_Management_System.Properties.Resources.profile_icon;
-            this.pfpbox.Location = new System.Drawing.Point(60, 40);
-            this.pfpbox.Name = "pfpbox";
-            this.pfpbox.Size = new System.Drawing.Size(120, 120);
-            this.pfpbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pfpbox.TabIndex = 24;
-            this.pfpbox.TabStop = false;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Exam_Management_System.Properties.Resources.profile_header;
-            this.pictureBox2.Location = new System.Drawing.Point(100, 68);
+            this.pictureBox2.Location = new System.Drawing.Point(99, 60);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(127, 51);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, -6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1200, 759);
+            this.pictureBox1.TabIndex = 38;
+            this.pictureBox1.TabStop = false;
             // 
             // Profile
             // 
@@ -958,6 +977,7 @@ namespace Exam_Management_System.Designs
             this.Controls.Add(this.timelabel);
             this.Controls.Add(this.profilePanel);
             this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Profile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -969,6 +989,7 @@ namespace Exam_Management_System.Designs
             ((System.ComponentModel.ISupportInitialize)(this.Program_Combo_Box)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pfpbox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1016,5 +1037,6 @@ namespace Exam_Management_System.Designs
         private KryptonButton LogoutBtn;
         private KryptonButton archiveViewBtn;
         private KryptonButton profileViewBtn;
+        private PictureBox pictureBox1;
     }
 }

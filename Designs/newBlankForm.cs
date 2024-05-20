@@ -22,6 +22,8 @@ namespace TeacherDashboard
             GenerateExamCode(); // Call the method to generate the exam code when the form is initialized
             questionType_DB.Items.AddRange(new object[] { "Identification", "Paragraph Form", "Multiple Choice", "Contextual Paragraph", "Contextual Image", "Contextual Paragraph & Image" });
 
+            questionType_DB.DropDownStyle = ComboBoxStyle.DropDownList;
+
             // Set the default selection to "Short Answer"
             questionType_DB.SelectedIndex = 0;
 
@@ -53,6 +55,8 @@ namespace TeacherDashboard
 
             questionType_DB.SelectedIndexChanged += QuestionType_DB_SelectedIndexChanged;
 
+            contextualPicOnly_PB.Image = Exam_Management_System.Properties.Resources.Sample;
+
             // Hide the delete button initially
 
         }
@@ -83,7 +87,6 @@ namespace TeacherDashboard
             bool manualCheckEnabled = manualC_CB.Checked;
 
             // Disable the components when manual checking is enabled
-            point_TB.Enabled = !manualCheckEnabled;
             identification_TB.Enabled = !manualCheckEnabled;
             longAnswer_TB.Enabled = !manualCheckEnabled;
             multiple1_RB.Enabled = !manualCheckEnabled;
@@ -97,9 +100,25 @@ namespace TeacherDashboard
             // Retrieve values from text boxes
             string question = question_TB.Text;
             string examCode = examCodeBox.Text;
-            int? points = null;
             string questionType = questionType_DB.SelectedItem?.ToString();
             int manualCheck = manualC_CB.Checked ? 1 : 0;
+            int? points = null;
+
+            // Handle point requirement based on question type
+            if (questionType == "Contextual Image" || questionType == "Contextual Paragraph" || questionType == "Contextual Paragraph & Image")
+            {
+                points = null; // Points set to null for specific question types
+            }
+            else
+            {
+                // Ensure points are entered for other question types
+                if (string.IsNullOrWhiteSpace(point_TB.Text) || !int.TryParse(point_TB.Text, out int pointValue))
+                {
+                    MessageBox.Show("Please enter a valid point value.");
+                    return;
+                }
+                points = pointValue;
+            }
 
             // Check if manual checking checkbox is not checked
             if (!manualC_CB.Checked)
@@ -159,13 +178,12 @@ namespace TeacherDashboard
             }
             else
             {
-                points = null;
                 identification_TB.Text = null;
                 longAnswer_TB.Text = null;
-                multiple1_TB.Text = null;
-                multiple2_TB.Text = null;
-                multiple3_TB.Text = null;
-                multiple4_TB.Text = null;
+                multiple1_RB.Text = null;
+                multiple2_RB.Text = null;
+                multiple3_RB.Text = null;
+                multiple4_RB.Text = null;
                 contextualParaOnly_TB.Text = null;
             }
 
@@ -201,11 +219,15 @@ namespace TeacherDashboard
 
             try
             {
+                // Get the next question number for the given exam code
+                int questionNumber = GetNextQuestionNumber(examCode);
+
                 // SQL query to insert values into the "examQuestions" table
-                string query = "INSERT INTO examQuestions (question, examCode, question_type, image, point, manual_check, multiplechoice_choices, multiplechoice_answer, identification, paragraph_type, contextual_paragraph) " +
-                               "VALUES (@Question, @Code, @QuestionType, @Image, @Point, @ManualCheck, @MultipleChoiceOptions, @MultipleChoiceAnswer, @ShortAnswer, @LongAnswer, @ContextualParagraph)";
+                string query = "INSERT INTO examQuestions (questionNumber, question, examCode, question_type, image, point, manual_check, multiplechoice_choices, multiplechoice_answer, identification, paragraph_type, contextual_paragraph) " +
+                               "VALUES (@QuestionNumber, @Question, @Code, @QuestionType, @Image, @Point, @ManualCheck, @MultipleChoiceOptions, @MultipleChoiceAnswer, @ShortAnswer, @LongAnswer, @ContextualParagraph)";
 
                 MySqlCommand command = new MySqlCommand(query);
+                command.Parameters.AddWithValue("@QuestionNumber", questionNumber);
                 command.Parameters.AddWithValue("@Question", question);
                 command.Parameters.AddWithValue("@Code", examCode);
                 command.Parameters.AddWithValue("@QuestionType", questionType);
@@ -217,7 +239,7 @@ namespace TeacherDashboard
                 command.Parameters.AddWithValue("@ShortAnswer", questionType == "Identification" ? identification_TB.Text : (object)DBNull.Value);
                 command.Parameters.AddWithValue("@LongAnswer", questionType == "Paragraph Form" ? longAnswer_TB.Text : (object)DBNull.Value);
                 command.Parameters.AddWithValue("@ContextualParagraph", questionType == "Contextual Paragraph" ? contextualParaOnly_TB.Text : (questionType == "Contextual Paragraph & Image" ? contextualPara_TB.Text : (object)DBNull.Value));
-                
+
                 // Execute the query using the database class
                 objDBAccess.createConn(); // Ensure connection is open
                 int rowsAffected = objDBAccess.executeQuery(command);
@@ -237,6 +259,7 @@ namespace TeacherDashboard
                     multiple4_TB.Clear();
                     contextualParaOnly_TB.Clear();
                     contextualPara_TB.Clear();
+                    manualC_CB.Checked = false;
                     multiple1_RB.Checked = false;
                     multiple2_RB.Checked = false;
                     multiple3_RB.Checked = false;
@@ -246,11 +269,7 @@ namespace TeacherDashboard
                     fileName_LBL.Visible = false;
                     deleteA_BTN.Visible = false;
 
-                    selectedFilePath = "";
-                    deleteA_BTN.Visible = false;
-                    fileName_LBL.Visible = false;
-
-                    contextualPicOnly_PB.Image = Exam_Management_System.Properties.Resources.Sample; // Replace "InitialImage" with the name of your initial image resource
+                    contextualPicOnly_PB.Image = Exam_Management_System.Properties.Resources.Sample; // Replace "Sample" with the name of your initial image resource
                     contextualPic_PB.Image = Exam_Management_System.Properties.Resources.Sample;
 
                     if (questionType == "Contextual Image")
@@ -280,6 +299,28 @@ namespace TeacherDashboard
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
+
+        private int GetNextQuestionNumber(string examCode)
+        {
+            try
+            {
+                string query = "SELECT IFNULL(MAX(questionNumber), 0) + 1 FROM examQuestions WHERE examCode = @Code";
+                MySqlCommand command = new MySqlCommand(query);
+                command.Parameters.AddWithValue("@Code", examCode);
+
+                objDBAccess.createConn();
+                int nextQuestionNumber = Convert.ToInt32(objDBAccess.executeScalar(command));
+                objDBAccess.closeConn();
+
+                return nextQuestionNumber;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while retrieving the next question number: " + ex.Message);
+                return 1; // Default to 1 if there's an error
+            }
+        }
+
 
 
         private void attachment_BT_Click(object sender, EventArgs e)
@@ -640,22 +681,25 @@ namespace TeacherDashboard
             // Access the CodeValue property to get the code
             string code = CodeValue;
 
-            // Create an instance of Form1
-            if (previewFormInstance == null)
+            // Check if the instance is null or disposed
+            if (previewFormInstance == null || previewFormInstance.IsDisposed)
             {
+                // Create a new instance of PreviewForm
                 previewFormInstance = new PreviewForm();
+
+                // Handle the FormClosed event to set previewFormInstance to null when the form is closed
+                previewFormInstance.FormClosed += (s, args) => previewFormInstance = null;
             }
 
-            // Set the code in the label of Form1
+            // Set the code in the label of PreviewForm
             previewFormInstance.SetCodeLabel(code);
 
-            // Show Form1
+            // Show PreviewForm
             previewFormInstance.Show();
 
             // Ensure DisplayData method is called to load the data
             previewFormInstance.DisplayData();
         }
-
 
 
         private void discardBTN_Click(object sender, EventArgs e)

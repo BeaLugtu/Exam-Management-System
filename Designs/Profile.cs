@@ -119,6 +119,13 @@ namespace Exam_Management_System.Designs
                 if (result == DialogResult.Yes)
                 {
                     SaveBtn_Click(null, null);
+                    // Get the user ID and user type from the database
+                    user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
+                    UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
+
+                    this.Close();
+                    Designs.TeacherDashBoard teacherDashBoard = new Designs.TeacherDashBoard(user_ID, userType);
+                    teacherDashBoard.Show();
                 }
                 else if (result == DialogResult.No)
                 {
