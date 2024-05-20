@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CquestionType_LBL = new Krypton.Toolkit.KryptonLabel();
             this.Cquestion_TB = new Krypton.Toolkit.KryptonRichTextBox();
             this.CshortAnswer_TB = new Krypton.Toolkit.KryptonTextBox();
             this.ClongAnswer_TB = new Krypton.Toolkit.KryptonRichTextBox();
@@ -41,24 +40,29 @@
             this.Cmultiple3_TB = new Krypton.Toolkit.KryptonTextBox();
             this.Cmultiple4_TB = new Krypton.Toolkit.KryptonTextBox();
             this.CmanualC_CB = new Krypton.Toolkit.KryptonCheckBox();
-            this.Cpoint_LBL = new Krypton.Toolkit.KryptonLabel();
-            this.Cimage_PB = new Krypton.Toolkit.KryptonPictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.Cimage_PB)).BeginInit();
+            this.CcontextualPic_PB = new Krypton.Toolkit.KryptonPictureBox();
+            this.edit_BTN = new Krypton.Toolkit.KryptonButton();
+            this.deleteQ_BTN = new Krypton.Toolkit.KryptonButton();
+            this.save_BTN = new Krypton.Toolkit.KryptonButton();
+            this.CquestionType_CB = new Krypton.Toolkit.KryptonComboBox();
+            this.CcontextualPicOnly_PB = new Krypton.Toolkit.KryptonPictureBox();
+            this.CcontextualParaOnly_TB = new Krypton.Toolkit.KryptonRichTextBox();
+            this.CcontextualPara_TB = new Krypton.Toolkit.KryptonRichTextBox();
+            this.delete_BTN = new Krypton.Toolkit.KryptonButton();
+            this.Cattachment_BT = new Krypton.Toolkit.KryptonButton();
+            this.CattachmentBoth_BT = new Krypton.Toolkit.KryptonButton();
+            this.Cpoint_TB = new Krypton.Toolkit.KryptonTextBox();
+            this.points_LBL = new Krypton.Toolkit.KryptonLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.CcontextualPic_PB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CquestionType_CB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CcontextualPicOnly_PB)).BeginInit();
             this.SuspendLayout();
-            // 
-            // CquestionType_LBL
-            // 
-            this.CquestionType_LBL.Location = new System.Drawing.Point(29, 35);
-            this.CquestionType_LBL.Name = "CquestionType_LBL";
-            this.CquestionType_LBL.Size = new System.Drawing.Size(110, 24);
-            this.CquestionType_LBL.TabIndex = 0;
-            this.CquestionType_LBL.Values.Text = "Question Type";
             // 
             // Cquestion_TB
             // 
-            this.Cquestion_TB.Location = new System.Drawing.Point(179, 74);
+            this.Cquestion_TB.Location = new System.Drawing.Point(29, 74);
             this.Cquestion_TB.Name = "Cquestion_TB";
-            this.Cquestion_TB.Size = new System.Drawing.Size(364, 121);
+            this.Cquestion_TB.Size = new System.Drawing.Size(514, 121);
             this.Cquestion_TB.TabIndex = 1;
             this.Cquestion_TB.Text = "";
             // 
@@ -139,34 +143,132 @@
             // 
             // CmanualC_CB
             // 
-            this.CmanualC_CB.Location = new System.Drawing.Point(348, 35);
+            this.CmanualC_CB.Location = new System.Drawing.Point(301, 35);
             this.CmanualC_CB.Name = "CmanualC_CB";
             this.CmanualC_CB.Size = new System.Drawing.Size(142, 24);
             this.CmanualC_CB.TabIndex = 12;
             this.CmanualC_CB.Values.Text = "Manual Checking";
             // 
-            // Cpoint_LBL
+            // CcontextualPic_PB
             // 
-            this.Cpoint_LBL.Location = new System.Drawing.Point(496, 35);
-            this.Cpoint_LBL.Name = "Cpoint_LBL";
-            this.Cpoint_LBL.Size = new System.Drawing.Size(47, 24);
-            this.Cpoint_LBL.TabIndex = 13;
-            this.Cpoint_LBL.Values.Text = "Point";
+            this.CcontextualPic_PB.Location = new System.Drawing.Point(137, 74);
+            this.CcontextualPic_PB.Name = "CcontextualPic_PB";
+            this.CcontextualPic_PB.Size = new System.Drawing.Size(306, 121);
+            this.CcontextualPic_PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CcontextualPic_PB.TabIndex = 14;
+            this.CcontextualPic_PB.TabStop = false;
             // 
-            // Cimage_PB
+            // edit_BTN
             // 
-            this.Cimage_PB.Location = new System.Drawing.Point(29, 74);
-            this.Cimage_PB.Name = "Cimage_PB";
-            this.Cimage_PB.Size = new System.Drawing.Size(132, 121);
-            this.Cimage_PB.TabIndex = 14;
-            this.Cimage_PB.TabStop = false;
+            this.edit_BTN.Location = new System.Drawing.Point(295, 355);
+            this.edit_BTN.Name = "edit_BTN";
+            this.edit_BTN.Size = new System.Drawing.Size(121, 25);
+            this.edit_BTN.TabIndex = 15;
+            this.edit_BTN.Values.Text = "Edit";
+            // 
+            // deleteQ_BTN
+            // 
+            this.deleteQ_BTN.Location = new System.Drawing.Point(168, 355);
+            this.deleteQ_BTN.Name = "deleteQ_BTN";
+            this.deleteQ_BTN.Size = new System.Drawing.Size(121, 25);
+            this.deleteQ_BTN.TabIndex = 16;
+            this.deleteQ_BTN.Values.Text = "Delete";
+            // 
+            // save_BTN
+            // 
+            this.save_BTN.Location = new System.Drawing.Point(422, 355);
+            this.save_BTN.Name = "save_BTN";
+            this.save_BTN.Size = new System.Drawing.Size(121, 25);
+            this.save_BTN.TabIndex = 17;
+            this.save_BTN.Values.Text = "Save";
+            // 
+            // CquestionType_CB
+            // 
+            this.CquestionType_CB.DropDownWidth = 155;
+            this.CquestionType_CB.IntegralHeight = false;
+            this.CquestionType_CB.Location = new System.Drawing.Point(29, 37);
+            this.CquestionType_CB.Name = "CquestionType_CB";
+            this.CquestionType_CB.Size = new System.Drawing.Size(155, 25);
+            this.CquestionType_CB.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.CquestionType_CB.TabIndex = 18;
+            this.CquestionType_CB.Text = "kryptonComboBox1";
+            // 
+            // CcontextualPicOnly_PB
+            // 
+            this.CcontextualPicOnly_PB.Location = new System.Drawing.Point(29, 74);
+            this.CcontextualPicOnly_PB.Name = "CcontextualPicOnly_PB";
+            this.CcontextualPicOnly_PB.Size = new System.Drawing.Size(514, 239);
+            this.CcontextualPicOnly_PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CcontextualPicOnly_PB.TabIndex = 19;
+            this.CcontextualPicOnly_PB.TabStop = false;
+            // 
+            // CcontextualParaOnly_TB
+            // 
+            this.CcontextualParaOnly_TB.Location = new System.Drawing.Point(29, 74);
+            this.CcontextualParaOnly_TB.Name = "CcontextualParaOnly_TB";
+            this.CcontextualParaOnly_TB.Size = new System.Drawing.Size(514, 239);
+            this.CcontextualParaOnly_TB.TabIndex = 20;
+            this.CcontextualParaOnly_TB.Text = "";
+            // 
+            // CcontextualPara_TB
+            // 
+            this.CcontextualPara_TB.Location = new System.Drawing.Point(29, 216);
+            this.CcontextualPara_TB.Name = "CcontextualPara_TB";
+            this.CcontextualPara_TB.Size = new System.Drawing.Size(514, 121);
+            this.CcontextualPara_TB.TabIndex = 21;
+            this.CcontextualPara_TB.Text = "";
+            // 
+            // delete_BTN
+            // 
+            this.delete_BTN.Location = new System.Drawing.Point(422, 35);
+            this.delete_BTN.Name = "delete_BTN";
+            this.delete_BTN.Size = new System.Drawing.Size(120, 25);
+            this.delete_BTN.TabIndex = 22;
+            this.delete_BTN.Values.Text = "Clear Image";
+            // 
+            // Cattachment_BT
+            // 
+            this.Cattachment_BT.Location = new System.Drawing.Point(227, 216);
+            this.Cattachment_BT.Name = "Cattachment_BT";
+            this.Cattachment_BT.Size = new System.Drawing.Size(122, 25);
+            this.Cattachment_BT.TabIndex = 23;
+            this.Cattachment_BT.Values.Text = "Attach Image";
+            // 
+            // CattachmentBoth_BT
+            // 
+            this.CattachmentBoth_BT.Location = new System.Drawing.Point(226, 122);
+            this.CattachmentBoth_BT.Name = "CattachmentBoth_BT";
+            this.CattachmentBoth_BT.Size = new System.Drawing.Size(123, 25);
+            this.CattachmentBoth_BT.TabIndex = 24;
+            this.CattachmentBoth_BT.Values.Text = "Attach Image";
+            // 
+            // Cpoint_TB
+            // 
+            this.Cpoint_TB.Location = new System.Drawing.Point(516, 35);
+            this.Cpoint_TB.Name = "Cpoint_TB";
+            this.Cpoint_TB.Size = new System.Drawing.Size(25, 27);
+            this.Cpoint_TB.TabIndex = 25;
+            // 
+            // points_LBL
+            // 
+            this.points_LBL.Location = new System.Drawing.Point(457, 35);
+            this.points_LBL.Name = "points_LBL";
+            this.points_LBL.Size = new System.Drawing.Size(53, 24);
+            this.points_LBL.TabIndex = 26;
+            this.points_LBL.Values.Text = "Points";
             // 
             // teacherPreviewCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.Cimage_PB);
-            this.Controls.Add(this.Cpoint_LBL);
+            this.Controls.Add(this.points_LBL);
+            this.Controls.Add(this.Cpoint_TB);
+            this.Controls.Add(this.CattachmentBoth_BT);
+            this.Controls.Add(this.Cattachment_BT);
+            this.Controls.Add(this.CquestionType_CB);
+            this.Controls.Add(this.save_BTN);
+            this.Controls.Add(this.deleteQ_BTN);
+            this.Controls.Add(this.edit_BTN);
             this.Controls.Add(this.CmanualC_CB);
             this.Controls.Add(this.Cmultiple4_TB);
             this.Controls.Add(this.Cmultiple3_TB);
@@ -178,19 +280,23 @@
             this.Controls.Add(this.Cmultiple1_RB);
             this.Controls.Add(this.ClongAnswer_TB);
             this.Controls.Add(this.CshortAnswer_TB);
+            this.Controls.Add(this.CcontextualPara_TB);
+            this.Controls.Add(this.delete_BTN);
+            this.Controls.Add(this.CcontextualPic_PB);
+            this.Controls.Add(this.CcontextualPicOnly_PB);
             this.Controls.Add(this.Cquestion_TB);
-            this.Controls.Add(this.CquestionType_LBL);
+            this.Controls.Add(this.CcontextualParaOnly_TB);
             this.Name = "teacherPreviewCard";
-            this.Size = new System.Drawing.Size(577, 360);
-            ((System.ComponentModel.ISupportInitialize)(this.Cimage_PB)).EndInit();
+            this.Size = new System.Drawing.Size(577, 436);
+            ((System.ComponentModel.ISupportInitialize)(this.CcontextualPic_PB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CquestionType_CB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CcontextualPicOnly_PB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Krypton.Toolkit.KryptonLabel CquestionType_LBL;
         private Krypton.Toolkit.KryptonRichTextBox Cquestion_TB;
         private Krypton.Toolkit.KryptonTextBox CshortAnswer_TB;
         private Krypton.Toolkit.KryptonRichTextBox ClongAnswer_TB;
@@ -203,7 +309,18 @@
         private Krypton.Toolkit.KryptonTextBox Cmultiple3_TB;
         private Krypton.Toolkit.KryptonTextBox Cmultiple4_TB;
         private Krypton.Toolkit.KryptonCheckBox CmanualC_CB;
-        private Krypton.Toolkit.KryptonLabel Cpoint_LBL;
-        private Krypton.Toolkit.KryptonPictureBox Cimage_PB;
+        private Krypton.Toolkit.KryptonPictureBox CcontextualPic_PB;
+        private Krypton.Toolkit.KryptonButton edit_BTN;
+        private Krypton.Toolkit.KryptonButton deleteQ_BTN;
+        private Krypton.Toolkit.KryptonButton save_BTN;
+        private Krypton.Toolkit.KryptonComboBox CquestionType_CB;
+        private Krypton.Toolkit.KryptonPictureBox CcontextualPicOnly_PB;
+        private Krypton.Toolkit.KryptonRichTextBox CcontextualParaOnly_TB;
+        private Krypton.Toolkit.KryptonRichTextBox CcontextualPara_TB;
+        private Krypton.Toolkit.KryptonButton delete_BTN;
+        private Krypton.Toolkit.KryptonButton Cattachment_BT;
+        private Krypton.Toolkit.KryptonButton CattachmentBoth_BT;
+        private Krypton.Toolkit.KryptonTextBox Cpoint_TB;
+        private Krypton.Toolkit.KryptonLabel points_LBL;
     }
 }

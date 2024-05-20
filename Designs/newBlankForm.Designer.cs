@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(newBlankForm));
             this.timeDateLbl = new System.Windows.Forms.Label();
             this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
@@ -47,6 +48,8 @@
             this.examEstimateBox = new Krypton.Toolkit.KryptonTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.examCodeBox = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonPictureBox3 = new Krypton.Toolkit.KryptonPictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.questionType_DB = new Krypton.Toolkit.KryptonComboBox();
             this.attachment_BT = new Krypton.Toolkit.KryptonButton();
@@ -67,25 +70,25 @@
             this.multiple2_RB = new Krypton.Toolkit.KryptonCheckBox();
             this.save_BTN = new Krypton.Toolkit.KryptonButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.contextualPara_TB = new Krypton.Toolkit.KryptonRichTextBox();
             this.contextualParaOnly_TB = new Krypton.Toolkit.KryptonRichTextBox();
-            this.kryptonPictureBox2 = new Krypton.Toolkit.KryptonPictureBox();
-            this.kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
-            this.kryptonPictureBox3 = new Krypton.Toolkit.KryptonPictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.contextualPara_TB = new Krypton.Toolkit.KryptonRichTextBox();
             this.contextualPic_PB = new Krypton.Toolkit.KryptonPictureBox();
             this.contextualPicOnly_PB = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonPictureBox4 = new Krypton.Toolkit.KryptonPictureBox();
+            this.kryptonPictureBox2 = new Krypton.Toolkit.KryptonPictureBox();
+            this.kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
+            this.kryptonCustomPaletteBase1 = new Krypton.Toolkit.KryptonCustomPaletteBase(this.components);
+            this.Program_DropButtonPalette = new Krypton.Toolkit.KryptonCustomPaletteBase(this.components);
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.questionType_DB)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionType_DB)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contextualPic_PB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contextualPicOnly_PB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // timeDateLbl
@@ -506,6 +509,28 @@
             this.examCodeBox.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5);
             this.examCodeBox.TabIndex = 22;
             // 
+            // kryptonPictureBox3
+            // 
+            this.kryptonPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPictureBox3.Image")));
+            this.kryptonPictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.kryptonPictureBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.kryptonPictureBox3.Name = "kryptonPictureBox3";
+            this.kryptonPictureBox3.Size = new System.Drawing.Size(348, 482);
+            this.kryptonPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.kryptonPictureBox3.TabIndex = 13;
+            this.kryptonPictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(63, 132);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(264, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -522,12 +547,16 @@
             // questionType_DB
             // 
             this.questionType_DB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.questionType_DB.DropBackStyle = Krypton.Toolkit.PaletteBackStyle.ButtonCustom1;
+            this.questionType_DB.DropButtonStyle = Krypton.Toolkit.ButtonStyle.Custom1;
             this.questionType_DB.DropDownWidth = 161;
             this.questionType_DB.FormattingEnabled = true;
             this.questionType_DB.IntegralHeight = false;
             this.questionType_DB.Location = new System.Drawing.Point(719, 345);
             this.questionType_DB.Margin = new System.Windows.Forms.Padding(0);
             this.questionType_DB.Name = "questionType_DB";
+            this.questionType_DB.Palette = this.Program_DropButtonPalette;
+            this.questionType_DB.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
             this.questionType_DB.Size = new System.Drawing.Size(161, 28);
             this.questionType_DB.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.questionType_DB.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
@@ -1174,6 +1203,14 @@
             this.panel1.Size = new System.Drawing.Size(807, 593);
             this.panel1.TabIndex = 47;
             // 
+            // contextualParaOnly_TB
+            // 
+            this.contextualParaOnly_TB.Location = new System.Drawing.Point(80, 194);
+            this.contextualParaOnly_TB.Name = "contextualParaOnly_TB";
+            this.contextualParaOnly_TB.Size = new System.Drawing.Size(649, 245);
+            this.contextualParaOnly_TB.TabIndex = 26;
+            this.contextualParaOnly_TB.Text = "";
+            // 
             // contextualPara_TB
             // 
             this.contextualPara_TB.Location = new System.Drawing.Point(421, 194);
@@ -1182,13 +1219,35 @@
             this.contextualPara_TB.TabIndex = 25;
             this.contextualPara_TB.Text = "";
             // 
-            // contextualParaOnly_TB
+            // contextualPic_PB
             // 
-            this.contextualParaOnly_TB.Location = new System.Drawing.Point(80, 194);
-            this.contextualParaOnly_TB.Name = "contextualParaOnly_TB";
-            this.contextualParaOnly_TB.Size = new System.Drawing.Size(649, 245);
-            this.contextualParaOnly_TB.TabIndex = 26;
-            this.contextualParaOnly_TB.Text = "";
+            this.contextualPic_PB.Image = ((System.Drawing.Image)(resources.GetObject("contextualPic_PB.Image")));
+            this.contextualPic_PB.Location = new System.Drawing.Point(80, 195);
+            this.contextualPic_PB.Name = "contextualPic_PB";
+            this.contextualPic_PB.Size = new System.Drawing.Size(349, 246);
+            this.contextualPic_PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.contextualPic_PB.TabIndex = 24;
+            this.contextualPic_PB.TabStop = false;
+            // 
+            // contextualPicOnly_PB
+            // 
+            this.contextualPicOnly_PB.Location = new System.Drawing.Point(79, 194);
+            this.contextualPicOnly_PB.Name = "contextualPicOnly_PB";
+            this.contextualPicOnly_PB.Size = new System.Drawing.Size(650, 247);
+            this.contextualPicOnly_PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.contextualPicOnly_PB.TabIndex = 23;
+            this.contextualPicOnly_PB.TabStop = false;
+            // 
+            // kryptonPictureBox4
+            // 
+            this.kryptonPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPictureBox4.Image")));
+            this.kryptonPictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.kryptonPictureBox4.Margin = new System.Windows.Forms.Padding(0);
+            this.kryptonPictureBox4.Name = "kryptonPictureBox4";
+            this.kryptonPictureBox4.Size = new System.Drawing.Size(807, 593);
+            this.kryptonPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.kryptonPictureBox4.TabIndex = 22;
+            this.kryptonPictureBox4.TabStop = false;
             // 
             // kryptonPictureBox2
             // 
@@ -1211,58 +1270,33 @@
             this.kryptonPictureBox1.TabIndex = 5;
             this.kryptonPictureBox1.TabStop = false;
             // 
-            // kryptonPictureBox3
+            // kryptonCustomPaletteBase1
             // 
-            this.kryptonPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPictureBox3.Image")));
-            this.kryptonPictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.kryptonPictureBox3.Margin = new System.Windows.Forms.Padding(0);
-            this.kryptonPictureBox3.Name = "kryptonPictureBox3";
-            this.kryptonPictureBox3.Size = new System.Drawing.Size(348, 482);
-            this.kryptonPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.kryptonPictureBox3.TabIndex = 13;
-            this.kryptonPictureBox3.TabStop = false;
+            this.kryptonCustomPaletteBase1.BaseFont = new System.Drawing.Font("Segoe UI", 9F);
+            this.kryptonCustomPaletteBase1.BaseFontSize = 9F;
+            this.kryptonCustomPaletteBase1.BasePaletteType = Krypton.Toolkit.BasePaletteType.Custom;
+            this.kryptonCustomPaletteBase1.ThemeName = "";
+            this.kryptonCustomPaletteBase1.UseKryptonFileDialogs = true;
             // 
-            // pictureBox1
+            // Program_DropButtonPalette
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(63, 132);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(264, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            // 
-            // contextualPic_PB
-            // 
-            this.contextualPic_PB.Image = ((System.Drawing.Image)(resources.GetObject("contextualPic_PB.Image")));
-            this.contextualPic_PB.Location = new System.Drawing.Point(80, 195);
-            this.contextualPic_PB.Name = "contextualPic_PB";
-            this.contextualPic_PB.Size = new System.Drawing.Size(349, 246);
-            this.contextualPic_PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.contextualPic_PB.TabIndex = 24;
-            this.contextualPic_PB.TabStop = false;
-            // 
-            // contextualPicOnly_PB
-            // 
-            //this.contextualPicOnly_PB.Image = global::Exam_Management_System.Properties.Resources.Sample;
-            this.contextualPicOnly_PB.Location = new System.Drawing.Point(125, 194);
-            this.contextualPicOnly_PB.Name = "contextualPicOnly_PB";
-            this.contextualPicOnly_PB.Size = new System.Drawing.Size(562, 247);
-            this.contextualPicOnly_PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.contextualPicOnly_PB.TabIndex = 23;
-            this.contextualPicOnly_PB.TabStop = false;
-            // 
-            // kryptonPictureBox4
-            // 
-            this.kryptonPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPictureBox4.Image")));
-            this.kryptonPictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.kryptonPictureBox4.Margin = new System.Windows.Forms.Padding(0);
-            this.kryptonPictureBox4.Name = "kryptonPictureBox4";
-            this.kryptonPictureBox4.Size = new System.Drawing.Size(807, 593);
-            this.kryptonPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.kryptonPictureBox4.TabIndex = 22;
-            this.kryptonPictureBox4.TabStop = false;
+            this.Program_DropButtonPalette.BaseFont = new System.Drawing.Font("Segoe UI", 9F);
+            this.Program_DropButtonPalette.BaseFontSize = 9F;
+            this.Program_DropButtonPalette.BasePaletteMode = Krypton.Toolkit.PaletteMode.Microsoft365BlackDarkMode;
+            this.Program_DropButtonPalette.BasePaletteType = Krypton.Toolkit.BasePaletteType.Custom;
+            this.Program_DropButtonPalette.ButtonStyles.ButtonCustom1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Program_DropButtonPalette.ButtonStyles.ButtonCustom1.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Program_DropButtonPalette.ButtonStyles.ButtonCustom1.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Program_DropButtonPalette.ButtonStyles.ButtonCustom1.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Program_DropButtonPalette.ButtonStyles.ButtonCustom1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.Program_DropButtonPalette.ButtonStyles.ButtonCustom1.StateCommon.Content.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.Program_DropButtonPalette.ButtonStyles.ButtonCustom1.StateCommon.Content.LongText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.Program_DropButtonPalette.ButtonStyles.ButtonCustom1.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.Program_DropButtonPalette.ButtonStyles.ButtonCustom1.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.Program_DropButtonPalette.ThemeName = "";
+            this.Program_DropButtonPalette.UseKryptonFileDialogs = true;
             // 
             // newBlankForm
             // 
@@ -1307,15 +1341,15 @@
             this.Text = "exam.io";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.questionType_DB)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionType_DB)).EndInit();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.contextualPic_PB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contextualPicOnly_PB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1370,5 +1404,7 @@
         private Krypton.Toolkit.KryptonRichTextBox contextualParaOnly_TB;
         private Krypton.Toolkit.KryptonRichTextBox contextualPara_TB;
         private Krypton.Toolkit.KryptonPictureBox contextualPic_PB;
+        private Krypton.Toolkit.KryptonCustomPaletteBase kryptonCustomPaletteBase1;
+        private Krypton.Toolkit.KryptonCustomPaletteBase Program_DropButtonPalette;
     }
 }
