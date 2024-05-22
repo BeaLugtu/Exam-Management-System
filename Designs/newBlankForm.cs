@@ -14,6 +14,8 @@ namespace TeacherDashboard
         DBAccess objDBAccess = new DBAccess();
         private bool isDeadlineSelected = false;
         private PreviewForm previewFormInstance;
+        private string lastSelectedQuestionType;
+
 
         string selectedFilePath = "";
         public newBlankForm()
@@ -85,7 +87,6 @@ namespace TeacherDashboard
         private void manualC_CB_CheckedChanged(object sender, EventArgs e)
         {
             bool manualCheckEnabled = manualC_CB.Checked;
-
             // Disable the components when manual checking is enabled
             identification_TB.Enabled = !manualCheckEnabled;
             longAnswer_TB.Enabled = !manualCheckEnabled;
@@ -383,6 +384,23 @@ namespace TeacherDashboard
 
         private void QuestionType_DB_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Check if there is unsaved data in the current question type
+            if (IsUnsavedData())
+            {
+                // Prompt the user if they want to proceed without saving
+                var result = MessageBox.Show("There is unsaved data. Do you want to continue without saving?", "Unsaved Data", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.No)
+                {
+                    // Select the previously selected question type in the ComboBox
+                    questionType_DB.SelectedItem = lastSelectedQuestionType;
+                    return;
+                }
+            }
+
+            // Save the currently selected question type as the last selected
+            lastSelectedQuestionType = questionType_DB.SelectedItem?.ToString();
+
             // Handle question type selection change
             string selectedQuestionType = questionType_DB.SelectedItem?.ToString();
 
@@ -513,9 +531,43 @@ namespace TeacherDashboard
                     contextualPara_TB.Visible = true;
                     contextualPic_PB.Visible = true;
                     break;
-
             }
         }
+
+        // Method to check if there is unsaved data in the current question type
+        private bool IsUnsavedData()
+        {
+            string selectedQuestionType = questionType_DB.SelectedItem?.ToString();
+
+            switch (selectedQuestionType)
+            {
+                case "Identification":
+                    return !string.IsNullOrEmpty(identification_TB.Text);
+
+                case "Paragraph Form":
+                    return !string.IsNullOrEmpty(longAnswer_TB.Text);
+
+                case "Multiple Choice":
+                    return !string.IsNullOrEmpty(multiple1_TB.Text) ||
+                           !string.IsNullOrEmpty(multiple2_TB.Text) ||
+                           !string.IsNullOrEmpty(multiple3_TB.Text) ||
+                           !string.IsNullOrEmpty(multiple4_TB.Text);
+
+                case "Contextual Paragraph":
+                    return !string.IsNullOrEmpty(contextualParaOnly_TB.Text);
+
+                case "Contextual Image":
+                    return contextualPicOnly_PB.Image != Exam_Management_System.Properties.Resources.Sample;
+
+                case "Contextual Paragraph & Image":
+                    return !string.IsNullOrEmpty(contextualPara_TB.Text) ||
+                           contextualPic_PB.Image != Exam_Management_System.Properties.Resources.Sample;
+
+                default:
+                    return false;
+            }
+        }
+
 
         private string FormatTimeInput(string input)
         {
