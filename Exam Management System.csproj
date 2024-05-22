@@ -53,6 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBAccess.cs" />
+    <Compile Include="Designs\archiveCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\archiveCard.Designer.cs">
+      <DependentUpon>archiveCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Designs\ChooseAccountSignUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Designs\archiveCard.resx">
+      <DependentUpon>archiveCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Designs\ChooseAccountSignUpForm.resx">
       <DependentUpon>ChooseAccountSignUpForm.cs</DependentUpon>
     </EmbeddedResource>

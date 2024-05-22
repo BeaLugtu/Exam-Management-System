@@ -69,18 +69,27 @@ namespace Exam_Management_System.Designs
             this.newpassword2 = new Krypton.Toolkit.KryptonTextBox();
             this.newpassword = new Krypton.Toolkit.KryptonTextBox();
             this.password_cr = new Krypton.Toolkit.KryptonTextBox();
-            this.backToDashboardBtn = new Krypton.Toolkit.KryptonButton();
-            this.LogoutBtn = new Krypton.Toolkit.KryptonButton();
-            this.archiveViewBtn = new Krypton.Toolkit.KryptonButton();
-            this.profileViewBtn = new Krypton.Toolkit.KryptonButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.logoutBtn = new Krypton.Toolkit.KryptonButton();
+            this.backToDashboardBtn = new Krypton.Toolkit.KryptonButton();
+            this.kryptonPictureBox4 = new Krypton.Toolkit.KryptonPictureBox();
+            this.kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
+            this.acrhiveTablePanel = new Krypton.Toolkit.KryptonPanel();
+            this.flowLayoutTablelistExam = new System.Windows.Forms.FlowLayoutPanel();
+            this.archivePanel = new Krypton.Toolkit.KryptonPanel();
+            this.profileViewBtn = new System.Windows.Forms.Button();
+            this.archiveViewBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.profilePanel)).BeginInit();
             this.profilePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Program_Combo_Box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pfpbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.acrhiveTablePanel)).BeginInit();
+            this.acrhiveTablePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.archivePanel)).BeginInit();
+            this.archivePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // user_id
@@ -104,7 +113,7 @@ namespace Exam_Management_System.Designs
             this.timelabel.Location = new System.Drawing.Point(936, 65);
             this.timelabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.timelabel.Name = "timelabel";
-            this.timelabel.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.timelabel.Padding = new System.Windows.Forms.Padding(8);
             this.timelabel.Size = new System.Drawing.Size(192, 35);
             this.timelabel.TabIndex = 6;
             this.timelabel.Text = "11:44 pm - Tue, May 6";
@@ -379,8 +388,8 @@ namespace Exam_Management_System.Designs
             this.profilePanel.Controls.Add(this.LastNameLabel);
             this.profilePanel.Controls.Add(this.FirstNameLabel);
             this.profilePanel.Controls.Add(this.StudentIdLabel);
-            this.profilePanel.Location = new System.Drawing.Point(277, 150);
-            this.profilePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.profilePanel.Location = new System.Drawing.Point(279, 149);
+            this.profilePanel.Margin = new System.Windows.Forms.Padding(2);
             this.profilePanel.Name = "profilePanel";
             this.profilePanel.PanelBackStyle = Krypton.Toolkit.PaletteBackStyle.FormCustom1;
             this.profilePanel.Size = new System.Drawing.Size(721, 537);
@@ -546,7 +555,7 @@ namespace Exam_Management_System.Designs
             this.pfpbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pfpbox.Image = global::Exam_Management_System.Properties.Resources.profile_icon;
             this.pfpbox.Location = new System.Drawing.Point(45, 32);
-            this.pfpbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pfpbox.Margin = new System.Windows.Forms.Padding(2);
             this.pfpbox.Name = "pfpbox";
             this.pfpbox.Size = new System.Drawing.Size(90, 98);
             this.pfpbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -741,29 +750,55 @@ namespace Exam_Management_System.Designs
             this.password_cr.UseSystemPasswordChar = true;
             this.password_cr.TextChanged += new System.EventHandler(this.password_cr_TextChanged);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Exam_Management_System.Properties.Resources.profile_header;
+            this.pictureBox2.Location = new System.Drawing.Point(99, 60);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(127, 51);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // logoutBtn
+            // 
+            this.logoutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoutBtn.Location = new System.Drawing.Point(97, 647);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(156, 39);
+            this.logoutBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.logoutBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.logoutBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("logoutBtn.StateCommon.Back.Image")));
+            this.logoutBtn.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.logoutBtn.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.logoutBtn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.logoutBtn.StateCommon.Border.Rounding = 10F;
+            this.logoutBtn.StateCommon.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.logoutBtn.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
+            this.logoutBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.logoutBtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.logoutBtn.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("logoutBtn.StateTracking.Back.Image")));
+            this.logoutBtn.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.logoutBtn.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.logoutBtn.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.logoutBtn.TabIndex = 40;
+            this.logoutBtn.Values.Text = "";
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
+            // 
             // backToDashboardBtn
             // 
-            this.backToDashboardBtn.ButtonStyle = Krypton.Toolkit.ButtonStyle.Custom2;
-            this.backToDashboardBtn.Location = new System.Drawing.Point(99, 150);
-            this.backToDashboardBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.backToDashboardBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backToDashboardBtn.Location = new System.Drawing.Point(89, 149);
             this.backToDashboardBtn.Name = "backToDashboardBtn";
-            this.backToDashboardBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.backToDashboardBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.backToDashboardBtn.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.backToDashboardBtn.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.backToDashboardBtn.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.backToDashboardBtn.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.backToDashboardBtn.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.backToDashboardBtn.OverrideFocus.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.backToDashboardBtn.OverrideFocus.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.backToDashboardBtn.OverrideFocus.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.backToDashboardBtn.Size = new System.Drawing.Size(112, 31);
-            this.backToDashboardBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.backToDashboardBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.backToDashboardBtn.Size = new System.Drawing.Size(138, 32);
+            this.backToDashboardBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backToDashboardBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.backToDashboardBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("backToDashboardBtn.StateCommon.Back.Image")));
             this.backToDashboardBtn.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
             this.backToDashboardBtn.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
@@ -772,194 +807,101 @@ namespace Exam_Management_System.Designs
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.backToDashboardBtn.StateCommon.Border.Rounding = 10F;
-            this.backToDashboardBtn.StateCommon.Border.Width = 1;
-            this.backToDashboardBtn.StateCommon.Content.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.backToDashboardBtn.StateCommon.Content.LongText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.backToDashboardBtn.StateCommon.Content.LongText.ColorAngle = 45F;
-            this.backToDashboardBtn.StateCommon.Content.LongText.Font = new System.Drawing.Font("Inter SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backToDashboardBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.backToDashboardBtn.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.backToDashboardBtn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.backToDashboardBtn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.backToDashboardBtn.StatePressed.Back.Image = ((System.Drawing.Image)(resources.GetObject("backToDashboardBtn.StatePressed.Back.Image")));
-            this.backToDashboardBtn.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.backToDashboardBtn.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.backToDashboardBtn.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.backToDashboardBtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.backToDashboardBtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.backToDashboardBtn.StateCommon.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.backToDashboardBtn.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
+            this.backToDashboardBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backToDashboardBtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backToDashboardBtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.backToDashboardBtn.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("backToDashboardBtn.StateTracking.Back.Image")));
-            this.backToDashboardBtn.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.backToDashboardBtn.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.backToDashboardBtn.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backToDashboardBtn.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.backToDashboardBtn.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.backToDashboardBtn.StateTracking.Border.Rounding = 0F;
-            this.backToDashboardBtn.StateTracking.Border.Width = 0;
-            this.backToDashboardBtn.TabIndex = 34;
+            this.backToDashboardBtn.TabIndex = 42;
             this.backToDashboardBtn.Values.Text = "";
             this.backToDashboardBtn.Click += new System.EventHandler(this.backToDashboardBtn_Click);
             // 
-            // LogoutBtn
+            // kryptonPictureBox4
             // 
-            this.LogoutBtn.ButtonStyle = Krypton.Toolkit.ButtonStyle.Custom2;
-            this.LogoutBtn.Enabled = false;
-            this.LogoutBtn.Location = new System.Drawing.Point(115, 640);
-            this.LogoutBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.LogoutBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.LogoutBtn.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.LogoutBtn.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.LogoutBtn.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.LogoutBtn.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.LogoutBtn.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.LogoutBtn.OverrideFocus.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.LogoutBtn.OverrideFocus.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.LogoutBtn.OverrideFocus.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.LogoutBtn.Size = new System.Drawing.Size(120, 32);
-            this.LogoutBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.LogoutBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.LogoutBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("LogoutBtn.StateCommon.Back.Image")));
-            this.LogoutBtn.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.LogoutBtn.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.LogoutBtn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.LogoutBtn.StateCommon.Border.Rounding = 10F;
-            this.LogoutBtn.StateCommon.Border.Width = 1;
-            this.LogoutBtn.StateCommon.Content.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.LogoutBtn.StateCommon.Content.LongText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.LogoutBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.LogoutBtn.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.LogoutBtn.StateDisabled.Content.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.LogoutBtn.StateDisabled.Content.LongText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.LogoutBtn.StateDisabled.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.LogoutBtn.StateDisabled.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.LogoutBtn.StatePressed.Back.Image = ((System.Drawing.Image)(resources.GetObject("LogoutBtn.StatePressed.Back.Image")));
-            this.LogoutBtn.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("LogoutBtn.StateTracking.Back.Image")));
-            this.LogoutBtn.TabIndex = 35;
-            this.LogoutBtn.UseMnemonic = false;
-            this.LogoutBtn.Values.Text = "";
-            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
+            this.kryptonPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPictureBox4.Image")));
+            this.kryptonPictureBox4.Location = new System.Drawing.Point(89, 48);
+            this.kryptonPictureBox4.Name = "kryptonPictureBox4";
+            this.kryptonPictureBox4.Size = new System.Drawing.Size(549, 54);
+            this.kryptonPictureBox4.TabIndex = 48;
+            this.kryptonPictureBox4.TabStop = false;
             // 
-            // archiveViewBtn
+            // kryptonPictureBox1
             // 
-            this.archiveViewBtn.ButtonStyle = Krypton.Toolkit.ButtonStyle.Custom2;
-            this.archiveViewBtn.Enabled = false;
-            this.archiveViewBtn.Location = new System.Drawing.Point(106, 243);
-            this.archiveViewBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.archiveViewBtn.Name = "archiveViewBtn";
-            this.archiveViewBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.archiveViewBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.archiveViewBtn.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.archiveViewBtn.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.archiveViewBtn.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.archiveViewBtn.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.archiveViewBtn.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.archiveViewBtn.OverrideFocus.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.archiveViewBtn.OverrideFocus.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.archiveViewBtn.OverrideFocus.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.archiveViewBtn.Size = new System.Drawing.Size(120, 32);
-            this.archiveViewBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.archiveViewBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.archiveViewBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("archiveViewBtn.StateCommon.Back.Image")));
-            this.archiveViewBtn.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.archiveViewBtn.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.archiveViewBtn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.archiveViewBtn.StateCommon.Border.Rounding = 10F;
-            this.archiveViewBtn.StateCommon.Border.Width = 1;
-            this.archiveViewBtn.StateCommon.Content.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.archiveViewBtn.StateCommon.Content.LongText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.archiveViewBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.archiveViewBtn.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.archiveViewBtn.StateDisabled.Content.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.archiveViewBtn.StateDisabled.Content.LongText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.archiveViewBtn.StateDisabled.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.archiveViewBtn.StateDisabled.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.archiveViewBtn.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("archiveViewBtn.StateTracking.Back.Image")));
-            this.archiveViewBtn.TabIndex = 36;
-            this.archiveViewBtn.UseMnemonic = false;
-            this.archiveViewBtn.Values.Text = "";
-            this.archiveViewBtn.Click += new System.EventHandler(this.archiveViewBtn_Click);
+            this.kryptonPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPictureBox1.Image")));
+            this.kryptonPictureBox1.Location = new System.Drawing.Point(89, 124);
+            this.kryptonPictureBox1.Name = "kryptonPictureBox1";
+            this.kryptonPictureBox1.Size = new System.Drawing.Size(541, 379);
+            this.kryptonPictureBox1.TabIndex = 49;
+            this.kryptonPictureBox1.TabStop = false;
+            // 
+            // acrhiveTablePanel
+            // 
+            this.acrhiveTablePanel.Controls.Add(this.flowLayoutTablelistExam);
+            this.acrhiveTablePanel.Location = new System.Drawing.Point(89, 124);
+            this.acrhiveTablePanel.Name = "acrhiveTablePanel";
+            this.acrhiveTablePanel.Size = new System.Drawing.Size(541, 379);
+            this.acrhiveTablePanel.StateCommon.Color1 = System.Drawing.Color.Transparent;
+            this.acrhiveTablePanel.StateCommon.Color2 = System.Drawing.Color.Transparent;
+            this.acrhiveTablePanel.StateCommon.Image = ((System.Drawing.Image)(resources.GetObject("acrhiveTablePanel.StateCommon.Image")));
+            this.acrhiveTablePanel.TabIndex = 50;
+            // 
+            // flowLayoutTablelistExam
+            // 
+            this.flowLayoutTablelistExam.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutTablelistExam.Location = new System.Drawing.Point(0, 1);
+            this.flowLayoutTablelistExam.Name = "flowLayoutTablelistExam";
+            this.flowLayoutTablelistExam.Size = new System.Drawing.Size(541, 378);
+            this.flowLayoutTablelistExam.TabIndex = 0;
+            // 
+            // archivePanel
+            // 
+            this.archivePanel.Controls.Add(this.acrhiveTablePanel);
+            this.archivePanel.Controls.Add(this.kryptonPictureBox1);
+            this.archivePanel.Controls.Add(this.kryptonPictureBox4);
+            this.archivePanel.Location = new System.Drawing.Point(280, 149);
+            this.archivePanel.Margin = new System.Windows.Forms.Padding(2);
+            this.archivePanel.Name = "archivePanel";
+            this.archivePanel.PanelBackStyle = Krypton.Toolkit.PaletteBackStyle.FormCustom1;
+            this.archivePanel.Size = new System.Drawing.Size(721, 537);
+            this.archivePanel.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.archivePanel.StateCommon.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.archivePanel.StateCommon.Image = ((System.Drawing.Image)(resources.GetObject("archivePanel.StateCommon.Image")));
+            this.archivePanel.StateCommon.ImageAlign = Krypton.Toolkit.PaletteRectangleAlign.Control;
+            this.archivePanel.StateCommon.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.archivePanel.StateDisabled.Draw = Krypton.Toolkit.InheritBool.True;
+            this.archivePanel.TabIndex = 40;
             // 
             // profileViewBtn
             // 
-            this.profileViewBtn.ButtonStyle = Krypton.Toolkit.ButtonStyle.Custom2;
-            this.profileViewBtn.Enabled = false;
-            this.profileViewBtn.Location = new System.Drawing.Point(106, 196);
-            this.profileViewBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.profileViewBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.profileViewBtn.FlatAppearance.BorderSize = 0;
+            this.profileViewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.profileViewBtn.Image = ((System.Drawing.Image)(resources.GetObject("profileViewBtn.Image")));
+            this.profileViewBtn.Location = new System.Drawing.Point(94, 198);
             this.profileViewBtn.Name = "profileViewBtn";
-            this.profileViewBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.profileViewBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.profileViewBtn.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.profileViewBtn.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.profileViewBtn.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.profileViewBtn.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.profileViewBtn.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.profileViewBtn.OverrideFocus.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.profileViewBtn.OverrideFocus.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.profileViewBtn.OverrideFocus.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.profileViewBtn.Size = new System.Drawing.Size(120, 32);
-            this.profileViewBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.profileViewBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.profileViewBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("profileViewBtn.StateCommon.Back.Image")));
-            this.profileViewBtn.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
-            this.profileViewBtn.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.profileViewBtn.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.profileViewBtn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.profileViewBtn.StateCommon.Border.Rounding = 10F;
-            this.profileViewBtn.StateCommon.Border.Width = 1;
-            this.profileViewBtn.StateCommon.Content.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.profileViewBtn.StateCommon.Content.LongText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.profileViewBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.profileViewBtn.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.profileViewBtn.StateDisabled.Content.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.profileViewBtn.StateDisabled.Content.LongText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.profileViewBtn.StateDisabled.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.profileViewBtn.StateDisabled.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.profileViewBtn.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("profileViewBtn.StateTracking.Back.Image")));
-            this.profileViewBtn.TabIndex = 37;
-            this.profileViewBtn.UseMnemonic = false;
-            this.profileViewBtn.Values.Text = "";
+            this.profileViewBtn.Size = new System.Drawing.Size(156, 41);
+            this.profileViewBtn.TabIndex = 45;
+            this.profileViewBtn.UseVisualStyleBackColor = true;
             this.profileViewBtn.Click += new System.EventHandler(this.profileViewBtn_Click);
             // 
-            // pictureBox2
+            // archiveViewBtn
             // 
-            this.pictureBox2.Image = global::Exam_Management_System.Properties.Resources.profile_header;
-            this.pictureBox2.Location = new System.Drawing.Point(99, 60);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(127, 51);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, -6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1200, 759);
-            this.pictureBox1.TabIndex = 38;
-            this.pictureBox1.TabStop = false;
+            this.archiveViewBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.archiveViewBtn.FlatAppearance.BorderSize = 0;
+            this.archiveViewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.archiveViewBtn.Image = ((System.Drawing.Image)(resources.GetObject("archiveViewBtn.Image")));
+            this.archiveViewBtn.Location = new System.Drawing.Point(94, 249);
+            this.archiveViewBtn.Name = "archiveViewBtn";
+            this.archiveViewBtn.Size = new System.Drawing.Size(156, 41);
+            this.archiveViewBtn.TabIndex = 46;
+            this.archiveViewBtn.UseVisualStyleBackColor = true;
+            this.archiveViewBtn.Click += new System.EventHandler(this.archiveViewBtn_Click);
             // 
             // Profile
             // 
@@ -968,16 +910,16 @@ namespace Exam_Management_System.Designs
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(1200, 750);
             this.ControlBox = false;
-            this.Controls.Add(this.profileViewBtn);
             this.Controls.Add(this.archiveViewBtn);
-            this.Controls.Add(this.LogoutBtn);
+            this.Controls.Add(this.profileViewBtn);
+            this.Controls.Add(this.archivePanel);
             this.Controls.Add(this.backToDashboardBtn);
+            this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.account_type);
             this.Controls.Add(this.user_id);
             this.Controls.Add(this.timelabel);
             this.Controls.Add(this.profilePanel);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Profile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -989,7 +931,12 @@ namespace Exam_Management_System.Designs
             ((System.ComponentModel.ISupportInitialize)(this.Program_Combo_Box)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pfpbox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.acrhiveTablePanel)).EndInit();
+            this.acrhiveTablePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.archivePanel)).EndInit();
+            this.archivePanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1033,10 +980,14 @@ namespace Exam_Management_System.Designs
         private Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private Krypton.Toolkit.KryptonLabel kryptonLabel5;
         private Krypton.Toolkit.KryptonLabel kryptonLabel4;
+        private KryptonButton logoutBtn;
         private KryptonButton backToDashboardBtn;
-        private KryptonButton LogoutBtn;
-        private KryptonButton archiveViewBtn;
-        private KryptonButton profileViewBtn;
-        private PictureBox pictureBox1;
+        private KryptonPictureBox kryptonPictureBox4;
+        private KryptonPictureBox kryptonPictureBox1;
+        private KryptonPanel acrhiveTablePanel;
+        private FlowLayoutPanel flowLayoutTablelistExam;
+        private KryptonPanel archivePanel;
+        private Button profileViewBtn;
+        private Button archiveViewBtn;
     }
 }

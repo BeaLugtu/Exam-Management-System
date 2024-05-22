@@ -1,16 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Exam_Management_System.Designs
 {
-    public partial class teacherExamHistoCard : UserControl
+    public partial class archiveCard : UserControl
     {
         private Action<string> deleteExamCardAction;
+        private Action<string> restoreExamCardAction; // Define action for restoring exam
 
-        public teacherExamHistoCard(Action<string> deleteExamCardAction)
+        public archiveCard(Action<string> deleteExamCardAction, Action<string> restoreExamCardAction)
         {
             InitializeComponent();
             this.deleteExamCardAction = deleteExamCardAction;
+            this.restoreExamCardAction = restoreExamCardAction; // Assign action for restoring exam
         }
 
         public void SetTitle(string title)
@@ -21,26 +30,6 @@ namespace Exam_Management_System.Designs
         public void SetCode(string code)
         {
             codeExamLbl.Text = code;
-        }
-
-        public void SetTotalSubmittedStudents(int total)
-        {
-            totalSubmittedStudLbl.Text = total.ToString();
-        }
-
-        public void SetCreatedDateTime(DateTime createdDateTime)
-        {
-            createdExamDateTimeLbl.Text = createdDateTime.ToString("yyyy-MM-dd HH:mm:ss");
-        }
-
-        public void SetDeadlineDateTime(DateTime deadlineDateTime)
-        {
-            deadlineExamDateTimeLbl.Text = deadlineDateTime.ToString("yyyy-MM-dd HH:mm:ss");
-        }
-
-        public void SetStatus(string status)
-        {
-            statusExamLbl.Text = status;
         }
 
         private void deleteExamBtn_Click(object sender, EventArgs e)
@@ -60,6 +49,20 @@ namespace Exam_Management_System.Designs
             }
         }
 
+        private void restoreExamBtn_Click(object sender, EventArgs e)
+        {
+            // Display a confirmation dialog
+            DialogResult result = MessageBox.Show("Are you sure you want to restore this exam?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // If user confirms restoration
+            if (result == DialogResult.Yes)
+            {
+                // Restore the exam
+                string examCode = codeExamLbl.Text;
+                restoreExamCardAction?.Invoke(examCode);
+            }
+        }
 
     }
 }
+

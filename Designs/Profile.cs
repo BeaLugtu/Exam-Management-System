@@ -51,6 +51,16 @@ namespace Exam_Management_System.Designs
             MakePictureBoxCircular(pfpbox);
             GetUserInfo();
             UpdateTimeLabel();
+
+            profilePanel.Visible = true;
+            archivePanel.Visible = false;
+
+            user_id.Visible = false;
+            account_type.Visible = false;
+            // Clear existing controls from the flow layout panel
+            flowLayoutTablelistExam.Controls.Clear();
+            PopulateFlowLayoutPanel();
+
         }
 
         private void UpdateTimeLabel()
@@ -169,13 +179,13 @@ namespace Exam_Management_System.Designs
                 }
             }
         }
-        
+
         //100% Working
         private void timer1_Tick(object sender, EventArgs e)
         {
             timelabel.Text = $"{DateTime.Now.ToString("hh:mm tt")} — {DateTime.Now.ToString("ddd, MMM d")}";
         }
-        
+
         //to edit
         //100% Working
         private void SetLabels()
@@ -641,7 +651,7 @@ namespace Exam_Management_System.Designs
             {
                 textBox.Clear();
                 textBox.UseSystemPasswordChar = true;
-                
+
             }
         }
         private void Program_Combo_Box_SelectedIndexChanged(object sender, EventArgs e)
@@ -777,22 +787,22 @@ namespace Exam_Management_System.Designs
                 e.Handled = true;
             }
         }
-/*
-        private void Backbtn_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Check if the pressed key is Enter
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                // Perform a click action on Backbtn
-                Backbtn.Focus();
-                if (e.KeyChar == (char)Keys.Enter)
-                    Backbtn.PerformClick();
+        /*
+                private void Backbtn_KeyPress(object sender, KeyPressEventArgs e)
+                {
+                    // Check if the pressed key is Enter
+                    if (e.KeyChar == (char)Keys.Enter)
+                    {
+                        // Perform a click action on Backbtn
+                        Backbtn.Focus();
+                        if (e.KeyChar == (char)Keys.Enter)
+                            Backbtn.PerformClick();
 
-                // Prevent the Enter key from being processed further
-                e.Handled = true;
-            }
-        }
-*/
+                        // Prevent the Enter key from being processed further
+                        e.Handled = true;
+                    }
+                }
+        */
 
         private void ChangePasswordButton_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -807,13 +817,16 @@ namespace Exam_Management_System.Designs
             }
         }
 
-        private void LogoutBtn_Click(object sender, EventArgs e)
-        {
-            // Show a confirmation dialog
-            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // If the user clicks 'Yes', perform the logout
-            if (result == DialogResult.Yes)
+
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            if (hasUnsavedChanges)
+            {
+                HandleUnsavedChanges();
+            } 
+            else 
             {
                 this.Hide();
                 LoginForm login = new LoginForm();
@@ -823,43 +836,160 @@ namespace Exam_Management_System.Designs
 
         private void backToDashboardBtn_Click(object sender, EventArgs e)
         {
-
+            if (hasUnsavedChanges)
             {
-                if (hasUnsavedChanges)
-                {
-                    HandleUnsavedChanges();
-                }
-                else
-                {
-                    // Get the user ID and user type from the database
-                    user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
-                    UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
+                HandleUnsavedChanges();
+            }
+            else
+            {
+                // Get the user ID and user type from the database
+                user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
+                UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
 
-                    this.Close();
-                    Designs.TeacherDashBoard teacherDashBoard = new Designs.TeacherDashBoard(user_ID, userType);
-                    teacherDashBoard.Show();
-                }
+                this.Close();
+                Designs.TeacherDashBoard teacherDashBoard = new Designs.TeacherDashBoard(user_ID, userType);
+                teacherDashBoard.Show();
             }
         }
 
-
         private void profileViewBtn_Click(object sender, EventArgs e)
         {
-            // Hide the profilePanel
             profilePanel.Visible = true;
+            archivePanel.Visible = false;
 
             // Change the image of the teacherAccountOptionBtn to the selected image
-            profileViewBtn.Values.Image = Properties.Resources.profileBtnActive;
-            archiveViewBtn.Values.Image = Properties.Resources.archiveBtnNotActive;
+            profileViewBtn.Image = Properties.Resources.profileBtnActive;
+            archiveViewBtn.Image = Properties.Resources.archiveBtnNotActive;
         }
 
         private void archiveViewBtn_Click(object sender, EventArgs e)
         {
-            profilePanel.Visible = false;
+            Console.WriteLine("archiveViewBtn clicked");
 
-            // Change the image of the teacherAccountOptionBtn to the selected image
-            profileViewBtn.Values.Image = Properties.Resources.profileBtnNotActive;
-            archiveViewBtn.Values.Image = Properties.Resources.archiveBtnActive;
+            profilePanel.Visible = false;
+            archivePanel.Visible = true;
+
+            profileViewBtn.Image = Properties.Resources.profileBtnNotActive;
+            archiveViewBtn.Image = Properties.Resources.archiveBtnActive;
+
+            this.Refresh();
         }
+
+        private void PopulateFlowLayoutPanel()
+        {
+            DataTable examData = new DataTable();
+            objDABAccess.readDatathroughAdapter("SELECT * FROM examformsarchive", examData);
+
+            foreach (DataRow row in examData.Rows)
+            {
+                // Create an instance of archiveCard with both deletion and restoration actions
+                archiveCard examCard = new archiveCard(DeleteExamCard, RestoreExamCard);
+                examCard.SetTitle(row["examTitle"].ToString());
+                examCard.SetCode(row["examCode"].ToString());
+
+                flowLayoutTablelistExam.Controls.Add(examCard);
+            }
+        }
+
+        private void DeleteExamCard(string examCode)
+        {
+            try
+            {
+                // Construct the SQL query to select the record to be archived
+                string selectQuery = $"SELECT * FROM examformsarchive WHERE examCode = '{examCode}'";
+
+                // Read the data from the examforms table
+                DataTable examData = new DataTable();
+                objDABAccess.readDatathroughAdapter(selectQuery, examData);
+
+                if (examData.Rows.Count > 0)
+                {
+
+
+
+                    // Construct the SQL query to insert the record into the examFormsArchive table
+                    string insertQuery = "INSERT INTO examformsdeletedbackup (teacherID, examTitle, examCode, examTotalStudents, examCreated, examDeadlineDate, examDeadlineTime, examStatus) " +
+                                         "VALUES (@teacherID, @examTitle, @examCode, @examTotalStudents, @examCreated, @examDeadlineDate, @examDeadlineTime, @examStatus)";
+
+
+                    MySqlCommand insertCommand = new MySqlCommand(insertQuery);
+                    insertCommand.Parameters.AddWithValue("@teacherID", examData.Rows[0]["teacherID"]);
+                    insertCommand.Parameters.AddWithValue("@examTitle", examData.Rows[0]["examTitle"]);
+                    insertCommand.Parameters.AddWithValue("@examCode", examData.Rows[0]["examCode"]);
+                    insertCommand.Parameters.AddWithValue("@examTotalStudents", examData.Rows[0]["examTotalStudents"]);
+                    insertCommand.Parameters.AddWithValue("@examCreated", examData.Rows[0]["examCreated"]);
+                    insertCommand.Parameters.AddWithValue("@examDeadlineDate", examData.Rows[0]["examDeadlineDate"]);
+                    insertCommand.Parameters.AddWithValue("@examDeadlineTime", examData.Rows[0]["examDeadlineTime"]);
+                    insertCommand.Parameters.AddWithValue("@examStatus", examData.Rows[0]["examStatus"]);
+
+                    // Execute the insert query to archive the record
+                    objDABAccess.executeQuery(insertCommand);
+
+                    // Construct the SQL query to delete the record from the examforms table
+                    string deleteQuery = $"DELETE FROM examformsarchive WHERE examCode = '{examCode}'";
+
+                    // Execute the delete query
+                    objDABAccess.executeQuery(new MySqlCommand(deleteQuery));
+                }
+                else
+                {
+                    MessageBox.Show("No record found with the provided exam code.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while deleting the exam: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void RestoreExamCard(string examCode)
+        {
+            try
+            {
+                // Construct the SQL query to select the record to be restored
+                string selectQuery = $"SELECT * FROM examformsarchive WHERE examCode = '{examCode}'";
+
+                // Read the data from the examformsdeletedbackup table
+                DataTable examData = new DataTable();
+                objDABAccess.readDatathroughAdapter(selectQuery, examData);
+
+                if (examData.Rows.Count > 0)
+                {
+                    // Construct the SQL query to insert the record back into the examformsarchive table
+                    string insertQuery = "INSERT INTO examforms (teacherID, examTitle, examCode, examTotalStudents, examCreated, examDeadlineDate, examDeadlineTime, examStatus) " +
+                                         "VALUES (@teacherID, @examTitle, @examCode, @examTotalStudents, @examCreated, @examDeadlineDate, @examDeadlineTime, @examStatus)";
+
+                    MySqlCommand insertCommand = new MySqlCommand(insertQuery);
+                    insertCommand.Parameters.AddWithValue("@teacherID", examData.Rows[0]["teacherID"]);
+                    insertCommand.Parameters.AddWithValue("@examTitle", examData.Rows[0]["examTitle"]);
+                    insertCommand.Parameters.AddWithValue("@examCode", examData.Rows[0]["examCode"]);
+                    insertCommand.Parameters.AddWithValue("@examTotalStudents", examData.Rows[0]["examTotalStudents"]);
+                    insertCommand.Parameters.AddWithValue("@examCreated", examData.Rows[0]["examCreated"]);
+                    insertCommand.Parameters.AddWithValue("@examDeadlineDate", examData.Rows[0]["examDeadlineDate"]);
+                    insertCommand.Parameters.AddWithValue("@examDeadlineTime", examData.Rows[0]["examDeadlineTime"]);
+                    insertCommand.Parameters.AddWithValue("@examStatus", examData.Rows[0]["examStatus"]);
+
+                    // Execute the insert query to restore the record
+                    objDABAccess.executeQuery(insertCommand);
+
+                    // Construct the SQL query to delete the record from the examformsdeletedbackup table
+                    string deleteQuery = $"DELETE FROM examformsarchive WHERE examCode = '{examCode}'";
+
+                    // Execute the delete query
+                    objDABAccess.executeQuery(new MySqlCommand(deleteQuery));
+                    // Clear existing controls from the flow layout panel
+                    flowLayoutTablelistExam.Controls.Clear();
+                    PopulateFlowLayoutPanel();
+                }
+                else
+                {
+                    MessageBox.Show("No record found with the provided exam code in the deleted backup.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while restoring the exam: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }
