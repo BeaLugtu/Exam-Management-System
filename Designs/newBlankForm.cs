@@ -6,6 +6,7 @@ using System.IO;
 using Exam_Management_System;
 using Exam_Management_System.Designs;
 using System.Drawing;
+using System.ComponentModel.Design;
 
 namespace TeacherDashboard
 {
@@ -17,12 +18,17 @@ namespace TeacherDashboard
         private string lastSelectedQuestionType;
 
         string selectedFilePath = "";
-        public newBlankForm()
+        private string user_ID;
+        private string accounttype;
+
+
+        public newBlankForm(string userID, UserType userType)
         {
             InitializeComponent();
             GenerateExamCode(); // Call the method to generate the exam code when the form is initialized
             questionType_DB.Items.AddRange(new object[] { "Identification", "Paragraph Form", "Multiple Choice", "Contextual Paragraph", "Contextual Image", "Contextual Paragraph & Image" });
-
+            this.user_ID = userID;
+            accounttype = userType.ToString();
             questionType_DB.DropDownStyle = ComboBoxStyle.DropDownList;
 
             // Set the default selection to "Short Answer"
@@ -638,10 +644,11 @@ namespace TeacherDashboard
                 DateTime examCreated = DateTime.Now;
 
                 // Use parameterized query to insert data into the examforms table
-                string query = "INSERT INTO examforms (examCode, examTitle, examCreated, examDeadlineDate, examDeadlineTime, examStatus, examTotalStudents) " +
-                                "VALUES (@examCode, @examTitle, @examCreated, @examDeadlineDate, @examDeadlineTime, @examStatus, @examTotalStudents)";
+                string query = "INSERT INTO examforms (teacherID, examCode, examTitle, examCreated, examDeadlineDate, examDeadlineTime, examStatus, examTotalStudents) " +
+                                "VALUES (@user_ID, @examCode, @examTitle, @examCreated, @examDeadlineDate, @examDeadlineTime, @examStatus, @examTotalStudents)";
 
                 MySqlCommand command = new MySqlCommand(query);
+                command.Parameters.AddWithValue("@user_ID", user_ID);
                 command.Parameters.AddWithValue("@examCode", examCode);
                 command.Parameters.AddWithValue("@examTitle", examTitle);
                 command.Parameters.AddWithValue("@examCreated", examCreated.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -766,9 +773,21 @@ namespace TeacherDashboard
             {
                 // Close the application when newBlankForm is closed
                 Application.Exit();
+                
             };
         }
 
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the NewBlankForm and pass the instance of Form1
+            // Create an instance of teacherDashboardForm
+            // Get the user ID and user type from the database
 
+            this.Close();
+            TeacherDashBoard dashboardForm = new TeacherDashBoard(user_ID, UserType.Teacher);
+
+            // Show the teacherDashboardForm
+            dashboardForm.Show();
+        }
     }
 }

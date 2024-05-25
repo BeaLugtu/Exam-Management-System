@@ -121,6 +121,7 @@ namespace Exam_Management_System
                         // Open the dashboard for teachers
                         Designs.TeacherDashBoard teacherDashboard = new Designs.TeacherDashBoard(userID, UserType.Teacher);
                         teacherDashboard.Show();
+    
                     }
                     else
                     {

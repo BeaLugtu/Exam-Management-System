@@ -58,14 +58,14 @@ namespace Exam_Management_System.Designs
         private void InitializeHoverEffects()
         {
             // Hover effect for kryptonButton5
-            originalSize = kryptonButton5.Size;
-            originalImage = kryptonButton5.Values.Image;
+            originalSize = profileShowBtn.Size;
+            originalImage = profileShowBtn.Values.Image;
             if (originalImage != null)
             {
                 originalImageSize = originalImage.Size;
             }
-            kryptonButton5.MouseEnter += KryptonButton5_MouseEnter;
-            kryptonButton5.MouseLeave += KryptonButton5_MouseLeave;
+            profileShowBtn.MouseEnter += KryptonButton5_MouseEnter;
+            profileShowBtn.MouseLeave += KryptonButton5_MouseLeave;
 
             // Hover effect for notificationBtn
             originalSizeNotificationBtn = notificationBtn.Size;
@@ -87,8 +87,13 @@ namespace Exam_Management_System.Designs
         // Method to populate the flowLayoutTablelistExam with teacherExamHistoCard controls
         private void PopulateFlowLayoutPanel()
         {
+            // Assuming you have the teacher's ID stored in a variable called teacherID
+            string query = "SELECT * FROM examforms WHERE teacherID = @userID";
+            MySqlCommand cmd = new MySqlCommand(query);
+            cmd.Parameters.AddWithValue("@userID", userID);
+
             DataTable examData = new DataTable();
-            dbAccess.readDatathroughAdapter("SELECT * FROM examforms", examData);
+            dbAccess.readDatathroughAdapter1(cmd, examData);
 
             foreach (DataRow row in examData.Rows)
             {
@@ -138,21 +143,14 @@ namespace Exam_Management_System.Designs
         private void blankForm_BTN_Click(object sender, EventArgs e)
         {
             // Create a new instance of the NewBlankForm and pass the instance of Form1
-            newBlankForm newForm = new newBlankForm();
-
+            newBlankForm newForm = new newBlankForm(userID, userType);
             // Show the new form
             newForm.Show();
 
             this.Hide();
         }
 
-        private void LoginBtn_Click(object sender, EventArgs e)
-        {
-            // Hide the current form
-            Designs.Profile profile = new Designs.Profile(userID, userType);
-            profile.Show();
-            this.Hide();
-        }
+
 
         private void notificationBtn_Click(object sender, EventArgs e)
         {
@@ -222,9 +220,9 @@ namespace Exam_Management_System.Designs
             if (originalImage != null)
             {
                 // Enlarge the button slightly on hover
-                kryptonButton5.Size = new Size(originalSize.Width + 3, originalSize.Height + 3);
+                profileShowBtn.Size = new Size(originalSize.Width + 3, originalSize.Height + 3);
                 // Enlarge the image slightly on hover
-                kryptonButton5.Values.Image = new Bitmap(originalImage, new Size(originalImageSize.Width + 3, originalImageSize.Height + 3));
+                profileShowBtn.Values.Image = new Bitmap(originalImage, new Size(originalImageSize.Width + 3, originalImageSize.Height + 3));
             }
         }
 
@@ -234,9 +232,9 @@ namespace Exam_Management_System.Designs
             if (originalImage != null)
             {
                 // Restore the original size when the mouse leaves
-                kryptonButton5.Size = originalSize;
+                profileShowBtn.Size = originalSize;
                 // Restore the original image when the mouse leaves
-                kryptonButton5.Values.Image = originalImage;
+                profileShowBtn.Values.Image = originalImage;
             }
         }
 
@@ -347,6 +345,14 @@ namespace Exam_Management_System.Designs
         private void kryptonPictureBox4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ProfileView_Click(object sender, EventArgs e)
+        {
+            // Hide the current form
+            Designs.Profile profile = new Designs.Profile(userID, userType);
+            profile.Show();
+            this.Hide();
         }
     }
 }
