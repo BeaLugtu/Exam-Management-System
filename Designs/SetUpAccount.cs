@@ -38,7 +38,7 @@ namespace Exam_Management_System.Designs
             if (userType == UserType.Student)
             {
                 // Open the homepage for students
-                Designs.StudentDashboard studentDashboard = new Designs.StudentDashboard(userID, userType);
+                Designs.StudentDashboard studentDashboard = new Designs.StudentDashboard(userID);
                 studentDashboard.Show();
             }
             else if (userType == UserType.Teacher)

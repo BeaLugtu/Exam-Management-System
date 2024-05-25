@@ -62,37 +62,37 @@
     <Compile Include="Designs\Cards\ContextualCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Designs\Cards\ContextualCard.Designer.cs">
+    <Compile Include="Designs\Cards\ContextualCard.designer.cs">
       <DependentUpon>ContextualCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Designs\Cards\ContextualImageCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Designs\Cards\ContextualImageCard.Designer.cs">
+    <Compile Include="Designs\Cards\ContextualImageCard.designer.cs">
       <DependentUpon>ContextualImageCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Designs\Cards\ContextualImageParagraphCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Designs\Cards\ContextualImageParagraphCard.Designer.cs">
+    <Compile Include="Designs\Cards\ContextualImageParagraphCard.designer.cs">
       <DependentUpon>ContextualImageParagraphCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Designs\Cards\IdentificationCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Designs\Cards\IdentificationCard.Designer.cs">
+    <Compile Include="Designs\Cards\IdentificationCard.designer.cs">
       <DependentUpon>IdentificationCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Designs\Cards\MultipleChoiceCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Designs\Cards\MultipleChoiceCard.Designer.cs">
+    <Compile Include="Designs\Cards\MultipleChoiceCard.designer.cs">
       <DependentUpon>MultipleChoiceCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Designs\Cards\ParagraphCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Designs\Cards\ParagraphCard.Designer.cs">
+    <Compile Include="Designs\Cards\ParagraphCard.designer.cs">
       <DependentUpon>ParagraphCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Designs\CheckingPreview.cs">
