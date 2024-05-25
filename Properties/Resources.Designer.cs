@@ -73,6 +73,26 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap archiveBtnActive {
+            get {
+                object obj = ResourceManager.GetObject("archiveBtnActive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap archiveBtnNotActive {
+            get {
+                object obj = ResourceManager.GetObject("archiveBtnNotActive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap darkStudentOption {
             get {
                 object obj = ResourceManager.GetObject("darkStudentOption", resourceCulture);
@@ -203,9 +223,15 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
         internal static System.Drawing.Bitmap question_mark {
             get {
                 object obj = ResourceManager.GetObject("question_mark", resourceCulture);
+
+        internal static System.Drawing.Bitmap profileBtnActive {
+            get {
+                object obj = ResourceManager.GetObject("profileBtnActive", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,6 +239,7 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
         internal static System.Drawing.Bitmap Radio_Button_Selected__1_ {
             get {
                 object obj = ResourceManager.GetObject("Radio_Button_Selected__1_", resourceCulture);
@@ -276,6 +303,11 @@ namespace Exam_Management_System.Properties {
         internal static System.Drawing.Bitmap Rectangle_415 {
             get {
                 object obj = ResourceManager.GetObject("Rectangle_415", resourceCulture);
+
+        internal static System.Drawing.Bitmap profileBtnNotActive {
+            get {
+                object obj = ResourceManager.GetObject("profileBtnNotActive", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

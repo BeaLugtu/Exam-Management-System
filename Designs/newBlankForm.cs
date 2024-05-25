@@ -6,6 +6,7 @@ using System.IO;
 using Exam_Management_System;
 using Exam_Management_System.Designs;
 using System.Drawing;
+using System.ComponentModel.Design;
 
 namespace TeacherDashboard
 {
@@ -14,14 +15,20 @@ namespace TeacherDashboard
         DBAccess objDBAccess = new DBAccess();
         private bool isDeadlineSelected = false;
         private PreviewForm previewFormInstance;
+        private string lastSelectedQuestionType;
 
         string selectedFilePath = "";
-        public newBlankForm()
+        private string user_ID;
+        private string accounttype;
+
+
+        public newBlankForm(string userID, UserType userType)
         {
             InitializeComponent();
             GenerateExamCode(); // Call the method to generate the exam code when the form is initialized
             questionType_DB.Items.AddRange(new object[] { "Identification", "Paragraph Form", "Multiple Choice", "Contextual Paragraph", "Contextual Image", "Contextual Paragraph & Image" });
-
+            this.user_ID = userID;
+            accounttype = userType.ToString();
             questionType_DB.DropDownStyle = ComboBoxStyle.DropDownList;
 
             // Set the default selection to "Short Answer"
@@ -48,6 +55,8 @@ namespace TeacherDashboard
             contextualPicOnly_PB.Visible = false;
             contextualPara_TB.Visible = false;
             contextualPic_PB.Visible = false;
+            contextualFromQ_TB.Visible = false;
+            contextualToQ_TB.Visible = false;
 
             deleteA_BTN.Visible = false;
             fileName_LBL.Visible = false;
@@ -103,15 +112,14 @@ namespace TeacherDashboard
             string questionType = questionType_DB.SelectedItem?.ToString();
             int manualCheck = manualC_CB.Checked ? 1 : 0;
             int? points = null;
+            int randomizer = 1; // Default value for randomizer
+            int? contextualFromQ = null;
+            int? contextualToQ = null;
+            int? questionNumber = null; // Default to null
 
             // Handle point requirement based on question type
-            if (questionType == "Contextual Image" || questionType == "Contextual Paragraph" || questionType == "Contextual Paragraph & Image")
+            if (questionType != "Contextual Paragraph" && questionType != "Contextual Paragraph & Image" && questionType != "Contextual Image")
             {
-                points = null; // Points set to null for specific question types
-            }
-            else
-            {
-                // Ensure points are entered for other question types
                 if (string.IsNullOrWhiteSpace(point_TB.Text) || !int.TryParse(point_TB.Text, out int pointValue))
                 {
                     MessageBox.Show("Please enter a valid point value.");
@@ -120,82 +128,35 @@ namespace TeacherDashboard
                 points = pointValue;
             }
 
-            // Check if manual checking checkbox is not checked
-            if (!manualC_CB.Checked)
+            // Handle contextual range inputs
+            if (!string.IsNullOrWhiteSpace(contextualFromQ_TB.Text) && int.TryParse(contextualFromQ_TB.Text, out int fromQ))
             {
-                switch (questionType)
-                {
-                    case "Identification":
-                        if (string.IsNullOrWhiteSpace(identification_TB.Text))
-                        {
-                            MessageBox.Show("Please enter a short answer.");
-                            return;
-                        }
-                        break;
-                    case "Paragraph Form":
-                        if (string.IsNullOrWhiteSpace(longAnswer_TB.Text))
-                        {
-                            MessageBox.Show("Please enter a long answer.");
-                            return;
-                        }
-                        break;
-                    case "Multiple Choice":
-                        if (string.IsNullOrWhiteSpace(multiple1_TB.Text) ||
-                            string.IsNullOrWhiteSpace(multiple2_TB.Text))
-                        {
-                            MessageBox.Show("Please enter at least two options for the multiple choice question.");
-                            return;
-                        }
-                        if (!multiple1_RB.Checked && !multiple2_RB.Checked &&
-                            !multiple3_RB.Checked && !multiple4_RB.Checked)
-                        {
-                            MessageBox.Show("Please select an answer for the multiple choice question.");
-                            return;
-                        }
-                        break;
-                    case "Contextual Paragraph":
-                        if (string.IsNullOrWhiteSpace(contextualParaOnly_TB.Text))
-                        {
-                            MessageBox.Show("Please enter the contextual paragraph.");
-                            return;
-                        }
-                        break;
-                    case "Contextual Image":
-                        if (contextualPicOnly_PB.Image == null)
-                        {
-                            MessageBox.Show("Please select an image for the contextual paragraph.");
-                            return;
-                        }
-                        break;
-                    case "Contextual Paragraph & Image":
-                        if (string.IsNullOrWhiteSpace(contextualPara_TB.Text) || contextualPic_PB.Image == null)
-                        {
-                            MessageBox.Show("Please enter the contextual paragraph and image.");
-                            return;
-                        }
-                        break;
-                }
+                contextualFromQ = fromQ;
+            }
+            if (!string.IsNullOrWhiteSpace(contextualToQ_TB.Text) && int.TryParse(contextualToQ_TB.Text, out int toQ))
+            {
+                contextualToQ = toQ;
+            }
+
+            // Determine if the current question is contextual
+            if (questionType == "Contextual Paragraph" || questionType == "Contextual Paragraph & Image" || questionType == "Contextual Image")
+            {
+                questionNumber = 0; // Set question number  to null for contextual questions
+                randomizer = 0; // Set randomizer to 0 for contextual questions
             }
             else
             {
-                identification_TB.Text = null;
-                longAnswer_TB.Text = null;
-                multiple1_RB.Text = null;
-                multiple2_RB.Text = null;
-                multiple3_RB.Text = null;
-                multiple4_RB.Text = null;
-                contextualParaOnly_TB.Text = null;
-            }
-
-            if (questionType == "Multiple Choice" && manualC_CB.Checked)
-            {
-                if (string.IsNullOrWhiteSpace(multiple1_TB.Text) ||
-                    string.IsNullOrWhiteSpace(multiple2_TB.Text))
+                questionNumber = GetNextQuestionNumber(examCode);
+                if (questionNumber.HasValue && contextualFromQ.HasValue && contextualToQ.HasValue)
                 {
-                    MessageBox.Show("Please enter at least two options for the multiple choice question.");
-                    return;
+                    if (questionNumber.Value >= contextualFromQ.Value && questionNumber.Value <= contextualToQ.Value)
+                    {
+                        randomizer = 0; // Set randomizer to 0 if within contextual range
+                    }
                 }
             }
+
+            // Other validations...
 
             byte[] fileData = null;
             if (!string.IsNullOrEmpty(selectedFilePath))
@@ -205,10 +166,10 @@ namespace TeacherDashboard
 
             string multipleChoiceOptions = string.Join(",", new string[]
             {
-        multiple1_TB.Text,
-        multiple2_TB.Text,
-        multiple3_TB.Text,
-        multiple4_TB.Text
+                 multiple1_TB.Text,
+                 multiple2_TB.Text,
+                 multiple3_TB.Text,
+                 multiple4_TB.Text
             }.Where(x => !string.IsNullOrWhiteSpace(x)));
 
             string correctAnswer = "";
@@ -219,15 +180,12 @@ namespace TeacherDashboard
 
             try
             {
-                // Get the next question number for the given exam code
-                int questionNumber = GetNextQuestionNumber(examCode);
-
                 // SQL query to insert values into the "examQuestions" table
-                string query = "INSERT INTO examQuestions (questionNumber, question, examCode, question_type, image, point, manual_check, multiplechoice_choices, multiplechoice_answer, identification, paragraph_type, contextual_paragraph) " +
-                               "VALUES (@QuestionNumber, @Question, @Code, @QuestionType, @Image, @Point, @ManualCheck, @MultipleChoiceOptions, @MultipleChoiceAnswer, @ShortAnswer, @LongAnswer, @ContextualParagraph)";
+                string query = "INSERT INTO examQuestions (questionNumber, question, examCode, question_type, image, point, manual_check, multiplechoice_choices, multiplechoice_answer, identification, paragraph_type, contextual_paragraph, randomizer, contextualFromQ, contextualToQ) " +
+                               "VALUES (@QuestionNumber, @Question, @Code, @QuestionType, @Image, @Point, @ManualCheck, @MultipleChoiceOptions, @MultipleChoiceAnswer, @ShortAnswer, @LongAnswer, @ContextualParagraph, @Randomizer, @ContextualFromQ, @ContextualToQ)";
 
                 MySqlCommand command = new MySqlCommand(query);
-                command.Parameters.AddWithValue("@QuestionNumber", questionNumber);
+                command.Parameters.AddWithValue("@QuestionNumber", questionNumber ?? (object)DBNull.Value);
                 command.Parameters.AddWithValue("@Question", question);
                 command.Parameters.AddWithValue("@Code", examCode);
                 command.Parameters.AddWithValue("@QuestionType", questionType);
@@ -239,6 +197,9 @@ namespace TeacherDashboard
                 command.Parameters.AddWithValue("@ShortAnswer", questionType == "Identification" ? identification_TB.Text : (object)DBNull.Value);
                 command.Parameters.AddWithValue("@LongAnswer", questionType == "Paragraph Form" ? longAnswer_TB.Text : (object)DBNull.Value);
                 command.Parameters.AddWithValue("@ContextualParagraph", questionType == "Contextual Paragraph" ? contextualParaOnly_TB.Text : (questionType == "Contextual Paragraph & Image" ? contextualPara_TB.Text : (object)DBNull.Value));
+                command.Parameters.AddWithValue("@Randomizer", randomizer);
+                command.Parameters.AddWithValue("@ContextualFromQ", contextualFromQ ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@ContextualToQ", contextualToQ ?? (object)DBNull.Value);
 
                 // Execute the query using the database class
                 objDBAccess.createConn(); // Ensure connection is open
@@ -248,34 +209,13 @@ namespace TeacherDashboard
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show("Data saved successfully.");
+
+                    // Reset the form to "Identification" question type
+                    questionType_DB.SelectedItem = "Identification";
+                    QuestionType_DB_SelectedIndexChanged(null, null);
+
                     // Clear text boxes after successful insertion
-                    question_TB.Clear();
-                    point_TB.Clear();
-                    identification_TB.Clear();
-                    longAnswer_TB.Clear();
-                    multiple1_TB.Clear();
-                    multiple2_TB.Clear();
-                    multiple3_TB.Clear();
-                    multiple4_TB.Clear();
-                    contextualParaOnly_TB.Clear();
-                    contextualPara_TB.Clear();
-                    manualC_CB.Checked = false;
-                    multiple1_RB.Checked = false;
-                    multiple2_RB.Checked = false;
-                    multiple3_RB.Checked = false;
-                    multiple4_RB.Checked = false;
-                    selectedFilePath = "";
-                    fileName_LBL.Text = "";
-                    fileName_LBL.Visible = false;
-                    deleteA_BTN.Visible = false;
-
-                    contextualPicOnly_PB.Image = Exam_Management_System.Properties.Resources.Sample; // Replace "Sample" with the name of your initial image resource
-                    contextualPic_PB.Image = Exam_Management_System.Properties.Resources.Sample;
-
-                    if (questionType == "Contextual Image")
-                    {
-                        attachment_BT.Visible = true;
-                    }
+                    ClearFields();
 
                     PreviewForm previewForm1 = Application.OpenForms.OfType<PreviewForm>().FirstOrDefault();
 
@@ -383,6 +323,23 @@ namespace TeacherDashboard
 
         private void QuestionType_DB_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Check if there is unsaved data in the current question type
+            if (IsUnsavedData())
+            {
+                // Prompt the user if they want to proceed without saving
+                var result = MessageBox.Show("There is unsaved data. Do you want to continue without saving?", "Unsaved Data", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.No)
+                {
+                    // Select the previously selected question type in the ComboBox
+                    questionType_DB.SelectedItem = lastSelectedQuestionType;
+                    return;
+                }
+            }
+
+            // Save the currently selected question type as the last selected
+            lastSelectedQuestionType = questionType_DB.SelectedItem?.ToString();
+
             // Handle question type selection change
             string selectedQuestionType = questionType_DB.SelectedItem?.ToString();
 
@@ -390,6 +347,7 @@ namespace TeacherDashboard
             {
                 case "Identification":
                     // Show short answer text box and hide other controls
+                    question_TB.Visible = true;
                     identification_TB.Visible = true;
                     longAnswer_TB.Visible = false;
                     multiple1_RB.Visible = false;
@@ -401,15 +359,20 @@ namespace TeacherDashboard
                     multiple3_TB.Visible = false;
                     multiple4_TB.Visible = false;
                     attachment_BT.Visible = false;
+                    manualC_CB.Visible = true;
+                    point_TB.Visible = true;
 
                     contextualParaOnly_TB.Visible = false;
                     contextualPicOnly_PB.Visible = false;
                     contextualPara_TB.Visible = false;
                     contextualPic_PB.Visible = false;
+                    contextualFromQ_TB.Visible = false;
+                    contextualToQ_TB.Visible = false;
                     break;
 
                 case "Paragraph Form":
                     // Show long answer text box and hide other controls
+                    question_TB.Visible = true;
                     identification_TB.Visible = false;
                     longAnswer_TB.Visible = true;
                     multiple1_RB.Visible = false;
@@ -421,15 +384,20 @@ namespace TeacherDashboard
                     multiple3_TB.Visible = false;
                     multiple4_TB.Visible = false;
                     attachment_BT.Visible = false;
+                    manualC_CB.Visible = true;
+                    point_TB.Visible = true;
 
                     contextualParaOnly_TB.Visible = false;
                     contextualPicOnly_PB.Visible = false;
                     contextualPara_TB.Visible = false;
                     contextualPic_PB.Visible = false;
+                    contextualFromQ_TB.Visible = false;
+                    contextualToQ_TB.Visible = false;
                     break;
 
                 case "Multiple Choice":
                     // Show multiple choice radio buttons and text boxes
+                    question_TB.Visible = true;
                     identification_TB.Visible = false;
                     longAnswer_TB.Visible = false;
                     multiple1_RB.Visible = true;
@@ -441,11 +409,15 @@ namespace TeacherDashboard
                     multiple3_TB.Visible = true;
                     multiple4_TB.Visible = true;
                     attachment_BT.Visible = false;
+                    manualC_CB.Visible = true;
+                    point_TB.Visible = true;
 
                     contextualParaOnly_TB.Visible = false;
                     contextualPicOnly_PB.Visible = false;
                     contextualPara_TB.Visible = false;
                     contextualPic_PB.Visible = false;
+                    contextualFromQ_TB.Visible = false;
+                    contextualToQ_TB.Visible = false;
                     break;
 
                 case "Contextual Paragraph":
@@ -468,6 +440,8 @@ namespace TeacherDashboard
                     contextualPicOnly_PB.Visible = false;
                     contextualPara_TB.Visible = false;
                     contextualPic_PB.Visible = false;
+                    contextualFromQ_TB.Visible = true;
+                    contextualToQ_TB.Visible = true;
                     break;
 
                 case "Contextual Image":
@@ -490,6 +464,8 @@ namespace TeacherDashboard
                     contextualPicOnly_PB.Visible = true;
                     contextualPara_TB.Visible = false;
                     contextualPic_PB.Visible = false;
+                    contextualFromQ_TB.Visible = true;
+                    contextualToQ_TB.Visible = true;
                     break;
 
                 case "Contextual Paragraph & Image":
@@ -512,8 +488,42 @@ namespace TeacherDashboard
                     contextualPicOnly_PB.Visible = false;
                     contextualPara_TB.Visible = true;
                     contextualPic_PB.Visible = true;
+                    contextualFromQ_TB.Visible = true;
+                    contextualToQ_TB.Visible = true;
                     break;
+            }
+        }
 
+        private bool IsUnsavedData()
+        {
+            string selectedQuestionType = questionType_DB.SelectedItem?.ToString();
+
+            switch (selectedQuestionType)
+            {
+                case "Identification":
+                    return identification_TB.Visible && !string.IsNullOrEmpty(identification_TB.Text);
+
+                case "Paragraph Form":
+                    return longAnswer_TB.Visible && !string.IsNullOrEmpty(longAnswer_TB.Text);
+
+                case "Multiple Choice":
+                    return (multiple1_TB.Visible && !string.IsNullOrEmpty(multiple1_TB.Text)) ||
+                           (multiple2_TB.Visible && !string.IsNullOrEmpty(multiple2_TB.Text)) ||
+                           (multiple3_TB.Visible && !string.IsNullOrEmpty(multiple3_TB.Text)) ||
+                           (multiple4_TB.Visible && !string.IsNullOrEmpty(multiple4_TB.Text));
+
+                case "Contextual Paragraph":
+                    return contextualParaOnly_TB.Visible && !string.IsNullOrEmpty(contextualParaOnly_TB.Text);
+
+                case "Contextual Image":
+                    return contextualPicOnly_PB.Visible && contextualPicOnly_PB.Image != Exam_Management_System.Properties.Resources.Sample;
+
+                case "Contextual Paragraph & Image":
+                    return (contextualPara_TB.Visible && !string.IsNullOrEmpty(contextualPara_TB.Text)) ||
+                           (contextualPic_PB.Visible && contextualPic_PB.Image != Exam_Management_System.Properties.Resources.Sample);
+
+                default:
+                    return false;
             }
         }
 
@@ -634,10 +644,11 @@ namespace TeacherDashboard
                 DateTime examCreated = DateTime.Now;
 
                 // Use parameterized query to insert data into the examforms table
-                string query = "INSERT INTO examforms (examCode, examTitle, examCreated, examDeadlineDate, examDeadlineTime, examStatus, examTotalStudents) " +
-                                "VALUES (@examCode, @examTitle, @examCreated, @examDeadlineDate, @examDeadlineTime, @examStatus, @examTotalStudents)";
+                string query = "INSERT INTO examforms (teacherID, examCode, examTitle, examCreated, examDeadlineDate, examDeadlineTime, examStatus, examTotalStudents) " +
+                                "VALUES (@user_ID, @examCode, @examTitle, @examCreated, @examDeadlineDate, @examDeadlineTime, @examStatus, @examTotalStudents)";
 
                 MySqlCommand command = new MySqlCommand(query);
+                command.Parameters.AddWithValue("@user_ID", user_ID);
                 command.Parameters.AddWithValue("@examCode", examCode);
                 command.Parameters.AddWithValue("@examTitle", examTitle);
                 command.Parameters.AddWithValue("@examCreated", examCreated.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -666,15 +677,30 @@ namespace TeacherDashboard
             }
         }
 
-
         private void ClearFields()
         {
-            examTitleBox.Text = "";
-            examEstimateBox.Text = "";
-            // Reset the deadline selected flag
-            isDeadlineSelected = false;
+            question_TB.Clear();
+            point_TB.Clear();
+            identification_TB.Clear();
+            longAnswer_TB.Clear();
+            multiple1_TB.Clear();
+            multiple2_TB.Clear();
+            multiple3_TB.Clear();
+            multiple4_TB.Clear();
+            contextualParaOnly_TB.Clear();
+            contextualPara_TB.Clear();
+            contextualFromQ_TB.Clear();
+            contextualToQ_TB.Clear();
+            manualC_CB.Checked = false;
+            multiple1_RB.Checked = false;
+            multiple2_RB.Checked = false;
+            multiple3_RB.Checked = false;
+            multiple4_RB.Checked = false;
+            selectedFilePath = "";
+            fileName_LBL.Text = "";
+            fileName_LBL.Visible = false;
+            deleteA_BTN.Visible = false;
         }
-
 
         private void view_BTN_Click(object sender, EventArgs e)
         {
@@ -747,9 +773,21 @@ namespace TeacherDashboard
             {
                 // Close the application when newBlankForm is closed
                 Application.Exit();
+                
             };
         }
 
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the NewBlankForm and pass the instance of Form1
+            // Create an instance of teacherDashboardForm
+            // Get the user ID and user type from the database
 
+            this.Close();
+            TeacherDashBoard dashboardForm = new TeacherDashBoard(user_ID, UserType.Teacher);
+
+            // Show the teacherDashboardForm
+            dashboardForm.Show();
+        }
     }
 }

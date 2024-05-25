@@ -71,7 +71,9 @@
             this.multiple2_RB = new Krypton.Toolkit.KryptonCheckBox();
             this.save_BTN = new Krypton.Toolkit.KryptonButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.contextualToQ_TB = new Krypton.Toolkit.KryptonTextBox();
             this.contextualParaOnly_TB = new Krypton.Toolkit.KryptonRichTextBox();
+            this.contextualFromQ_TB = new Krypton.Toolkit.KryptonTextBox();
             this.contextualPara_TB = new Krypton.Toolkit.KryptonRichTextBox();
             this.contextualPic_PB = new Krypton.Toolkit.KryptonPictureBox();
             this.contextualPicOnly_PB = new Krypton.Toolkit.KryptonPictureBox();
@@ -79,6 +81,9 @@
             this.kryptonPictureBox2 = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonCustomPaletteBase1 = new Krypton.Toolkit.KryptonCustomPaletteBase(this.components);
+
+            this.backBtn = new Krypton.Toolkit.KryptonButton();
+
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -186,7 +191,9 @@
             // view_BTN
             // 
             this.view_BTN.Location = new System.Drawing.Point(289, 44);
-            this.view_BTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
+            this.view_BTN.Margin = new System.Windows.Forms.Padding(2);
+
             this.view_BTN.Name = "view_BTN";
             this.view_BTN.Size = new System.Drawing.Size(19, 20);
             this.view_BTN.TabIndex = 48;
@@ -283,7 +290,9 @@
             this.label7.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.label7.Location = new System.Drawing.Point(272, 301);
-            this.label7.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+
+            this.label7.Margin = new System.Windows.Forms.Padding(5);
+
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 15);
             this.label7.TabIndex = 32;
@@ -319,8 +328,7 @@
             this.examDateDeadline.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.examDateDeadline.Location = new System.Drawing.Point(51, 262);
             this.examDateDeadline.Name = "examDateDeadline";
-            this.examDateDeadline.Palette = this.Program_DropButtonPalette;
-            this.examDateDeadline.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
+
             this.examDateDeadline.Size = new System.Drawing.Size(121, 27);
             this.examDateDeadline.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.examDateDeadline.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
@@ -602,13 +610,7 @@
             this.Program_DropButtonPalette.ButtonStyles.ButtonCustom1.StateCommon.Content.LongText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.Program_DropButtonPalette.ButtonStyles.ButtonCustom1.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.Program_DropButtonPalette.ButtonStyles.ButtonCustom1.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.Program_DropButtonPalette.ButtonStyles.ButtonCustom2.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.Program_DropButtonPalette.ButtonStyles.ButtonCustom2.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.Program_DropButtonPalette.ButtonStyles.ButtonCustom2.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.Program_DropButtonPalette.ButtonStyles.ButtonCustom2.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.Program_DropButtonPalette.ButtonStyles.ButtonCustom2.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+
             this.Program_DropButtonPalette.ThemeName = "";
             this.Program_DropButtonPalette.UseKryptonFileDialogs = true;
             // 
@@ -616,7 +618,8 @@
             // 
             this.attachment_BT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.attachment_BT.Location = new System.Drawing.Point(664, 277);
-            this.attachment_BT.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+
+            this.attachment_BT.Margin = new System.Windows.Forms.Padding(6);
             this.attachment_BT.Name = "attachment_BT";
             this.attachment_BT.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.attachment_BT.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
@@ -842,7 +845,9 @@
             this.question_TB.CueHint.TextV = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.question_TB.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.question_TB.Location = new System.Drawing.Point(540, 326);
-            this.question_TB.Margin = new System.Windows.Forms.Padding(16, 16, 16, 16);
+
+            this.question_TB.Margin = new System.Windows.Forms.Padding(16);
+
             this.question_TB.Name = "question_TB";
             this.question_TB.Size = new System.Drawing.Size(487, 106);
             this.question_TB.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
@@ -1005,7 +1010,9 @@
             this.longAnswer_TB.CueHint.TextV = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.longAnswer_TB.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.longAnswer_TB.Location = new System.Drawing.Point(539, 448);
-            this.longAnswer_TB.Margin = new System.Windows.Forms.Padding(16, 16, 16, 16);
+
+            this.longAnswer_TB.Margin = new System.Windows.Forms.Padding(16);
+
             this.longAnswer_TB.Name = "longAnswer_TB";
             this.longAnswer_TB.Size = new System.Drawing.Size(487, 52);
             this.longAnswer_TB.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
@@ -1219,7 +1226,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.contextualToQ_TB);
             this.panel1.Controls.Add(this.contextualParaOnly_TB);
+            this.panel1.Controls.Add(this.contextualFromQ_TB);
             this.panel1.Controls.Add(this.contextualPara_TB);
             this.panel1.Controls.Add(this.contextualPic_PB);
             this.panel1.Controls.Add(this.contextualPicOnly_PB);
@@ -1229,19 +1238,69 @@
             this.panel1.Size = new System.Drawing.Size(605, 482);
             this.panel1.TabIndex = 47;
             // 
+            // contextualToQ_TB
+            // 
+            this.contextualToQ_TB.CueHint.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.contextualToQ_TB.CueHint.CueHintText = "To Q#";
+            this.contextualToQ_TB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.contextualToQ_TB.Location = new System.Drawing.Point(173, 376);
+            this.contextualToQ_TB.Margin = new System.Windows.Forms.Padding(0);
+            this.contextualToQ_TB.Name = "contextualToQ_TB";
+            this.contextualToQ_TB.Size = new System.Drawing.Size(100, 34);
+            this.contextualToQ_TB.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.contextualToQ_TB.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.contextualToQ_TB.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.contextualToQ_TB.StateCommon.Border.ColorAlign = Krypton.Toolkit.PaletteRectangleAlign.Control;
+            this.contextualToQ_TB.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.contextualToQ_TB.StateCommon.Border.Rounding = 10F;
+            this.contextualToQ_TB.StateCommon.Border.Width = 1;
+            this.contextualToQ_TB.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.contextualToQ_TB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextualToQ_TB.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5);
+            this.contextualToQ_TB.TabIndex = 53;
+            // 
             // contextualParaOnly_TB
             // 
             this.contextualParaOnly_TB.Location = new System.Drawing.Point(60, 158);
-            this.contextualParaOnly_TB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
+            this.contextualParaOnly_TB.Margin = new System.Windows.Forms.Padding(2);
+
             this.contextualParaOnly_TB.Name = "contextualParaOnly_TB";
             this.contextualParaOnly_TB.Size = new System.Drawing.Size(487, 199);
             this.contextualParaOnly_TB.TabIndex = 26;
             this.contextualParaOnly_TB.Text = "";
             // 
+            // contextualFromQ_TB
+            // 
+            this.contextualFromQ_TB.CueHint.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.contextualFromQ_TB.CueHint.CueHintText = "From Q#";
+            this.contextualFromQ_TB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.contextualFromQ_TB.Location = new System.Drawing.Point(59, 376);
+            this.contextualFromQ_TB.Margin = new System.Windows.Forms.Padding(0);
+            this.contextualFromQ_TB.Name = "contextualFromQ_TB";
+            this.contextualFromQ_TB.Size = new System.Drawing.Size(100, 34);
+            this.contextualFromQ_TB.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.contextualFromQ_TB.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.contextualFromQ_TB.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.contextualFromQ_TB.StateCommon.Border.ColorAlign = Krypton.Toolkit.PaletteRectangleAlign.Control;
+            this.contextualFromQ_TB.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.contextualFromQ_TB.StateCommon.Border.Rounding = 10F;
+            this.contextualFromQ_TB.StateCommon.Border.Width = 1;
+            this.contextualFromQ_TB.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.contextualFromQ_TB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextualFromQ_TB.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5);
+            this.contextualFromQ_TB.TabIndex = 52;
+            // 
             // contextualPara_TB
             // 
             this.contextualPara_TB.Location = new System.Drawing.Point(316, 158);
-            this.contextualPara_TB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
+            this.contextualPara_TB.Margin = new System.Windows.Forms.Padding(2);
+
             this.contextualPara_TB.Name = "contextualPara_TB";
             this.contextualPara_TB.Size = new System.Drawing.Size(230, 201);
             this.contextualPara_TB.TabIndex = 25;
@@ -1251,7 +1310,9 @@
             // 
             this.contextualPic_PB.Image = ((System.Drawing.Image)(resources.GetObject("contextualPic_PB.Image")));
             this.contextualPic_PB.Location = new System.Drawing.Point(60, 158);
-            this.contextualPic_PB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
+            this.contextualPic_PB.Margin = new System.Windows.Forms.Padding(2);
+
             this.contextualPic_PB.Name = "contextualPic_PB";
             this.contextualPic_PB.Size = new System.Drawing.Size(262, 200);
             this.contextualPic_PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1261,7 +1322,9 @@
             // contextualPicOnly_PB
             // 
             this.contextualPicOnly_PB.Location = new System.Drawing.Point(59, 158);
-            this.contextualPicOnly_PB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
+            this.contextualPicOnly_PB.Margin = new System.Windows.Forms.Padding(2);
+
             this.contextualPicOnly_PB.Name = "contextualPicOnly_PB";
             this.contextualPicOnly_PB.Size = new System.Drawing.Size(488, 201);
             this.contextualPicOnly_PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1282,10 +1345,12 @@
             // kryptonPictureBox2
             // 
             this.kryptonPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPictureBox2.Image")));
-            this.kryptonPictureBox2.Location = new System.Drawing.Point(100, 120);
+
+            this.kryptonPictureBox2.Location = new System.Drawing.Point(128, 120);
             this.kryptonPictureBox2.Margin = new System.Windows.Forms.Padding(0);
             this.kryptonPictureBox2.Name = "kryptonPictureBox2";
-            this.kryptonPictureBox2.Size = new System.Drawing.Size(985, 24);
+            this.kryptonPictureBox2.Size = new System.Drawing.Size(959, 24);
+
             this.kryptonPictureBox2.TabIndex = 6;
             this.kryptonPictureBox2.TabStop = false;
             // 
@@ -1308,12 +1373,101 @@
             this.kryptonCustomPaletteBase1.ThemeName = "";
             this.kryptonCustomPaletteBase1.UseKryptonFileDialogs = true;
             // 
+
+            // backBtn
+            // 
+            this.backBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backBtn.Location = new System.Drawing.Point(95, 120);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.backBtn.OverrideDefault.Border.Rounding = 10F;
+            this.backBtn.OverrideDefault.Content.Padding = new System.Windows.Forms.Padding(25, 5, 25, 5);
+            this.backBtn.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.backBtn.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.backBtn.OverrideDefault.Content.ShortText.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBtn.Size = new System.Drawing.Size(29, 24);
+            this.backBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton1.StateCommon.Back.Image")));
+            this.backBtn.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.backBtn.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.backBtn.StateCommon.Border.Rounding = 10F;
+            this.backBtn.StateCommon.Content.Padding = new System.Windows.Forms.Padding(25, 5, 25, 5);
+            this.backBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.backBtn.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.backBtn.StateCommon.Content.ShortText.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.backBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBtn.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.StateDisabled.Border.Color2 = System.Drawing.Color.White;
+            this.backBtn.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.backBtn.StateDisabled.Border.Rounding = 10F;
+            this.backBtn.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(25, 5, 25, 5);
+            this.backBtn.StateDisabled.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.backBtn.StateDisabled.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.backBtn.StateDisabled.Content.ShortText.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBtn.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.StateNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.StateNormal.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.backBtn.StateNormal.Border.Rounding = 10F;
+            this.backBtn.StateNormal.Content.Padding = new System.Windows.Forms.Padding(25, 5, 25, 5);
+            this.backBtn.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBtn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.backBtn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.backBtn.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.backBtn.StatePressed.Border.Rounding = 10F;
+            this.backBtn.StatePressed.Border.Width = 1;
+            this.backBtn.StatePressed.Content.Padding = new System.Windows.Forms.Padding(25, 5, 25, 5);
+            this.backBtn.StatePressed.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.StatePressed.Content.ShortText.Font = new System.Drawing.Font("Inter SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.backBtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.backBtn.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.backBtn.StateTracking.Border.Rounding = 12F;
+            this.backBtn.StateTracking.Border.Width = 1;
+            this.backBtn.StateTracking.Content.Padding = new System.Windows.Forms.Padding(25, 5, 25, 5);
+            this.backBtn.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.backBtn.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Inter SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBtn.TabIndex = 49;
+            this.backBtn.Values.Text = "";
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+
             // newBlankForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(1184, 711);
+
+            this.Controls.Add(this.backBtn);
+
             this.Controls.Add(this.save_BTN);
             this.Controls.Add(this.multiple4_TB);
             this.Controls.Add(this.multiple4_RB);
@@ -1341,6 +1495,7 @@
             this.Controls.Add(this.timeDateLbl);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -1354,6 +1509,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionType_DB)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contextualPic_PB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contextualPicOnly_PB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox4)).EndInit();
@@ -1415,5 +1571,9 @@
         private Krypton.Toolkit.KryptonPictureBox contextualPic_PB;
         private Krypton.Toolkit.KryptonCustomPaletteBase kryptonCustomPaletteBase1;
         private Krypton.Toolkit.KryptonCustomPaletteBase Program_DropButtonPalette;
+
+        private Krypton.Toolkit.KryptonTextBox contextualToQ_TB;
+        private Krypton.Toolkit.KryptonTextBox contextualFromQ_TB;
+        private Krypton.Toolkit.KryptonButton backBtn;
     }
 }
