@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,13 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Exam_Management_System.Designs
 {
-    
     public partial class StudentDashboard : Form
     {
         private string userID;
+        private UserType userType;
+
         DBAccess objDABAccess = new DBAccess();
         DataTable dtUsers = new DataTable();
         private ExamForm examForm;
@@ -29,26 +30,32 @@ namespace Exam_Management_System.Designs
 
         public StudentDashboard(string userID, UserType userType)
         {
-            string query = "Select * from Users Where ID= '" + userID + "'";
-            objDABAccess.readDatathroughAdapter(query, dtUsers);
             InitializeComponent();
             InitializeHoverEffects();
-            this.userID = userID.ToString();
-        }
+            this.userID = userID;
+            this.userType = userType;
 
+            // Load user profile picture
+            LoadUserProfilePicture();
+
+            // Start a timer to update the time label every second
+            Timer timer = new Timer();
+            timer.Interval = 1000; // 1 second interval
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
 
         private void InitializeHoverEffects()
         {
-
-            // Hover effect for kryptonButton5
-            originalSize = kryptonButton5.Size;
-            originalImage = kryptonButton5.Values.Image;
+            // Hover effect for ProfileView button
+            originalSize = ProfileView.Size;
+            originalImage = ProfileView.Values.Image;
             if (originalImage != null)
             {
                 originalImageSize = originalImage.Size;
             }
-            kryptonButton5.MouseEnter += KryptonButton5_MouseEnter;
-            kryptonButton5.MouseLeave += KryptonButton5_MouseLeave;
+            ProfileView.MouseEnter += KryptonButton5_MouseEnter;
+            ProfileView.MouseLeave += KryptonButton5_MouseLeave;
 
             // Hover effect for notificationBtn
             originalSizeNotificationBtn = notificationBtn.Size;
@@ -61,43 +68,26 @@ namespace Exam_Management_System.Designs
             notificationBtn.MouseLeave += NotificationBtn_MouseLeave;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void pictureBox1_Click(object sender, EventArgs e) { }
 
         private void KryptonButton5_MouseEnter(object sender, EventArgs e)
         {
             if (originalImage != null)
             {
                 // Enlarge the button slightly on hover
-                kryptonButton5.Size = new Size(originalSize.Width + 3, originalSize.Height + 3);
+                ProfileView.Size = new Size(originalSize.Width + 3, originalSize.Height + 3);
                 // Enlarge the image slightly on hover
-                kryptonButton5.Values.Image = new Bitmap(originalImage, new Size(originalImageSize.Width + 3, originalImageSize.Height + 3));
+                ProfileView.Values.Image = new Bitmap(originalImage, new Size(originalImageSize.Width + 3, originalImageSize.Height + 3));
             }
         }
 
-
-        private void UpdateTimeLabel()
-        {
-            DateTime currentTime = DateTime.Now;
-            string formattedDateTime = currentTime.ToString("h:mm tt - ddd, MMM d");
-            timeDateLbl.Text = formattedDateTime;
-        }
-
-        // Timer tick event handler to update the time label
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            UpdateTimeLabel();
-        }
-
-        // Mouse leave event handler for kryptonButton5
         private void KryptonButton5_MouseLeave(object sender, EventArgs e)
         {
-
+            // Restore the original size and image when the mouse leaves
+            ProfileView.Size = originalSize;
+            ProfileView.Values.Image = originalImage;
         }
 
-        // Hover effect for notificationBtn
         private void NotificationBtn_MouseEnter(object sender, EventArgs e)
         {
             if (originalImageNotificationBtn != null)
@@ -109,35 +99,31 @@ namespace Exam_Management_System.Designs
             }
         }
 
-        // Mouse leave event handler for notificationBtn
         private void NotificationBtn_MouseLeave(object sender, EventArgs e)
         {
             if (originalImageNotificationBtn != null)
             {
-                // Restore the original size when the mouse leaves
+                // Restore the original size and image when the mouse leaves
                 notificationBtn.Size = originalSizeNotificationBtn;
-                // Restore the original image when the mouse leaves
                 notificationBtn.Values.Image = originalImageNotificationBtn;
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+        private void label1_Click(object sender, EventArgs e) { }
 
-        }
-
-        private void SubmitLbl_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void SubmitLbl_Click(object sender, EventArgs e) { }
 
         private void StudentDashboard_Load(object sender, EventArgs e)
         {
+            UpdateTimeLabel();
 
+            // Load user profile picture
+            LoadUserProfilePicture();
         }
+
         private void Exam_Click(object sender, EventArgs e)
         {
-            string query = "Select * from Users Where ID= '" + userID + "'";
+            string query = $"Select * from Users Where ID= '{userID}'";
             objDABAccess.readDatathroughAdapter(query, dtUsers);
             userID = dtUsers.Rows[0]["ID"].ToString();
             string Examcode = examCodeTB.Text;
@@ -146,25 +132,45 @@ namespace Exam_Management_System.Designs
             examForm.Show();
             this.Hide();
         }
-        private void ProfileBtn_Click(object sender, EventArgs e)
-        {
-            string query = "Select * from Users Where ID= '" + userID + "'";
 
+
+        private void ProfileView_Click(object sender, EventArgs e)
+        {
+            // Hide the current form
+            Designs.Profile profile = new Designs.Profile(userID, userType);
+            profile.Show();
+            this.Hide();
+        }
+
+        // Update the time label with the current time
+        private void UpdateTimeLabel()
+        {
+            DateTime currentTime = DateTime.Now;
+            string formattedDateTime = currentTime.ToString("h:mm tt - ddd, MMM d");
+            timeLbl.Text = formattedDateTime;
+        }
+
+        // Timer tick event handler to update the time label
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            UpdateTimeLabel();
+        }
+
+        // Load user profile picture from database
+        private void LoadUserProfilePicture()
+        {
+            string query = $"Select profile_pic from Users Where ID= '{userID}'";
             objDABAccess.readDatathroughAdapter(query, dtUsers);
 
-            if (dtUsers.Rows.Count > 0)
+            if (dtUsers.Rows.Count > 0 && dtUsers.Rows[0]["profile_pic"] != DBNull.Value)
             {
-                // Get the user ID and user type from the database
-                userID = dtUsers.Rows[0]["ID"].ToString();
-                UserType userType = (UserType)Enum.Parse(typeof(UserType), dtUsers.Rows[0]["User_Type"].ToString());
-                objDABAccess.closeConn();
-                profileForm = new Profile(userID, userType);
-                profileForm.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Invalid Input. Please Try Again.");
+                byte[] imageData = (byte[])dtUsers.Rows[0]["profile_pic"];
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    ProfileView.Values.Image = Image.FromStream(ms);
+                    originalImage = ProfileView.Values.Image;
+                    originalImageSize = originalImage.Size;
+                }
             }
         }
     }
