@@ -73,6 +73,26 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap archiveBtnActive {
+            get {
+                object obj = ResourceManager.GetObject("archiveBtnActive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap archiveBtnNotActive {
+            get {
+                object obj = ResourceManager.GetObject("archiveBtnNotActive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap darkStudentOption {
             get {
                 object obj = ResourceManager.GetObject("darkStudentOption", resourceCulture);
@@ -186,6 +206,26 @@ namespace Exam_Management_System.Properties {
         internal static System.Drawing.Bitmap profile_pic {
             get {
                 object obj = ResourceManager.GetObject("profile pic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap profileBtnActive {
+            get {
+                object obj = ResourceManager.GetObject("profileBtnActive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap profileBtnNotActive {
+            get {
+                object obj = ResourceManager.GetObject("profileBtnNotActive", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

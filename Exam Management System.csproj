@@ -53,11 +53,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBAccess.cs" />
+
     <Compile Include="Designs\CheckingPreview.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Designs\CheckingPreview.Designer.cs">
       <DependentUpon>CheckingPreview.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Designs\ChooseAccountSignUpForm.cs">
       <SubType>Form</SubType>
@@ -151,8 +153,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+
     <EmbeddedResource Include="Designs\CheckingPreview.resx">
       <DependentUpon>CheckingPreview.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\ChooseAccountSignUpForm.resx">
       <DependentUpon>ChooseAccountSignUpForm.cs</DependentUpon>
@@ -230,6 +234,12 @@
     <Content Include="assets\Student Sign up Form.png" />
     <Content Include="assets\StudentAccountOption.png" />
     <Content Include="assets\TeacherAccountOption.png" />
+
+    <None Include="Resources\Group 1799.png" />
+    <None Include="Resources\Group 1800.png" />
+    <None Include="Resources\fgdxfdg.png" />
+    <None Include="Resources\414.png" />
+
     <None Include="Resources\Group 175.png" />
     <None Include="Resources\notification icon.png" />
     <None Include="Resources\profile pic.jpeg" />

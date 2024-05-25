@@ -66,6 +66,7 @@ namespace Exam_Management_System.Designs
             }
         }
 
+
         private void viewSubmissions_BTN_Click(object sender, EventArgs e)
         {
             // Instantiate the CheckingPreview form
@@ -84,6 +85,7 @@ namespace Exam_Management_System.Designs
             // Optionally, handle the CheckingPreview form closing event to show the TeacherDashboard form again
             checkingPreview.FormClosed += (s, args) => teacherDashboard.Show();
         }
+
 
     }
 }
