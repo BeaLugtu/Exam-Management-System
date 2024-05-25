@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Homepage));
             this.IDLbl = new Krypton.Toolkit.KryptonLabel();
             this.ProfileBtn = new System.Windows.Forms.Button();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
@@ -110,6 +111,7 @@
             this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.ProfileBtn);
             this.Controls.Add(this.IDLbl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Homepage";
             this.Text = "Homepage";
             this.ResumeLayout(false);

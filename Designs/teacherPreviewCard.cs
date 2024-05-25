@@ -1,11 +1,15 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Exam_Management_System.Designs
 {
     public partial class teacherPreviewCard : UserControl
     {
+
+        DBAccess objDBAccess = new DBAccess();
         public teacherPreviewCard()
         {
             InitializeComponent();
@@ -239,8 +243,14 @@ namespace Exam_Management_System.Designs
             set { Cquestion_TB.Text = value; }
         }
 
-        public string QuestionType
+        public string QuestionNumber
         {
+            get { return questionNo_LBL.Text; }
+            set { questionNo_LBL.Text = "Q No. " + value; }
+        }
+
+        public string QuestionType
+        {                                   
             get { return CquestionType_CB.Text; }
             set { CquestionType_CB.Text = value; }
         }
@@ -330,5 +340,173 @@ namespace Exam_Management_System.Designs
                 }
             }
         }
+
+        private void save_BTN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Retrieve the exam code from PreviewForm
+                PreviewForm previewForm = Application.OpenForms.OfType<PreviewForm>().FirstOrDefault();
+                if (previewForm == null)
+                {
+                    MessageBox.Show("PreviewForm is not open.");
+                    return;
+                }
+
+                string examCode = previewForm.GetExamCode();
+                string questionNumber = this.QuestionNumber.Replace("Q No. ", "");
+
+                // Get the data from the form using properties
+                string question = this.Question;
+                string questionType = this.QuestionType;
+                byte[] fileData = null; // Add logic to retrieve file data if any
+                int? points = int.TryParse(this.Points, out int parsedPoints) ? parsedPoints : (int?)null;
+                bool manualCheck = this.ManualCheckStatus;
+                string multipleChoiceOptions = this.MultipleChoiceChoices;
+                string correctAnswer = this.MultipleChoiceAnswer;
+                string shortAnswer = questionType == "Identification" ? this.Identification : null;
+                string longAnswer = questionType == "Paragraph Form" ? this.ParagraphType : null;
+                string contextualParagraph = questionType == "Contextual Paragraph" ? this.ContextualParagraph :
+                                              (questionType == "Contextual Paragraph & Image" ? this.ContextualParagraph : null);
+
+                // Check if the data already exists
+                bool dataExists = CheckIfDataExists(examCode, questionNumber);
+
+                // SQL query to update or insert values into the "examQuestions" table
+                string query = "";
+                if (dataExists)
+                {
+                    query = "UPDATE examQuestions SET " +
+                            "question = @Question, " +
+                            "question_type = @QuestionType, " +
+                            "image = @Image, " +
+                            "point = @Point, " +
+                            "manual_check = @ManualCheck, " +
+                            "multiplechoice_choices = @MultipleChoiceOptions, " +
+                            "multiplechoice_answer = @MultipleChoiceAnswer, " +
+                            "identification = @ShortAnswer, " +
+                            "paragraph_type = @LongAnswer, " +
+                            "contextual_paragraph = @ContextualParagraph " +
+                            "WHERE examCode = @Code AND questionNumber = @QuestionNumber";
+                }
+                else
+                {
+                    query = "INSERT INTO examQuestions (questionNumber, question, examCode, question_type, image, point, manual_check, multiplechoice_choices, multiplechoice_answer, identification, paragraph_type, contextual_paragraph) " +
+                            "VALUES (@QuestionNumber, @Question, @Code, @QuestionType, @Image, @Point, @ManualCheck, @MultipleChoiceOptions, @MultipleChoiceAnswer, @ShortAnswer, @LongAnswer, @ContextualParagraph)";
+                }
+
+                // Use MySqlCommand to insert or update data in the database
+                using (MySqlCommand command = new MySqlCommand(query))
+                {
+                    command.Parameters.AddWithValue("@QuestionNumber", questionNumber);
+                    command.Parameters.AddWithValue("@Question", question);
+                    command.Parameters.AddWithValue("@Code", examCode);
+                    command.Parameters.AddWithValue("@QuestionType", questionType);
+                    command.Parameters.AddWithValue("@Image", fileData ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@Point", points ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@ManualCheck", manualCheck);
+                    command.Parameters.AddWithValue("@MultipleChoiceOptions", multipleChoiceOptions);
+                    command.Parameters.AddWithValue("@MultipleChoiceAnswer", correctAnswer ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@ShortAnswer", shortAnswer ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@LongAnswer", longAnswer ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@ContextualParagraph", contextualParagraph ?? (object)DBNull.Value);
+
+                    objDBAccess.createConn(); // Ensure connection is open
+                    int rowsAffected = objDBAccess.executeQuery(command);
+                    objDBAccess.closeConn(); // Close connection
+
+                    if (rowsAffected > 0)
+                    {
+                        if (dataExists)
+                            MessageBox.Show("Data updated successfully.");
+                        else
+                            MessageBox.Show("Data saved successfully.");
+
+                        // Refresh the PreviewForm
+                        previewForm.DisplayData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("An error occurred while saving data.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+
+        // Function to check if data already exists
+        private bool CheckIfDataExists(string examCode, string questionNumber)
+        {
+            string query = "SELECT COUNT(*) FROM examQuestions WHERE examCode = @Code AND questionNumber = @QuestionNumber";
+            using (MySqlCommand command = new MySqlCommand(query))
+            {
+                command.Parameters.AddWithValue("@Code", examCode);
+                command.Parameters.AddWithValue("@QuestionNumber", questionNumber);
+
+                objDBAccess.createConn(); // Ensure connection is open
+                int count = Convert.ToInt32(objDBAccess.executeScalar(command));
+                objDBAccess.closeConn(); // Close connection
+
+                return count > 0;
+            }
+        }
+
+        private void deleteQ_BTN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Retrieve the exam code from PreviewForm
+                PreviewForm previewForm = Application.OpenForms.OfType<PreviewForm>().FirstOrDefault();
+                if (previewForm == null)
+                {
+                    MessageBox.Show("PreviewForm is not open.");
+                    return;
+                }
+
+                string examCode = previewForm.GetExamCode();
+                string questionNumber = this.QuestionNumber.Replace("Q No. ", "");
+
+                // SQL query to delete the question from examQuestions and move to examQuestionsArchive
+                string deleteQuery = "INSERT INTO examQuestionsArchive (questionNumber, question, examCode, question_type, image, point, manual_check, multiplechoice_choices, multiplechoice_answer, identification, paragraph_type, contextual_paragraph) " +
+                                     "SELECT questionNumber, question, examCode, question_type, image, point, manual_check, multiplechoice_choices, multiplechoice_answer, identification, paragraph_type, contextual_paragraph " +
+                                     "FROM examQuestions WHERE examCode = @Code AND questionNumber = @QuestionNumber; " +
+                                     "DELETE FROM examQuestions WHERE examCode = @Code AND questionNumber = @QuestionNumber";
+
+                using (MySqlCommand command = new MySqlCommand(deleteQuery))
+                {
+                    command.Parameters.AddWithValue("@Code", examCode);
+                    command.Parameters.AddWithValue("@QuestionNumber", questionNumber);
+
+                    objDBAccess.createConn(); // Ensure connection is open
+                    int rowsAffected = objDBAccess.executeQuery(command);
+                    objDBAccess.closeConn(); // Close connection
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Question deleted successfully.");
+
+                        // Refresh the PreviewForm
+                        previewForm.DisplayData();
+
+                        // Update number of questions displayed
+                        previewForm.DisplayNumberOfQuestions();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No question found to delete.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+
+
+
     }
 }
