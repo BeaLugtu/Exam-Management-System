@@ -274,8 +274,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+
             this.ClientSize = new System.Drawing.Size(1200, 750);
             this.Controls.Add(this.timeLbl);
+
             this.Controls.Add(this.kryptonBorderEdge2);
             this.Controls.Add(this.kryptonPictureBox3);
             this.Controls.Add(this.label1);
