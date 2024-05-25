@@ -133,9 +133,8 @@ namespace Exam_Management_System.Designs
 
         private void StudentDashboard_Load(object sender, EventArgs e)
         {
-
         }
-        private void Exam_Click(object sender, EventArgs e)
+       private void Exam_Click(object sender, EventArgs e)
         {
             string query = "Select * from Users Where ID= '" + userID + "'";
             objDABAccess.readDatathroughAdapter(query, dtUsers);

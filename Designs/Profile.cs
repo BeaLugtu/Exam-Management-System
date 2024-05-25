@@ -213,10 +213,10 @@ namespace Exam_Management_System.Designs
                 {
             "--Select Department--",
             "UCC Communication Advocates",
-            "ASAP-North",
+            "UCC ASAP-North",
             "UCC Public Administration Society",
             "UCC Psychology Society",
-            "Computer Studies Department - North",
+            "UCC Computer Studies Department - North",
             "UCC Mathematics"
                 });
             }

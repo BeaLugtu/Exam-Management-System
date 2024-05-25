@@ -48,14 +48,23 @@ namespace Exam_Management_System.Designs
 
             }
         }
-
-        public (string QuestionID, string Answer) GetAnswerData()
+        private string correctAnswer;
+        public string CorrectAnswer
         {
-            return (questionID, AnswerText);
+            get => correctAnswer;
+            set
+            {
+                correctAnswer = value;
+            }
+        }
+        public bool iscorrect;
+        public (string QuestionID, string Answer, string CorrectAnswer, string Point, bool iscorrect) GetAnswerData()
+        {
+            return (questionID, AnswerText, CorrectAnswer, Point, iscorrect);
         }
         private string pointValue;
         private string questionNumber;
-        public string point
+        public string Point
         {
             get => pointValue;
             set
@@ -88,6 +97,7 @@ namespace Exam_Management_System.Designs
             // Set the new height for the control
             AnswerTB.Height = newHeight;
             AnswerText = AnswerTB.Text;
+            iscorrect = false;
         }
     }
     

@@ -45,6 +45,7 @@ namespace Exam_Management_System.Designs
             this.timePH = new Krypton.Toolkit.KryptonLabel();
             this.kryptonPictureBox2 = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cardplaceholder = new System.Windows.Forms.FlowLayoutPanel();
             this.ParagraphCardPanel = new Krypton.Toolkit.KryptonPanel();
             this.Item3 = new Krypton.Toolkit.KryptonButton();
@@ -55,15 +56,14 @@ namespace Exam_Management_System.Designs
             this.QuestionRTB = new Krypton.Toolkit.KryptonRichTextBox();
             this.PointPH = new Krypton.Toolkit.KryptonLabel();
             this.QuestionPH = new Krypton.Toolkit.KryptonLabel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.cardplaceholder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ParagraphCardPanel)).BeginInit();
             this.ParagraphCardPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Program_DropButtonPalette
@@ -301,6 +301,14 @@ namespace Exam_Management_System.Designs
             this.kryptonPanel1.Size = new System.Drawing.Size(1184, 711);
             this.kryptonPanel1.TabIndex = 68;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(29, 510);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 75;
+            // 
             // cardplaceholder
             // 
             this.cardplaceholder.AutoScroll = true;
@@ -414,14 +422,6 @@ namespace Exam_Management_System.Designs
             this.QuestionPH.TabIndex = 0;
             this.QuestionPH.Values.Text = "Question";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(338, 35);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 75;
-            // 
             // ExamForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -440,11 +440,11 @@ namespace Exam_Management_System.Designs
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.cardplaceholder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ParagraphCardPanel)).EndInit();
             this.ParagraphCardPanel.ResumeLayout(false);
             this.ParagraphCardPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

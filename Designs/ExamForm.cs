@@ -9,16 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Krypton.Toolkit;
 using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 using Org.BouncyCastle.Bcpg;
 
 namespace Exam_Management_System.Designs
 {
     public interface IQuestionCard
     {
-        (string QuestionID, string Answer) GetAnswerData();
+        (string QuestionID, string Answer, string CorrectAnswer, string Point, bool iscorrect) GetAnswerData();
     }
     public partial class ExamForm : Krypton.Toolkit.KryptonForm
     {
+
+        private bool submit_Clicked = false;
         private int cardCount = 0;
         private string userID;
         private DateTime examDeadline;
@@ -43,8 +46,11 @@ namespace Exam_Management_System.Designs
         private void InitializeAnswersTable()
         {
             answersTable = new DataTable();
-            answersTable.Columns.Add("QuestionNumber", typeof(string));
+            answersTable.Columns.Add("ID", typeof(string));
             answersTable.Columns.Add("Answer", typeof(string));
+            answersTable.Columns.Add("CorrectAnswer", typeof(string));
+            answersTable.Columns.Add("iscorrect", typeof(bool));
+            answersTable.Columns.Add("Point", typeof(int));
         }
         private void setLabels()
         {
@@ -109,8 +115,557 @@ namespace Exam_Management_System.Designs
         }
         private void AddCard()
         {
+                //string query = "Select * from examquestions where (( question_Type = 'multiple choice') && (examcode = '" + ExamCode + "'))";
+            {   //random
+                string query = "SELECT id, questionNumber, examCode, question_type, question, point, manual_check, identification, paragraph_type," +
+                    " multiplechoice_answer, contextual_paragraph, multiplechoice_choices, image FROM examquestions eq WHERE (( randomizer = 1) && " +
+                    "(examcode = '" + ExamCode + "')) ORDER BY rand()";
+                //not random
+                //string query = "SELECT questionNumber, examCode, question_type, question, point, manual_check, identification, paragraph_type, multiplechoice_answer, contextual_paragraph, multiplechoice_choices, image FROM examquestions WHERE examcode = '" + ExamCode + "' ORDER BY questionnumber";
+                DataTable dtQuestionsRand = new DataTable();
+                objDABAccess.readDatathroughAdapter(query, dtQuestionsRand);
 
-            { //random
+                foreach (DataRow row in dtQuestionsRand.Rows)
+                {
+                    cardCount++;
+                    string questionType = row["question_type"].ToString();
+                    string questionText = row["question"].ToString();
+                    string pointlbl = row["point"].ToString();
+                    string Cardcount = cardCount.ToString();
+                    string contextget = row["contextual_paragraph"].ToString();
+                    byte[] imageBytes = row["image"] as byte[];
+                    string QuestionID = row["ID"].ToString();
+                    string CorrectAnswer = row["identification"].ToString();
+                    string CorrectAnswer2 = row["multiplechoice_answer"].ToString();
+                    switch (questionType)
+                    {
+                        case "Identification":
+
+                            IdentificationCard identificationCard = new IdentificationCard
+                            {
+                                QuestionText = questionText,
+                                Point = pointlbl,
+                                Qnum = Cardcount,
+                                QuestionID = QuestionID,
+                                CorrectAnswer = CorrectAnswer
+                            };
+                            cardplaceholder.Controls.Add(identificationCard);
+                            break;
+
+                        case "Paragraph Form":
+                            ParagraphCard ParagraphCard = new ParagraphCard
+                            {
+                                QuestionText = questionText,
+                                Point = pointlbl,
+                                qnum = Cardcount,
+                                QuestionID = QuestionID,
+                                
+                                // Add any other necessary properties for paragraph card
+                            };
+                            cardplaceholder.Controls.Add(ParagraphCard);
+                            break;
+
+                        case "Multiple Choice":
+                            
+                            string[] choices = row["multiplechoice_choices"].ToString().Split(',');
+                            MultipleChoiceCard multipleChoiceCard = new MultipleChoiceCard
+                            {
+                                QuestionText = questionText,
+                                Options = choices,
+                                Point = pointlbl,
+                                QuestionNumber = Cardcount,
+                                QuestionID = QuestionID,
+                                CorrectAnswer = CorrectAnswer2
+                            };
+                            cardplaceholder.Controls.Add(multipleChoiceCard);
+                            break;
+
+                        case "Contextual Paragraph":
+                            ContextualCard contextualParagraphCard = new ContextualCard
+                            {
+                                contextget = contextget
+                                // Add any other necessary properties for contextual paragraph card
+                            };
+                            cardCount--;
+                            cardplaceholder.Controls.Add(contextualParagraphCard);
+                            break;
+
+                        case "Contextual Image":
+
+                            ContextualImageCard contextualImageCard = new ContextualImageCard
+                            {
+                                ImageBytes = imageBytes
+                            };
+                            cardCount--;
+                            cardplaceholder.Controls.Add(contextualImageCard);
+                            break;
+
+                        case "Contextual Paragraph & Image":
+                            ContextualImageParagraphCard contextualImageAndParagraphCard = new ContextualImageParagraphCard
+                            {
+                                ImageBytes = imageBytes,
+                                contextget = contextget
+                                // Add any other necessary properties for contextual image and paragraph card
+                            };
+                            cardCount--;
+                            cardplaceholder.Controls.Add(contextualImageAndParagraphCard);
+                            break;
+
+                        default:
+                            // Handle unknown question types if needed
+                            break;
+                    }
+                }
+                //string query = "SELECT id, questionNumber, examCode, question_type, question, point, manual_check, identification, paragraph_type, multiplechoice_answer, contextual_paragraph, multiplechoice_choices, image FROM examquestions WHERE (( randomizer = 1) && (examcode = '" + ExamCode + "')) ORDER BY rand()";
+                //not random
+            }
+            { 
+            string query2 = "SELECT id, questionNumber, examCode, question_type, question, point, manual_check, identification, paragraph_type, multiplechoice_answer," +
+                    " contextual_paragraph, multiplechoice_choices, image FROM examquestions WHERE ((randomizer = 0) && (examcode = '" + ExamCode + "'))";
+            DataTable dtQuestionsCon = new DataTable();
+            objDABAccess.readDatathroughAdapter(query2, dtQuestionsCon);
+                foreach (DataRow row in dtQuestionsCon.Rows)
+                {
+                    cardCount++;
+                    string questionType = row["question_type"].ToString();
+                    string questionText = row["question"].ToString();
+                    string pointlbl = row["point"].ToString();
+                    string Cardcount = cardCount.ToString();
+                    string contextget = row["contextual_paragraph"].ToString();
+                    byte[] imageBytes = row["image"] as byte[];
+                    string QuestionID = row["ID"].ToString();
+                    string CorrectAnswer = row["identification"].ToString();
+                    string CorrectAnswer2 = row["multiplechoice_answer"].ToString();
+                    switch (questionType)
+                    {
+                        case "Identification":
+
+                            IdentificationCard identificationCard = new IdentificationCard
+                            {
+                                QuestionText = questionText,
+                                Point = pointlbl,
+                                Qnum = Cardcount,
+                                QuestionID = QuestionID,
+                                CorrectAnswer = CorrectAnswer
+                            };
+                            cardplaceholder.Controls.Add(identificationCard);
+                            break;
+
+                        case "Paragraph Form":
+                            ParagraphCard ParagraphCard = new ParagraphCard
+                            {
+                                QuestionText = questionText,
+                                Point = pointlbl,
+                                qnum = Cardcount,
+                                QuestionID = QuestionID,
+
+                                // Add any other necessary properties for paragraph card
+                            };
+                            cardplaceholder.Controls.Add(ParagraphCard);
+                            break;
+
+                        case "Multiple Choice":
+
+                            string[] choices = row["multiplechoice_choices"].ToString().Split(',');
+                            MultipleChoiceCard multipleChoiceCard = new MultipleChoiceCard
+                            {
+                                QuestionText = questionText,
+                                Options = choices,
+                                Point = pointlbl,
+                                QuestionNumber = Cardcount,
+                                QuestionID = QuestionID,
+                                CorrectAnswer = CorrectAnswer2
+                            };
+                            cardplaceholder.Controls.Add(multipleChoiceCard);
+                            break;
+
+                        case "Contextual Paragraph":
+                            ContextualCard contextualParagraphCard = new ContextualCard
+                            {
+                                contextget = contextget
+                                // Add any other necessary properties for contextual paragraph card
+                            };
+                            cardCount--;
+                            cardplaceholder.Controls.Add(contextualParagraphCard);
+                            break;
+
+                        case "Contextual Image":
+
+                            ContextualImageCard contextualImageCard = new ContextualImageCard
+                            {
+                                ImageBytes = imageBytes
+                            };
+                            cardCount--;
+                            cardplaceholder.Controls.Add(contextualImageCard);
+                            break;
+
+                        case "Contextual Paragraph & Image":
+                            ContextualImageParagraphCard contextualImageAndParagraphCard = new ContextualImageParagraphCard
+                            {
+                                ImageBytes = imageBytes,
+                                contextget = contextget
+                                // Add any other necessary properties for contextual image and paragraph card
+                            };
+                            cardCount--;
+                            cardplaceholder.Controls.Add(contextualImageAndParagraphCard);
+                            break;
+
+                        default:
+                            // Handle unknown question types if needed
+                            break;
+                    }
+                }
+            }
+        }
+        private void SubmitExam()
+        {
+            
+            dataGridView1.DataSource = answersTable;
+            answersTable.Clear(); // Clear any existing data
+
+            foreach (Control control in cardplaceholder.Controls)
+            {
+                if (control is IQuestionCard questionCard)
+                {
+                    var answerData = questionCard.GetAnswerData();
+                    DataRow row = answersTable.NewRow();
+                    row["ID"] = answerData.QuestionID;
+                    row["Answer"] = answerData.Answer;
+                    row["CorrectAnswer"] = answerData.CorrectAnswer;
+                    row["Point"] = answerData.Point;
+
+                    // Compare answer to correctAnswer
+                    if (answerData.Answer == answerData.CorrectAnswer)
+                    {
+                        row["iscorrect"] = true;
+                        row["Point"] = row["Point"].ToString();
+                    }
+                    else
+                    {
+                        row["iscorrect"] = false;
+                        row["Point"] = "0";
+                    }
+
+                    // If answer is null, set point to null
+                    if (string.IsNullOrEmpty(answerData.Answer))
+                    {
+                        row["Point"] = DBNull.Value;
+                    }
+
+                    answersTable.Rows.Add(row);
+                    
+            }
+        }
+            
+
+
+            // Optionally, display or debug the DataTable
+            foreach (DataRow row in answersTable.Rows)
+            {
+                Console.WriteLine($"{row["ID"]} === {row["Answer"]} === {row["iscorrect"]}");
+            }
+            string updateTotalStudentsQuery = "UPDATE examforms SET examstudentsturnedin = examstudentsturnedin + 1 WHERE examcode = @ExamCode";
+            MySqlCommand updateTotalStudentsCommand = new MySqlCommand(updateTotalStudentsQuery);
+            updateTotalStudentsCommand.Parameters.AddWithValue("@ExamCode", ExamCode);
+
+            try
+            {
+                objDABAccess.executeQuery(updateTotalStudentsCommand);
+                MessageBox.Show("Total students count updated successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating total students count: {ex.Message}");
+            }
+        }
+
+
+
+            private void UpdateAnswersInDatabase()
+        {
+            string tableName = ExamCode + "_answers";
+            string userAnswersColumn = userID + "_answers";
+            string userPointsColumn = userID + "_points"; // Corrected column name for points
+
+            // Order the rows in answersTable by ID
+            var orderedRows = answersTable.AsEnumerable()
+                                           .OrderBy(row => row.Field<string>("ID"));
+
+            foreach (DataRow row in orderedRows)
+            {
+                string questionNumber = row["ID"].ToString();
+                string answer = row["Answer"].ToString();
+                string point = row["Point"].ToString();
+
+                // Update the answers in the database where ID matches QuestionID
+                string updateQuery = $"UPDATE {tableName} SET `{userAnswersColumn}` = @Answer WHERE ID = @ID; " +
+                                     $"UPDATE {tableName} SET `{userPointsColumn}` = @Point WHERE ID = @ID"; // Corrected parameter name to @Point
+                MySqlCommand updateCommand = new MySqlCommand(updateQuery);
+                updateCommand.Parameters.AddWithValue("@Answer", answer);
+                updateCommand.Parameters.AddWithValue("@ID", questionNumber);
+                updateCommand.Parameters.AddWithValue("@Point", point); // Corrected parameter name to @Point
+
+                try
+                {
+                    objDABAccess.executeQuery(updateCommand);
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception
+                    MessageBox.Show($"Error updating answers: {ex.Message}");
+                }
+            }
+        }
+
+
+        private void AlterAnswersTable()
+        {
+            string tableName = ExamCode + "_answers";
+            string userAnswersColumn = userID + "_answers";
+            string userPointsColumn = userID + "_points";
+
+            string alterTableQuery = $"ALTER TABLE {tableName} ADD COLUMN IF NOT EXISTS `{userAnswersColumn}` TEXT, ADD COLUMN IF NOT EXISTS `{userPointsColumn}` TEXT";
+
+            MySqlCommand alterCommand = new MySqlCommand(alterTableQuery);
+
+            try
+            {
+                objDABAccess.executeQuery(alterCommand);
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception, maybe the column already exists
+                MessageBox.Show($"Error altering table: {ex.Message}");
+            }
+        }
+        private bool corrext = false;
+        /*private void AutoCheckAnswers()
+        {
+            DataTable dtanswer = new DataTable();
+            string tableName = ExamCode + "_answers";
+            string columnAnswer = userID + "_answers";
+            string columnPoints = userID + "_points";
+
+            string query = $"SELECT eq.id, eq.point, eq.identification, eq.multiplechoice_answer, ea.`{columnAnswer}`, ea.`{columnPoints}` FROM examquestions AS eq " +
+                $"JOIN `{tableName}` AS ea ON eq.ID = ea.ID WHERE eq.examCode = '@ExamCode'";
+
+            MySqlCommand selectCommand = new MySqlCommand(query);
+            selectCommand.Parameters.AddWithValue("@ExamCode", ExamCode);
+
+            objDABAccess.readDatathroughAdapter(query, dtanswer);
+
+            foreach (DataRow row in dtanswer.Rows)
+            {
+                string questionID = row["id"].ToString();
+                string identificationAnswer = row["identification"].ToString();
+                string multipleChoiceAnswer = row["multiplechoice_answer"].ToString();
+                string userAnswer = row[columnAnswer].ToString();
+
+                // Check identification answer
+                if (!string.IsNullOrEmpty(identificationAnswer) && identificationAnswer.Equals(userAnswer, StringComparison.OrdinalIgnoreCase))
+                {
+                    corrext= true;
+                    if (corrext == true)
+                    {
+                        string pointed = "1"; // Assigning 1 for correct multiple choice answer
+                        string updateQuery = $"UPDATE `{tableName}` SET `{columnPoints}` = '"+pointed+"' WHERE id = '"+questionID+"'";
+                        objDABAccess.readDatathroughAdapter(query, dtanswer);
+                    }
+                }
+
+                // Check multiple choice answer
+                if (!string.IsNullOrEmpty(multipleChoiceAnswer) && multipleChoiceAnswer.Equals(userAnswer, StringComparison.OrdinalIgnoreCase))
+                {
+                    corrext = true;
+                    if (corrext == true)
+                    {
+                        string pointed = "1"; // Assigning 1 for correct multiple choice answer
+                        string updateQuery = $"UPDATE `{tableName}` SET `{columnPoints}` = '" + pointed + "' WHERE id = '" + questionID + "'";
+                        objDABAccess.readDatathroughAdapter(query, dtanswer);
+                    }
+                }
+            }
+        }*/
+
+
+        private void Submit(object sender, EventArgs e)
+        {
+            // Alter answers table
+            AlterAnswersTable();
+
+            // Submit the exam
+            SubmitExam();
+
+            // Update answers in the database
+            UpdateAnswersInDatabase();
+
+            // Set submit_Clicked to true
+            submit_Clicked = true;
+
+            // Disable the submit button after it has been clicked
+            SubmitBtn.Enabled = false;
+
+            // Optionally, you can add other functionality here
+
+            // For example, if you want to execute another method like AutoCheckAnswers(),
+            // you can uncomment the line below:
+            // AutoCheckAnswers();
+        }
+
+
+    }
+
+}
+
+/*private void SubmitExam()
+        {
+            dataGridView1.DataSource = answersTable;
+            answersTable.Clear(); // Clear any existing data
+
+            foreach (Control control in cardplaceholder.Controls)
+            {
+                if (control is IQuestionCard questionCard)
+                {
+                    var answerData = questionCard.GetAnswerData();
+                    DataRow row = answersTable.NewRow();
+                    row["ID"] = answerData.QuestionID;
+                    row["Answer"] = answerData.Answer;
+                    answersTable.Rows.Add(row);
+                }
+            }
+
+            // Optionally, display or debug the DataTable
+            foreach (DataRow row in answersTable.Rows)
+            {
+                Console.WriteLine($"{row["ID"]} === {row["Answer"]}");
+            }
+            
+
+        }
+
+        private void UpdateAnswersInDatabase()
+        {
+            string tableName = ExamCode + "_answers";
+            string userAnswersColumn = userID + "_answers";
+
+            // Order the rows in answersTable by ID
+            var orderedRows = answersTable.AsEnumerable()
+                                           .OrderBy(row => row.Field<string>("ID"));
+
+            foreach (DataRow row in orderedRows)
+            {
+                string questionNumber = row["ID"].ToString();
+                string answer = row["Answer"].ToString();
+
+                // Update the answers in the database where ID matches QuestionID
+                string updateQuery = $"UPDATE {tableName} SET `{userAnswersColumn}` = @Answer WHERE ID = @ID";
+                MySqlCommand updateCommand = new MySqlCommand(updateQuery);
+                updateCommand.Parameters.AddWithValue("@Answer", answer);
+                updateCommand.Parameters.AddWithValue("@ID", questionNumber);
+
+                try
+                {
+                    objDABAccess.executeQuery(updateCommand);
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception
+                    MessageBox.Show($"Error updating answers: {ex.Message}");
+                }
+            }
+        }
+
+
+        private void AlterAnswersTable()
+        {
+            string tableName = ExamCode + "_answers";
+            string userAnswersColumn = userID + "_answers";
+            string userPointsColumn = userID + "_points";
+
+            string alterTableQuery = $"ALTER TABLE {tableName} ADD COLUMN IF NOT EXISTS `{userAnswersColumn}` TEXT, ADD COLUMN IF NOT EXISTS `{userPointsColumn}` TEXT";
+
+            MySqlCommand alterCommand = new MySqlCommand(alterTableQuery);
+
+            try
+            {
+                objDABAccess.executeQuery(alterCommand);
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception, maybe the column already exists
+                MessageBox.Show($"Error altering table: {ex.Message}");
+            }
+        }
+        private bool corrext = false;
+        private void AutoCheckAnswers()
+        {
+            DataTable dtanswer = new DataTable();
+            string tableName = ExamCode + "_answers";
+            string columnAnswer = userID + "_answers";
+            string columnPoints = userID + "_points";
+
+            string query = $"SELECT eq.id, eq.point, eq.identification, eq.multiplechoice_answer, ea.`{columnAnswer}`, ea.`{columnPoints}` FROM examquestions AS eq " +
+                $"JOIN `{tableName}` AS ea ON eq.ID = ea.ID WHERE eq.examCode = '@ExamCode'";
+
+            MySqlCommand selectCommand = new MySqlCommand(query);
+            selectCommand.Parameters.AddWithValue("@ExamCode", ExamCode);
+
+            objDABAccess.readDatathroughAdapter(query, dtanswer);
+
+            foreach (DataRow row in dtanswer.Rows)
+            {
+                string questionID = row["id"].ToString();
+                string identificationAnswer = row["identification"].ToString();
+                string multipleChoiceAnswer = row["multiplechoice_answer"].ToString();
+                string userAnswer = row[columnAnswer].ToString();
+
+                // Check identification answer
+                if (!string.IsNullOrEmpty(identificationAnswer) && identificationAnswer.Equals(userAnswer, StringComparison.OrdinalIgnoreCase))
+                {
+                    corrext= true;
+                    if (corrext == true)
+                    {
+                        string pointed = "1"; // Assigning 1 for correct multiple choice answer
+                        string updateQuery = $"UPDATE `{tableName}` SET `{columnPoints}` = '"+pointed+"' WHERE id = '"+questionID+"'";
+                        objDABAccess.readDatathroughAdapter(query, dtanswer);
+                    }
+                }
+
+                // Check multiple choice answer
+                if (!string.IsNullOrEmpty(multipleChoiceAnswer) && multipleChoiceAnswer.Equals(userAnswer, StringComparison.OrdinalIgnoreCase))
+                {
+                    corrext = true;
+                    if (corrext == true)
+                    {
+                        string pointed = "1"; // Assigning 1 for correct multiple choice answer
+                        string updateQuery = $"UPDATE `{tableName}` SET `{columnPoints}` = '" + pointed + "' WHERE id = '" + questionID + "'";
+                        objDABAccess.readDatathroughAdapter(query, dtanswer);
+                    }
+                }
+            }
+        }
+
+
+        private void Submit(object sender, EventArgs e)
+        {
+            AlterAnswersTable();
+            SubmitExam();
+            UpdateAnswersInDatabase();
+            AutoCheckAnswers();
+        }
+
+    }
+
+}*/
+
+/*private void ExamForm_Load(object sender, EventArgs e)
+        {
+            AddCard();
+        }
+        private void AddCard()
+        {
+                //string query = "Select * from examquestions where (( question_Type = 'multiple choice') && (examcode = '" + ExamCode + "'))";
+            {   //random
                 string query = "SELECT id, questionNumber, examCode, question_type, question, point, manual_check, identification, paragraph_type, multiplechoice_answer, contextual_paragraph, multiplechoice_choices, image FROM examquestions WHERE (( randomizer = 1) && (examcode = '" + ExamCode + "')) ORDER BY rand()";
                 //not random
                 //string query = "SELECT questionNumber, examCode, question_type, question, point, manual_check, identification, paragraph_type, multiplechoice_answer, contextual_paragraph, multiplechoice_choices, image FROM examquestions WHERE examcode = '" + ExamCode + "' ORDER BY questionnumber";
@@ -134,7 +689,6 @@ namespace Exam_Management_System.Designs
                             IdentificationCard identificationCard = new IdentificationCard
                             {
                                 QuestionText = questionText,
-                                AnswerText = "",
                                 Point = pointlbl,
                                 Qnum = Cardcount,
                                 QuestionID = QuestionID
@@ -203,285 +757,4 @@ namespace Exam_Management_System.Designs
                             // Handle unknown question types if needed
                             break;
                     }
-                }
-                //string query = "SELECT id, questionNumber, examCode, question_type, question, point, manual_check, identification, paragraph_type, multiplechoice_answer, contextual_paragraph, multiplechoice_choices, image FROM examquestions WHERE (( randomizer = 1) && (examcode = '" + ExamCode + "')) ORDER BY rand()";
-                //not random
-            }
-            { 
-            string query2 = "SELECT id, questionNumber, examCode, question_type, question, point, manual_check, identification, paragraph_type, multiplechoice_answer, contextual_paragraph, multiplechoice_choices, image FROM examquestions WHERE ((randomizer = 0) && (examcode = '" + ExamCode + "'))";
-            DataTable dtQuestionsCon = new DataTable();
-            objDABAccess.readDatathroughAdapter(query2, dtQuestionsCon);
-            foreach (DataRow row in dtQuestionsCon.Rows)
-            {
-                cardCount++;
-                string questionType = row["question_type"].ToString();
-                string questionText = row["question"].ToString();
-                string pointlbl = row["point"].ToString();
-                string Cardcount = cardCount.ToString();
-                string contextget = row["contextual_paragraph"].ToString();
-                byte[] imageBytes = row["image"] as byte[];
-                string QuestionID = row["ID"].ToString();
-
-                switch (questionType)
-                {
-                    case "Identification":
-                        IdentificationCard identificationCard = new IdentificationCard
-                        {
-                            QuestionText = questionText,
-                            AnswerText = "",
-                            Point = pointlbl,
-                            Qnum = Cardcount,
-                            QuestionID = QuestionID
-                        };
-                        cardplaceholder.Controls.Add(identificationCard);
-                        break;
-
-                    case "Paragraph Form":
-                        ParagraphCard ParagraphCard = new ParagraphCard
-                        {
-                            QuestionText = questionText,
-                            point = pointlbl,
-                            qnum = Cardcount,
-                            QuestionID = QuestionID
-
-                            // Add any other necessary properties for paragraph card
-                        };
-                        cardplaceholder.Controls.Add(ParagraphCard);
-                        break;
-
-                    case "Multiple Choice":
-                        string[] choices = row["multiplechoice_choices"].ToString().Split(',');
-                        MultipleChoiceCard multipleChoiceCard = new MultipleChoiceCard
-                        {
-                            QuestionText = questionText,
-                            Options = choices,
-                            point = pointlbl,
-                            qnum = Cardcount,
-                            QuestionID = QuestionID
-                        };
-                        cardplaceholder.Controls.Add(multipleChoiceCard);
-                        break;
-
-                    case "Contextual Paragraph":
-                        ContextualCard contextualParagraphCard = new ContextualCard
-                        {
-                            contextget = contextget
-                            // Add any other necessary properties for contextual paragraph card
-                        };
-                        cardCount--;
-                        cardplaceholder.Controls.Add(contextualParagraphCard);
-                        break;
-
-                    case "Contextual Image":
-
-                        ContextualImageCard contextualImageCard = new ContextualImageCard
-                        {
-                            ImageBytes = imageBytes
-                        };
-                        cardCount--;
-                        cardplaceholder.Controls.Add(contextualImageCard);
-                        break;
-
-                    case "Contextual Paragraph & Image":
-                        ContextualImageParagraphCard contextualImageAndParagraphCard = new ContextualImageParagraphCard
-                        {
-                            ImageBytes = imageBytes,
-                            contextget = contextget
-                            // Add any other necessary properties for contextual image and paragraph card
-                        };
-                        cardCount--;
-                        cardplaceholder.Controls.Add(contextualImageAndParagraphCard);
-                        break;
-
-                    default:
-                        // Handle unknown question types if needed
-                        break;
-                }
-            }
-        }
-        }
-        private void SubmitExam()
-        {
-            dataGridView1.DataSource = answersTable;
-            answersTable.Clear(); // Clear any existing data
-
-            foreach (Control control in cardplaceholder.Controls)
-            {
-                if (control is IQuestionCard questionCard)
-                {
-                    var answerData = questionCard.GetAnswerData();
-                    DataRow row = answersTable.NewRow();
-                    row["QuestionID"] = answerData.QuestionID;
-                    row["Answer"] = answerData.Answer;
-                    answersTable.Rows.Add(row);
-                }
-            }
-
-            // Optionally, display or debug the DataTable
-            foreach (DataRow row in answersTable.Rows)
-            {
-                Console.WriteLine($"{row["QuestionNumber"]} === {row["Answer"]}");
-            }
-            
-
-        }
-        
-        private void UpdateAnswersInDatabase()
-        {
-            string tableName = ExamCode + "_answers";
-            string userAnswersColumn = userID + "_answers";
-
-            foreach (DataRow row in answersTable.Rows)
-            {
-                string questionNumber = row["QuestionNumber"].ToString();
-                string answer = row["Answer"].ToString();
-
-                string updateQuery = $"UPDATE {tableName} SET {userAnswersColumn} = @Answer WHERE QuestionID = @QuestionNumber";
-                MySqlCommand updateCommand = new MySqlCommand(updateQuery);
-                updateCommand.Parameters.AddWithValue("@Answer", answer);
-                updateCommand.Parameters.AddWithValue("@QuestionNumber", questionNumber);
-
-                try
-                {
-                    objDABAccess.executeQuery(updateCommand);
-                }
-                catch (Exception ex)
-                {
-                    // Handle the exception
-                    MessageBox.Show($"Error updating answers: {ex.Message}");
-                }
-            }
-        }
-        private void AlterAnswersTable()
-        {
-            string tableName = ExamCode + "_answers";
-            string userAnswersColumn = userID + "_answers";
-            string userPointsColumn = userID + "_points";
-
-            string alterTableQuery = $"ALTER TABLE {tableName} ADD COLUMN IF NOT EXISTS {userAnswersColumn} TEXT, ADD COLUMN IF NOT EXISTS {userPointsColumn} TEXT";
-            MySqlCommand alterCommand = new MySqlCommand(alterTableQuery);
-
-            try
-            {
-                objDABAccess.executeQuery(alterCommand);
-            }
-            catch (Exception ex)
-            {
-                // Handle the exception, maybe the column already exists
-                MessageBox.Show($"Error altering table: {ex.Message}");
-            }
-        }
-        private void AutoCheckAnswers()
-        {
-            string tableName = ExamCode + "_answers";
-            string userAnswersColumn = userID + "_answers";
-            string userPointsColumn = userID + "_points";
-
-            string selectQuery = $"SELECT eq.questionNumber, eq.question_type, eq.manual_check, eq.identification, eq.paragraph_type, eq.multiplechoice_answer, ea.{userAnswersColumn}, ea.{userPointsColumn} " +
-                                 $"FROM examquestions eq " +
-                                 $"JOIN {tableName} ea ON eq.questionNumber = ea.QuestionID " +
-                                 $"WHERE eq.examcode = '@ExamCode'";
-
-            DataTable dtAnswers = new DataTable();
-            MySqlCommand selectCommand = new MySqlCommand(selectQuery);
-            selectCommand.Parameters.AddWithValue("@ExamCode", ExamCode);
-            objDABAccess.readDatathroughAdapter(selectQuery, dtAnswers);
-
-            foreach (DataRow row in dtAnswers.Rows)
-            {
-                string questionID = row["questionNumber"].ToString();
-                string questionType = row["question_type"].ToString();
-                bool manualChecking = Convert.ToBoolean(row["manual_check"]);
-                string correctAnswer = row["identification"].ToString();
-                string studentAnswer = row[userAnswersColumn].ToString();
-                int points = 0;
-
-                if (manualChecking)
-                {
-                    // Update the table with 'wow'
-                    string updateQueryWow = $"UPDATE {tableName} SET {userPointsColumn} = 'wow' WHERE QuestionID = @QuestionID";
-                    MySqlCommand updateCommandWow = new MySqlCommand(updateQueryWow);
-                    updateCommandWow.Parameters.AddWithValue("@QuestionID", questionID);
-
-                    try
-                    {
-                        objDABAccess.executeQuery(updateCommandWow);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Error updating points: {ex.Message}");
-                    }
-
-                    // Skip automatic checking
-                    continue;
-                }
-
-                // Your existing logic for automatic checking goes here
-                // ...
-                if (!manualChecking)
-                {
-                    continue;
-                }
-
-                switch (questionType)
-                {
-                    case "Identification":
-                        // Check if student answer matches correct answer
-                        if (studentAnswer.Equals(correctAnswer, StringComparison.OrdinalIgnoreCase))
-                        {
-                            // Set points to the points obtained by the student
-                            points = Convert.ToInt32(row[userPointsColumn]);
-                        }
-                        break;
-
-                    case "Paragraph Form":
-                        if (studentAnswer.IndexOf(row["paragraph_type"].ToString(), StringComparison.OrdinalIgnoreCase) >= 0)
-                        {
-                            points = 1;
-                        }
-                        break;
-
-
-                    case "Multiple Choice":
-                        // Check if student answer matches correct multiple choice answer
-                        if (studentAnswer.Equals(row["multiplechoice_answer"].ToString(), StringComparison.OrdinalIgnoreCase))
-                        {
-                            // Set points to the points obtained by the student
-                            points = Convert.ToInt32(row[userPointsColumn]);
-                        }
-                        break;
-
-                    default:
-                        // Handle other question types or unknown types
-                        break;
-                }
-
-                // Update the points in the database
-                string updateQuery = $"UPDATE {tableName} SET {userPointsColumn} = @Points WHERE QuestionID = @QuestionID";
-                MySqlCommand updateCommand = new MySqlCommand(updateQuery);
-                updateCommand.Parameters.AddWithValue("@Points", points);
-                updateCommand.Parameters.AddWithValue("@QuestionID", questionID);
-
-                try
-                {
-                    objDABAccess.executeQuery(updateCommand);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error updating points: {ex.Message}");
-                }
-            }
-        }
-
-        private void Submit(object sender, EventArgs e)
-        {
-            AlterAnswersTable();
-            SubmitExam();
-            UpdateAnswersInDatabase();
-            AutoCheckAnswers();
-        }
-
-    }
-
-}
-
+                }*/
