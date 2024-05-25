@@ -21,6 +21,8 @@ namespace Exam_Management_System
             //Application.Run(loadingScreen);
             TeacherDashBoard teacherDashBoard = new TeacherDashBoard();
             Application.Run(teacherDashBoard);
+            //CheckingPreview checkingPreview = new CheckingPreview();
+            //Application.Run(checkingPreview);
         }
     }
 }

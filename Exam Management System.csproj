@@ -53,11 +53,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBAccess.cs" />
-    <Compile Include="Designs\archiveCard.cs">
-      <SubType>UserControl</SubType>
+
+    <Compile Include="Designs\CheckingPreview.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Designs\archiveCard.Designer.cs">
-      <DependentUpon>archiveCard.cs</DependentUpon>
+    <Compile Include="Designs\CheckingPreview.Designer.cs">
+      <DependentUpon>CheckingPreview.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Designs\ChooseAccountSignUpForm.cs">
       <SubType>Form</SubType>
@@ -125,6 +127,12 @@
     <Compile Include="Designs\SignupFormTeacher.Designer.cs">
       <DependentUpon>SignupFormTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="Designs\TeacherCheckingCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\TeacherCheckingCard.Designer.cs">
+      <DependentUpon>TeacherCheckingCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Designs\TeacherDashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,8 +153,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Designs\archiveCard.resx">
-      <DependentUpon>archiveCard.cs</DependentUpon>
+
+    <EmbeddedResource Include="Designs\CheckingPreview.resx">
+      <DependentUpon>CheckingPreview.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\ChooseAccountSignUpForm.resx">
       <DependentUpon>ChooseAccountSignUpForm.cs</DependentUpon>
@@ -180,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\SignupFormTeacher.resx">
       <DependentUpon>SignupFormTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\TeacherCheckingCard.resx">
+      <DependentUpon>TeacherCheckingCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\TeacherDashBoard.resx">
       <DependentUpon>TeacherDashBoard.cs</DependentUpon>
@@ -221,10 +234,12 @@
     <Content Include="assets\Student Sign up Form.png" />
     <Content Include="assets\StudentAccountOption.png" />
     <Content Include="assets\TeacherAccountOption.png" />
+
     <None Include="Resources\Group 1799.png" />
     <None Include="Resources\Group 1800.png" />
     <None Include="Resources\fgdxfdg.png" />
     <None Include="Resources\414.png" />
+
     <None Include="Resources\Group 175.png" />
     <None Include="Resources\notification icon.png" />
     <None Include="Resources\profile pic.jpeg" />

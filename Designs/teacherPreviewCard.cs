@@ -1,7 +1,9 @@
+
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Drawing;
 using System.Linq;
+
 using System.Windows.Forms;
 
 namespace Exam_Management_System.Designs
@@ -9,7 +11,9 @@ namespace Exam_Management_System.Designs
     public partial class teacherPreviewCard : UserControl
     {
 
+
         DBAccess objDBAccess = new DBAccess();
+
         public teacherPreviewCard()
         {
             InitializeComponent();
@@ -78,7 +82,9 @@ namespace Exam_Management_System.Designs
                     CattachmentBoth_BT.Visible = false;
                     delete_BTN.Visible = false;
                     points_LBL.Visible = true;
-                    Cpoint_TB.Visible = true;
+
+                    Cpoint_TB.Visible = true;  
+
 
                     CcontextualParaOnly_TB.Visible = false;
                     CcontextualPicOnly_PB.Visible = false;
@@ -124,7 +130,9 @@ namespace Exam_Management_System.Designs
                     Cmultiple4_TB.Visible = true;
                     Cattachment_BT.Visible = false;
                     CattachmentBoth_BT.Visible = false;
-                    delete_BTN.Visible = true;
+
+                    delete_BTN.Visible = false;
+
                     points_LBL.Visible = true;
                     Cpoint_TB.Visible = true;
 
@@ -241,12 +249,14 @@ namespace Exam_Management_System.Designs
         {
             get { return Cquestion_TB.Text; }
             set { Cquestion_TB.Text = value; }
+
         }
 
         public string QuestionNumber
         {
             get { return questionNo_LBL.Text; }
             set { questionNo_LBL.Text = "Q No. " + value; }
+
         }
 
         public string QuestionType
@@ -259,6 +269,7 @@ namespace Exam_Management_System.Designs
         {
             get { return Cpoint_TB.Text; }
             set { Cpoint_TB.Text = value; }
+
         }
 
         public bool ManualCheckStatus
@@ -504,6 +515,7 @@ namespace Exam_Management_System.Designs
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
+
 
         }
     }

@@ -95,6 +95,7 @@
             this.timeDateLbl.Size = new System.Drawing.Size(165, 20);
             this.timeDateLbl.TabIndex = 20;
             this.timeDateLbl.Text = "11:44 pm - Tue, May 6";
+            this.timeDateLbl.Click += new System.EventHandler(this.timeDateLbl_Click);
             // 
             // kryptonButton5
             // 
@@ -181,6 +182,7 @@
             this.kryptonLabel1.StateCommon.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonLabel1.TabIndex = 30;
             this.kryptonLabel1.Values.Text = "Exam Finished";
+            this.kryptonLabel1.Click += new System.EventHandler(this.kryptonLabel1_Click);
             // 
             // examFinishedLbl
             // 
@@ -195,6 +197,7 @@
             this.examFinishedLbl.StateCommon.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.examFinishedLbl.TabIndex = 31;
             this.examFinishedLbl.Values.Text = "12";
+            this.examFinishedLbl.Click += new System.EventHandler(this.examFinishedLbl_Click);
             // 
             // kryptonButton2
             // 
@@ -228,6 +231,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonButton2.TabIndex = 32;
             this.kryptonButton2.Values.Text = "";
+            this.kryptonButton2.Click += new System.EventHandler(this.kryptonButton2_Click);
             // 
             // kryptonLabel2
             // 
@@ -242,6 +246,7 @@
             this.kryptonLabel2.StateCommon.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonLabel2.TabIndex = 34;
             this.kryptonLabel2.Values.Text = "10";
+            this.kryptonLabel2.Click += new System.EventHandler(this.kryptonLabel2_Click);
             // 
             // kryptonLabel3
             // 
@@ -256,6 +261,7 @@
             this.kryptonLabel3.StateCommon.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonLabel3.TabIndex = 33;
             this.kryptonLabel3.Values.Text = "Running Exam";
+            this.kryptonLabel3.Click += new System.EventHandler(this.kryptonLabel3_Click);
             // 
             // kryptonButton3
             // 
@@ -289,6 +295,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonButton3.TabIndex = 35;
             this.kryptonButton3.Values.Text = "";
+            this.kryptonButton3.Click += new System.EventHandler(this.kryptonButton3_Click);
             // 
             // kryptonLabel4
             // 
@@ -303,6 +310,7 @@
             this.kryptonLabel4.StateCommon.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonLabel4.TabIndex = 37;
             this.kryptonLabel4.Values.Text = "86%";
+            this.kryptonLabel4.Click += new System.EventHandler(this.kryptonLabel4_Click);
             // 
             // kryptonLabel5
             // 
@@ -317,6 +325,7 @@
             this.kryptonLabel5.StateCommon.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonLabel5.TabIndex = 36;
             this.kryptonLabel5.Values.Text = "Completed Rate %";
+            this.kryptonLabel5.Click += new System.EventHandler(this.kryptonLabel5_Click);
             // 
             // kryptonButton4
             // 
@@ -351,6 +360,7 @@
             this.kryptonButton4.StateTracking.Border.Rounding = 10F;
             this.kryptonButton4.TabIndex = 38;
             this.kryptonButton4.Values.Text = "";
+            this.kryptonButton4.Click += new System.EventHandler(this.kryptonButton4_Click);
             // 
             // kryptonLabel6
             // 
@@ -365,6 +375,7 @@
             this.kryptonLabel6.StateCommon.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonLabel6.TabIndex = 40;
             this.kryptonLabel6.Values.Text = "432";
+            this.kryptonLabel6.Click += new System.EventHandler(this.kryptonLabel6_Click);
             // 
             // kryptonLabel7
             // 
@@ -379,6 +390,7 @@
             this.kryptonLabel7.StateCommon.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonLabel7.TabIndex = 39;
             this.kryptonLabel7.Values.Text = "Students Turned in";
+            this.kryptonLabel7.Click += new System.EventHandler(this.kryptonLabel7_Click);
             // 
             // kryptonButton1
             // 
@@ -412,6 +424,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonButton1.TabIndex = 41;
             this.kryptonButton1.Values.Text = "";
+            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // kryptonPanel1
             // 
@@ -543,6 +556,7 @@
             this.kryptonPictureBox4.Size = new System.Drawing.Size(1026, 54);
             this.kryptonPictureBox4.TabIndex = 47;
             this.kryptonPictureBox4.TabStop = false;
+            this.kryptonPictureBox4.Click += new System.EventHandler(this.kryptonPictureBox4_Click);
             // 
             // kryptonPictureBox3
             // 
@@ -552,6 +566,7 @@
             this.kryptonPictureBox3.Size = new System.Drawing.Size(1020, 27);
             this.kryptonPictureBox3.TabIndex = 24;
             this.kryptonPictureBox3.TabStop = false;
+            this.kryptonPictureBox3.Click += new System.EventHandler(this.kryptonPictureBox3_Click);
             // 
             // kryptonPictureBox2
             // 
@@ -561,6 +576,7 @@
             this.kryptonPictureBox2.Size = new System.Drawing.Size(1019, 27);
             this.kryptonPictureBox2.TabIndex = 23;
             this.kryptonPictureBox2.TabStop = false;
+            this.kryptonPictureBox2.Click += new System.EventHandler(this.kryptonPictureBox2_Click);
             // 
             // kryptonPictureBox1
             // 
@@ -570,6 +586,7 @@
             this.kryptonPictureBox1.Size = new System.Drawing.Size(127, 50);
             this.kryptonPictureBox1.TabIndex = 21;
             this.kryptonPictureBox1.TabStop = false;
+            this.kryptonPictureBox1.Click += new System.EventHandler(this.kryptonPictureBox1_Click);
             // 
             // flowLayoutTablelistExam
             // 

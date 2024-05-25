@@ -17,11 +17,13 @@ namespace Exam_Management_System.Designs
             InitializeComponent();
             DisplayData();
             DisplayNumberOfQuestions();
+
         }
 
         public string GetExamCode()
         {
             return codePreviewForm_LBL.Text;
+
         }
 
         public void SetCodeLabel(string code)
@@ -50,7 +52,9 @@ namespace Exam_Management_System.Designs
                     connection.Open();
                     Console.WriteLine("Database connection opened.");
 
+
                     string query = "SELECT question,questionNumber, question_type, point, manual_check, identification, paragraph_type, multiplechoice_choices, multiplechoice_answer, image, contextual_paragraph FROM examquestions WHERE examCode = @Code";
+
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@Code", code);
@@ -107,6 +111,7 @@ namespace Exam_Management_System.Designs
                 }
             }
         }
+
         private Image ByteArrayToImage(byte[] byteArray)
         {
             using (MemoryStream ms = new MemoryStream(byteArray))

@@ -38,7 +38,7 @@
             this.statusExamLbl = new System.Windows.Forms.Label();
             this.deleteExamBtn = new Krypton.Toolkit.KryptonButton();
             this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
-            this.kryptonButton3 = new Krypton.Toolkit.KryptonButton();
+            this.viewSubmissions_BTN = new Krypton.Toolkit.KryptonButton();
             this.SuspendLayout();
             // 
             // titleExamLbl
@@ -199,39 +199,39 @@
             this.kryptonButton2.TabIndex = 49;
             this.kryptonButton2.Values.Text = "";
             // 
-            // kryptonButton3
+            // viewSubmissions_BTN
             // 
-            this.kryptonButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kryptonButton3.Location = new System.Drawing.Point(944, 17);
-            this.kryptonButton3.Name = "kryptonButton3";
-            this.kryptonButton3.Size = new System.Drawing.Size(20, 18);
-            this.kryptonButton3.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.kryptonButton3.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.kryptonButton3.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton3.StateCommon.Back.Image")));
-            this.kryptonButton3.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
-            this.kryptonButton3.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.kryptonButton3.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.kryptonButton3.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.viewSubmissions_BTN.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.viewSubmissions_BTN.Location = new System.Drawing.Point(944, 17);
+            this.viewSubmissions_BTN.Name = "viewSubmissions_BTN";
+            this.viewSubmissions_BTN.Size = new System.Drawing.Size(20, 18);
+            this.viewSubmissions_BTN.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.viewSubmissions_BTN.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.viewSubmissions_BTN.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton3.StateCommon.Back.Image")));
+            this.viewSubmissions_BTN.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            this.viewSubmissions_BTN.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.viewSubmissions_BTN.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.viewSubmissions_BTN.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton3.StateCommon.Border.Rounding = 1F;
-            this.kryptonButton3.StateCommon.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.kryptonButton3.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
-            this.kryptonButton3.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonButton3.StateTracking.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonButton3.StateTracking.Back.Color2 = System.Drawing.Color.Transparent;
-            this.kryptonButton3.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton3.StateTracking.Back.Image")));
-            this.kryptonButton3.StateTracking.Border.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonButton3.StateTracking.Border.Color2 = System.Drawing.Color.Transparent;
-            this.kryptonButton3.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.None;
-            this.kryptonButton3.TabIndex = 50;
-            this.kryptonButton3.Values.Text = "";
+            this.viewSubmissions_BTN.StateCommon.Border.Rounding = 1F;
+            this.viewSubmissions_BTN.StateCommon.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.viewSubmissions_BTN.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
+            this.viewSubmissions_BTN.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewSubmissions_BTN.StateTracking.Back.Color1 = System.Drawing.Color.Transparent;
+            this.viewSubmissions_BTN.StateTracking.Back.Color2 = System.Drawing.Color.Transparent;
+            this.viewSubmissions_BTN.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton3.StateTracking.Back.Image")));
+            this.viewSubmissions_BTN.StateTracking.Border.Color1 = System.Drawing.Color.Transparent;
+            this.viewSubmissions_BTN.StateTracking.Border.Color2 = System.Drawing.Color.Transparent;
+            this.viewSubmissions_BTN.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.None;
+            this.viewSubmissions_BTN.TabIndex = 50;
+            this.viewSubmissions_BTN.Values.Text = "";
             // 
             // teacherExamHistoCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.kryptonButton3);
+            this.Controls.Add(this.viewSubmissions_BTN);
             this.Controls.Add(this.kryptonButton2);
             this.Controls.Add(this.deleteExamBtn);
             this.Controls.Add(this.statusExamLbl);
@@ -258,6 +258,6 @@
         private System.Windows.Forms.Label statusExamLbl;
         private Krypton.Toolkit.KryptonButton deleteExamBtn;
         private Krypton.Toolkit.KryptonButton kryptonButton2;
-        private Krypton.Toolkit.KryptonButton kryptonButton3;
+        private Krypton.Toolkit.KryptonButton viewSubmissions_BTN;
     }
 }
