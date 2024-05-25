@@ -89,7 +89,7 @@
     </Compile>
     <Compile Include="Designs\Cards\ParagraphCard.Designer.cs">
       <DependentUpon>ParagraphCard.cs</DependentUpon>
-
+    </Compile>
     <Compile Include="Designs\archiveCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
