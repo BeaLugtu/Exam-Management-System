@@ -35,7 +35,6 @@
             this.timeDateLbl = new System.Windows.Forms.Label();
             this.kryptonBorderEdge1 = new Krypton.Toolkit.KryptonBorderEdge();
             this.LoginBtn = new Krypton.Toolkit.KryptonButton();
-            this.forgotPassBtn = new Krypton.Toolkit.KryptonLabel();
             this.SignupBtn = new Krypton.Toolkit.KryptonLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.invisiblePassBtn = new Krypton.Toolkit.KryptonButton();
@@ -46,8 +45,9 @@
             // 
             this.IDTB.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.IDTB.Location = new System.Drawing.Point(117, 269);
+            this.IDTB.Margin = new System.Windows.Forms.Padding(2);
             this.IDTB.Name = "IDTB";
-            this.IDTB.Size = new System.Drawing.Size(286, 39);
+            this.IDTB.Size = new System.Drawing.Size(286, 41);
             this.IDTB.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.IDTB.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.IDTB.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
@@ -55,7 +55,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.IDTB.StateCommon.Border.Rounding = 10F;
-            this.IDTB.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDTB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDTB.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.IDTB.TabIndex = 14;
             this.IDTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailTB_KeyPress);
@@ -65,7 +65,7 @@
             this.PasswordTB.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.PasswordTB.Location = new System.Drawing.Point(117, 352);
             this.PasswordTB.Name = "PasswordTB";
-            this.PasswordTB.Size = new System.Drawing.Size(286, 39);
+            this.PasswordTB.Size = new System.Drawing.Size(286, 41);
             this.PasswordTB.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.PasswordTB.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.PasswordTB.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
@@ -73,7 +73,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.PasswordTB.StateCommon.Border.Rounding = 10F;
-            this.PasswordTB.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordTB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordTB.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7, 7, 34, 7);
             this.PasswordTB.TabIndex = 15;
             this.PasswordTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasswordTB_KeyPress);
@@ -110,7 +110,7 @@
             // LoginBtn
             // 
             this.LoginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LoginBtn.Location = new System.Drawing.Point(117, 437);
+            this.LoginBtn.Location = new System.Drawing.Point(116, 425);
             this.LoginBtn.Name = "LoginBtn";
             this.LoginBtn.Size = new System.Drawing.Size(286, 39);
             this.LoginBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
@@ -133,24 +133,6 @@
             this.LoginBtn.TabIndex = 16;
             this.LoginBtn.Values.Text = "";
             this.LoginBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LoginBtn_MouseClick);
-            // 
-            // forgotPassBtn
-            // 
-            this.forgotPassBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.forgotPassBtn.Location = new System.Drawing.Point(117, 403);
-            this.forgotPassBtn.Name = "forgotPassBtn";
-            this.forgotPassBtn.Size = new System.Drawing.Size(102, 16);
-            this.forgotPassBtn.StateCommon.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.forgotPassBtn.StateCommon.LongText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.forgotPassBtn.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.forgotPassBtn.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.forgotPassBtn.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.forgotPassBtn.TabIndex = 22;
-            this.forgotPassBtn.ToolTipValues.Description = "Forgotttt???????";
-            this.forgotPassBtn.UseMnemonic = false;
-            this.forgotPassBtn.Values.Text = "Forgot Password?";
-            this.forgotPassBtn.MouseLeave += new System.EventHandler(this.forgotPassBtn_MouseLeave);
-            this.forgotPassBtn.MouseHover += new System.EventHandler(this.forgotPassBtn_MouseHover);
             // 
             // SignupBtn
             // 
@@ -214,7 +196,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.SignupBtn);
-            this.Controls.Add(this.forgotPassBtn);
             this.Controls.Add(this.invisiblePassBtn);
             this.Controls.Add(this.kryptonBorderEdge1);
             this.Controls.Add(this.timeDateLbl);
@@ -242,7 +223,6 @@
         private System.Windows.Forms.Label timeDateLbl;
         private Krypton.Toolkit.KryptonBorderEdge kryptonBorderEdge1;
         private Krypton.Toolkit.KryptonButton LoginBtn;
-        private Krypton.Toolkit.KryptonLabel forgotPassBtn;
         private Krypton.Toolkit.KryptonLabel SignupBtn;
         private Krypton.Toolkit.KryptonButton invisiblePassBtn;
     }

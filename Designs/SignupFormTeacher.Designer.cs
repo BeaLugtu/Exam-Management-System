@@ -63,7 +63,7 @@
             this.confirmPassTB.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.confirmPassTB.Location = new System.Drawing.Point(258, 439);
             this.confirmPassTB.Name = "confirmPassTB";
-            this.confirmPassTB.Size = new System.Drawing.Size(128, 36);
+            this.confirmPassTB.Size = new System.Drawing.Size(128, 38);
             this.confirmPassTB.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.confirmPassTB.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.confirmPassTB.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
@@ -71,7 +71,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.confirmPassTB.StateCommon.Border.Rounding = 10F;
-            this.confirmPassTB.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.confirmPassTB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmPassTB.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.confirmPassTB.TabIndex = 38;
             this.confirmPassTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.confirmPassTB_KeyPress);
@@ -81,7 +81,7 @@
             this.passwordTB.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.passwordTB.Location = new System.Drawing.Point(120, 439);
             this.passwordTB.Name = "passwordTB";
-            this.passwordTB.Size = new System.Drawing.Size(128, 36);
+            this.passwordTB.Size = new System.Drawing.Size(128, 38);
             this.passwordTB.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.passwordTB.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.passwordTB.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
@@ -89,7 +89,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.passwordTB.StateCommon.Border.Rounding = 10F;
-            this.passwordTB.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.passwordTB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTB.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.passwordTB.TabIndex = 37;
             this.passwordTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passwordTB_KeyPress);
@@ -99,7 +99,7 @@
             this.lnameTB.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lnameTB.Location = new System.Drawing.Point(258, 372);
             this.lnameTB.Name = "lnameTB";
-            this.lnameTB.Size = new System.Drawing.Size(128, 36);
+            this.lnameTB.Size = new System.Drawing.Size(128, 38);
             this.lnameTB.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.lnameTB.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.lnameTB.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
@@ -107,7 +107,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.lnameTB.StateCommon.Border.Rounding = 10F;
-            this.lnameTB.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lnameTB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnameTB.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.lnameTB.TabIndex = 36;
             this.lnameTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lnameTB_KeyPress);
@@ -117,7 +117,7 @@
             this.fnameTB.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.fnameTB.Location = new System.Drawing.Point(120, 372);
             this.fnameTB.Name = "fnameTB";
-            this.fnameTB.Size = new System.Drawing.Size(128, 36);
+            this.fnameTB.Size = new System.Drawing.Size(128, 38);
             this.fnameTB.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.fnameTB.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.fnameTB.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
@@ -125,7 +125,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.fnameTB.StateCommon.Border.Rounding = 10F;
-            this.fnameTB.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.fnameTB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fnameTB.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.fnameTB.TabIndex = 35;
             this.fnameTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fnameTB_KeyPress);
@@ -135,7 +135,7 @@
             this.teacherIDTB.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.teacherIDTB.Location = new System.Drawing.Point(120, 303);
             this.teacherIDTB.Name = "teacherIDTB";
-            this.teacherIDTB.Size = new System.Drawing.Size(266, 36);
+            this.teacherIDTB.Size = new System.Drawing.Size(266, 38);
             this.teacherIDTB.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.teacherIDTB.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.teacherIDTB.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
@@ -143,7 +143,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.teacherIDTB.StateCommon.Border.Rounding = 10F;
-            this.teacherIDTB.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.teacherIDTB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 9.75F);
             this.teacherIDTB.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
             this.teacherIDTB.TabIndex = 0;
             this.teacherIDTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.teacherIDTB_KeyPress);
