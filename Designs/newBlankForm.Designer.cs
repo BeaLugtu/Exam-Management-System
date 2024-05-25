@@ -71,11 +71,9 @@
             this.multiple2_RB = new Krypton.Toolkit.KryptonCheckBox();
             this.save_BTN = new Krypton.Toolkit.KryptonButton();
             this.panel1 = new System.Windows.Forms.Panel();
-
             this.contextualToQ_TB = new Krypton.Toolkit.KryptonTextBox();
             this.contextualFromQ_TB = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonTextBox2 = new Krypton.Toolkit.KryptonTextBox();
-
             this.contextualParaOnly_TB = new Krypton.Toolkit.KryptonRichTextBox();
             this.contextualPara_TB = new Krypton.Toolkit.KryptonRichTextBox();
             this.contextualPic_PB = new Krypton.Toolkit.KryptonPictureBox();
@@ -84,7 +82,6 @@
             this.kryptonPictureBox2 = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonCustomPaletteBase1 = new Krypton.Toolkit.KryptonCustomPaletteBase(this.components);
-
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -527,9 +524,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-
             this.pictureBox1.Location = new System.Drawing.Point(47, 107);
-
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(264, 30);
@@ -563,9 +558,7 @@
             this.questionType_DB.Name = "questionType_DB";
             this.questionType_DB.Palette = this.Program_DropButtonPalette;
             this.questionType_DB.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
-
             this.questionType_DB.Size = new System.Drawing.Size(121, 25);
-
             this.questionType_DB.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.questionType_DB.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.questionType_DB.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
@@ -1314,12 +1307,10 @@
             // 
             // contextualPara_TB
             // 
-
             this.contextualPara_TB.Location = new System.Drawing.Point(316, 158);
             this.contextualPara_TB.Margin = new System.Windows.Forms.Padding(2);
             this.contextualPara_TB.Name = "contextualPara_TB";
             this.contextualPara_TB.Size = new System.Drawing.Size(230, 201);
-
             this.contextualPara_TB.TabIndex = 25;
             this.contextualPara_TB.Text = "";
             // 
@@ -1336,12 +1327,10 @@
             // 
             // contextualPicOnly_PB
             // 
-
             this.contextualPicOnly_PB.Location = new System.Drawing.Point(59, 158);
             this.contextualPicOnly_PB.Margin = new System.Windows.Forms.Padding(2);
             this.contextualPicOnly_PB.Name = "contextualPicOnly_PB";
             this.contextualPicOnly_PB.Size = new System.Drawing.Size(488, 201);
-
             this.contextualPicOnly_PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.contextualPicOnly_PB.TabIndex = 23;
             this.contextualPicOnly_PB.TabStop = false;
@@ -1360,7 +1349,6 @@
             // kryptonPictureBox2
             // 
             this.kryptonPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPictureBox2.Image")));
-
             this.kryptonPictureBox2.Location = new System.Drawing.Point(100, 120);
             this.kryptonPictureBox2.Margin = new System.Windows.Forms.Padding(0);
             this.kryptonPictureBox2.Name = "kryptonPictureBox2";
@@ -1371,9 +1359,7 @@
             // kryptonPictureBox1
             // 
             this.kryptonPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPictureBox1.Image")));
-
             this.kryptonPictureBox1.Location = new System.Drawing.Point(100, 40);
-
             this.kryptonPictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.kryptonPictureBox1.Name = "kryptonPictureBox1";
             this.kryptonPictureBox1.Size = new System.Drawing.Size(127, 51);
@@ -1389,7 +1375,6 @@
             this.kryptonCustomPaletteBase1.ThemeName = "";
             this.kryptonCustomPaletteBase1.UseKryptonFileDialogs = true;
             // 
-
             // newBlankForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1433,9 +1418,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionType_DB)).EndInit();
             this.panel1.ResumeLayout(false);
-
             this.panel1.PerformLayout();
-
             ((System.ComponentModel.ISupportInitialize)(this.contextualPic_PB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contextualPicOnly_PB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox4)).EndInit();
@@ -1500,6 +1483,5 @@
         private Krypton.Toolkit.KryptonTextBox contextualToQ_TB;
         private Krypton.Toolkit.KryptonTextBox contextualFromQ_TB;
         private Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
-
     }
 }

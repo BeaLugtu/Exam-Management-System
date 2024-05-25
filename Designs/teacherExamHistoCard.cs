@@ -60,6 +60,5 @@ namespace Exam_Management_System.Designs
             }
         }
 
-
     }
 }
