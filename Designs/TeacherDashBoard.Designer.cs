@@ -596,7 +596,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.ClientSize = new System.Drawing.Size(1136, 640);
+            this.ClientSize = new System.Drawing.Size(1200, 700);
             this.Controls.Add(this.kryptonPanel9);
             this.Controls.Add(this.kryptonPictureBox5);
             this.Controls.Add(this.kryptonPictureBox4);
@@ -620,6 +620,7 @@
             this.Controls.Add(this.timeDateLbl);
             this.Controls.Add(this.kryptonButton2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TeacherDashBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "teacherDashBoard";
