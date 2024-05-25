@@ -18,7 +18,7 @@ namespace Exam_Management_System
         DBAccess objDABAccess = new DBAccess();
         DataTable dtUsers = new DataTable();
 
-
+        private StudentDashboard sdboard;
         // Declare variables to store original width and height
         private int originalWidth;
         private int originalHeight;
@@ -113,8 +113,9 @@ namespace Exam_Management_System
                     if (userType == 0)
                     {
                         // Open the homepage for students
-                        Designs.Homepage homePage = new Designs.Homepage(userID, UserType.Student);
-                        homePage.Show();
+                        sdboard = new StudentDashboard(userID); // Instantiate StudentDashboard
+                        sdboard.Show();
+                        this.Hide();
                     }
                     else if (userType == 1)
                     {
