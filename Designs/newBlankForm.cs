@@ -106,12 +106,10 @@ namespace TeacherDashboard
             string questionType = questionType_DB.SelectedItem?.ToString();
             int manualCheck = manualC_CB.Checked ? 1 : 0;
             int? points = null;
-
             int randomizer = 1; // Default value for randomizer
             int? contextualFromQ = null;
             int? contextualToQ = null;
             int? questionNumber = null; // Default to null
-
 
             // Handle point requirement based on question type
             if (questionType != "Contextual Paragraph" && questionType != "Contextual Paragraph & Image" && questionType != "Contextual Image")
@@ -127,13 +125,11 @@ namespace TeacherDashboard
             // Handle contextual range inputs
             if (!string.IsNullOrWhiteSpace(contextualFromQ_TB.Text) && int.TryParse(contextualFromQ_TB.Text, out int fromQ))
             {
-
                 contextualFromQ = fromQ;
             }
             if (!string.IsNullOrWhiteSpace(contextualToQ_TB.Text) && int.TryParse(contextualToQ_TB.Text, out int toQ))
             {
                 contextualToQ = toQ;
-
             }
 
             // Determine if the current question is contextual
@@ -178,17 +174,12 @@ namespace TeacherDashboard
 
             try
             {
-                // Get the next question number for the given exam code
-                int questionNumber = GetNextQuestionNumber(examCode);
-
                 // SQL query to insert values into the "examQuestions" table
-
                 string query = "INSERT INTO examQuestions (questionNumber, question, examCode, question_type, image, point, manual_check, multiplechoice_choices, multiplechoice_answer, identification, paragraph_type, contextual_paragraph, randomizer, contextualFromQ, contextualToQ) " +
                                "VALUES (@QuestionNumber, @Question, @Code, @QuestionType, @Image, @Point, @ManualCheck, @MultipleChoiceOptions, @MultipleChoiceAnswer, @ShortAnswer, @LongAnswer, @ContextualParagraph, @Randomizer, @ContextualFromQ, @ContextualToQ)";
 
                 MySqlCommand command = new MySqlCommand(query);
                 command.Parameters.AddWithValue("@QuestionNumber", questionNumber ?? (object)DBNull.Value);
-
                 command.Parameters.AddWithValue("@Question", question);
                 command.Parameters.AddWithValue("@Code", examCode);
                 command.Parameters.AddWithValue("@QuestionType", questionType);
@@ -200,11 +191,9 @@ namespace TeacherDashboard
                 command.Parameters.AddWithValue("@ShortAnswer", questionType == "Identification" ? identification_TB.Text : (object)DBNull.Value);
                 command.Parameters.AddWithValue("@LongAnswer", questionType == "Paragraph Form" ? longAnswer_TB.Text : (object)DBNull.Value);
                 command.Parameters.AddWithValue("@ContextualParagraph", questionType == "Contextual Paragraph" ? contextualParaOnly_TB.Text : (questionType == "Contextual Paragraph & Image" ? contextualPara_TB.Text : (object)DBNull.Value));
-
                 command.Parameters.AddWithValue("@Randomizer", randomizer);
                 command.Parameters.AddWithValue("@ContextualFromQ", contextualFromQ ?? (object)DBNull.Value);
                 command.Parameters.AddWithValue("@ContextualToQ", contextualToQ ?? (object)DBNull.Value);
-
 
                 // Execute the query using the database class
                 objDBAccess.createConn(); // Ensure connection is open
@@ -265,28 +254,6 @@ namespace TeacherDashboard
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
-
-        private int GetNextQuestionNumber(string examCode)
-        {
-            try
-            {
-                string query = "SELECT IFNULL(MAX(questionNumber), 0) + 1 FROM examQuestions WHERE examCode = @Code";
-                MySqlCommand command = new MySqlCommand(query);
-                command.Parameters.AddWithValue("@Code", examCode);
-
-                objDBAccess.createConn();
-                int nextQuestionNumber = Convert.ToInt32(objDBAccess.executeScalar(command));
-                objDBAccess.closeConn();
-
-                return nextQuestionNumber;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred while retrieving the next question number: " + ex.Message);
-                return 1; // Default to 1 if there's an error
-            }
-        }
-
 
 
 
