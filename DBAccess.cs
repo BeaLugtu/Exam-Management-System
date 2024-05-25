@@ -79,6 +79,25 @@ namespace Exam_Management_System
                 throw ex;
             }
         }
+        public void readDatathroughAdapter1(MySqlCommand cmd, DataTable tblName)
+        {
+            try
+            {
+                if (mySqlConnection.State == ConnectionState.Closed)
+                {
+                    createConn();
+                }
+
+                cmd.Connection = mySqlConnection;
+
+                adapter.SelectCommand = cmd;
+                adapter.Fill(tblName);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         // Reads data from the database using a DataReader and a provided SQL query
         public MySqlDataReader readDatathroughReader(string query)

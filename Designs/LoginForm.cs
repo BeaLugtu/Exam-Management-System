@@ -122,6 +122,7 @@ namespace Exam_Management_System
                         // Open the dashboard for teachers
                         Designs.TeacherDashBoard teacherDashboard = new Designs.TeacherDashBoard(userID, UserType.Teacher);
                         teacherDashboard.Show();
+    
                     }
                     else
                     {
@@ -186,16 +187,7 @@ namespace Exam_Management_System
         }
 
 
-        private void forgotPassBtn_MouseHover(object sender, EventArgs e)
-        {
-            forgotPassBtn.StateCommon.ShortText.Font = new Font(forgotPassBtn.StateCommon.ShortText.Font.FontFamily, 8.7f, forgotPassBtn.StateCommon.ShortText.Font.Style); // Set font size to 8.3pt on hover
-        }
 
-        private void forgotPassBtn_MouseLeave(object sender, EventArgs e)
-        {
-            forgotPassBtn.StateCommon.ShortText.Font = new Font(forgotPassBtn.StateCommon.ShortText.Font.FontFamily, 8.25f, forgotPassBtn.StateCommon.ShortText.Font.Style); // Set font size to 8.3pt on hover
-
-        }
 
         private bool isDefaultImage = true;
 

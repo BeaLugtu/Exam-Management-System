@@ -40,7 +40,6 @@ namespace Exam_Management_System.Designs
             string Password = passwordTB.Text;
             string ConfirmPassword = confirmPassTB.Text;
 
-
             // Check if any field is empty
             if (string.IsNullOrWhiteSpace(StudentID) || string.IsNullOrWhiteSpace(Fname) || string.IsNullOrWhiteSpace(Lname) || string.IsNullOrWhiteSpace(Password) || string.IsNullOrWhiteSpace(ConfirmPassword))
             {
@@ -83,39 +82,63 @@ namespace Exam_Management_System.Designs
                 MessageBox.Show("New password and confirm password do not match.");
                 return;
             }
+
+            // Check if the Student ID exists in adminaccountrecords
+            if (!IsIDInAdminRecords(StudentID))
+            {
+                MessageBox.Show("The Student ID does not exist in admin account records. Please provide a valid ID.");
+                return;
+            }
+
+            // Check if the Student ID is already used
+            if (IsIDAlreadyUsed(StudentID))
+            {
+                MessageBox.Show("The Student ID is already used. Please choose a different ID.");
+                return;
+            }
+
+            MySqlCommand insertCommand = new MySqlCommand("INSERT INTO Users(ID, First_Name, Last_Name, Password, User_Type) VALUES(@StudentID, @Fname, @Lname, @Password, 0)");
+            insertCommand.Parameters.AddWithValue("@StudentID", StudentID);
+            insertCommand.Parameters.AddWithValue("@Fname", Fname);
+            insertCommand.Parameters.AddWithValue("@Lname", Lname);
+            insertCommand.Parameters.AddWithValue("@Password", Password);
+
+            int row = objDBAccess.executeQuery(insertCommand);
+
+            if (row == 1)
+            {
+                // Pass student ID to the next form
+                // For student signup
+                SetUpAccount setupAccountForm = new SetUpAccount(StudentID, UserType.Student);
+                MessageBox.Show("Account Created Successfully");
+                this.Hide();
+                setupAccountForm.Show();
+            }
             else
             {
-                MySqlCommand insertCommand = new MySqlCommand("INSERT INTO Users(ID, First_Name, Last_Name, Password, User_Type) VALUES(@StudentID, @Fname, @Lname, @Password, 0)");
-                insertCommand.Parameters.AddWithValue("@StudentID", StudentID);
-                insertCommand.Parameters.AddWithValue("@Fname", Fname);
-                insertCommand.Parameters.AddWithValue("@Lname", Lname);
-                insertCommand.Parameters.AddWithValue("@Password", Password);
-
-                int row = objDBAccess.executeQuery(insertCommand);
-
-                if (row == 1)
-                {
-                    // Pass student ID to the next form
-                    // For student signup
-                    SetUpAccount setupAccountForm = new SetUpAccount(StudentID, UserType.Student);
-                    MessageBox.Show("Account Created Successfully");
-                    this.Hide();
-                    setupAccountForm.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Error Occurred. Try again");
-                }
+                MessageBox.Show("Error Occurred. Try again");
             }
         }
+
+        // Method to check if the Student ID exists in admin account records
+        private bool IsIDInAdminRecords(string studentID)
+        {
+            MySqlCommand checkCommand = new MySqlCommand("SELECT COUNT(*) FROM adminaccountrecords WHERE ID = @StudentID AND User_type = 0");
+            checkCommand.Parameters.AddWithValue("@StudentID", studentID);
+
+            int count = Convert.ToInt32(objDBAccess.executeScalar(checkCommand));
+            return count > 0;
+        }
+
+
 
         // Method to check if the ID is already used
         private bool IsIDAlreadyUsed(string teacherID)
         {
             // Assuming there is a table named 'Users' with 'ID' column
-            string query = "SELECT COUNT(*) FROM Users WHERE ID = @TeacherID";
+            string query = "SELECT COUNT(*) FROM Users WHERE ID = @StudentID";
             MySqlCommand command = new MySqlCommand(query);
-            command.Parameters.AddWithValue("@TeacherID", teacherID);
+            command.Parameters.AddWithValue("@StudentID", teacherID);
             int count = Convert.ToInt32(objDBAccess.executeScalar(command));
             return count > 0;
         }
