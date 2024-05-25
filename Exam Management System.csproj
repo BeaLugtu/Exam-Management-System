@@ -59,6 +59,42 @@
     <Compile Include="Designs\archiveCard.Designer.cs">
       <DependentUpon>archiveCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Designs\Cards\ContextualCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\Cards\ContextualCard.Designer.cs">
+      <DependentUpon>ContextualCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\Cards\ContextualImageCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\Cards\ContextualImageCard.Designer.cs">
+      <DependentUpon>ContextualImageCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\Cards\ContextualImageParagraphCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\Cards\ContextualImageParagraphCard.Designer.cs">
+      <DependentUpon>ContextualImageParagraphCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\Cards\IdentificationCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\Cards\IdentificationCard.Designer.cs">
+      <DependentUpon>IdentificationCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\Cards\MultipleChoiceCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\Cards\MultipleChoiceCard.Designer.cs">
+      <DependentUpon>MultipleChoiceCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\Cards\ParagraphCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\Cards\ParagraphCard.Designer.cs">
+      <DependentUpon>ParagraphCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Designs\CheckingPreview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +201,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Designs\archiveCard.resx">
       <DependentUpon>archiveCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\Cards\ContextualCard.resx">
+      <DependentUpon>ContextualCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\Cards\ContextualImageCard.resx">
+      <DependentUpon>ContextualImageCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\Cards\ContextualImageParagraphCard.resx">
+      <DependentUpon>ContextualImageParagraphCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\Cards\IdentificationCard.resx">
+      <DependentUpon>IdentificationCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\Cards\MultipleChoiceCard.resx">
+      <DependentUpon>MultipleChoiceCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\Cards\ParagraphCard.resx">
+      <DependentUpon>ParagraphCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\CheckingPreview.resx">
       <DependentUpon>CheckingPreview.cs</DependentUpon>
