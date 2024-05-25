@@ -33,10 +33,12 @@
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             this.noOfQuestions_LBL = new Krypton.Toolkit.KryptonLabel();
+
             this.SuspendLayout();
             // 
             // codePreviewForm_LBL
             // 
+
             this.codePreviewForm_LBL.Location = new System.Drawing.Point(421, 30);
             this.codePreviewForm_LBL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.codePreviewForm_LBL.Name = "codePreviewForm_LBL";
@@ -47,16 +49,20 @@
             // sh_FLP
             // 
             this.sh_FLP.AutoScroll = true;
+
             this.sh_FLP.Location = new System.Drawing.Point(28, 84);
             this.sh_FLP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.sh_FLP.Name = "sh_FLP";
             this.sh_FLP.Size = new System.Drawing.Size(474, 495);
+
             this.sh_FLP.TabIndex = 1;
             // 
             // kryptonLabel1
             // 
+
             this.kryptonLabel1.Location = new System.Drawing.Point(348, 30);
             this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(74, 20);
             this.kryptonLabel1.TabIndex = 2;
@@ -64,6 +70,7 @@
             // 
             // kryptonLabel2
             // 
+
             this.kryptonLabel2.Location = new System.Drawing.Point(28, 30);
             this.kryptonLabel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.kryptonLabel2.Name = "kryptonLabel2";
@@ -73,6 +80,7 @@
             // 
             // noOfQuestions_LBL
             // 
+
             this.noOfQuestions_LBL.Location = new System.Drawing.Point(28, 51);
             this.noOfQuestions_LBL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.noOfQuestions_LBL.Name = "noOfQuestions_LBL";
@@ -80,10 +88,12 @@
             this.noOfQuestions_LBL.TabIndex = 4;
             this.noOfQuestions_LBL.Values.Text = "kryptonLabel3";
             // 
+
             // PreviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(534, 623);
             this.Controls.Add(this.noOfQuestions_LBL);
             this.Controls.Add(this.kryptonLabel2);
@@ -105,5 +115,6 @@
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private Krypton.Toolkit.KryptonLabel noOfQuestions_LBL;
+
     }
 }

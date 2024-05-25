@@ -52,14 +52,14 @@
             this.kryptonPanel6 = new Krypton.Toolkit.KryptonPanel();
             this.kryptonPanel7 = new Krypton.Toolkit.KryptonPanel();
             this.kryptonPanel8 = new Krypton.Toolkit.KryptonPanel();
-            this.flowLayoutTablelistExam = new System.Windows.Forms.FlowLayoutPanel();
-            this.kryptonPanel9 = new Krypton.Toolkit.KryptonPanel();
             this.notificationBtn = new Krypton.Toolkit.KryptonButton();
             this.kryptonPictureBox5 = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonPictureBox4 = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonPictureBox3 = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonPictureBox2 = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
+            this.flowLayoutTablelistExam = new System.Windows.Forms.FlowLayoutPanel();
+            this.kryptonPanel9 = new Krypton.Toolkit.KryptonPanel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
@@ -76,13 +76,13 @@
             this.kryptonPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel8)).BeginInit();
             this.kryptonPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel9)).BeginInit();
-            this.kryptonPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel9)).BeginInit();
+            this.kryptonPanel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // timeDateLbl
@@ -493,26 +493,6 @@
             this.kryptonPanel8.StateCommon.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.kryptonPanel8.TabIndex = 46;
             // 
-            // flowLayoutTablelistExam
-            // 
-            this.flowLayoutTablelistExam.AutoScroll = true;
-            this.flowLayoutTablelistExam.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutTablelistExam.Location = new System.Drawing.Point(1, 0);
-            this.flowLayoutTablelistExam.Name = "flowLayoutTablelistExam";
-            this.flowLayoutTablelistExam.Size = new System.Drawing.Size(1025, 229);
-            this.flowLayoutTablelistExam.TabIndex = 48;
-            // 
-            // kryptonPanel9
-            // 
-            this.kryptonPanel9.Controls.Add(this.flowLayoutTablelistExam);
-            this.kryptonPanel9.Location = new System.Drawing.Point(85, 483);
-            this.kryptonPanel9.Name = "kryptonPanel9";
-            this.kryptonPanel9.Size = new System.Drawing.Size(1026, 229);
-            this.kryptonPanel9.StateCommon.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonPanel9.StateCommon.Color2 = System.Drawing.Color.Transparent;
-            this.kryptonPanel9.StateCommon.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPanel9.StateCommon.Image")));
-            this.kryptonPanel9.TabIndex = 50;
-            // 
             // notificationBtn
             // 
             this.notificationBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -591,12 +571,34 @@
             this.kryptonPictureBox1.TabIndex = 21;
             this.kryptonPictureBox1.TabStop = false;
             // 
+            // flowLayoutTablelistExam
+            // 
+            this.flowLayoutTablelistExam.AutoScroll = true;
+            this.flowLayoutTablelistExam.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutTablelistExam.Location = new System.Drawing.Point(1, 0);
+            this.flowLayoutTablelistExam.Name = "flowLayoutTablelistExam";
+            this.flowLayoutTablelistExam.Size = new System.Drawing.Size(1025, 229);
+            this.flowLayoutTablelistExam.TabIndex = 48;
+            // 
+            // kryptonPanel9
+            // 
+            this.kryptonPanel9.Controls.Add(this.flowLayoutTablelistExam);
+            this.kryptonPanel9.Location = new System.Drawing.Point(85, 483);
+            this.kryptonPanel9.Name = "kryptonPanel9";
+            this.kryptonPanel9.Size = new System.Drawing.Size(1026, 229);
+            this.kryptonPanel9.StateCommon.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonPanel9.StateCommon.Color2 = System.Drawing.Color.Transparent;
+            this.kryptonPanel9.StateCommon.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPanel9.StateCommon.Image")));
+            this.kryptonPanel9.TabIndex = 50;
+            // 
             // TeacherDashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.ClientSize = new System.Drawing.Size(1200, 700);
+
+            this.ClientSize = new System.Drawing.Size(1200, 750);
+
             this.Controls.Add(this.kryptonPanel9);
             this.Controls.Add(this.kryptonPictureBox5);
             this.Controls.Add(this.kryptonPictureBox4);
@@ -641,13 +643,13 @@
             this.kryptonPanel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel8)).EndInit();
             this.kryptonPanel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel9)).EndInit();
-            this.kryptonPanel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel9)).EndInit();
+            this.kryptonPanel9.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -681,9 +683,9 @@
         private Krypton.Toolkit.KryptonPanel kryptonPanel7;
         private Krypton.Toolkit.KryptonPanel kryptonPanel8;
         private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutTablelistExam;
         private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox5;
-        private Krypton.Toolkit.KryptonPanel kryptonPanel9;
         private Krypton.Toolkit.KryptonButton notificationBtn;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutTablelistExam;
+        private Krypton.Toolkit.KryptonPanel kryptonPanel9;
     }
 }
