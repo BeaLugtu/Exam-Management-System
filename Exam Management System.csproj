@@ -71,17 +71,17 @@
     <Compile Include="Designs\ChooseAccountSignUpForm.Designer.cs">
       <DependentUpon>ChooseAccountSignUpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Designs\ExamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designs\ExamForm.Designer.cs">
+      <DependentUpon>ExamForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Designs\examSuccessForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Designs\examSuccessForm.Designer.cs">
       <DependentUpon>examSuccessForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Designs\Homepage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Designs\Homepage.Designer.cs">
-      <DependentUpon>Homepage.cs</DependentUpon>
     </Compile>
     <Compile Include="Designs\LoadingScreen.cs">
       <SubType>Form</SubType>
@@ -131,6 +131,12 @@
     <Compile Include="Designs\SignupFormTeacher.Designer.cs">
       <DependentUpon>SignupFormTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="Designs\StudentDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designs\StudentDashboard.designer.cs">
+      <DependentUpon>StudentDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Designs\TeacherCheckingCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -166,11 +172,11 @@
     <EmbeddedResource Include="Designs\ChooseAccountSignUpForm.resx">
       <DependentUpon>ChooseAccountSignUpForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Designs\ExamForm.resx">
+      <DependentUpon>ExamForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Designs\examSuccessForm.resx">
       <DependentUpon>examSuccessForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Designs\Homepage.resx">
-      <DependentUpon>Homepage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\LoadingScreen.resx">
       <DependentUpon>LoadingScreen.cs</DependentUpon>
@@ -195,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\SignupFormTeacher.resx">
       <DependentUpon>SignupFormTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\StudentDashboard.resx">
+      <DependentUpon>StudentDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\TeacherCheckingCard.resx">
       <DependentUpon>TeacherCheckingCard.cs</DependentUpon>
@@ -239,6 +248,17 @@
     <Content Include="assets\Student Sign up Form.png" />
     <Content Include="assets\StudentAccountOption.png" />
     <Content Include="assets\TeacherAccountOption.png" />
+    <None Include="Resources\studenDashboardPage1.png" />
+    <None Include="Resources\Group 1751.png" />
+    <None Include="Resources\Rectangle 415.png" />
+    <None Include="Resources\Rectangle 413.png" />
+    <None Include="Resources\Rectangle 412.png" />
+    <None Include="Resources\Rectangle 348 %281%29.png" />
+    <None Include="Resources\readyText.png" />
+    <None Include="Resources\Radio_Button_UnSelected %281%29.png" />
+    <None Include="Resources\Radio_Button_Selected %281%29.png" />
+    <None Include="Resources\question mark.png" />
+    <None Include="Resources\Group 186.png" />
     <None Include="Resources\Group 1799.png" />
     <None Include="Resources\Group 1800.png" />
     <None Include="Resources\fgdxfdg.png" />
@@ -314,5 +334,6 @@
       <Version>0.7.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

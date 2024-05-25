@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 
 namespace Exam_Management_System.Designs
@@ -51,8 +50,8 @@ namespace Exam_Management_System.Designs
         {
             // Create a linear gradient brush for the background
             Rectangle rect = new Rectangle(0, 0, kryptonProgressBar1.Width, kryptonProgressBar1.Height);
-            Color color1 = Color.LightGray; 
-            Color color2 = Color.DarkGray;  
+            Color color1 = Color.LightGray;
+            Color color2 = Color.DarkGray;
 
             LinearGradientBrush gradientBrush = new LinearGradientBrush(rect, color1, color2, LinearGradientMode.Vertical);
 

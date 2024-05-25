@@ -822,15 +822,26 @@ namespace Exam_Management_System.Designs
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
-            if (hasUnsavedChanges)
+            var result = MessageBox.Show(
+                                "You have unsaved changes on your Profile. Click yes to save?",
+                                "Unsaved Changes",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
             {
-                HandleUnsavedChanges();
-            } 
-            else 
+                SaveBtn_Click(null, null);
+                // Get the user ID and user type from the database
+                user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
+                UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
+
+                this.Close();
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+            }
+            else if (result == DialogResult.No)
             {
-                this.Hide();
-                LoginForm login = new LoginForm();
-                login.Show();
+                return;
             }
         }
 

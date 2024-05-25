@@ -113,8 +113,8 @@ namespace Exam_Management_System
                     if (userType == 0)
                     {
                         // Open the homepage for students
-                        Designs.Homepage homePage = new Designs.Homepage(userID, UserType.Student);
-                        homePage.Show();
+                        Designs.StudentDashboard studentDashboard = new Designs.StudentDashboard(userID, UserType.Student);
+                        studentDashboard.Show();
                     }
                     else if (userType == 1)
                     {
