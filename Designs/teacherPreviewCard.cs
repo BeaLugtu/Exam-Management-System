@@ -255,7 +255,7 @@ namespace Exam_Management_System.Designs
         public string QuestionNumber
         {
             get { return questionNo_LBL.Text; }
-            set { questionNo_LBL.Text = "Q No. " + value; }
+            set { questionNo_LBL.Text = "Q# " + value; }
 
         }
 
