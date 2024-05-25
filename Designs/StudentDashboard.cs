@@ -1,4 +1,8 @@
-﻿using System;
+
+﻿
+using MySql.Data.MySqlClient;
+using System;
+
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -115,14 +119,69 @@ namespace Exam_Management_System.Designs
 
         private void StudentDashboard_Load(object sender, EventArgs e)
         {
+
             UpdateTimeLabel();
 
             // Load user profile picture
             LoadUserProfilePicture();
+
         }
 
         private void Exam_Click(object sender, EventArgs e)
         {
+
+            //string userID = dtUsers.Rows[0]["ID"].ToString();
+            string examCode = examCodeTB.Text;
+
+            // Check if the user has already answered the exam
+            string query = "SELECT COUNT(`"+userID+ "_answers`) FROM `" + examCode + "_answers`";
+
+            // Create a DataTable to store the result
+            DataTable dtCount = new DataTable();
+
+            try
+            {
+                // Execute the query to fetch the count of answered questions
+                objDABAccess.readDatathroughAdapter(query, dtCount);
+
+                // Get the count of answered questions from the DataTable
+                int answeredCount = Convert.ToInt32(dtCount.Rows[0][0]);
+
+                // Determine if the exam has been answered
+                bool answered = answeredCount > 0;
+
+                // If the exam has been answered, display a message and do not open the exam form
+                if (answered)
+                {
+                    MessageBox.Show("Exam has already been answered.", "Exam Answered", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    // Open the exam form
+                    ExamForm examForm = new ExamForm(userID, examCode);
+                    examForm.Show();
+                    this.Hide();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                // If the table does not exist, set answered to false and proceed
+                bool answered = false;
+
+                // Display an error message if needed
+                MessageBox.Show("Proceed Answering");
+
+                // Proceed to open the exam form
+                ExamForm examForm = new ExamForm(userID, examCode);
+                examForm.Show();
+                this.Hide();
+            }
+        }
+
+
+
+        private void ProfileBtn_Click(object sender, EventArgs e) { 
+
             string query = $"Select * from Users Where ID= '{userID}'";
             objDABAccess.readDatathroughAdapter(query, dtUsers);
             userID = dtUsers.Rows[0]["ID"].ToString();
@@ -135,6 +194,7 @@ namespace Exam_Management_System.Designs
 
 
         private void ProfileView_Click(object sender, EventArgs e)
+
         {
             // Hide the current form
             Designs.Profile profile = new Designs.Profile(userID, userType);

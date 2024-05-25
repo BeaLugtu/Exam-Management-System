@@ -132,7 +132,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.LoginBtn.TabIndex = 16;
             this.LoginBtn.Values.Text = "";
-            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
+            this.LoginBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LoginBtn_MouseClick);
             // 
             // SignupBtn
             // 

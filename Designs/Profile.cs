@@ -847,7 +847,6 @@ namespace Exam_Management_System.Designs
                 return;
             }
         }
-
         private void backToDashboardBtn_Click(object sender, EventArgs e)
         {
             if (hasUnsavedChanges)
@@ -857,14 +856,47 @@ namespace Exam_Management_System.Designs
             else
             {
                 // Get the user ID and user type from the database
-                user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
-                UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
+                string user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
+                string userTypeString = dtloggedin_User.Rows[0]["User_Type"].ToString();
+                UserType userType;
 
-                this.Close();
-                Designs.TeacherDashBoard teacherDashBoard = new Designs.TeacherDashBoard(user_ID, userType);
-                teacherDashBoard.Show();
+                // Debug output
+                Console.WriteLine("User ID: " + user_ID);
+                Console.WriteLine("User Type String: " + userTypeString);
+
+                // Parse the user type
+                if (Enum.TryParse(userTypeString, out userType))
+                {
+                    Console.WriteLine("Parsed User Type: " + userType);
+                    Console.WriteLine("Parsed User Type (int): " + (int)userType);
+
+                    this.Close();
+
+                    // Redirect based on user type
+                    if ((int)userType == 0)
+                    {
+                        Designs.StudentDashboard studentDashboard = new Designs.StudentDashboard(user_ID, userType);
+                        studentDashboard.Show();
+                    }
+                    else if ((int)userType == 1)
+                    {
+                        Designs.TeacherDashBoard teacherDashBoard = new Designs.TeacherDashBoard(user_ID, userType);
+                        teacherDashBoard.Show();
+                    }
+                    else
+                    {
+                        // Handle other user types if necessary
+                        MessageBox.Show("Unknown user type. Please contact support.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Failed to parse user type. Please contact support.");
+                }
             }
         }
+
+
 
         private void profileViewBtn_Click(object sender, EventArgs e)
         {

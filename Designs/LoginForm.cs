@@ -22,7 +22,7 @@ namespace Exam_Management_System
         // Declare variables to store original width and height
         private int originalWidth;
         private int originalHeight;
-
+        private StudentDashboard sdboard;
         public LoginForm()
         {
             InitializeComponent();
@@ -191,7 +191,7 @@ namespace Exam_Management_System
 
         }
 
-        private void LoginBtn_Click(object sender, EventArgs e)
+        private void LoginBtn_MouseClick(object sender, MouseEventArgs e)
         {
             string UserID = IDTB.Text;
             string Password = PasswordTB.Text;
@@ -225,15 +225,15 @@ namespace Exam_Management_System
                     if (userType == 0)
                     {
                         // Open the homepage for students
-                        Designs.StudentDashboard studentDashboard = new Designs.StudentDashboard(userID, UserType.Student);
-                        studentDashboard.Show();
+                        sdboard = new StudentDashboard(userID, UserType.Student); // Instantiate StudentDashboard
+                        sdboard.Show();
+                        this.Hide();
                     }
                     else if (userType == 1)
                     {
                         // Open the dashboard for teachers
                         Designs.TeacherDashBoard teacherDashboard = new Designs.TeacherDashBoard(userID, UserType.Teacher);
                         teacherDashboard.Show();
-
                     }
                     else
                     {
