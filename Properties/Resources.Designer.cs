@@ -113,6 +113,16 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Group_186 {
+            get {
+                object obj = ResourceManager.GetObject("Group_186", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_eye_15 {
             get {
                 object obj = ResourceManager.GetObject("icons8_eye_15", resourceCulture);
@@ -213,9 +223,15 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
+        internal static System.Drawing.Bitmap question_mark {
+            get {
+                object obj = ResourceManager.GetObject("question_mark", resourceCulture);
+
         internal static System.Drawing.Bitmap profileBtnActive {
             get {
                 object obj = ResourceManager.GetObject("profileBtnActive", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +239,75 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
+        internal static System.Drawing.Bitmap Radio_Button_Selected__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Radio_Button_Selected__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Radio_Button_UnSelected__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Radio_Button_UnSelected__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap readyText {
+            get {
+                object obj = ResourceManager.GetObject("readyText", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rectangle_348__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Rectangle_348__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rectangle_412 {
+            get {
+                object obj = ResourceManager.GetObject("Rectangle_412", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rectangle_413 {
+            get {
+                object obj = ResourceManager.GetObject("Rectangle_413", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rectangle_415 {
+            get {
+                object obj = ResourceManager.GetObject("Rectangle_415", resourceCulture);
+
         internal static System.Drawing.Bitmap profileBtnNotActive {
             get {
                 object obj = ResourceManager.GetObject("profileBtnNotActive", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -236,6 +318,16 @@ namespace Exam_Management_System.Properties {
         internal static System.Drawing.Bitmap Sample {
             get {
                 object obj = ResourceManager.GetObject("Sample", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap studenDashboardPage1 {
+            get {
+                object obj = ResourceManager.GetObject("studenDashboardPage1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

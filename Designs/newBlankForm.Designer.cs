@@ -81,7 +81,9 @@
             this.kryptonPictureBox2 = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonCustomPaletteBase1 = new Krypton.Toolkit.KryptonCustomPaletteBase(this.components);
+
             this.backBtn = new Krypton.Toolkit.KryptonButton();
+
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -189,7 +191,9 @@
             // view_BTN
             // 
             this.view_BTN.Location = new System.Drawing.Point(289, 44);
+
             this.view_BTN.Margin = new System.Windows.Forms.Padding(2);
+
             this.view_BTN.Name = "view_BTN";
             this.view_BTN.Size = new System.Drawing.Size(19, 20);
             this.view_BTN.TabIndex = 48;
@@ -286,7 +290,9 @@
             this.label7.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.label7.Location = new System.Drawing.Point(272, 301);
+
             this.label7.Margin = new System.Windows.Forms.Padding(5);
+
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 15);
             this.label7.TabIndex = 32;
@@ -318,9 +324,11 @@
             this.examDateDeadline.CalendarTodayDate = new System.DateTime(2024, 5, 18, 0, 0, 0, 0);
             this.examDateDeadline.Checked = false;
             this.examDateDeadline.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.examDateDeadline.DropButtonStyle = Krypton.Toolkit.ButtonStyle.Custom2;
             this.examDateDeadline.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.examDateDeadline.Location = new System.Drawing.Point(51, 262);
             this.examDateDeadline.Name = "examDateDeadline";
+
             this.examDateDeadline.Size = new System.Drawing.Size(121, 27);
             this.examDateDeadline.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.examDateDeadline.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
@@ -602,6 +610,7 @@
             this.Program_DropButtonPalette.ButtonStyles.ButtonCustom1.StateCommon.Content.LongText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.Program_DropButtonPalette.ButtonStyles.ButtonCustom1.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.Program_DropButtonPalette.ButtonStyles.ButtonCustom1.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+
             this.Program_DropButtonPalette.ThemeName = "";
             this.Program_DropButtonPalette.UseKryptonFileDialogs = true;
             // 
@@ -609,6 +618,7 @@
             // 
             this.attachment_BT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.attachment_BT.Location = new System.Drawing.Point(664, 277);
+
             this.attachment_BT.Margin = new System.Windows.Forms.Padding(6);
             this.attachment_BT.Name = "attachment_BT";
             this.attachment_BT.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
@@ -835,7 +845,9 @@
             this.question_TB.CueHint.TextV = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.question_TB.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.question_TB.Location = new System.Drawing.Point(540, 326);
+
             this.question_TB.Margin = new System.Windows.Forms.Padding(16);
+
             this.question_TB.Name = "question_TB";
             this.question_TB.Size = new System.Drawing.Size(487, 106);
             this.question_TB.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
@@ -998,7 +1010,9 @@
             this.longAnswer_TB.CueHint.TextV = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.longAnswer_TB.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.longAnswer_TB.Location = new System.Drawing.Point(539, 448);
+
             this.longAnswer_TB.Margin = new System.Windows.Forms.Padding(16);
+
             this.longAnswer_TB.Name = "longAnswer_TB";
             this.longAnswer_TB.Size = new System.Drawing.Size(487, 52);
             this.longAnswer_TB.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
@@ -1250,7 +1264,9 @@
             // contextualParaOnly_TB
             // 
             this.contextualParaOnly_TB.Location = new System.Drawing.Point(60, 158);
+
             this.contextualParaOnly_TB.Margin = new System.Windows.Forms.Padding(2);
+
             this.contextualParaOnly_TB.Name = "contextualParaOnly_TB";
             this.contextualParaOnly_TB.Size = new System.Drawing.Size(487, 199);
             this.contextualParaOnly_TB.TabIndex = 26;
@@ -1282,7 +1298,9 @@
             // contextualPara_TB
             // 
             this.contextualPara_TB.Location = new System.Drawing.Point(316, 158);
+
             this.contextualPara_TB.Margin = new System.Windows.Forms.Padding(2);
+
             this.contextualPara_TB.Name = "contextualPara_TB";
             this.contextualPara_TB.Size = new System.Drawing.Size(230, 201);
             this.contextualPara_TB.TabIndex = 25;
@@ -1292,7 +1310,9 @@
             // 
             this.contextualPic_PB.Image = ((System.Drawing.Image)(resources.GetObject("contextualPic_PB.Image")));
             this.contextualPic_PB.Location = new System.Drawing.Point(60, 158);
+
             this.contextualPic_PB.Margin = new System.Windows.Forms.Padding(2);
+
             this.contextualPic_PB.Name = "contextualPic_PB";
             this.contextualPic_PB.Size = new System.Drawing.Size(262, 200);
             this.contextualPic_PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1302,7 +1322,9 @@
             // contextualPicOnly_PB
             // 
             this.contextualPicOnly_PB.Location = new System.Drawing.Point(59, 158);
+
             this.contextualPicOnly_PB.Margin = new System.Windows.Forms.Padding(2);
+
             this.contextualPicOnly_PB.Name = "contextualPicOnly_PB";
             this.contextualPicOnly_PB.Size = new System.Drawing.Size(488, 201);
             this.contextualPicOnly_PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1323,10 +1345,12 @@
             // kryptonPictureBox2
             // 
             this.kryptonPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPictureBox2.Image")));
+
             this.kryptonPictureBox2.Location = new System.Drawing.Point(128, 120);
             this.kryptonPictureBox2.Margin = new System.Windows.Forms.Padding(0);
             this.kryptonPictureBox2.Name = "kryptonPictureBox2";
             this.kryptonPictureBox2.Size = new System.Drawing.Size(959, 24);
+
             this.kryptonPictureBox2.TabIndex = 6;
             this.kryptonPictureBox2.TabStop = false;
             // 
@@ -1349,6 +1373,7 @@
             this.kryptonCustomPaletteBase1.ThemeName = "";
             this.kryptonCustomPaletteBase1.UseKryptonFileDialogs = true;
             // 
+
             // backBtn
             // 
             this.backBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1433,14 +1458,16 @@
             this.backBtn.TabIndex = 49;
             this.backBtn.Values.Text = "";
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
-            // 
+
             // newBlankForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(1184, 711);
+
             this.Controls.Add(this.backBtn);
+
             this.Controls.Add(this.save_BTN);
             this.Controls.Add(this.multiple4_TB);
             this.Controls.Add(this.multiple4_RB);

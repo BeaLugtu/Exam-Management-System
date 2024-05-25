@@ -1,4 +1,5 @@
-﻿namespace Exam_Management_System
+﻿using Krypton.Toolkit;
+namespace Exam_Management_System
 {
     partial class LoginForm
     {
