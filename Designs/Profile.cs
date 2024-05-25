@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using Exam_Management_System.Properties;
 using MySql.Data.MySqlClient;
 using KryptonTextBox = Krypton.Toolkit.KryptonTextBox;
+using System.Collections;
 
 namespace Exam_Management_System.Designs
 {
@@ -21,6 +22,8 @@ namespace Exam_Management_System.Designs
         private string user_ID;
         private string accounttype;
         private bool hasUnsavedChanges = false;
+        private readonly DBAccess dbAccess = new DBAccess();
+
 
         public Profile(string userID, UserType userType)
         {
@@ -888,8 +891,13 @@ namespace Exam_Management_System.Designs
 
         private void PopulateFlowLayoutPanel()
         {
+
+            string query = "SELECT * FROM examformsarchive WHERE teacherID = @userID";
+            MySqlCommand cmd = new MySqlCommand(query);
+            cmd.Parameters.AddWithValue("@userID", user_ID);
+
             DataTable examData = new DataTable();
-            objDABAccess.readDatathroughAdapter("SELECT * FROM examformsarchive", examData);
+            dbAccess.readDatathroughAdapter1(cmd, examData);
 
             foreach (DataRow row in examData.Rows)
             {
