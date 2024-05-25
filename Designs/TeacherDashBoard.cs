@@ -20,6 +20,7 @@ namespace Exam_Management_System.Designs
         private Size originalSizeNotificationBtn;
         private Size originalImageSizeNotificationBtn;
         private Image originalImageNotificationBtn;
+        private Form teacherDashboard;
 
         // New constructor to accept userID and userType
         public TeacherDashBoard(string userID, UserType userType)
@@ -91,7 +92,7 @@ namespace Exam_Management_System.Designs
 
             foreach (DataRow row in examData.Rows)
             {
-                teacherExamHistoCard examCard = new teacherExamHistoCard(DeleteExamCard);
+                teacherExamHistoCard examCard = new teacherExamHistoCard(DeleteExamCard, teacherDashboard);
                 examCard.SetTitle(row["examTitle"].ToString());
                 examCard.SetCode(row["examCode"].ToString());
                 examCard.SetTotalSubmittedStudents(Convert.ToInt32(row["examTotalStudents"]));
@@ -223,6 +224,91 @@ namespace Exam_Management_System.Designs
                 // Restore the original image when the mouse leaves
                 notificationBtn.Values.Image = originalImageNotificationBtn;
             }
+        }
+
+        private void kryptonPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonPictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timeDateLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void examFinishedLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonLabel6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonLabel7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonPictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonPictureBox4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

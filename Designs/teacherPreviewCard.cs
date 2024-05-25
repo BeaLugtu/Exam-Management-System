@@ -120,7 +120,7 @@ namespace Exam_Management_System.Designs
                     Cmultiple4_TB.Visible = true;
                     Cattachment_BT.Visible = false;
                     CattachmentBoth_BT.Visible = false;
-                    delete_BTN.Visible = true;
+                    delete_BTN.Visible = false;
                     points_LBL.Visible = true;
                     Cpoint_TB.Visible = true;
 
