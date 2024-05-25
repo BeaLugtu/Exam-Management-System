@@ -17,6 +17,13 @@ namespace Exam_Management_System.Designs
             InitializeComponent();
             DisplayData();
             DisplayNumberOfQuestions();
+
+        }
+
+        public string GetExamCode()
+        {
+            return codePreviewForm_LBL.Text;
+
         }
 
         public void SetCodeLabel(string code)
@@ -45,7 +52,8 @@ namespace Exam_Management_System.Designs
                     connection.Open();
                     Console.WriteLine("Database connection opened.");
 
-                    string query = "SELECT question, question_type, point, manual_check, identification, paragraph_type, multiplechoice_choices, multiplechoice_answer, image, contextual_paragraph FROM examquestions WHERE examCode = @Code";
+
+                    string query = "SELECT question,questionNumber, question_type, point, manual_check, identification, paragraph_type, multiplechoice_choices, multiplechoice_answer, image, contextual_paragraph FROM examquestions WHERE examCode = @Code";
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@Code", code);
@@ -60,6 +68,7 @@ namespace Exam_Management_System.Designs
                             while (reader.Read())
                             {
                                 string question = reader.GetString("question");
+                                int questionNumber = reader.GetInt32("questionNumber");
                                 string questionType = reader.GetString("question_type");
                                 int? points = reader.IsDBNull(reader.GetOrdinal("point")) ? (int?)null : reader.GetInt32("point");
                                 bool manualCheckStatus = reader.GetBoolean("manual_check");
@@ -73,6 +82,7 @@ namespace Exam_Management_System.Designs
                                 teacherPreviewCard card = new teacherPreviewCard
                                 {
                                     Question = question,
+                                    QuestionNumber = questionNumber.ToString(),
                                     QuestionType = questionType,
                                     Points = points?.ToString(),
                                     ManualCheckStatus = manualCheckStatus,
@@ -144,5 +154,6 @@ namespace Exam_Management_System.Designs
                 }
             }
         }
+
     }
 }
