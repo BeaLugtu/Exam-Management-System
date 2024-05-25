@@ -1,0 +1,266 @@
+﻿namespace Exam_Management_System.Designs.AnswerKey_Cards
+{
+    partial class studentMultipleChoice
+    {
+        /// <summary> 
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary> 
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Component Designer generated code
+
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(studentMultipleChoice));
+            this.Item4 = new Krypton.Toolkit.KryptonTextBox();
+            this.D = new Krypton.Toolkit.KryptonRadioButton();
+            this.Item2 = new Krypton.Toolkit.KryptonTextBox();
+            this.B = new Krypton.Toolkit.KryptonRadioButton();
+            this.Item3 = new Krypton.Toolkit.KryptonTextBox();
+            this.Item1 = new Krypton.Toolkit.KryptonTextBox();
+            this.C = new Krypton.Toolkit.KryptonRadioButton();
+            this.A = new Krypton.Toolkit.KryptonRadioButton();
+            this.QuestionPHP = new Krypton.Toolkit.KryptonRichTextBox();
+            this.PointPH = new Krypton.Toolkit.KryptonLabel();
+            this.QuestionPH = new Krypton.Toolkit.KryptonLabel();
+            this.SuspendLayout();
+            // 
+            // Item4
+            // 
+            this.Item4.Enabled = false;
+            this.Item4.Location = new System.Drawing.Point(432, 254);
+            this.Item4.Name = "Item4";
+            this.Item4.ReadOnly = true;
+            this.Item4.Size = new System.Drawing.Size(96, 22);
+            this.Item4.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Item4.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.Item4.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
+            this.Item4.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.Item4.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.Item4.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+            this.Item4.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Item4.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Item4.TabIndex = 70;
+            this.Item4.Text = "kryptonTextBox1";
+            // 
+            // D
+            // 
+            this.D.Images.CheckedNormal = global::Exam_Management_System.Properties.Resources.Radio_Button_Selected__1_;
+            this.D.Images.CheckedPressed = global::Exam_Management_System.Properties.Resources.Radio_Button_Selected__1_;
+            this.D.Images.CheckedTracking = global::Exam_Management_System.Properties.Resources.Radio_Button_Selected__1_;
+            this.D.Images.Common = global::Exam_Management_System.Properties.Resources.Radio_Button_UnSelected__1_;
+            this.D.LabelStyle = Krypton.Toolkit.LabelStyle.Custom1;
+            this.D.Location = new System.Drawing.Point(393, 247);
+            this.D.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.D.Name = "D";
+            this.D.Size = new System.Drawing.Size(302, 38);
+            this.D.TabIndex = 69;
+            this.D.Values.Image = ((System.Drawing.Image)(resources.GetObject("D.Values.Image")));
+            this.D.Values.Text = "";
+            // 
+            // Item2
+            // 
+            this.Item2.Enabled = false;
+            this.Item2.Location = new System.Drawing.Point(430, 208);
+            this.Item2.Name = "Item2";
+            this.Item2.ReadOnly = true;
+            this.Item2.Size = new System.Drawing.Size(96, 20);
+            this.Item2.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Item2.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.Item2.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
+            this.Item2.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.Item2.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.Item2.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.Item2.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Item2.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Item2.TabIndex = 68;
+            this.Item2.Text = "kryptonTextBox1";
+            this.Item2.TextChanged += new System.EventHandler(this.Item2_TextChanged);
+            // 
+            // B
+            // 
+            this.B.Images.CheckedNormal = global::Exam_Management_System.Properties.Resources.Radio_Button_Selected__1_;
+            this.B.Images.CheckedPressed = global::Exam_Management_System.Properties.Resources.Radio_Button_Selected__1_;
+            this.B.Images.CheckedTracking = global::Exam_Management_System.Properties.Resources.Radio_Button_Selected__1_;
+            this.B.Images.Common = global::Exam_Management_System.Properties.Resources.Radio_Button_UnSelected__1_;
+            this.B.LabelStyle = Krypton.Toolkit.LabelStyle.Custom1;
+            this.B.Location = new System.Drawing.Point(393, 199);
+            this.B.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.B.Name = "B";
+            this.B.Size = new System.Drawing.Size(302, 38);
+            this.B.TabIndex = 67;
+            this.B.Values.Image = ((System.Drawing.Image)(resources.GetObject("B.Values.Image")));
+            this.B.Values.Text = "";
+            // 
+            // Item3
+            // 
+            this.Item3.Enabled = false;
+            this.Item3.Location = new System.Drawing.Point(68, 256);
+            this.Item3.Name = "Item3";
+            this.Item3.ReadOnly = true;
+            this.Item3.Size = new System.Drawing.Size(97, 20);
+            this.Item3.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Item3.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.Item3.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
+            this.Item3.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.Item3.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.Item3.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.Item3.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Item3.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Item3.TabIndex = 66;
+            this.Item3.Text = "kryptonTextBox1";
+            // 
+            // Item1
+            // 
+            this.Item1.Enabled = false;
+            this.Item1.Location = new System.Drawing.Point(68, 208);
+            this.Item1.Name = "Item1";
+            this.Item1.ReadOnly = true;
+            this.Item1.Size = new System.Drawing.Size(97, 20);
+            this.Item1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Item1.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.Item1.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
+            this.Item1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.Item1.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.Item1.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Item1.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Item1.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.Item1.TabIndex = 65;
+            this.Item1.Text = "kryptonTextBox1";
+            // 
+            // C
+            // 
+            this.C.Images.CheckedNormal = global::Exam_Management_System.Properties.Resources.Radio_Button_Selected__1_;
+            this.C.Images.CheckedPressed = global::Exam_Management_System.Properties.Resources.Radio_Button_Selected__1_;
+            this.C.Images.CheckedTracking = global::Exam_Management_System.Properties.Resources.Radio_Button_Selected__1_;
+            this.C.Images.Common = global::Exam_Management_System.Properties.Resources.Radio_Button_UnSelected__1_;
+            this.C.LabelStyle = Krypton.Toolkit.LabelStyle.Custom1;
+            this.C.Location = new System.Drawing.Point(35, 247);
+            this.C.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.C.Name = "C";
+            this.C.Size = new System.Drawing.Size(302, 38);
+            this.C.TabIndex = 64;
+            this.C.Values.Image = ((System.Drawing.Image)(resources.GetObject("C.Values.Image")));
+            this.C.Values.Text = "";
+            this.C.CheckedChanged += new System.EventHandler(this.C_CheckedChanged);
+            // 
+            // A
+            // 
+            this.A.Images.CheckedNormal = global::Exam_Management_System.Properties.Resources.Radio_Button_Selected__1_;
+            this.A.Images.CheckedPressed = global::Exam_Management_System.Properties.Resources.Radio_Button_Selected__1_;
+            this.A.Images.CheckedTracking = global::Exam_Management_System.Properties.Resources.Radio_Button_Selected__1_;
+            this.A.Images.Common = global::Exam_Management_System.Properties.Resources.Radio_Button_UnSelected__1_;
+            this.A.LabelStyle = Krypton.Toolkit.LabelStyle.Custom1;
+            this.A.Location = new System.Drawing.Point(35, 199);
+            this.A.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.A.Name = "A";
+            this.A.Size = new System.Drawing.Size(302, 38);
+            this.A.TabIndex = 63;
+            this.A.Values.Image = ((System.Drawing.Image)(resources.GetObject("A.Values.Image")));
+            this.A.Values.Text = "";
+            // 
+            // QuestionPHP
+            // 
+            this.QuestionPHP.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.QuestionPHP.CornerRoundingRadius = 10F;
+            this.QuestionPHP.Location = new System.Drawing.Point(35, 69);
+            this.QuestionPHP.Margin = new System.Windows.Forms.Padding(5);
+            this.QuestionPHP.Name = "QuestionPHP";
+            this.QuestionPHP.ReadOnly = true;
+            this.QuestionPHP.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.QuestionPHP.Size = new System.Drawing.Size(660, 120);
+            this.QuestionPHP.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.QuestionPHP.StateCommon.Border.Color1 = System.Drawing.Color.White;
+            this.QuestionPHP.StateCommon.Border.Color2 = System.Drawing.Color.White;
+            this.QuestionPHP.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.QuestionPHP.StateCommon.Border.Rounding = 10F;
+            this.QuestionPHP.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.QuestionPHP.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F);
+            this.QuestionPHP.StateCommon.Content.Padding = new System.Windows.Forms.Padding(25, 18, 25, 18);
+            this.QuestionPHP.TabIndex = 62;
+            this.QuestionPHP.Text = "Question";
+            // 
+            // PointPH
+            // 
+            this.PointPH.LabelStyle = Krypton.Toolkit.LabelStyle.Custom1;
+            this.PointPH.Location = new System.Drawing.Point(744, 174);
+            this.PointPH.Name = "PointPH";
+            this.PointPH.Size = new System.Drawing.Size(39, 20);
+            this.PointPH.TabIndex = 73;
+            this.PointPH.Values.Text = "Point";
+            // 
+            // QuestionPH
+            // 
+            this.QuestionPH.LabelStyle = Krypton.Toolkit.LabelStyle.Custom1;
+            this.QuestionPH.Location = new System.Drawing.Point(35, 26);
+            this.QuestionPH.Name = "QuestionPH";
+            this.QuestionPH.Size = new System.Drawing.Size(50, 20);
+            this.QuestionPH.TabIndex = 72;
+            this.QuestionPH.Values.Text = "Answer";
+            // 
+            // studentMultipleChoice
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackgroundImage = global::Exam_Management_System.Properties.Resources.Rectangle_415;
+            this.Controls.Add(this.Item4);
+            this.Controls.Add(this.D);
+            this.Controls.Add(this.Item2);
+            this.Controls.Add(this.B);
+            this.Controls.Add(this.Item3);
+            this.Controls.Add(this.Item1);
+            this.Controls.Add(this.C);
+            this.Controls.Add(this.A);
+            this.Controls.Add(this.QuestionPHP);
+            this.Controls.Add(this.PointPH);
+            this.Controls.Add(this.QuestionPH);
+            this.Name = "studentMultipleChoice";
+            this.Size = new System.Drawing.Size(730, 298);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private Krypton.Toolkit.KryptonTextBox Item4;
+        private Krypton.Toolkit.KryptonRadioButton D;
+        private Krypton.Toolkit.KryptonTextBox Item2;
+        private Krypton.Toolkit.KryptonRadioButton B;
+        private Krypton.Toolkit.KryptonTextBox Item3;
+        private Krypton.Toolkit.KryptonTextBox Item1;
+        private Krypton.Toolkit.KryptonRadioButton C;
+        private Krypton.Toolkit.KryptonRadioButton A;
+        private Krypton.Toolkit.KryptonRichTextBox QuestionPHP;
+        private Krypton.Toolkit.KryptonLabel PointPH;
+        private Krypton.Toolkit.KryptonLabel QuestionPH;
+    }
+}

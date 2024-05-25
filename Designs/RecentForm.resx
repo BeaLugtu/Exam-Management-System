@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="flowLayoutRecentFormList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 208</value>
+  </data>
+  <data name="flowLayoutRecentFormList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1021, 437</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="flowLayoutRecentFormList.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutRecentFormList.Name" xml:space="preserve">
+    <value>flowLayoutRecentFormList</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutRecentFormList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutRecentFormList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutRecentFormList.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="notificationBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="notificationBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>824, 23</value>
+  </data>
+  <data name="notificationBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 50</value>
+  </data>
+  <data name="notificationBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="notificationBtn.Values.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;notificationBtn.Name" xml:space="preserve">
+    <value>notificationBtn</value>
+  </data>
+  <data name="&gt;&gt;notificationBtn.Type" xml:space="preserve">
+    <value>Krypton.Toolkit.KryptonButton, Krypton.Toolkit, Version=80.24.3.64, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;notificationBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;notificationBtn.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="kryptonButton5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="kryptonButton5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>879, 30</value>
+  </data>
+  <data name="kryptonButton5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 39</value>
+  </data>
+  <data name="kryptonButton5.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="kryptonButton5.Values.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;kryptonButton5.Name" xml:space="preserve">
+    <value>kryptonButton5</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton5.Type" xml:space="preserve">
+    <value>Krypton.Toolkit.KryptonButton, Krypton.Toolkit, Version=80.24.3.64, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;kryptonButton5.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="timeDateLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="timeDateLbl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="timeDateLbl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="timeDateLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>928, 42</value>
+  </data>
+  <data name="timeDateLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 20</value>
+  </data>
+  <data name="timeDateLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="timeDateLbl.Text" xml:space="preserve">
+    <value>11:44 pm - Tue, May 6</value>
+  </data>
+  <data name="&gt;&gt;timeDateLbl.Name" xml:space="preserve">
+    <value>timeDateLbl</value>
+  </data>
+  <data name="&gt;&gt;timeDateLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timeDateLbl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;timeDateLbl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="kryptonPictureBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="kryptonPictureBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 101</value>
+  </data>
+  <data name="kryptonPictureBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 27</value>
+  </data>
+  <data name="kryptonPictureBox2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="kryptonPictureBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="&gt;&gt;kryptonPictureBox2.Name" xml:space="preserve">
+    <value>kryptonPictureBox2</value>
+  </data>
+  <data name="&gt;&gt;kryptonPictureBox2.Type" xml:space="preserve">
+    <value>Krypton.Toolkit.KryptonPictureBox, Krypton.Toolkit, Version=80.24.3.64, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;kryptonPictureBox2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;kryptonPictureBox2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="kryptonPictureBox4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="kryptonPictureBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 144</value>
+  </data>
+  <data name="kryptonPictureBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1021, 54</value>
+  </data>
+  <data name="kryptonPictureBox4.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="kryptonPictureBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="&gt;&gt;kryptonPictureBox4.Name" xml:space="preserve">
+    <value>kryptonPictureBox4</value>
+  </data>
+  <data name="&gt;&gt;kryptonPictureBox4.Type" xml:space="preserve">
+    <value>Krypton.Toolkit.KryptonPictureBox, Krypton.Toolkit, Version=80.24.3.64, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;kryptonPictureBox4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;kryptonPictureBox4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="kryptonPictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="kryptonPictureBox3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="kryptonPictureBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>118, 101</value>
+  </data>
+  <data name="kryptonPictureBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>985, 27</value>
+  </data>
+  <data name="kryptonPictureBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="&gt;&gt;kryptonPictureBox3.Name" xml:space="preserve">
+    <value>kryptonPictureBox3</value>
+  </data>
+  <data name="&gt;&gt;kryptonPictureBox3.Type" xml:space="preserve">
+    <value>Krypton.Toolkit.KryptonPictureBox, Krypton.Toolkit, Version=80.24.3.64, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;kryptonPictureBox3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;kryptonPictureBox3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="kryptonPictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        OwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="kryptonPictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="kryptonPictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 23</value>
+  </data>
+  <data name="kryptonPictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 50</value>
+  </data>
+  <data name="kryptonPictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;kryptonPictureBox1.Name" xml:space="preserve">
+    <value>kryptonPictureBox1</value>
+  </data>
+  <data name="&gt;&gt;kryptonPictureBox1.Type" xml:space="preserve">
+    <value>Krypton.Toolkit.KryptonPictureBox, Krypton.Toolkit, Version=80.24.3.64, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e</value>
+  </data>
+  <data name="&gt;&gt;kryptonPictureBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;kryptonPictureBox1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1184, 661</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>RecentForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>RecentForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

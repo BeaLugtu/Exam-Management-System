@@ -53,6 +53,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBAccess.cs" />
+    <Compile Include="Designs\Answer Cards\studentMultipleChoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\Answer Cards\studentMultipleChoice.Designer.cs">
+      <DependentUpon>studentMultipleChoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\Answer Cards\studentParagraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\Answer Cards\studentParagraph.Designer.cs">
+      <DependentUpon>studentParagraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\Answer Cards\studentShortAnswer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\Answer Cards\studentShortAnswer.Designer.cs">
+      <DependentUpon>studentShortAnswer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Designs\Cards\ContextualCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -143,6 +161,18 @@
     <Compile Include="Designs\Profile.designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Designs\RecentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designs\RecentForm.Designer.cs">
+      <DependentUpon>RecentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\recentFormCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\recentFormCard.Designer.cs">
+      <DependentUpon>recentFormCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Designs\SetUpAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,8 +215,23 @@
     <Compile Include="Designs\teacherPreviewCard.Designer.cs">
       <DependentUpon>teacherPreviewCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Designs\ViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designs\ViewForm.Designer.cs">
+      <DependentUpon>ViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Designs\Answer Cards\studentMultipleChoice.resx">
+      <DependentUpon>studentMultipleChoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\Answer Cards\studentParagraph.resx">
+      <DependentUpon>studentParagraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\Answer Cards\studentShortAnswer.resx">
+      <DependentUpon>studentShortAnswer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Designs\Cards\ContextualCard.resx">
       <DependentUpon>ContextualCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +277,12 @@
     <EmbeddedResource Include="Designs\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Designs\RecentForm.resx">
+      <DependentUpon>RecentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\recentFormCard.resx">
+      <DependentUpon>recentFormCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Designs\SetUpAccount.resx">
       <DependentUpon>SetUpAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\teacherPreviewCard.resx">
       <DependentUpon>teacherPreviewCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\ViewForm.resx">
+      <DependentUpon>ViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -284,6 +338,10 @@
     <Content Include="assets\Student Sign up Form.png" />
     <Content Include="assets\StudentAccountOption.png" />
     <Content Include="assets\TeacherAccountOption.png" />
+    <None Include="Resources\gray short rounded panel1.png" />
+    <None Include="Resources\view form.png" />
+    <None Include="Resources\recentForm.png" />
+    <None Include="Resources\back button.png" />
     <None Include="Resources\Rectangle 348 %281%29.png" />
     <None Include="Resources\Rectangle 412.png" />
     <None Include="Resources\studenDashboardPage1.png" />

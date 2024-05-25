@@ -85,7 +85,7 @@ namespace Exam_Management_System.Designs
             this.Program_DropButtonPalette.ButtonStyles.ButtonCustom1.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.Program_DropButtonPalette.LabelStyles.LabelCustom1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Program_DropButtonPalette.LabelStyles.LabelCustom1.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Program_DropButtonPalette.LabelStyles.LabelCustom1.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 10.5F);
+            this.Program_DropButtonPalette.LabelStyles.LabelCustom1.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F);
             this.Program_DropButtonPalette.PanelStyles.PanelClient.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.Program_DropButtonPalette.PanelStyles.PanelClient.StateCommon.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.Program_DropButtonPalette.PanelStyles.PanelCustom2.StateCommon.Color1 = System.Drawing.Color.White;
@@ -169,7 +169,7 @@ namespace Exam_Management_System.Designs
             // ExamDetailsLBL
             // 
             this.ExamDetailsLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.ExamDetailsLBL.Font = new System.Drawing.Font("Inter", 14.5F);
+            this.ExamDetailsLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.5F);
             this.ExamDetailsLBL.ForeColor = System.Drawing.Color.Black;
             this.ExamDetailsLBL.Location = new System.Drawing.Point(78, 136);
             this.ExamDetailsLBL.Name = "ExamDetailsLBL";
@@ -192,7 +192,7 @@ namespace Exam_Management_System.Designs
             this.SubmitBtn.StateCommon.Border.Rounding = 8F;
             this.SubmitBtn.StateNormal.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.SubmitBtn.StateNormal.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.SubmitBtn.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubmitBtn.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubmitBtn.TabIndex = 61;
             this.SubmitBtn.Values.Text = "Submit";
             this.SubmitBtn.Click += new System.EventHandler(this.Submit);
@@ -211,7 +211,7 @@ namespace Exam_Management_System.Designs
             // 
             this.titlePH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.titlePH.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.titlePH.Font = new System.Drawing.Font("Inter", 10.5F);
+            this.titlePH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F);
             this.titlePH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.titlePH.Location = new System.Drawing.Point(81, 175);
             this.titlePH.Name = "titlePH";
@@ -226,7 +226,7 @@ namespace Exam_Management_System.Designs
             this.UniqueCodeLBL.Name = "UniqueCodeLBL";
             this.UniqueCodeLBL.Palette = this.Program_DropButtonPalette;
             this.UniqueCodeLBL.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
-            this.UniqueCodeLBL.Size = new System.Drawing.Size(52, 21);
+            this.UniqueCodeLBL.Size = new System.Drawing.Size(50, 20);
             this.UniqueCodeLBL.TabIndex = 1;
             this.UniqueCodeLBL.Values.Text = "Code: ";
             // 
@@ -234,7 +234,7 @@ namespace Exam_Management_System.Designs
             // 
             this.ProfessorPH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.ProfessorPH.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ProfessorPH.Font = new System.Drawing.Font("Inter", 10.5F);
+            this.ProfessorPH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F);
             this.ProfessorPH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ProfessorPH.Location = new System.Drawing.Point(81, 232);
             this.ProfessorPH.Name = "ProfessorPH";
@@ -249,7 +249,7 @@ namespace Exam_Management_System.Designs
             this.TimeRemainingLBL.Name = "TimeRemainingLBL";
             this.TimeRemainingLBL.Palette = this.Program_DropButtonPalette;
             this.TimeRemainingLBL.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
-            this.TimeRemainingLBL.Size = new System.Drawing.Size(124, 21);
+            this.TimeRemainingLBL.Size = new System.Drawing.Size(120, 20);
             this.TimeRemainingLBL.TabIndex = 70;
             this.TimeRemainingLBL.Values.Text = "Time Remaining:";
             // 
@@ -260,10 +260,10 @@ namespace Exam_Management_System.Designs
             this.timePH.Name = "timePH";
             this.timePH.Palette = this.Program_DropButtonPalette;
             this.timePH.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
-            this.timePH.Size = new System.Drawing.Size(99, 28);
+            this.timePH.Size = new System.Drawing.Size(90, 27);
             this.timePH.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.timePH.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.timePH.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 14.5F);
+            this.timePH.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.5F);
             this.timePH.TabIndex = 71;
             this.timePH.Values.Text = "00:00:00";
             // 
@@ -391,7 +391,7 @@ namespace Exam_Management_System.Designs
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.QuestionRTB.StateCommon.Border.Rounding = 10F;
             this.QuestionRTB.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.QuestionRTB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 10.5F);
+            this.QuestionRTB.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F);
             this.QuestionRTB.StateCommon.Content.Padding = new System.Windows.Forms.Padding(25, 18, 25, 18);
             this.QuestionRTB.TabIndex = 3;
             this.QuestionRTB.Text = "Question";
@@ -430,7 +430,7 @@ namespace Exam_Management_System.Designs
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.ClientSize = new System.Drawing.Size(1184, 711);
             this.Controls.Add(this.kryptonPanel1);
-            this.Font = new System.Drawing.Font("Inter", 9.5F);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ExamForm";

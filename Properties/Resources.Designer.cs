@@ -73,6 +73,16 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back_button {
+            get {
+                object obj = ResourceManager.GetObject("back button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap darkStudentOption {
             get {
                 object obj = ResourceManager.GetObject("darkStudentOption", resourceCulture);
@@ -86,6 +96,26 @@ namespace Exam_Management_System.Properties {
         internal static System.Drawing.Bitmap darkTeacherOption {
             get {
                 object obj = ResourceManager.GetObject("darkTeacherOption", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gray_short_rounded_panel {
+            get {
+                object obj = ResourceManager.GetObject("gray short rounded panel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gray_short_rounded_panel1 {
+            get {
+                object obj = ResourceManager.GetObject("gray short rounded panel1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,6 +273,16 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap recentForm {
+            get {
+                object obj = ResourceManager.GetObject("recentForm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rectangle_348__1_ {
             get {
                 object obj = ResourceManager.GetObject("Rectangle_348__1_", resourceCulture);
@@ -296,6 +336,16 @@ namespace Exam_Management_System.Properties {
         internal static System.Drawing.Bitmap studenDashboardPage1 {
             get {
                 object obj = ResourceManager.GetObject("studenDashboardPage1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap view_form {
+            get {
+                object obj = ResourceManager.GetObject("view form", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

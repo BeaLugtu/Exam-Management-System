@@ -32,8 +32,8 @@
             this.Program_DropButtonPalette = new Krypton.Toolkit.KryptonCustomPaletteBase(this.components);
             this.IdentificationCardPanel = new Krypton.Toolkit.KryptonPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.imagecard = new Krypton.Toolkit.KryptonPictureBox();
             this.context = new Krypton.Toolkit.KryptonRichTextBox();
+            this.imagecard = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.IdentificationCardPanel)).BeginInit();
             this.IdentificationCardPanel.SuspendLayout();
@@ -61,7 +61,7 @@
             this.Program_DropButtonPalette.ButtonStyles.ButtonCustom1.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.Program_DropButtonPalette.LabelStyles.LabelCustom1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.Program_DropButtonPalette.LabelStyles.LabelCustom1.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.Program_DropButtonPalette.LabelStyles.LabelCustom1.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 8.75F);
+            this.Program_DropButtonPalette.LabelStyles.LabelCustom1.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F);
             this.Program_DropButtonPalette.PanelStyles.PanelClient.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.Program_DropButtonPalette.PanelStyles.PanelClient.StateCommon.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.Program_DropButtonPalette.PanelStyles.PanelCustom2.StateCommon.Color1 = System.Drawing.Color.White;
@@ -95,18 +95,6 @@
             this.flowLayoutPanel2.TabIndex = 8;
             this.flowLayoutPanel2.WrapContents = false;
             // 
-            // imagecard
-            // 
-            this.imagecard.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imagecard.Image = global::Exam_Management_System.Properties.Resources.profile_icon;
-            this.imagecard.Location = new System.Drawing.Point(5, 11);
-            this.imagecard.Margin = new System.Windows.Forms.Padding(5, 10, 5, 10);
-            this.imagecard.Name = "imagecard";
-            this.imagecard.Size = new System.Drawing.Size(217, 261);
-            this.imagecard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imagecard.TabIndex = 9;
-            this.imagecard.TabStop = false;
-            // 
             // context
             // 
             this.context.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -126,10 +114,22 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.context.StateCommon.Border.Rounding = 10F;
             this.context.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.context.StateCommon.Content.Font = new System.Drawing.Font("Inter", 10.5F);
+            this.context.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F);
             this.context.StateCommon.Content.Padding = new System.Windows.Forms.Padding(25, 18, 25, 18);
             this.context.TabIndex = 10;
             this.context.Text = "Question";
+            // 
+            // imagecard
+            // 
+            this.imagecard.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imagecard.Image = global::Exam_Management_System.Properties.Resources.profile_icon;
+            this.imagecard.Location = new System.Drawing.Point(5, 11);
+            this.imagecard.Margin = new System.Windows.Forms.Padding(5, 10, 5, 10);
+            this.imagecard.Name = "imagecard";
+            this.imagecard.Size = new System.Drawing.Size(217, 261);
+            this.imagecard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imagecard.TabIndex = 9;
+            this.imagecard.TabStop = false;
             // 
             // kryptonPictureBox1
             // 
