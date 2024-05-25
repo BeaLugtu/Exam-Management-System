@@ -13,6 +13,8 @@ namespace TeacherDashboard
     public partial class newBlankForm : Form
     {
         DBAccess objDBAccess = new DBAccess();
+        string connectionString = "Server=26.96.197.206;Database=exam.io;Uid=admin;Pwd=admin;";
+
         private bool isDeadlineSelected = false;
         private PreviewForm previewFormInstance;
         private string lastSelectedQuestionType;
@@ -66,8 +68,20 @@ namespace TeacherDashboard
 
             contextualPicOnly_PB.Image = Exam_Management_System.Properties.Resources.Sample;
 
-            // Hide the delete button initially
+            DisplayCurrentDateTime();
 
+        }
+
+        private void DisplayCurrentDateTime()
+        {
+            // Get current date and time
+            DateTime now = DateTime.Now;
+
+            // Format the date and time
+            string formattedDateTime = now.ToString("h:mm tt — ddd, MMM d");
+
+            // Set the formatted date and time to your label
+            timeDateLbl.Text = formattedDateTime;
         }
 
         private void GenerateExamCode()
@@ -166,10 +180,10 @@ namespace TeacherDashboard
 
             string multipleChoiceOptions = string.Join(",", new string[]
             {
-                 multiple1_TB.Text,
-                 multiple2_TB.Text,
-                 multiple3_TB.Text,
-                 multiple4_TB.Text
+        multiple1_TB.Text,
+        multiple2_TB.Text,
+        multiple3_TB.Text,
+        multiple4_TB.Text
             }.Where(x => !string.IsNullOrWhiteSpace(x)));
 
             string correctAnswer = "";
@@ -209,13 +223,34 @@ namespace TeacherDashboard
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show("Data saved successfully.");
-
-                    // Reset the form to "Identification" question type
-                    questionType_DB.SelectedItem = "Identification";
-                    QuestionType_DB_SelectedIndexChanged(null, null);
-
                     // Clear text boxes after successful insertion
-                    ClearFields();
+                    question_TB.Clear();
+                    point_TB.Clear();
+                    identification_TB.Clear();
+                    longAnswer_TB.Clear();
+                    multiple1_TB.Clear();
+                    multiple2_TB.Clear();
+                    multiple3_TB.Clear();
+                    multiple4_TB.Clear();
+                    contextualParaOnly_TB.Clear();
+                    contextualPara_TB.Clear();
+                    manualC_CB.Checked = false;
+                    multiple1_RB.Checked = false;
+                    multiple2_RB.Checked = false;
+                    multiple3_RB.Checked = false;
+                    multiple4_RB.Checked = false;
+                    selectedFilePath = "";
+                    fileName_LBL.Text = "";
+                    fileName_LBL.Visible = false;
+                    deleteA_BTN.Visible = false;
+
+                    contextualPicOnly_PB.Image = Exam_Management_System.Properties.Resources.Sample; // Replace "Sample" with the name of your initial image resource
+                    contextualPic_PB.Image = Exam_Management_System.Properties.Resources.Sample;
+
+                    if (questionType == "Contextual Image")
+                    {
+                        attachment_BT.Visible = true;
+                    }
 
                     PreviewForm previewForm1 = Application.OpenForms.OfType<PreviewForm>().FirstOrDefault();
 
@@ -239,6 +274,7 @@ namespace TeacherDashboard
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
+
 
         private int GetNextQuestionNumber(string examCode)
         {
@@ -323,19 +359,6 @@ namespace TeacherDashboard
 
         private void QuestionType_DB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Check if there is unsaved data in the current question type
-            if (IsUnsavedData())
-            {
-                // Prompt the user if they want to proceed without saving
-                var result = MessageBox.Show("There is unsaved data. Do you want to continue without saving?", "Unsaved Data", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (result == DialogResult.No)
-                {
-                    // Select the previously selected question type in the ComboBox
-                    questionType_DB.SelectedItem = lastSelectedQuestionType;
-                    return;
-                }
-            }
 
             // Save the currently selected question type as the last selected
             lastSelectedQuestionType = questionType_DB.SelectedItem?.ToString();
@@ -494,39 +517,6 @@ namespace TeacherDashboard
             }
         }
 
-        private bool IsUnsavedData()
-        {
-            string selectedQuestionType = questionType_DB.SelectedItem?.ToString();
-
-            switch (selectedQuestionType)
-            {
-                case "Identification":
-                    return identification_TB.Visible && !string.IsNullOrEmpty(identification_TB.Text);
-
-                case "Paragraph Form":
-                    return longAnswer_TB.Visible && !string.IsNullOrEmpty(longAnswer_TB.Text);
-
-                case "Multiple Choice":
-                    return (multiple1_TB.Visible && !string.IsNullOrEmpty(multiple1_TB.Text)) ||
-                           (multiple2_TB.Visible && !string.IsNullOrEmpty(multiple2_TB.Text)) ||
-                           (multiple3_TB.Visible && !string.IsNullOrEmpty(multiple3_TB.Text)) ||
-                           (multiple4_TB.Visible && !string.IsNullOrEmpty(multiple4_TB.Text));
-
-                case "Contextual Paragraph":
-                    return contextualParaOnly_TB.Visible && !string.IsNullOrEmpty(contextualParaOnly_TB.Text);
-
-                case "Contextual Image":
-                    return contextualPicOnly_PB.Visible && contextualPicOnly_PB.Image != Exam_Management_System.Properties.Resources.Sample;
-
-                case "Contextual Paragraph & Image":
-                    return (contextualPara_TB.Visible && !string.IsNullOrEmpty(contextualPara_TB.Text)) ||
-                           (contextualPic_PB.Visible && contextualPic_PB.Image != Exam_Management_System.Properties.Resources.Sample);
-
-                default:
-                    return false;
-            }
-        }
-
         private string FormatTimeInput(string input)
         {
             try
@@ -603,6 +593,8 @@ namespace TeacherDashboard
         {
             try
             {
+                DBAccess objDBAccess = new DBAccess(); // Instantiate DBAccess class
+
                 string examCode = examCodeBox.Text;
                 string examTitle = examTitleBox.Text;
                 int examTotalStudents = 0;
@@ -644,25 +636,49 @@ namespace TeacherDashboard
                 DateTime examCreated = DateTime.Now;
 
                 // Use parameterized query to insert data into the examforms table
-                string query = "INSERT INTO examforms (teacherID, examCode, examTitle, examCreated, examDeadlineDate, examDeadlineTime, examStatus, examTotalStudents) " +
-                                "VALUES (@user_ID, @examCode, @examTitle, @examCreated, @examDeadlineDate, @examDeadlineTime, @examStatus, @examTotalStudents)";
+                string insertQuery = "INSERT INTO examforms (teacherID, examCode, examTitle, examCreated, examDeadlineDate, examDeadlineTime, examStatus, examTotalStudents) " +
+                                     "VALUES (@user_ID, @examCode, @examTitle, @examCreated, @examDeadlineDate, @examDeadlineTime, @examStatus, @examTotalStudents)";
 
-                MySqlCommand command = new MySqlCommand(query);
-                command.Parameters.AddWithValue("@user_ID", user_ID);
-                command.Parameters.AddWithValue("@examCode", examCode);
-                command.Parameters.AddWithValue("@examTitle", examTitle);
-                command.Parameters.AddWithValue("@examCreated", examCreated.ToString("yyyy-MM-dd HH:mm:ss"));
-                command.Parameters.AddWithValue("@examDeadlineDate", examDeadlineDate.ToString("yyyy-MM-dd"));
-                command.Parameters.AddWithValue("@examDeadlineTime", formattedTime);
-                command.Parameters.AddWithValue("@examStatus", examStatus);
-                command.Parameters.AddWithValue("@examTotalStudents", examTotalStudents);
+                MySqlCommand insertCommand = new MySqlCommand(insertQuery);
+                insertCommand.Parameters.AddWithValue("@user_ID", user_ID);
+                insertCommand.Parameters.AddWithValue("@examCode", examCode);
+                insertCommand.Parameters.AddWithValue("@examTitle", examTitle);
+                insertCommand.Parameters.AddWithValue("@examCreated", examCreated.ToString("yyyy-MM-dd HH:mm:ss"));
+                insertCommand.Parameters.AddWithValue("@examDeadlineDate", examDeadlineDate.ToString("yyyy-MM-dd"));
+                insertCommand.Parameters.AddWithValue("@examDeadlineTime", formattedTime);
+                insertCommand.Parameters.AddWithValue("@examStatus", examStatus);
+                insertCommand.Parameters.AddWithValue("@examTotalStudents", examTotalStudents);
 
-                // Execute the query
-                int rowsAffected = objDBAccess.executeQuery(command);
+                // Execute the insert query
+                int rowsAffected = objDBAccess.executeQuery(insertCommand);
 
                 if (rowsAffected > 0)
                 {
+                    // Create the [examCode]_answers table
+                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    {
+                        connection.Open();
+
+                        string tableName = $"{examCode}_answers";
+                        string createTableQuery = $"CREATE TABLE IF NOT EXISTS `{tableName}` (" +
+                                                   "id INT PRIMARY KEY AUTO_INCREMENT," +
+                                                   "questionID INT," +
+                                                   "questions VARCHAR(255)" +
+                                                   ")";
+
+                        MySqlCommand createTableCommand = new MySqlCommand(createTableQuery, connection);
+                        createTableCommand.ExecuteNonQuery();
+                    }
+
                     MessageBox.Show("Exam form submitted successfully.");
+
+                    // Navigate to examSuccess form
+                    examSuccessForm examSuccessForm = new examSuccessForm(examCode); // Pass examCode to the constructor
+                    examSuccessForm.Show();
+
+                    // Close the current form
+                    this.Close();
+
                     ClearFields();
                     GenerateExamCode(); // Regenerate a new exam code for the next form
                 }
@@ -676,6 +692,7 @@ namespace TeacherDashboard
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
+
 
         private void ClearFields()
         {
