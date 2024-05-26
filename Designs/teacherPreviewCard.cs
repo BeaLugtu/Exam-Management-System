@@ -330,8 +330,8 @@ namespace Exam_Management_System.Designs
 
         public string ContextualParagraph
         {
-            get { return CcontextualPara_TB.Text; }
-            set { CcontextualPara_TB.Text = value; }
+            get { return CcontextualParaOnly_TB.Text; }
+            set { CcontextualParaOnly_TB.Text = value; }
         }
 
         public Image ImageData

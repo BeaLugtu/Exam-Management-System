@@ -47,6 +47,7 @@
             this.contextualPic_PB = new Krypton.Toolkit.KryptonPictureBox();
             this.contextualPara_TB = new Krypton.Toolkit.KryptonRichTextBox();
             this.contextualParaOnly_TB = new Krypton.Toolkit.KryptonRichTextBox();
+            this.answerKey_LBL = new Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.contextualPicOnly_PB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contextualPic_PB)).BeginInit();
             this.SuspendLayout();
@@ -54,33 +55,37 @@
             // question_LBL
             // 
             this.question_LBL.AutoSize = false;
-            this.question_LBL.Location = new System.Drawing.Point(34, 52);
+            this.question_LBL.Location = new System.Drawing.Point(34, 55);
             this.question_LBL.Name = "question_LBL";
-            this.question_LBL.Size = new System.Drawing.Size(497, 52);
+            this.question_LBL.Size = new System.Drawing.Size(497, 49);
+            this.question_LBL.StateCommon.LongText.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.question_LBL.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.question_LBL.TabIndex = 0;
             this.question_LBL.Values.Text = "Question";
             // 
             // point_LBL
             // 
-            this.point_LBL.Location = new System.Drawing.Point(444, 26);
+            this.point_LBL.Location = new System.Drawing.Point(446, 29);
             this.point_LBL.Name = "point_LBL";
-            this.point_LBL.Size = new System.Drawing.Size(39, 20);
+            this.point_LBL.Size = new System.Drawing.Size(37, 17);
+            this.point_LBL.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.point_LBL.TabIndex = 2;
             this.point_LBL.Values.Text = "Point";
             // 
             // scorePoint_TB
             // 
-            this.scorePoint_TB.Location = new System.Drawing.Point(489, 23);
+            this.scorePoint_TB.Location = new System.Drawing.Point(484, 26);
             this.scorePoint_TB.Name = "scorePoint_TB";
-            this.scorePoint_TB.Size = new System.Drawing.Size(19, 23);
+            this.scorePoint_TB.Size = new System.Drawing.Size(19, 21);
+            this.scorePoint_TB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scorePoint_TB.TabIndex = 3;
             // 
             // teacherAnswer_LBL
             // 
             this.teacherAnswer_LBL.AutoSize = false;
-            this.teacherAnswer_LBL.Location = new System.Drawing.Point(34, 168);
+            this.teacherAnswer_LBL.Location = new System.Drawing.Point(116, 176);
             this.teacherAnswer_LBL.Name = "teacherAnswer_LBL";
-            this.teacherAnswer_LBL.Size = new System.Drawing.Size(497, 28);
+            this.teacherAnswer_LBL.Size = new System.Drawing.Size(415, 20);
             this.teacherAnswer_LBL.TabIndex = 4;
             this.teacherAnswer_LBL.Values.Text = "";
             // 
@@ -96,15 +101,17 @@
             // 
             // overScore_LBL
             // 
-            this.overScore_LBL.Location = new System.Drawing.Point(509, 26);
+            this.overScore_LBL.Location = new System.Drawing.Point(507, 27);
             this.overScore_LBL.Name = "overScore_LBL";
-            this.overScore_LBL.Size = new System.Drawing.Size(22, 20);
+            this.overScore_LBL.Size = new System.Drawing.Size(21, 17);
+            this.overScore_LBL.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.overScore_LBL.TabIndex = 6;
             this.overScore_LBL.Values.Text = "/2";
             // 
             // multiple1_RB
             // 
-            this.multiple1_RB.Location = new System.Drawing.Point(43, 110);
+            this.multiple1_RB.Enabled = false;
+            this.multiple1_RB.Location = new System.Drawing.Point(44, 115);
             this.multiple1_RB.Name = "multiple1_RB";
             this.multiple1_RB.Size = new System.Drawing.Size(18, 12);
             this.multiple1_RB.TabIndex = 7;
@@ -112,7 +119,8 @@
             // 
             // multiple2_RB
             // 
-            this.multiple2_RB.Location = new System.Drawing.Point(43, 139);
+            this.multiple2_RB.Enabled = false;
+            this.multiple2_RB.Location = new System.Drawing.Point(44, 145);
             this.multiple2_RB.Name = "multiple2_RB";
             this.multiple2_RB.Size = new System.Drawing.Size(18, 12);
             this.multiple2_RB.TabIndex = 8;
@@ -120,7 +128,8 @@
             // 
             // multiple3_RB
             // 
-            this.multiple3_RB.Location = new System.Drawing.Point(298, 110);
+            this.multiple3_RB.Enabled = false;
+            this.multiple3_RB.Location = new System.Drawing.Point(301, 115);
             this.multiple3_RB.Name = "multiple3_RB";
             this.multiple3_RB.Size = new System.Drawing.Size(18, 12);
             this.multiple3_RB.TabIndex = 9;
@@ -128,7 +137,8 @@
             // 
             // multiple4_RB
             // 
-            this.multiple4_RB.Location = new System.Drawing.Point(298, 139);
+            this.multiple4_RB.Enabled = false;
+            this.multiple4_RB.Location = new System.Drawing.Point(301, 145);
             this.multiple4_RB.Name = "multiple4_RB";
             this.multiple4_RB.Size = new System.Drawing.Size(18, 12);
             this.multiple4_RB.TabIndex = 10;
@@ -136,41 +146,49 @@
             // 
             // multiple1_TB
             // 
-            this.multiple1_TB.Location = new System.Drawing.Point(67, 110);
+            this.multiple1_TB.Enabled = false;
+            this.multiple1_TB.Location = new System.Drawing.Point(67, 111);
             this.multiple1_TB.Name = "multiple1_TB";
-            this.multiple1_TB.Size = new System.Drawing.Size(213, 23);
+            this.multiple1_TB.Size = new System.Drawing.Size(213, 21);
+            this.multiple1_TB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.multiple1_TB.TabIndex = 11;
             this.multiple1_TB.Text = "Multiple 1";
             // 
             // multiple2_TB
             // 
+            this.multiple2_TB.Enabled = false;
             this.multiple2_TB.Location = new System.Drawing.Point(67, 139);
             this.multiple2_TB.Name = "multiple2_TB";
-            this.multiple2_TB.Size = new System.Drawing.Size(213, 23);
+            this.multiple2_TB.Size = new System.Drawing.Size(213, 21);
+            this.multiple2_TB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.multiple2_TB.TabIndex = 12;
             this.multiple2_TB.Text = "Multiple 2";
             // 
             // multiple3_TB
             // 
+            this.multiple3_TB.Enabled = false;
             this.multiple3_TB.Location = new System.Drawing.Point(325, 110);
             this.multiple3_TB.Name = "multiple3_TB";
-            this.multiple3_TB.Size = new System.Drawing.Size(206, 23);
+            this.multiple3_TB.Size = new System.Drawing.Size(206, 21);
+            this.multiple3_TB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.multiple3_TB.TabIndex = 13;
             this.multiple3_TB.Text = "Multiple 3";
             // 
             // multiple4_TB
             // 
+            this.multiple4_TB.Enabled = false;
             this.multiple4_TB.Location = new System.Drawing.Point(325, 139);
             this.multiple4_TB.Name = "multiple4_TB";
-            this.multiple4_TB.Size = new System.Drawing.Size(206, 23);
+            this.multiple4_TB.Size = new System.Drawing.Size(206, 21);
+            this.multiple4_TB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.multiple4_TB.TabIndex = 14;
             this.multiple4_TB.Text = "Multiple 4";
             // 
             // contextualPicOnly_PB
             // 
-            this.contextualPicOnly_PB.Location = new System.Drawing.Point(93, 26);
+            this.contextualPicOnly_PB.Location = new System.Drawing.Point(93, 23);
             this.contextualPicOnly_PB.Name = "contextualPicOnly_PB";
-            this.contextualPicOnly_PB.Size = new System.Drawing.Size(390, 170);
+            this.contextualPicOnly_PB.Size = new System.Drawing.Size(390, 173);
             this.contextualPicOnly_PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.contextualPicOnly_PB.TabIndex = 15;
             this.contextualPicOnly_PB.TabStop = false;
@@ -186,25 +204,36 @@
             // 
             // contextualPara_TB
             // 
-            this.contextualPara_TB.Location = new System.Drawing.Point(239, 26);
+            this.contextualPara_TB.Enabled = false;
+            this.contextualPara_TB.Location = new System.Drawing.Point(249, 23);
             this.contextualPara_TB.Name = "contextualPara_TB";
-            this.contextualPara_TB.Size = new System.Drawing.Size(292, 170);
+            this.contextualPara_TB.Size = new System.Drawing.Size(282, 173);
             this.contextualPara_TB.TabIndex = 17;
             this.contextualPara_TB.Text = "kryptonRichTextBox1";
             // 
             // contextualParaOnly_TB
             // 
+            this.contextualParaOnly_TB.Enabled = false;
             this.contextualParaOnly_TB.Location = new System.Drawing.Point(34, 23);
             this.contextualParaOnly_TB.Name = "contextualParaOnly_TB";
             this.contextualParaOnly_TB.Size = new System.Drawing.Size(497, 173);
             this.contextualParaOnly_TB.TabIndex = 18;
             this.contextualParaOnly_TB.Text = "kryptonRichTextBox1";
             // 
+            // answerKey_LBL
+            // 
+            this.answerKey_LBL.Location = new System.Drawing.Point(34, 176);
+            this.answerKey_LBL.Name = "answerKey_LBL";
+            this.answerKey_LBL.Size = new System.Drawing.Size(76, 20);
+            this.answerKey_LBL.TabIndex = 19;
+            this.answerKey_LBL.Values.Text = "Answer Key:";
+            // 
             // TeacherCheckingCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.Controls.Add(this.answerKey_LBL);
             this.Controls.Add(this.multiple4_TB);
             this.Controls.Add(this.multiple3_TB);
             this.Controls.Add(this.multiple2_TB);
@@ -224,7 +253,7 @@
             this.Controls.Add(this.contextualPic_PB);
             this.Controls.Add(this.contextualParaOnly_TB);
             this.Name = "TeacherCheckingCard";
-            this.Size = new System.Drawing.Size(570, 227);
+            this.Size = new System.Drawing.Size(570, 221);
             ((System.ComponentModel.ISupportInitialize)(this.contextualPicOnly_PB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contextualPic_PB)).EndInit();
             this.ResumeLayout(false);
@@ -252,5 +281,6 @@
         private Krypton.Toolkit.KryptonPictureBox contextualPic_PB;
         private Krypton.Toolkit.KryptonRichTextBox contextualPara_TB;
         private Krypton.Toolkit.KryptonRichTextBox contextualParaOnly_TB;
+        private Krypton.Toolkit.KryptonLabel answerKey_LBL;
     }
 }
