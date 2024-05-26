@@ -33,6 +33,8 @@ namespace Exam_Management_System.Designs
             this.components = new System.ComponentModel.Container();
             this.Program_DropButtonPalette = new Krypton.Toolkit.KryptonCustomPaletteBase(this.components);
             this.notificationBtn = new Krypton.Toolkit.KryptonButton();
+            this.kryptonButton5 = new Krypton.Toolkit.KryptonButton();
+            this.timeDateLbl = new System.Windows.Forms.Label();
             this.ExamDetailsLBL = new System.Windows.Forms.Label();
             this.SubmitBtn = new Krypton.Toolkit.KryptonButton();
             this.kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
@@ -53,9 +55,6 @@ namespace Exam_Management_System.Designs
             this.QuestionRTB = new Krypton.Toolkit.KryptonRichTextBox();
             this.PointPH = new Krypton.Toolkit.KryptonLabel();
             this.QuestionPH = new Krypton.Toolkit.KryptonLabel();
-            this.timeDateLbl = new System.Windows.Forms.Label();
-            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
-            this.profileShowBtn = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
@@ -84,7 +83,7 @@ namespace Exam_Management_System.Designs
             this.Program_DropButtonPalette.ButtonStyles.ButtonCustom1.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.Program_DropButtonPalette.LabelStyles.LabelCustom1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Program_DropButtonPalette.LabelStyles.LabelCustom1.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Program_DropButtonPalette.LabelStyles.LabelCustom1.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F);
+            this.Program_DropButtonPalette.LabelStyles.LabelCustom1.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 10.5F);
             this.Program_DropButtonPalette.PanelStyles.PanelClient.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.Program_DropButtonPalette.PanelStyles.PanelClient.StateCommon.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.Program_DropButtonPalette.PanelStyles.PanelCustom2.StateCommon.Color1 = System.Drawing.Color.White;
@@ -121,10 +120,54 @@ namespace Exam_Management_System.Designs
             this.notificationBtn.TabIndex = 60;
             this.notificationBtn.Values.Text = "";
             // 
+            // kryptonButton5
+            // 
+            this.kryptonButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.kryptonButton5.Location = new System.Drawing.Point(901, 58);
+            this.kryptonButton5.Name = "kryptonButton5";
+            this.kryptonButton5.Size = new System.Drawing.Size(39, 39);
+            this.kryptonButton5.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.kryptonButton5.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.kryptonButton5.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
+            this.kryptonButton5.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.kryptonButton5.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.kryptonButton5.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton5.StateCommon.Border.Rounding = 100F;
+            this.kryptonButton5.StateCommon.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonButton5.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
+            this.kryptonButton5.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonButton5.StateNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.kryptonButton5.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.kryptonButton5.StateNormal.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton5.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.kryptonButton5.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.kryptonButton5.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.kryptonButton5.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.kryptonButton5.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton5.TabIndex = 59;
+            this.kryptonButton5.Values.Text = "";
+            // 
+            // timeDateLbl
+            // 
+            this.timeDateLbl.AutoSize = true;
+            this.timeDateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeDateLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.timeDateLbl.Location = new System.Drawing.Point(942, 68);
+            this.timeDateLbl.Name = "timeDateLbl";
+            this.timeDateLbl.Size = new System.Drawing.Size(165, 20);
+            this.timeDateLbl.TabIndex = 58;
+            this.timeDateLbl.Text = "11:44 pm - Tue, May 6";
+            // 
             // ExamDetailsLBL
             // 
             this.ExamDetailsLBL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.ExamDetailsLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.5F);
+            this.ExamDetailsLBL.Font = new System.Drawing.Font("Inter", 14.5F);
             this.ExamDetailsLBL.ForeColor = System.Drawing.Color.Black;
             this.ExamDetailsLBL.Location = new System.Drawing.Point(78, 136);
             this.ExamDetailsLBL.Name = "ExamDetailsLBL";
@@ -134,7 +177,7 @@ namespace Exam_Management_System.Designs
             // 
             // SubmitBtn
             // 
-            this.SubmitBtn.Location = new System.Drawing.Point(81, 411);
+            this.SubmitBtn.Location = new System.Drawing.Point(80, 377);
             this.SubmitBtn.Name = "SubmitBtn";
             this.SubmitBtn.Size = new System.Drawing.Size(135, 35);
             this.SubmitBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -147,7 +190,7 @@ namespace Exam_Management_System.Designs
             this.SubmitBtn.StateCommon.Border.Rounding = 8F;
             this.SubmitBtn.StateNormal.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.SubmitBtn.StateNormal.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.SubmitBtn.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubmitBtn.StateNormal.Content.ShortText.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubmitBtn.TabIndex = 61;
             this.SubmitBtn.Values.Text = "Submit";
             this.SubmitBtn.Click += new System.EventHandler(this.Submit);
@@ -166,7 +209,7 @@ namespace Exam_Management_System.Designs
             // 
             this.titlePH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.titlePH.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.titlePH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F);
+            this.titlePH.Font = new System.Drawing.Font("Inter", 10.5F);
             this.titlePH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.titlePH.Location = new System.Drawing.Point(81, 175);
             this.titlePH.Name = "titlePH";
@@ -181,7 +224,7 @@ namespace Exam_Management_System.Designs
             this.UniqueCodeLBL.Name = "UniqueCodeLBL";
             this.UniqueCodeLBL.Palette = this.Program_DropButtonPalette;
             this.UniqueCodeLBL.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
-            this.UniqueCodeLBL.Size = new System.Drawing.Size(50, 20);
+            this.UniqueCodeLBL.Size = new System.Drawing.Size(52, 21);
             this.UniqueCodeLBL.TabIndex = 1;
             this.UniqueCodeLBL.Values.Text = "Code: ";
             // 
@@ -189,7 +232,7 @@ namespace Exam_Management_System.Designs
             // 
             this.ProfessorPH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.ProfessorPH.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ProfessorPH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F);
+            this.ProfessorPH.Font = new System.Drawing.Font("Inter", 10.5F);
             this.ProfessorPH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ProfessorPH.Location = new System.Drawing.Point(81, 232);
             this.ProfessorPH.Name = "ProfessorPH";
@@ -204,7 +247,7 @@ namespace Exam_Management_System.Designs
             this.TimeRemainingLBL.Name = "TimeRemainingLBL";
             this.TimeRemainingLBL.Palette = this.Program_DropButtonPalette;
             this.TimeRemainingLBL.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
-            this.TimeRemainingLBL.Size = new System.Drawing.Size(120, 20);
+            this.TimeRemainingLBL.Size = new System.Drawing.Size(124, 21);
             this.TimeRemainingLBL.TabIndex = 70;
             this.TimeRemainingLBL.Values.Text = "Time Remaining:";
             // 
@@ -215,10 +258,10 @@ namespace Exam_Management_System.Designs
             this.timePH.Name = "timePH";
             this.timePH.Palette = this.Program_DropButtonPalette;
             this.timePH.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
-            this.timePH.Size = new System.Drawing.Size(90, 27);
+            this.timePH.Size = new System.Drawing.Size(99, 28);
             this.timePH.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.timePH.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.timePH.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.5F);
+            this.timePH.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 14.5F);
             this.timePH.TabIndex = 71;
             this.timePH.Values.Text = "00:00:00";
             // 
@@ -234,8 +277,6 @@ namespace Exam_Management_System.Designs
             // 
             // kryptonPanel1
             // 
-
-
             this.kryptonPanel1.Controls.Add(this.cardplaceholder);
             this.kryptonPanel1.Controls.Add(this.kryptonPictureBox2);
             this.kryptonPanel1.Controls.Add(this.timePH);
@@ -247,6 +288,7 @@ namespace Exam_Management_System.Designs
             this.kryptonPanel1.Controls.Add(this.SubmitBtn);
             this.kryptonPanel1.Controls.Add(this.ExamDetailsLBL);
             this.kryptonPanel1.Controls.Add(this.timeDateLbl);
+            this.kryptonPanel1.Controls.Add(this.kryptonButton5);
             this.kryptonPanel1.Controls.Add(this.notificationBtn);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
@@ -255,7 +297,6 @@ namespace Exam_Management_System.Designs
             this.kryptonPanel1.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
             this.kryptonPanel1.Size = new System.Drawing.Size(1184, 711);
             this.kryptonPanel1.TabIndex = 68;
-            this.kryptonPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonPanel1_Paint);
             // 
             // cardplaceholder
             // 
@@ -347,7 +388,7 @@ namespace Exam_Management_System.Designs
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.QuestionRTB.StateCommon.Border.Rounding = 10F;
             this.QuestionRTB.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.QuestionRTB.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F);
+            this.QuestionRTB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 10.5F);
             this.QuestionRTB.StateCommon.Content.Padding = new System.Windows.Forms.Padding(25, 18, 25, 18);
             this.QuestionRTB.TabIndex = 3;
             this.QuestionRTB.Text = "Question";
@@ -370,86 +411,6 @@ namespace Exam_Management_System.Designs
             this.QuestionPH.TabIndex = 0;
             this.QuestionPH.Values.Text = "Question";
             // 
-            // timeDateLbl
-            // 
-            this.timeDateLbl.AutoSize = true;
-            this.timeDateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeDateLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.timeDateLbl.Location = new System.Drawing.Point(942, 68);
-            this.timeDateLbl.Name = "timeDateLbl";
-            this.timeDateLbl.Size = new System.Drawing.Size(165, 20);
-            this.timeDateLbl.TabIndex = 58;
-            this.timeDateLbl.Text = "11:44 pm - Tue, May 6";
-            // 
-            // kryptonButton1
-            // 
-            this.kryptonButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kryptonButton1.Location = new System.Drawing.Point(845, 51);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(51, 50);
-            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.kryptonButton1.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
-            this.kryptonButton1.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.kryptonButton1.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.kryptonButton1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.StateCommon.Border.Rounding = 10F;
-            this.kryptonButton1.StateCommon.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.kryptonButton1.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
-            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonButton1.StateTracking.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonButton1.StateTracking.Back.Color2 = System.Drawing.Color.Transparent;
-            this.kryptonButton1.StateTracking.Back.Draw = Krypton.Toolkit.InheritBool.False;
-            this.kryptonButton1.StateTracking.Border.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonButton1.StateTracking.Border.Color2 = System.Drawing.Color.Transparent;
-            this.kryptonButton1.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.TabIndex = 76;
-            this.kryptonButton1.Values.Image = global::Exam_Management_System.Properties.Resources.notification_icon;
-            this.kryptonButton1.Values.Text = "";
-            this.kryptonButton1.MouseEnter += new System.EventHandler(this.NotificationBtn_MouseEnter);
-            this.kryptonButton1.MouseLeave += new System.EventHandler(this.NotificationBtn_MouseLeave);
-            // 
-            // profileShowBtn
-            // 
-            this.profileShowBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.profileShowBtn.Location = new System.Drawing.Point(897, 56);
-            this.profileShowBtn.Name = "profileShowBtn";
-            this.profileShowBtn.Size = new System.Drawing.Size(39, 39);
-            this.profileShowBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.profileShowBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.profileShowBtn.StateCommon.Back.Image = global::Exam_Management_System.Properties.Resources.profile_pic;
-            this.profileShowBtn.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
-            this.profileShowBtn.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.profileShowBtn.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.profileShowBtn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.profileShowBtn.StateCommon.Border.Rounding = 100F;
-            this.profileShowBtn.StateCommon.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profileShowBtn.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
-            this.profileShowBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profileShowBtn.StateNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.profileShowBtn.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.profileShowBtn.StateNormal.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.profileShowBtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.profileShowBtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.profileShowBtn.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.profileShowBtn.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.profileShowBtn.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.profileShowBtn.TabIndex = 77;
-            this.profileShowBtn.Values.Image = global::Exam_Management_System.Properties.Resources.profile_pic;
-            this.profileShowBtn.Values.Text = "";
-            this.profileShowBtn.MouseEnter += new System.EventHandler(this.KryptonButton5_MouseEnter);
-            this.profileShowBtn.MouseLeave += new System.EventHandler(this.KryptonButton5_MouseLeave);
-            // 
             // ExamForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -458,7 +419,7 @@ namespace Exam_Management_System.Designs
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.ClientSize = new System.Drawing.Size(1184, 711);
             this.Controls.Add(this.kryptonPanel1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.Font = new System.Drawing.Font("Inter", 9.5F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ExamForm";
@@ -479,6 +440,8 @@ namespace Exam_Management_System.Designs
         #endregion
         private Krypton.Toolkit.KryptonCustomPaletteBase Program_DropButtonPalette;
         private Krypton.Toolkit.KryptonButton notificationBtn;
+        private Krypton.Toolkit.KryptonButton kryptonButton5;
+        private Label timeDateLbl;
         private Label ExamDetailsLBL;
         private Krypton.Toolkit.KryptonButton SubmitBtn;
         private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox1;
@@ -499,7 +462,5 @@ namespace Exam_Management_System.Designs
         private Krypton.Toolkit.KryptonRichTextBox QuestionRTB;
         private Krypton.Toolkit.KryptonLabel PointPH;
         private Krypton.Toolkit.KryptonLabel QuestionPH;
-
-
     }
 }
