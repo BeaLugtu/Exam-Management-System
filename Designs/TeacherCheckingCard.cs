@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -6,6 +7,21 @@ namespace Exam_Management_System.Designs
 {
     public partial class TeacherCheckingCard : UserControl
     {
+
+        string connectionString = "Server=26.96.197.206;Database=exam.io;Uid=admin;Pwd=admin;";
+
+        private string examCode;
+        private string studentID;
+        private string questionNumber;
+        public string QuestionID { get; set; } // Add this property for QuestionID
+
+        // Public property to set the question number
+        public string QuestionNumber
+        {
+            get { return questionNumber; }
+            set { questionNumber = value; }
+        }
+
         public TeacherCheckingCard()
         {
             InitializeComponent();
@@ -26,6 +42,16 @@ namespace Exam_Management_System.Designs
             contextualParaOnly_TB.Visible = false;
             contextualPic_PB.Visible = false;
             contextualPara_TB.Visible = false;
+
+            // Subscribe to TextChanged event of scorePoint_TB
+            scorePoint_TB.TextChanged += ScorePoint_TB_TextChanged;
+        }
+
+        // Event handler for TextChanged event of scorePoint_TB
+        private void ScorePoint_TB_TextChanged(object sender, EventArgs e)
+        {
+            // Call the SaveScore method when the text changes in scorePoint_TB
+            SaveScore();
         }
 
         // Public property to access question_LBL text
@@ -161,7 +187,6 @@ namespace Exam_Management_System.Designs
             set { teacherAnswer_LBL.Text = value; }
         }
 
-
         // Method to hide non-contextual paragraph controls
         public void HideNonContextualParagraphControls()
         {
@@ -183,6 +208,7 @@ namespace Exam_Management_System.Designs
             contextualParaOnly_TB.Visible = true;
             contextualPic_PB.Visible = false;
             contextualPara_TB.Visible = false;
+            answerKey_LBL.Visible = false;
         }
 
         public void HideNonContextualImageControls()
@@ -205,6 +231,7 @@ namespace Exam_Management_System.Designs
             contextualParaOnly_TB.Visible = false;
             contextualPic_PB.Visible = false;
             contextualPara_TB.Visible = false;
+            answerKey_LBL.Visible = false;
         }
 
         public void HideNonContextualImageAndParagraphControls()
@@ -227,6 +254,7 @@ namespace Exam_Management_System.Designs
             contextualParaOnly_TB.Visible = false;
             contextualPic_PB.Visible = true;
             contextualPara_TB.Visible = true;
+            answerKey_LBL.Visible = false;
         }
 
         // Method to hide non-multiple choice controls
@@ -251,5 +279,50 @@ namespace Exam_Management_System.Designs
             contextualPic_PB.Visible = false;
             contextualPara_TB.Visible = false;
         }
+
+        public void SetExamCodeAndStudentID(string examCode, string studentID)
+        {
+            // Store the exam code and student ID in the private fields
+            this.examCode = examCode;
+            this.studentID = studentID;
+        }
+
+        public void SaveScore()
+        {
+            // Fetch the value inserted in the scorePoint_TB
+            string score = ScorePointText;
+
+            // Fetch the question text displayed in question_LBL
+            string questionText = QuestionText;
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Update the [examcode]_answers table
+                    string query = $"UPDATE `{examCode}_answers` SET `{studentID}_points` = @Score WHERE questions = @QuestionText";
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@Score", score);
+                    command.Parameters.AddWithValue("@QuestionText", questionText);
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to save score.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while saving score: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
+
 }

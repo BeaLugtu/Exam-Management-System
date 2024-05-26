@@ -70,6 +70,33 @@ namespace TeacherDashboard
             examCodeBox.ReadOnly = true; // Make the examCodeBox read-only
         }
 
+        public void SetExamCode(string examCode)
+        {
+            // Set the exam code in the examCodeBox
+            examCodeBox.Text = examCode;
+            examCodeBox.ReadOnly = true; // Make the examCodeBox read-only
+        }
+
+        public void SetExamTitle(string examTitle)
+        {
+            examTitleBox.Text = examTitle;
+        }
+
+        public void SetExamTotalStudents(int examTotalStudents)
+        {
+            examEstimateBox.Text = examTotalStudents.ToString();
+        }
+
+        public void SetExamDeadlineDate(DateTime examDeadlineDate)
+        {
+            examDateDeadline.Value = examDeadlineDate;
+        }
+
+        public void SetExamDeadlineTime(string examDeadlineTime)
+        {
+            examTimeDeadline.Text = examDeadlineTime;
+        }
+
         public string CodeValue
         {
             get { return examCodeBox.Text; }
