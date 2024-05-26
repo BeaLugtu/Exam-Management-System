@@ -179,7 +179,7 @@
             this.editForm_BTN.Size = new System.Drawing.Size(20, 18);
             this.editForm_BTN.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.editForm_BTN.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.editForm_BTN.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton2.StateCommon.Back.Image")));
+            this.editForm_BTN.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("editForm_BTN.StateCommon.Back.Image")));
             this.editForm_BTN.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
             this.editForm_BTN.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
             this.editForm_BTN.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
@@ -191,7 +191,7 @@
             this.editForm_BTN.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editForm_BTN.StateTracking.Back.Color1 = System.Drawing.Color.Transparent;
             this.editForm_BTN.StateTracking.Back.Color2 = System.Drawing.Color.Transparent;
-            this.editForm_BTN.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton2.StateTracking.Back.Image")));
+            this.editForm_BTN.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("editForm_BTN.StateTracking.Back.Image")));
             this.editForm_BTN.StateTracking.Border.Color1 = System.Drawing.Color.Transparent;
             this.editForm_BTN.StateTracking.Border.Color2 = System.Drawing.Color.Transparent;
             this.editForm_BTN.StateTracking.Border.Draw = Krypton.Toolkit.InheritBool.False;

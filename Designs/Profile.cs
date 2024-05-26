@@ -3,7 +3,7 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.IO; 
+using System.IO;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -23,13 +23,14 @@ namespace Exam_Management_System.Designs
         private string accounttype;
         private bool hasUnsavedChanges = false;
         private readonly DBAccess dbAccess = new DBAccess();
-
+        private UserType userType; // Add this field to store the userType
 
         public Profile(string userID, UserType userType)
         {
             InitializeComponent();
             //Getting parameters from homepage
             this.user_ID = userID;
+            this.userType = userType; // Initialize the userType field
             accounttype = userType.ToString();
             PopulateProgramComboBox();
             loadkeypess();
@@ -42,11 +43,8 @@ namespace Exam_Management_System.Designs
             timer.Interval = 1000; // 1 second interval
             timer.Tick += Timer_Tick;
             timer.Start();
-
-
-
-
         }
+
         private void Profile_Load(object sender, EventArgs e)
         {
             timer1.Start();
@@ -64,8 +62,14 @@ namespace Exam_Management_System.Designs
             flowLayoutTablelistExam.Controls.Clear();
             PopulateFlowLayoutPanel();
 
+            // Check the userType and update the visibility of profilePanel and archiveViewBtn
+            if ((int)userType == 0)
+            {
+                archivePanel.Visible = false;
+                archiveViewBtn.Visible = false;
+                
+            }
         }
-
         private void UpdateTimeLabel()
         {
             DateTime currentTime = DateTime.Now;
@@ -124,7 +128,7 @@ namespace Exam_Management_System.Designs
             if (hasUnsavedChanges)
             {
                 var result = MessageBox.Show(
-                    "You have unsaved changes on your Profile. Click yes to save?",
+                    "Save your data. Click yes to save?",
                     "Unsaved Changes",
                     MessageBoxButtons.YesNoCancel,
                     MessageBoxIcon.Warning);
@@ -132,30 +136,15 @@ namespace Exam_Management_System.Designs
                 if (result == DialogResult.Yes)
                 {
                     SaveBtn_Click(null, null);
-                    // Get the user ID and user type from the database
-                    user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
-                    UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
-
-                    this.Close();
-                    Designs.TeacherDashBoard teacherDashBoard = new Designs.TeacherDashBoard(user_ID, userType);
-                    teacherDashBoard.Show();
-                }
-                else if (result == DialogResult.No)
-                {
-                    // Get the user ID and user type from the database
-                    user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
-                    UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
-
-                    this.Close();
-                    Designs.TeacherDashBoard teacherDashBoard = new Designs.TeacherDashBoard(user_ID, userType);
-                    teacherDashBoard.Show();
                 }
                 else if (result == DialogResult.Cancel)
                 {
-                    return;
+                    return; // Exit without closing the form
                 }
             }
         }
+
+
         private void Control_Modified(object sender, EventArgs e)
         {
             Control control = sender as Control;
@@ -826,7 +815,7 @@ namespace Exam_Management_System.Designs
         private void logoutBtn_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show(
-                                "You have unsaved changes on your Profile. Click yes to save?",
+                                "Click yes to save?",
                                 "Unsaved Changes",
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Warning);
@@ -853,49 +842,33 @@ namespace Exam_Management_System.Designs
             {
                 HandleUnsavedChanges();
             }
-            else
+
+            if (!hasUnsavedChanges || !this.IsHandleCreated)
             {
                 // Get the user ID and user type from the database
                 string user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
-                string userTypeString = dtloggedin_User.Rows[0]["User_Type"].ToString();
-                UserType userType;
+                UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
 
-                // Debug output
-                Console.WriteLine("User ID: " + user_ID);
-                Console.WriteLine("User Type String: " + userTypeString);
+                this.Close();
 
-                // Parse the user type
-                if (Enum.TryParse(userTypeString, out userType))
+                // Redirect based on user type
+                if ((int)userType == 0)
                 {
-                    Console.WriteLine("Parsed User Type: " + userType);
-                    Console.WriteLine("Parsed User Type (int): " + (int)userType);
-
-                    this.Close();
-
-                    // Redirect based on user type
-                    if ((int)userType == 0)
-                    {
-                        Designs.StudentDashboard studentDashboard = new Designs.StudentDashboard(user_ID, userType);
-                        studentDashboard.Show();
-                    }
-                    else if ((int)userType == 1)
-                    {
-                        Designs.TeacherDashBoard teacherDashBoard = new Designs.TeacherDashBoard(user_ID, userType);
-                        teacherDashBoard.Show();
-                    }
-                    else
-                    {
-                        // Handle other user types if necessary
-                        MessageBox.Show("Unknown user type. Please contact support.");
-                    }
+                    Designs.StudentDashboard studentDashboard = new Designs.StudentDashboard(user_ID, userType);
+                    studentDashboard.Show();
+                }
+                else if ((int)userType == 1)
+                {
+                    Designs.TeacherDashBoard teacherDashBoard = new Designs.TeacherDashBoard(user_ID, userType);
+                    teacherDashBoard.Show();
                 }
                 else
                 {
-                    MessageBox.Show("Failed to parse user type. Please contact support.");
+                    // Handle other user types if necessary
+                    MessageBox.Show("Unknown user type. Please contact support.");
                 }
             }
         }
-
 
 
         private void profileViewBtn_Click(object sender, EventArgs e)

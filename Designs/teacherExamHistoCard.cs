@@ -9,19 +9,24 @@ namespace Exam_Management_System.Designs
     public partial class teacherExamHistoCard : UserControl
     {
         private Action<string> deleteExamCardAction;
+        private Action<string> editExamCardAction;
+        private Action<string> viewExamCardAction;
         private Form teacherDashboard;
 
         string connectionString = "Server=26.96.197.206;Database=exam.io;Uid=admin;Pwd=admin;";
 
-        public teacherExamHistoCard(Action<string> deleteExamCardAction, Form teacherDashboard)
+
+        public teacherExamHistoCard(Action<string> deleteExamCardAction, Action<string> editExamCardAction, Action<string> viewExamCardAction, Form teacherDashboard)
         {
             InitializeComponent();
             this.deleteExamCardAction = deleteExamCardAction;
+            this.editExamCardAction = editExamCardAction; // Fix this line
+            this.viewExamCardAction = viewExamCardAction; // Fix this line
             this.teacherDashboard = teacherDashboard;
 
             viewSubmissions_BTN.Click += viewSubmissions_BTN_Click;
 
-            editForm_BTN.Click += editForm_BTN_Click; // Add this line
+            editForm_BTN.Click += editForm_BTN_Click;
         }
 
         public void SetTitle(string title)
@@ -71,95 +76,43 @@ namespace Exam_Management_System.Designs
             }
         }
 
-
         private void viewSubmissions_BTN_Click(object sender, EventArgs e)
         {
-            TeacherDashBoard teacherDashboard = new TeacherDashBoard();
+            // Display a confirmation dialog
+            DialogResult result = MessageBox.Show("Do you want to view this exam?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            teacherDashboard.Hide();
+            // If user confirms deletion
+            if (result == DialogResult.Yes)
+            {
+                // Remove the card from the flowLayoutPanel
+                this.Parent.Controls.Remove(this);
 
-            // Instantiate the CheckingPreview form
-            CheckingPreview checkingPreview = new CheckingPreview();
-
-            // Pass the exam code to the CheckingPreview form
-            checkingPreview.SetExamCode(codeExamLbl.Text);
-
-            // Show the CheckingPreview form
-            checkingPreview.Show();
-
-            // Optionally, handle the CheckingPreview form closing event to show the TeacherDashboard form again
-            checkingPreview.FormClosed += (s, args) => teacherDashboard.Show();
+                // Delete the corresponding record from the database
+                // Invoke the view action when the "View Submissions" button is clicked
+                string examCode = codeExamLbl.Text;
+                viewExamCardAction?.Invoke(examCode);
+            }
         }
-
 
         private void editForm_BTN_Click(object sender, EventArgs e)
         {
-            // Exam code to be passed
-            string examCode = codeExamLbl.Text;
+            // Display a confirmation dialog
+            DialogResult result = MessageBox.Show("Are you sure you want to edit this exam?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Query the database to check if the exam code exists and fetch the relevant details
-            try
+            // If user confirms deletion
+            if (result == DialogResult.Yes)
             {
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
-                {
-                    connection.Open();
-                    string query = "SELECT examTitle, examTotalStudents, examDeadlineDate, examDeadlineTime, examStudentsTurnedIn FROM examforms WHERE examCode = @examCode";
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@examCode", examCode);
-                        using (MySqlDataReader reader = command.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                // Check if students have already turned in the exam
-                                int studentsTurnedIn = reader.GetInt32(reader.GetOrdinal("examStudentsTurnedIn"));
-                                if (studentsTurnedIn != 0)
-                                {
-                                    MessageBox.Show("You cannot edit the form as students have already turned in the exam.", "Edit Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    return;
-                                }
+                // Remove the card from the flowLayoutPanel
+                this.Parent.Controls.Remove(this);
 
-                                // Hide the TeacherDashBoard form
-                                //teacherDashboard.Hide();
-
-                                // Instantiate the newBlankForm
-                                newBlankForm blankForm = new newBlankForm();
-
-                                // Set the exam code
-                                blankForm.SetExamCode(examCode);
-
-                                // Fetch and set the exam details
-                                string examTitle = reader.GetString(reader.GetOrdinal("examTitle"));
-                                int examTotalStudents = reader.GetInt32(reader.GetOrdinal("examTotalStudents"));
-                                DateTime examDeadlineDate = reader.GetDateTime(reader.GetOrdinal("examDeadlineDate"));
-                                TimeSpan examDeadlineTime = reader.GetTimeSpan(reader.GetOrdinal("examDeadlineTime"));
-
-                                blankForm.SetExamTitle(examTitle);
-                                blankForm.SetExamTotalStudents(examTotalStudents);
-                                blankForm.SetExamDeadlineDate(examDeadlineDate);
-                                blankForm.SetExamDeadlineTime(FormatTimeInput(examDeadlineTime));
-
-                                // Show the newBlankForm
-                                blankForm.Show();
-
-                                // Optionally, handle the newBlankForm form closing event to show the TeacherDashboard form again
-                                blankForm.FormClosed += (s, args) => teacherDashboard.Show();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Exam code not found.", "Edit Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Delete the corresponding record from the database
+                // Invoke the edit action when the "Edit Form" button is clicked
+                string examCode = codeExamLbl.Text;
+                editExamCardAction?.Invoke(examCode);
             }
         }
 
-
+        // Add an event handler for viewForm_BTN if necessary
 
         // Method to format time input
         private string FormatTimeInput(TimeSpan input)
@@ -175,9 +128,5 @@ namespace Exam_Management_System.Designs
                 return null;
             }
         }
-
-
-
-
     }
 }

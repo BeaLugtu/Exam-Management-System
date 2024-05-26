@@ -97,7 +97,7 @@ namespace Exam_Management_System.Designs
 
             foreach (DataRow row in examData.Rows)
             {
-                teacherExamHistoCard examCard = new teacherExamHistoCard(DeleteExamCard, teacherDashboard);
+                teacherExamHistoCard examCard = new teacherExamHistoCard(DeleteExamCard, EditExamCard, ViewExamCard, teacherDashboard);
                 examCard.SetTitle(row["examTitle"].ToString());
                 examCard.SetCode(row["examCode"].ToString());
                 examCard.SetTotalSubmittedStudents(Convert.ToInt32(row["examTotalStudents"]));
@@ -208,6 +208,79 @@ namespace Exam_Management_System.Designs
             }
         }
 
+        private void EditExamCard(string examCode)
+        {
+            try
+            {
+                // Construct the SQL query to select the record based on the examCode
+                string selectQuery = $"SELECT * FROM examforms WHERE examCode = '{examCode}'";
+
+                // Read the data from the examforms table
+                DataTable examData = new DataTable();
+                dbAccess.readDatathroughAdapter(selectQuery, examData);
+
+                if (examData.Rows.Count > 0)
+                {
+                    DataRow row = examData.Rows[0];
+                    // Check if students have already turned in the exam
+                    int studentsTurnedIn = Convert.ToInt32(row["examStudentsTurnedIn"]);
+                    if (studentsTurnedIn != 0)
+                    {
+                        MessageBox.Show("You cannot edit the form as students have already turned in the exam.", "Edit Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    // Instantiate the newBlankForm and pass userID and userType
+                    newBlankForm blankForm = new newBlankForm(userID, userType);
+
+                    // Set the exam code
+                    blankForm.SetExamCode(examCode);
+
+                    // Fetch and set the exam details
+                    string examTitle = row["examTitle"].ToString();
+                    int examTotalStudents = Convert.ToInt32(row["examTotalStudents"]);
+                    DateTime examDeadlineDate = Convert.ToDateTime(row["examDeadlineDate"]);
+                    TimeSpan examDeadlineTime = TimeSpan.Parse(row["examDeadlineTime"].ToString());
+
+                    blankForm.SetExamTitle(examTitle);
+                    blankForm.SetExamTotalStudents(examTotalStudents);
+                    blankForm.SetExamDeadlineDate(examDeadlineDate);
+                    //blankForm.SetExamDeadlineTime(FormatTimeInput(examDeadlineTime));
+
+                    // Show the newBlankForm
+                    blankForm.Show();
+
+                    // Optionally, handle the newBlankForm form closing event to show the TeacherDashboard form again
+                    //blankForm.FormClosed += (s, args) => teacherDashboard.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Exam code not found.", "Edit Form", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ViewExamCard(string examCode)
+        {
+            // Hide the TeacherDashBoard form
+            this.Hide();
+
+            // Instantiate the CheckingPreview form and pass userID and userType
+            CheckingPreview checkingPreview = new CheckingPreview(userID, userType);
+
+            // Pass the exam code to the CheckingPreview form
+            checkingPreview.SetExamCode(examCode);
+
+            // Show the CheckingPreview form
+            checkingPreview.Show();
+
+            // Optionally, handle the CheckingPreview form closing event to show the TeacherDashboard form again
+            checkingPreview.FormClosed += (s, args) => this.Show();
+        }
 
         private void TeacherDashBoard_Load_1(object sender, EventArgs e)
         {
