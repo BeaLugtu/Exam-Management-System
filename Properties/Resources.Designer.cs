@@ -113,6 +113,16 @@ namespace Exam_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EXAMFORMSUBMITTED_IMAGE {
+            get {
+                object obj = ResourceManager.GetObject("EXAMFORMSUBMITTED_IMAGE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Group_186 {
             get {
                 object obj = ResourceManager.GetObject("Group_186", resourceCulture);

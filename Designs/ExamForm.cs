@@ -31,7 +31,7 @@ namespace Exam_Management_System.Designs
         DBAccess objDABAccess = new DBAccess();
         DataTable dtloggedin_User = new DataTable();
         private DataTable answersTable;
-
+        private examSubmitSuccess sdboard;
         public ExamForm(string userID, string examcode)
         {
             InitializeComponent();
@@ -359,11 +359,6 @@ namespace Exam_Management_System.Designs
             answersTable.Rows.Add(row);
         }
     }
-
-
-            
-
-
             // Optionally, display or debug the DataTable
             foreach (DataRow row in answersTable.Rows)
             {
@@ -382,9 +377,8 @@ namespace Exam_Management_System.Designs
             {
                 MessageBox.Show($"Error updating total students count: {ex.Message}");
             }
+            
         }
-
-
 
             private void UpdateAnswersInDatabase()
         {
@@ -443,54 +437,7 @@ namespace Exam_Management_System.Designs
                 MessageBox.Show($"Error altering table: {ex.Message}");
             }
         }
-        // private bool corrext = false;
-        /*private void AutoCheckAnswers()
-        {
-            DataTable dtanswer = new DataTable();
-            string tableName = ExamCode + "_answers";
-            string columnAnswer = userID + "_answers";
-            string columnPoints = userID + "_points";
 
-            string query = $"SELECT eq.id, eq.point, eq.identification, eq.multiplechoice_answer, ea.`{columnAnswer}`, ea.`{columnPoints}` FROM examquestions AS eq " +
-                $"JOIN `{tableName}` AS ea ON eq.ID = ea.ID WHERE eq.examCode = '@ExamCode'";
-
-            MySqlCommand selectCommand = new MySqlCommand(query);
-            selectCommand.Parameters.AddWithValue("@ExamCode", ExamCode);
-
-            objDABAccess.readDatathroughAdapter(query, dtanswer);
-
-            foreach (DataRow row in dtanswer.Rows)
-            {
-                string questionID = row["id"].ToString();
-                string identificationAnswer = row["identification"].ToString();
-                string multipleChoiceAnswer = row["multiplechoice_answer"].ToString();
-                string userAnswer = row[columnAnswer].ToString();
-
-                // Check identification answer
-                if (!string.IsNullOrEmpty(identificationAnswer) && identificationAnswer.Equals(userAnswer, StringComparison.OrdinalIgnoreCase))
-                {
-                    corrext= true;
-                    if (corrext == true)
-                    {
-                        string pointed = "1"; // Assigning 1 for correct multiple choice answer
-                        string updateQuery = $"UPDATE `{tableName}` SET `{columnPoints}` = '"+pointed+"' WHERE id = '"+questionID+"'";
-                        objDABAccess.readDatathroughAdapter(query, dtanswer);
-                    }
-                }
-
-                // Check multiple choice answer
-                if (!string.IsNullOrEmpty(multipleChoiceAnswer) && multipleChoiceAnswer.Equals(userAnswer, StringComparison.OrdinalIgnoreCase))
-                {
-                    corrext = true;
-                    if (corrext == true)
-                    {
-                        string pointed = "1"; // Assigning 1 for correct multiple choice answer
-                        string updateQuery = $"UPDATE `{tableName}` SET `{columnPoints}` = '" + pointed + "' WHERE id = '" + questionID + "'";
-                        objDABAccess.readDatathroughAdapter(query, dtanswer);
-                    }
-                }
-            }
-        }*/
         private void DisableAllControls(Control.ControlCollection controls)
         {
             foreach (Control control in controls)
@@ -510,33 +457,106 @@ namespace Exam_Management_System.Designs
 
         private void Submit(object sender, EventArgs e)
         {
-            // Alter answers table
-            AlterAnswersTable();
+            try
+            {
+                // Alter answers table
+                AlterAnswersTable();
 
-            // Submit the exam
-            SubmitExam();
+                // Submit the exam
+                SubmitExam();
 
-            // Update answers in the database
-            UpdateAnswersInDatabase();
+                // Update answers in the database
+                UpdateAnswersInDatabase();
 
-            // Set submit_Clicked to true
-            submit_Clicked = true;
+                // Set submit_Clicked to true
+                submit_Clicked = true;
 
-            // Disable the submit button after it has been clicked
-            SubmitBtn.Enabled = false;
-            DisableAllControls(this.Controls);
-            // Optionally, you can add other functionality here
+                // Disable the submit button after it has been clicked
+                SubmitBtn.Enabled = false;
+                DisableAllControls(this.Controls);
 
-            // For example, if you want to execute another method like AutoCheckAnswers(),
-            // you can uncomment the line below:
-            // AutoCheckAnswers();
+                // Fetch user data from the database
+                string query = "SELECT * FROM Users WHERE ID = '" + userID + "'";
+                DataTable dtLoggedinUser = new DataTable();
+                objDABAccess.readDatathroughAdapter(query, dtLoggedinUser);
+
+                if (dtLoggedinUser.Rows.Count > 0)
+                {
+                    string userIDStr = userID.ToString();
+                    // Instantiate StudentDashboard
+                    examSubmitSuccess sdboard = new examSubmitSuccess(userIDStr);
+                    sdboard.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    // Handle case where user ID is not found
+                    MessageBox.Show("User ID not found.");
+                }
+
+                // Optionally, you can add other functionality here
+                // AutoCheckAnswers();
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
         }
+
 
 
     }
 
 }
+// private bool corrext = false;
+/*private void AutoCheckAnswers()
+{
+    DataTable dtanswer = new DataTable();
+    string tableName = ExamCode + "_answers";
+    string columnAnswer = userID + "_answers";
+    string columnPoints = userID + "_points";
 
+    string query = $"SELECT eq.id, eq.point, eq.identification, eq.multiplechoice_answer, ea.`{columnAnswer}`, ea.`{columnPoints}` FROM examquestions AS eq " +
+        $"JOIN `{tableName}` AS ea ON eq.ID = ea.ID WHERE eq.examCode = '@ExamCode'";
+
+    MySqlCommand selectCommand = new MySqlCommand(query);
+    selectCommand.Parameters.AddWithValue("@ExamCode", ExamCode);
+
+    objDABAccess.readDatathroughAdapter(query, dtanswer);
+
+    foreach (DataRow row in dtanswer.Rows)
+    {
+        string questionID = row["id"].ToString();
+        string identificationAnswer = row["identification"].ToString();
+        string multipleChoiceAnswer = row["multiplechoice_answer"].ToString();
+        string userAnswer = row[columnAnswer].ToString();
+
+        // Check identification answer
+        if (!string.IsNullOrEmpty(identificationAnswer) && identificationAnswer.Equals(userAnswer, StringComparison.OrdinalIgnoreCase))
+        {
+            corrext= true;
+            if (corrext == true)
+            {
+                string pointed = "1"; // Assigning 1 for correct multiple choice answer
+                string updateQuery = $"UPDATE `{tableName}` SET `{columnPoints}` = '"+pointed+"' WHERE id = '"+questionID+"'";
+                objDABAccess.readDatathroughAdapter(query, dtanswer);
+            }
+        }
+
+        // Check multiple choice answer
+        if (!string.IsNullOrEmpty(multipleChoiceAnswer) && multipleChoiceAnswer.Equals(userAnswer, StringComparison.OrdinalIgnoreCase))
+        {
+            corrext = true;
+            if (corrext == true)
+            {
+                string pointed = "1"; // Assigning 1 for correct multiple choice answer
+                string updateQuery = $"UPDATE `{tableName}` SET `{columnPoints}` = '" + pointed + "' WHERE id = '" + questionID + "'";
+                objDABAccess.readDatathroughAdapter(query, dtanswer);
+            }
+        }
+    }
+}*/
 /*private void SubmitExam()
         {
             dataGridView1.DataSource = answersTable;

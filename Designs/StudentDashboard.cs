@@ -27,6 +27,7 @@ namespace Exam_Management_System.Designs
         private Size originalSizeNotificationBtn;
         private Size originalImageSizeNotificationBtn;
         private Image originalImageNotificationBtn;
+        private LoginForm loginform;
 
         public StudentDashboard(string userID)
         {
@@ -135,9 +136,25 @@ namespace Exam_Management_System.Designs
         private void StudentDashboard_Load(object sender, EventArgs e)
         {
         }
-        private void Exam_Click(object sender, EventArgs e)
+       /* private void ViewForm_Click(object sender, EventArgs e)
         {
-            string userID = dtUsers.Rows[0]["ID"].ToString();
+            //string userID = dtUsers.Rows[0]["ID"].ToString();
+            string examCode = examCodeTB.Text;
+
+            // Check if the user has already answered the exam
+            string query = "SELECT COUNT(`" + userID + "_answers`) FROM `" + examCode + "_answers`";
+
+            // Create a DataTable to store the result
+            DataTable dtCount = new DataTable();
+            SubmittedExamViewForm examForm = new SubmittedExamViewForm(userID, examCode);
+            examForm.Show();
+            this.Hide();
+        }*/
+
+
+            private void Exam_Click(object sender, EventArgs e)
+        {
+            //string userID = dtUsers.Rows[0]["ID"].ToString();
             string examCode = examCodeTB.Text;
 
             // Check if the user has already answered the exam
@@ -185,7 +202,16 @@ namespace Exam_Management_System.Designs
             }
         }
 
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            // Show the main form (login form)
+            loginform = new LoginForm(); // Instantiate StudentDashboard
+            loginform.Show();
+            this.Hide();
 
+            // Close this form (logout form)
+            this.Close();
+        }
 
         private void ProfileBtn_Click(object sender, EventArgs e)
         {

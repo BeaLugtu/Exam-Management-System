@@ -119,6 +119,12 @@
     <Compile Include="Designs\examSuccessForm.Designer.cs">
       <DependentUpon>examSuccessForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Designs\examSubmitSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designs\examSubmitSuccess.Designer.cs">
+      <DependentUpon>examSubmitSuccess.cs</DependentUpon>
+    </Compile>
     <Compile Include="Designs\LoadingScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +235,9 @@
     <EmbeddedResource Include="Designs\ExamForm.resx">
       <DependentUpon>ExamForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Designs\examSubmitSuccess.resx">
+      <DependentUpon>examSubmitSuccess.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Designs\examSuccessForm.resx">
       <DependentUpon>examSuccessForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +311,7 @@
     <Content Include="assets\Student Sign up Form.png" />
     <Content Include="assets\StudentAccountOption.png" />
     <Content Include="assets\TeacherAccountOption.png" />
+    <None Include="Resources\EXAMFORMSUBMITTED_IMAGE.png" />
     <None Include="Resources\studenDashboardPage1.png" />
     <None Include="Resources\Group 1751.png" />
     <None Include="Resources\Rectangle 415.png" />

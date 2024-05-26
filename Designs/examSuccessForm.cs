@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TeacherDashboard
+namespace Exam_Management_System.Designs
 {
     public partial class examSuccessForm : Form
     {

@@ -41,6 +41,7 @@
             this.kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonBorderEdge2 = new Krypton.Toolkit.KryptonBorderEdge();
+            this.LogOutBtn = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox1)).BeginInit();
@@ -256,12 +257,41 @@
             this.kryptonBorderEdge2.StateCommon.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.kryptonBorderEdge2.Text = "kryptonBorderEdge2";
             // 
+            // LogOutBtn
+            // 
+            this.LogOutBtn.Location = new System.Drawing.Point(88, 535);
+            this.LogOutBtn.Name = "LogOutBtn";
+            this.LogOutBtn.Size = new System.Drawing.Size(120, 36);
+            this.LogOutBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LogOutBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LogOutBtn.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.LogOutBtn.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
+            this.LogOutBtn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.LogOutBtn.StateCommon.Border.Rounding = 10F;
+            this.LogOutBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.LogOutBtn.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.LogOutBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Inter Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutBtn.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LogOutBtn.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LogOutBtn.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LogOutBtn.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LogOutBtn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LogOutBtn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LogOutBtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LogOutBtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LogOutBtn.TabIndex = 66;
+            this.LogOutBtn.Values.Text = "Log Out";
+            this.LogOutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
+            // 
             // StudentDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(1124, 641);
+            this.Controls.Add(this.LogOutBtn);
             this.Controls.Add(this.kryptonBorderEdge2);
             this.Controls.Add(this.kryptonPictureBox3);
             this.Controls.Add(this.label1);
@@ -304,5 +334,6 @@
         private System.Windows.Forms.Label label1;
         private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox3;
         private Krypton.Toolkit.KryptonBorderEdge kryptonBorderEdge2;
+        private Krypton.Toolkit.KryptonButton LogOutBtn;
     }
 }
