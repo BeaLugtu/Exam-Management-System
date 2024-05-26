@@ -67,7 +67,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.back_BTN.TabIndex = 3;
-            this.back_BTN.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton1.Values.Image")));
+            this.back_BTN.Values.Image = ((System.Drawing.Image)(resources.GetObject("back_BTN.Values.Image")));
             this.back_BTN.Values.Text = "";
             // 
             // questions_FLP

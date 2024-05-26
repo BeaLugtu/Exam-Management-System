@@ -32,8 +32,6 @@
             this.timeDateLbl = new System.Windows.Forms.Label();
             this.JoinButton = new Krypton.Toolkit.KryptonButton();
             this.notificationBtn = new Krypton.Toolkit.KryptonButton();
-            this.howtosetupProfile = new System.Windows.Forms.Label();
-            this.questionMarkButton = new Krypton.Toolkit.KryptonButton();
             this.examCodeTB = new Krypton.Toolkit.KryptonTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.kryptonPictureBox3 = new Krypton.Toolkit.KryptonPictureBox();
@@ -155,31 +153,6 @@
             this.notificationBtn.Values.Image = global::Exam_Management_System.Properties.Resources.notification_icon;
             this.notificationBtn.Values.Text = "";
             // 
-            // howtosetupProfile
-            // 
-            this.howtosetupProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.howtosetupProfile.Font = new System.Drawing.Font("Inter", 11.25F);
-            this.howtosetupProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(130)))));
-            this.howtosetupProfile.Location = new System.Drawing.Point(122, 502);
-            this.howtosetupProfile.Name = "howtosetupProfile";
-            this.howtosetupProfile.Size = new System.Drawing.Size(231, 30);
-            this.howtosetupProfile.TabIndex = 57;
-            this.howtosetupProfile.Text = "How to edit my profile?";
-            this.howtosetupProfile.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // questionMarkButton
-            // 
-            this.questionMarkButton.ButtonStyle = Krypton.Toolkit.ButtonStyle.Custom1;
-            this.questionMarkButton.Location = new System.Drawing.Point(88, 500);
-            this.questionMarkButton.Name = "questionMarkButton";
-            this.questionMarkButton.Size = new System.Drawing.Size(24, 24);
-            this.questionMarkButton.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.questionMarkButton.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.questionMarkButton.StateCommon.Back.Image = global::Exam_Management_System.Properties.Resources.question_mark;
-            this.questionMarkButton.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
-            this.questionMarkButton.TabIndex = 58;
-            this.questionMarkButton.Values.Text = "";
-            // 
             // examCodeTB
             // 
             this.examCodeTB.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -274,17 +247,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-
             this.ClientSize = new System.Drawing.Size(1200, 750);
             this.Controls.Add(this.timeLbl);
-
             this.Controls.Add(this.kryptonBorderEdge2);
             this.Controls.Add(this.kryptonPictureBox3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.JoinButton);
             this.Controls.Add(this.examCodeTB);
-            this.Controls.Add(this.questionMarkButton);
-            this.Controls.Add(this.howtosetupProfile);
             this.Controls.Add(this.kryptonPictureBox2);
             this.Controls.Add(this.notificationBtn);
             this.Controls.Add(this.timeDateLbl);
@@ -312,8 +281,6 @@
         private System.Windows.Forms.Label timeDateLbl;
         private Krypton.Toolkit.KryptonButton notificationBtn;
         private Krypton.Toolkit.KryptonButton JoinButton;
-        private System.Windows.Forms.Label howtosetupProfile;
-        private Krypton.Toolkit.KryptonButton questionMarkButton;
         private Krypton.Toolkit.KryptonTextBox examCodeTB;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox2;

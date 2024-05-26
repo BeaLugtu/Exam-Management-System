@@ -20,8 +20,8 @@ namespace TeacherDashboard
         private string lastSelectedQuestionType;
 
         string selectedFilePath = "";
-        private string user_ID;
-        private string accounttype;
+        private string userID;
+        private UserType userType;
 
 
         public newBlankForm(string userID, UserType userType)
@@ -29,8 +29,8 @@ namespace TeacherDashboard
             InitializeComponent();
             GenerateExamCode(); // Call the method to generate the exam code when the form is initialized
             questionType_DB.Items.AddRange(new object[] { "Identification", "Paragraph Form", "Multiple Choice", "Contextual Paragraph", "Contextual Image", "Contextual Paragraph & Image" });
-            this.user_ID = userID;
-            accounttype = userType.ToString();
+            this.userID = userID;
+            this.userType = userType;
             questionType_DB.DropDownStyle = ComboBoxStyle.DropDownList;
 
             // Set the default selection to "Short Answer"
@@ -119,7 +119,6 @@ namespace TeacherDashboard
         {
             examTimeDeadline.Text = examDeadlineTime;
         }
-
         public string CodeValue
         {
             get { return examCodeBox.Text; }
@@ -667,7 +666,7 @@ namespace TeacherDashboard
                                      "VALUES (@user_ID, @examCode, @examTitle, @examCreated, @examDeadlineDate, @examDeadlineTime, @examStatus, @examTotalStudents)";
 
                 MySqlCommand insertCommand = new MySqlCommand(insertQuery);
-                insertCommand.Parameters.AddWithValue("@user_ID", user_ID);
+                insertCommand.Parameters.AddWithValue("@user_ID", userID);
                 insertCommand.Parameters.AddWithValue("@examCode", examCode);
                 insertCommand.Parameters.AddWithValue("@examTitle", examTitle);
                 insertCommand.Parameters.AddWithValue("@examCreated", examCreated.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -828,7 +827,7 @@ namespace TeacherDashboard
             // Get the user ID and user type from the database
 
             this.Close();
-            TeacherDashBoard dashboardForm = new TeacherDashBoard(user_ID, UserType.Teacher);
+            TeacherDashBoard dashboardForm = new TeacherDashBoard(userID, userType);
 
             // Show the teacherDashboardForm
             dashboardForm.Show();

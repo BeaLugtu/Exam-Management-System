@@ -321,7 +321,7 @@ namespace Exam_Management_System.Designs
         }
         private void SubmitExam()
 {
-    dataGridView1.DataSource = answersTable;
+    //dataGridView1.DataSource = answersTable;
     answersTable.Clear(); // Clear any existing data
 
     foreach (Control control in cardplaceholder.Controls)

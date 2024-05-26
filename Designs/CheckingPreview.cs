@@ -11,11 +11,15 @@ namespace Exam_Management_System.Designs
     {
         string connectionString = "Server=26.96.197.206;Database=exam.io;Uid=admin;Pwd=admin;";
         Timer timer;
+        private string userID;
+        private UserType userType;
 
-        public CheckingPreview()
+        public CheckingPreview(string userID, UserType userType)
         {
             InitializeComponent();
             PopulateListView();
+            this.userID = userID;
+            this.userType = userType;
 
             // Subscribe to the SelectedIndexChanged event
             respondents_LV.SelectedIndexChanged += Respondents_LV_SelectedIndexChanged;
@@ -201,7 +205,7 @@ namespace Exam_Management_System.Designs
                     string questionType = questionRow["question_type"].ToString();
                     TeacherCheckingCard card = new TeacherCheckingCard();
 
-                    card.SetExamCodeAndStudentID(examCode, studentID);
+                    //card.SetExamCodeAndStudentID(examCode, studentID);
 
                     // Fetch and set the point value with "/" character
                     string pointValue = questionRow["point"].ToString();
@@ -703,7 +707,7 @@ namespace Exam_Management_System.Designs
             this.Close();
 
             // Show the teacher dashboard form
-            TeacherDashBoard teacherDashboard = new TeacherDashBoard();
+            TeacherDashBoard teacherDashboard = new TeacherDashBoard(userID,userType);
             teacherDashboard.Show();
         }
 
