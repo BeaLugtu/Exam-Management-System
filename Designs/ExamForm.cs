@@ -32,6 +32,14 @@ namespace Exam_Management_System.Designs
         DataTable dtloggedin_User = new DataTable();
         private DataTable answersTable;
 
+        private Size originalSize;
+        private Size originalImageSize;
+        private Image originalImage;
+
+        private Size originalSizeNotificationBtn;
+        private Size originalImageSizeNotificationBtn;
+        private Image originalImageNotificationBtn;
+        private Form teacherDashboard;
         public ExamForm(string userID, string examcode)
         {
             InitializeComponent();
@@ -44,6 +52,74 @@ namespace Exam_Management_System.Designs
             this.Load += new EventHandler(ExamForm_Load);
             setLabels();
             InitializeAnswersTable();
+
+            InitializeHoverEffects();
+        }
+
+        private void InitializeHoverEffects()
+        {
+            // Hover effect for kryptonButton5
+            originalSize = profileShowBtn.Size;
+            originalImage = profileShowBtn.Values.Image;
+            if (originalImage != null)
+            {
+                originalImageSize = originalImage.Size;
+            }
+            profileShowBtn.MouseEnter += KryptonButton5_MouseEnter;
+            profileShowBtn.MouseLeave += KryptonButton5_MouseLeave;
+
+            // Hover effect for notificationBtn
+            originalSizeNotificationBtn = notificationBtn.Size;
+            originalImageNotificationBtn = notificationBtn.Values.Image;
+            if (originalImageNotificationBtn != null)
+            {
+                originalImageSizeNotificationBtn = originalImageNotificationBtn.Size;
+            }
+            notificationBtn.MouseEnter += NotificationBtn_MouseEnter;
+            notificationBtn.MouseLeave += NotificationBtn_MouseLeave;
+
+
+        }
+
+        private void KryptonButton5_MouseEnter(object sender, EventArgs e)
+        {
+            if (originalImage != null)
+            {
+                // Enlarge the button slightly on hover
+                profileShowBtn.Size = new Size(originalSize.Width + 3, originalSize.Height + 3);
+                // Enlarge the image slightly on hover
+                profileShowBtn.Values.Image = new Bitmap(originalImage, new Size(originalImageSize.Width + 3, originalImageSize.Height + 3));
+            }
+        }
+
+        // Mouse leave event handler for kryptonButton5
+        private void KryptonButton5_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        // Hover effect for notificationBtn
+        private void NotificationBtn_MouseEnter(object sender, EventArgs e)
+        {
+            if (originalImageNotificationBtn != null)
+            {
+                // Enlarge the button slightly on hover
+                notificationBtn.Size = new Size(originalSizeNotificationBtn.Width + 3, originalSizeNotificationBtn.Height + 3);
+                // Enlarge the image slightly on hover
+                notificationBtn.Values.Image = new Bitmap(originalImageNotificationBtn, new Size(originalImageSizeNotificationBtn.Width + 3, originalImageSizeNotificationBtn.Height + 3));
+            }
+        }
+
+        // Mouse leave event handler for notificationBtn
+        private void NotificationBtn_MouseLeave(object sender, EventArgs e)
+        {
+            if (originalImageNotificationBtn != null)
+            {
+                // Restore the original size when the mouse leaves
+                notificationBtn.Size = originalSizeNotificationBtn;
+                // Restore the original image when the mouse leaves
+                notificationBtn.Values.Image = originalImageNotificationBtn;
+            }
         }
         private void InitializeAnswersTable()
         {
@@ -105,8 +181,12 @@ namespace Exam_Management_System.Designs
                 timePH.Text = "00:00:00";
                 countdownTimer.Stop();
                 MessageBox.Show("The exam deadline has been reached.");
+
+                // Automatically submit the exam
+                SubmitExam();
             }
         }
+
 
 
         private FlowLayoutPanel cardplaceholderpanel;
@@ -532,7 +612,10 @@ namespace Exam_Management_System.Designs
             // AutoCheckAnswers();
         }
 
+        private void kryptonPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 
 }
