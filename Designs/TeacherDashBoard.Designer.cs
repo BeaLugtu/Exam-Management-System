@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherDashBoard));
             this.timeDateLbl = new System.Windows.Forms.Label();
-            this.kryptonButton5 = new Krypton.Toolkit.KryptonButton();
+            this.profileShowBtn = new Krypton.Toolkit.KryptonButton();
             this.blankForm_BTN = new Krypton.Toolkit.KryptonButton();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.examFinishedLbl = new Krypton.Toolkit.KryptonLabel();
@@ -52,14 +52,14 @@
             this.kryptonPanel6 = new Krypton.Toolkit.KryptonPanel();
             this.kryptonPanel7 = new Krypton.Toolkit.KryptonPanel();
             this.kryptonPanel8 = new Krypton.Toolkit.KryptonPanel();
-            this.flowLayoutTablelistExam = new System.Windows.Forms.FlowLayoutPanel();
-            this.kryptonPanel9 = new Krypton.Toolkit.KryptonPanel();
             this.notificationBtn = new Krypton.Toolkit.KryptonButton();
             this.kryptonPictureBox5 = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonPictureBox4 = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonPictureBox3 = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonPictureBox2 = new Krypton.Toolkit.KryptonPictureBox();
             this.kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
+            this.flowLayoutTablelistExam = new System.Windows.Forms.FlowLayoutPanel();
+            this.kryptonPanel9 = new Krypton.Toolkit.KryptonPanel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
@@ -76,13 +76,13 @@
             this.kryptonPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel8)).BeginInit();
             this.kryptonPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel9)).BeginInit();
-            this.kryptonPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel9)).BeginInit();
+            this.kryptonPanel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // timeDateLbl
@@ -97,43 +97,43 @@
             this.timeDateLbl.Text = "11:44 pm - Tue, May 6";
             this.timeDateLbl.Click += new System.EventHandler(this.timeDateLbl_Click);
             // 
-            // kryptonButton5
+            // profileShowBtn
             // 
-            this.kryptonButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kryptonButton5.Location = new System.Drawing.Point(882, 57);
-            this.kryptonButton5.Name = "kryptonButton5";
-            this.kryptonButton5.Size = new System.Drawing.Size(39, 39);
-            this.kryptonButton5.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.kryptonButton5.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.kryptonButton5.StateCommon.Back.Image = global::Exam_Management_System.Properties.Resources.profile_pic;
-            this.kryptonButton5.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
-            this.kryptonButton5.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.kryptonButton5.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.kryptonButton5.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.profileShowBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.profileShowBtn.Location = new System.Drawing.Point(882, 57);
+            this.profileShowBtn.Name = "profileShowBtn";
+            this.profileShowBtn.Size = new System.Drawing.Size(39, 39);
+            this.profileShowBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.profileShowBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.profileShowBtn.StateCommon.Back.Image = global::Exam_Management_System.Properties.Resources.profile_pic;
+            this.profileShowBtn.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
+            this.profileShowBtn.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.profileShowBtn.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.profileShowBtn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton5.StateCommon.Border.Rounding = 100F;
-            this.kryptonButton5.StateCommon.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonButton5.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
-            this.kryptonButton5.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonButton5.StateNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.kryptonButton5.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.kryptonButton5.StateNormal.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.profileShowBtn.StateCommon.Border.Rounding = 100F;
+            this.profileShowBtn.StateCommon.Content.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileShowBtn.StateCommon.Content.Padding = new System.Windows.Forms.Padding(7);
+            this.profileShowBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileShowBtn.StateNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.profileShowBtn.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.profileShowBtn.StateNormal.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton5.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.kryptonButton5.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.kryptonButton5.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.kryptonButton5.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.kryptonButton5.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.profileShowBtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.profileShowBtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.profileShowBtn.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.profileShowBtn.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.profileShowBtn.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton5.TabIndex = 22;
-            this.kryptonButton5.Values.Image = global::Exam_Management_System.Properties.Resources.profile_pic;
-            this.kryptonButton5.Values.Text = "";
-            this.kryptonButton5.Click += new System.EventHandler(this.LoginBtn_Click);
-            this.kryptonButton5.MouseEnter += new System.EventHandler(this.KryptonButton5_MouseEnter);
-            this.kryptonButton5.MouseLeave += new System.EventHandler(this.KryptonButton5_MouseLeave);
+            this.profileShowBtn.TabIndex = 22;
+            this.profileShowBtn.Values.Image = global::Exam_Management_System.Properties.Resources.profile_pic;
+            this.profileShowBtn.Values.Text = "";
+            this.profileShowBtn.Click += new System.EventHandler(this.ProfileView_Click);
+            this.profileShowBtn.MouseEnter += new System.EventHandler(this.KryptonButton5_MouseEnter);
+            this.profileShowBtn.MouseLeave += new System.EventHandler(this.KryptonButton5_MouseLeave);
             // 
             // blankForm_BTN
             // 
@@ -506,26 +506,6 @@
             this.kryptonPanel8.StateCommon.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.kryptonPanel8.TabIndex = 46;
             // 
-            // flowLayoutTablelistExam
-            // 
-            this.flowLayoutTablelistExam.AutoScroll = true;
-            this.flowLayoutTablelistExam.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutTablelistExam.Location = new System.Drawing.Point(1, 0);
-            this.flowLayoutTablelistExam.Name = "flowLayoutTablelistExam";
-            this.flowLayoutTablelistExam.Size = new System.Drawing.Size(1025, 229);
-            this.flowLayoutTablelistExam.TabIndex = 48;
-            // 
-            // kryptonPanel9
-            // 
-            this.kryptonPanel9.Controls.Add(this.flowLayoutTablelistExam);
-            this.kryptonPanel9.Location = new System.Drawing.Point(85, 483);
-            this.kryptonPanel9.Name = "kryptonPanel9";
-            this.kryptonPanel9.Size = new System.Drawing.Size(1026, 229);
-            this.kryptonPanel9.StateCommon.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonPanel9.StateCommon.Color2 = System.Drawing.Color.Transparent;
-            this.kryptonPanel9.StateCommon.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPanel9.StateCommon.Image")));
-            this.kryptonPanel9.TabIndex = 50;
-            // 
             // notificationBtn
             // 
             this.notificationBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -608,12 +588,32 @@
             this.kryptonPictureBox1.TabStop = false;
             this.kryptonPictureBox1.Click += new System.EventHandler(this.kryptonPictureBox1_Click);
             // 
+            // flowLayoutTablelistExam
+            // 
+            this.flowLayoutTablelistExam.AutoScroll = true;
+            this.flowLayoutTablelistExam.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutTablelistExam.Location = new System.Drawing.Point(1, 0);
+            this.flowLayoutTablelistExam.Name = "flowLayoutTablelistExam";
+            this.flowLayoutTablelistExam.Size = new System.Drawing.Size(1025, 229);
+            this.flowLayoutTablelistExam.TabIndex = 48;
+            // 
+            // kryptonPanel9
+            // 
+            this.kryptonPanel9.Controls.Add(this.flowLayoutTablelistExam);
+            this.kryptonPanel9.Location = new System.Drawing.Point(85, 483);
+            this.kryptonPanel9.Name = "kryptonPanel9";
+            this.kryptonPanel9.Size = new System.Drawing.Size(1026, 229);
+            this.kryptonPanel9.StateCommon.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonPanel9.StateCommon.Color2 = System.Drawing.Color.Transparent;
+            this.kryptonPanel9.StateCommon.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPanel9.StateCommon.Image")));
+            this.kryptonPanel9.TabIndex = 50;
+            // 
             // TeacherDashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.ClientSize = new System.Drawing.Size(1136, 640);
+            this.ClientSize = new System.Drawing.Size(1200, 750);
             this.Controls.Add(this.kryptonPanel9);
             this.Controls.Add(this.kryptonPictureBox5);
             this.Controls.Add(this.kryptonPictureBox4);
@@ -632,7 +632,7 @@
             this.Controls.Add(this.blankForm_BTN);
             this.Controls.Add(this.kryptonPictureBox3);
             this.Controls.Add(this.kryptonPictureBox2);
-            this.Controls.Add(this.kryptonButton5);
+            this.Controls.Add(this.profileShowBtn);
             this.Controls.Add(this.kryptonPictureBox1);
             this.Controls.Add(this.timeDateLbl);
             this.Controls.Add(this.kryptonButton2);
@@ -657,13 +657,13 @@
             this.kryptonPanel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel8)).EndInit();
             this.kryptonPanel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel9)).EndInit();
-            this.kryptonPanel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel9)).EndInit();
+            this.kryptonPanel9.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -672,7 +672,7 @@
         #endregion
         private System.Windows.Forms.Label timeDateLbl;
         private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox1;
-        private Krypton.Toolkit.KryptonButton kryptonButton5;
+        private Krypton.Toolkit.KryptonButton profileShowBtn;
         private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox2;
         private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox3;
         private Krypton.Toolkit.KryptonButton blankForm_BTN;
@@ -697,9 +697,9 @@
         private Krypton.Toolkit.KryptonPanel kryptonPanel7;
         private Krypton.Toolkit.KryptonPanel kryptonPanel8;
         private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutTablelistExam;
         private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox5;
-        private Krypton.Toolkit.KryptonPanel kryptonPanel9;
         private Krypton.Toolkit.KryptonButton notificationBtn;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutTablelistExam;
+        private Krypton.Toolkit.KryptonPanel kryptonPanel9;
     }
 }

@@ -22,7 +22,7 @@ namespace Exam_Management_System
         // Declare variables to store original width and height
         private int originalWidth;
         private int originalHeight;
-
+        private StudentDashboard sdboard;
         public LoginForm()
         {
             InitializeComponent();
@@ -79,61 +79,7 @@ namespace Exam_Management_System
             chooseAccountSignUpForm.Show();
         }
 
-        private void LoginBtn_MouseClick(object sender, MouseEventArgs e)
-        {
-            string UserID = IDTB.Text;
-            string Password = PasswordTB.Text;
 
-            if (UserID.Equals(""))
-            {
-                MessageBox.Show("Please Enter Your Email");
-            }
-            else if (Password.Equals(""))
-            {
-                MessageBox.Show("Please Enter Your Password");
-            }
-            else
-            {
-                string query = "Select * from Users Where ID= '" + UserID + "' AND Password = '" + Password + "'";
-
-                DataTable dtUsers = new DataTable();
-                objDABAccess.readDatathroughAdapter(query, dtUsers);
-
-                if (dtUsers.Rows.Count > 0)
-                {
-                    // Get the user ID and user type from the database
-                    string userID = dtUsers.Rows[0]["ID"].ToString();
-                    int userType = Convert.ToInt32(dtUsers.Rows[0]["User_Type"]);
-
-                    MessageBox.Show("Successfully Logged in.");
-                    objDABAccess.closeConn();
-                    this.Hide();
-
-                    // Check the userType and open the appropriate form
-                    if (userType == 0)
-                    {
-                        // Open the homepage for students
-                        Designs.Homepage homePage = new Designs.Homepage(userID, UserType.Student);
-                        homePage.Show();
-                    }
-                    else if (userType == 1)
-                    {
-                        // Open the dashboard for teachers
-                        Designs.TeacherDashBoard teacherDashboard = new Designs.TeacherDashBoard(userID, UserType.Teacher);
-                        teacherDashboard.Show();
-                    }
-                    else
-                    {
-                        // If userType is neither 0 nor 1, show an error message or handle appropriately
-                        MessageBox.Show("Invalid user type. Please contact support.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Invalid Input. Please Try Again.");
-                }
-            }
-        }
 
 
 
@@ -185,16 +131,7 @@ namespace Exam_Management_System
         }
 
 
-        private void forgotPassBtn_MouseHover(object sender, EventArgs e)
-        {
-            forgotPassBtn.StateCommon.ShortText.Font = new Font(forgotPassBtn.StateCommon.ShortText.Font.FontFamily, 8.7f, forgotPassBtn.StateCommon.ShortText.Font.Style); // Set font size to 8.3pt on hover
-        }
 
-        private void forgotPassBtn_MouseLeave(object sender, EventArgs e)
-        {
-            forgotPassBtn.StateCommon.ShortText.Font = new Font(forgotPassBtn.StateCommon.ShortText.Font.FontFamily, 8.25f, forgotPassBtn.StateCommon.ShortText.Font.Style); // Set font size to 8.3pt on hover
-
-        }
 
         private bool isDefaultImage = true;
 
@@ -254,5 +191,61 @@ namespace Exam_Management_System
 
         }
 
+        private void LoginBtn_MouseClick(object sender, MouseEventArgs e)
+        {
+            string UserID = IDTB.Text;
+            string Password = PasswordTB.Text;
+
+            if (UserID.Equals(""))
+            {
+                MessageBox.Show("Please Enter Your Email");
+            }
+            else if (Password.Equals(""))
+            {
+                MessageBox.Show("Please Enter Your Password");
+            }
+            else
+            {
+                string query = "Select * from Users Where ID= '" + UserID + "' AND Password = '" + Password + "'";
+
+                DataTable dtUsers = new DataTable();
+                objDABAccess.readDatathroughAdapter(query, dtUsers);
+
+                if (dtUsers.Rows.Count > 0)
+                {
+                    // Get the user ID and user type from the database
+                    string userID = dtUsers.Rows[0]["ID"].ToString();
+                    int userType = Convert.ToInt32(dtUsers.Rows[0]["User_Type"]);
+
+                    MessageBox.Show("Successfully Logged in.");
+                    objDABAccess.closeConn();
+                    this.Hide();
+
+                    // Check the userType and open the appropriate form
+                    if (userType == 0)
+                    {
+                        // Open the homepage for students
+                        sdboard = new StudentDashboard(userID, UserType.Student); // Instantiate StudentDashboard
+                        sdboard.Show();
+                        this.Hide();
+                    }
+                    else if (userType == 1)
+                    {
+                        // Open the dashboard for teachers
+                        Designs.TeacherDashBoard teacherDashboard = new Designs.TeacherDashBoard(userID, UserType.Teacher);
+                        teacherDashboard.Show();
+                    }
+                    else
+                    {
+                        // If userType is neither 0 nor 1, show an error message or handle appropriately
+                        MessageBox.Show("Invalid user type. Please contact support.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Input. Please Try Again.");
+                }
+            }
+        }
     }
 }

@@ -79,32 +79,51 @@ namespace Exam_Management_System.Designs
                 MessageBox.Show("New password and confirm password do not match.");
                 return;
             }
+            // Check if the Student ID exists in adminaccountrecords
+            if (!IsIDInAdminRecords(TeacherID))
+            {
+                MessageBox.Show("The Student ID does not exist in admin account records. Please provide a valid ID.");
+                return;
+            }
+
+            // Check if the Student ID is already used
+            if (IsIDAlreadyUsed(TeacherID))
+            {
+                MessageBox.Show("The Student ID is already used. Please choose a different ID.");
+                return;
+            }
+
+            MySqlCommand insertCommand = new MySqlCommand("INSERT INTO Users(ID, First_Name, Last_Name, Password, User_Type) VALUES(@TeacherID, @Fname, @Lname, @Password, 0)");
+            insertCommand.Parameters.AddWithValue("@TeacherID", TeacherID);
+            insertCommand.Parameters.AddWithValue("@Fname", Fname);
+            insertCommand.Parameters.AddWithValue("@Lname", Lname);
+            insertCommand.Parameters.AddWithValue("@Password", Password);
+
+            int row = objDBAccess.executeQuery(insertCommand);
+
+            if (row == 1)
+            {
+                // Pass student ID to the next form
+                // For student signup
+                SetUpAccount setupAccountForm = new SetUpAccount(TeacherID, UserType.Student);
+                MessageBox.Show("Account Created Successfully");
+                this.Hide();
+                setupAccountForm.Show();
+            }
             else
             {
-                MySqlCommand insertCommand = new MySqlCommand("INSERT INTO Users(ID, First_Name, Last_Name, Password, User_Type) VALUES(@TeacherID, @Fname, @Lname, @Password, 1)");
-               
-                insertCommand.Parameters.AddWithValue("@TeacherID", TeacherID);
-                insertCommand.Parameters.AddWithValue("@Fname", Fname);
-                insertCommand.Parameters.AddWithValue("@Lname", Lname);
-                insertCommand.Parameters.AddWithValue("@Password", Password);
-
-
-                int row = objDBAccess.executeQuery(insertCommand);
-
-                if (row == 1)
-                {
-                    // Pass teacher ID to the next form
-                    // For teacher signup
-                    SetUpAccount setupAccountForm = new SetUpAccount(TeacherID, UserType.Teacher);
-                    MessageBox.Show("Account Created Successfully");
-                    this.Hide();
-                    setupAccountForm.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Error Occurred. Try again");
-                }
+                MessageBox.Show("Error Occurred. Try again");
             }
+        }
+
+        // Method to check if the Student ID exists in admin account records
+        private bool IsIDInAdminRecords(string TeacherID)
+        {
+            MySqlCommand checkCommand = new MySqlCommand("SELECT COUNT(*) FROM adminaccountrecords WHERE ID = @TeacherID AND User_type = 1");
+            checkCommand.Parameters.AddWithValue("@TeacherID", TeacherID);
+
+            int count = Convert.ToInt32(objDBAccess.executeScalar(checkCommand));
+            return count > 0;
         }
 
         // Method to check if the ID is already used

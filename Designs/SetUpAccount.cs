@@ -38,8 +38,8 @@ namespace Exam_Management_System.Designs
             if (userType == UserType.Student)
             {
                 // Open the homepage for students
-                Designs.Homepage homePage = new Designs.Homepage(userID, userType);
-                homePage.Show();
+                Designs.StudentDashboard studentDashboard = new Designs.StudentDashboard(userID, userType);
+                studentDashboard.Show();
             }
             else if (userType == UserType.Teacher)
             {
