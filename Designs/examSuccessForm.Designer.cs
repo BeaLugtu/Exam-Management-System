@@ -65,7 +65,7 @@
             // examCode_TB
             // 
             this.examCode_TB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.examCode_TB.Location = new System.Drawing.Point(486, 471);
+            this.examCode_TB.Location = new System.Drawing.Point(486, 466);
             this.examCode_TB.Name = "examCode_TB";
             this.examCode_TB.ReadOnly = true;
             this.examCode_TB.Size = new System.Drawing.Size(235, 44);
@@ -86,7 +86,7 @@
             // backToDB_BTN
             // 
             this.backToDB_BTN.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.backToDB_BTN.Location = new System.Drawing.Point(519, 521);
+            this.backToDB_BTN.Location = new System.Drawing.Point(519, 525);
             this.backToDB_BTN.Margin = new System.Windows.Forms.Padding(8);
             this.backToDB_BTN.Name = "backToDB_BTN";
             this.backToDB_BTN.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
@@ -142,7 +142,7 @@
             // kryptonPictureBox2
             // 
             this.kryptonPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPictureBox2.Image")));
-            this.kryptonPictureBox2.Location = new System.Drawing.Point(3, -3);
+            this.kryptonPictureBox2.Location = new System.Drawing.Point(3, -17);
             this.kryptonPictureBox2.Name = "kryptonPictureBox2";
             this.kryptonPictureBox2.Size = new System.Drawing.Size(1200, 750);
             this.kryptonPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -155,7 +155,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 750);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "examSuccessForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";

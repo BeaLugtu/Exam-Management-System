@@ -113,9 +113,16 @@
             // 
             this.AnswerTB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.AnswerTB.CornerRoundingRadius = 10F;
+            this.AnswerTB.CueHint.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.AnswerTB.CueHint.CueHintText = "Write your answer here.";
+            this.AnswerTB.CueHint.Font = new System.Drawing.Font("Inter", 10.5F);
+            this.AnswerTB.CueHint.Hint = Krypton.Toolkit.PaletteTextHint.ClearTypeGridFit;
+            this.AnswerTB.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.AnswerTB.Location = new System.Drawing.Point(10, 140);
             this.AnswerTB.Margin = new System.Windows.Forms.Padding(5);
+            this.AnswerTB.MaximumSize = new System.Drawing.Size(660, 88);
             this.AnswerTB.MaxLength = 1000;
+            this.AnswerTB.MinimumSize = new System.Drawing.Size(0, 36);
             this.AnswerTB.Name = "AnswerTB";
             this.AnswerTB.Palette = this.Program_DropButtonPalette;
             this.AnswerTB.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
@@ -130,9 +137,9 @@
             this.AnswerTB.StateCommon.Border.Rounding = 10F;
             this.AnswerTB.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.AnswerTB.StateCommon.Content.Font = new System.Drawing.Font("Inter", 10.5F);
-            this.AnswerTB.StateCommon.Content.Padding = new System.Windows.Forms.Padding(25, 5, -1, -1);
+            this.AnswerTB.StateCommon.Content.Padding = new System.Windows.Forms.Padding(25, 5, 25, 5);
             this.AnswerTB.TabIndex = 6;
-            this.AnswerTB.Text = "Answer";
+            this.AnswerTB.Text = "";
             this.AnswerTB.TextChanged += new System.EventHandler(this.KryptonRichTextBox_TextChanged);
             // 
             // PointPH

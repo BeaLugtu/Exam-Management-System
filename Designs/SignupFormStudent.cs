@@ -97,6 +97,19 @@ namespace Exam_Management_System.Designs
                 return;
             }
 
+            // Check if the account exists in adminaccountrecords and if it's inactive
+            if (IsAccountInactive(StudentID))
+            {
+                // Update the account status to active
+                UpdateAccountStatus(StudentID);
+                MessageBox.Show("Account activated successfully.");
+            }
+            else
+            {
+                MessageBox.Show("Account already in use.");
+                return;
+            }
+
             MySqlCommand insertCommand = new MySqlCommand("INSERT INTO Users(ID, First_Name, Last_Name, Password, User_Type) VALUES(@StudentID, @Fname, @Lname, @Password, 0)");
             insertCommand.Parameters.AddWithValue("@StudentID", StudentID);
             insertCommand.Parameters.AddWithValue("@Fname", Fname);
@@ -119,6 +132,30 @@ namespace Exam_Management_System.Designs
                 MessageBox.Show("Error Occurred. Try again");
             }
         }
+
+        // Method to check if the account is inactive
+        private bool IsAccountInactive(string studentID)
+        {
+            MySqlCommand checkCommand = new MySqlCommand("SELECT Account_Status FROM adminaccountrecords WHERE ID = @StudentID AND User_type = 0");
+            checkCommand.Parameters.AddWithValue("@StudentID", studentID);
+
+            object result = objDBAccess.executeScalar(checkCommand);
+            if (result != null && result.ToString() == "Inactive")
+            {
+                return true;
+            }
+            return false;
+        }
+
+        // Method to update account status to active
+        private void UpdateAccountStatus(string studentID)
+        {
+            MySqlCommand updateCommand = new MySqlCommand("UPDATE adminaccountrecords SET Account_Status = 'Active' WHERE ID = @StudentID AND User_type = 0");
+            updateCommand.Parameters.AddWithValue("@StudentID", studentID);
+
+            objDBAccess.executeQuery(updateCommand);
+        }
+
 
         // Method to check if the Student ID exists in admin account records
         private bool IsIDInAdminRecords(string studentID)

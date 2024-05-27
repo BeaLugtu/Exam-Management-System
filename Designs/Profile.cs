@@ -17,7 +17,9 @@ namespace Exam_Management_System.Designs
     {
         DBAccess objDABAccess = new DBAccess();
         DataTable dtloggedin_User = new DataTable();
+        //Dinagdag kows
         private Dictionary<string, bool> fieldModified = new Dictionary<string, bool>(); // Track modified fields
+        private Dictionary<string, string> initialValues = new Dictionary<string, string>();
         private string user_ID;
         private string accounttype;
         private bool hasUnsavedChanges = false;
@@ -30,7 +32,8 @@ namespace Exam_Management_System.Designs
             accounttype = userType.ToString();
             PopulateProgramComboBox();
             loadkeypess();
-            StoreInitialValues(); // Store initial values after loading data
+            //BINURA KOWs
+            //StoreInitialValues(); // Store initial values after loading data
             SubscribeToModificationEvents(); // Subscribe to events after initial values are stored
             this.Load += Profile_Load;
 
@@ -39,9 +42,6 @@ namespace Exam_Management_System.Designs
             timer.Interval = 1000; // 1 second interval
             timer.Tick += Timer_Tick;
             timer.Start();
-
-
-
 
         }
         private void Profile_Load(object sender, EventArgs e)
@@ -91,6 +91,7 @@ namespace Exam_Management_System.Designs
             UploadPfpBtn.KeyPress += new KeyPressEventHandler(UploadPfpBtn_KeyPress);
             RemovePfpBtn.KeyPress += new KeyPressEventHandler(RemovePfpBtn_KeyPress);
         }
+        //inedit kows
         private void SubscribeToModificationEvents()
         {
             first_name.TextChanged += Control_Modified;
@@ -103,19 +104,19 @@ namespace Exam_Management_System.Designs
             newpassword2.TextChanged += Control_Modified;
             pfpbox.Click += Control_Modified;
         }
-
+        //pinalitan kows
         private void StoreInitialValues()
         {
-            first_name.Tag = first_name.Text;
-            last_name.Tag = last_name.Text;
-            email.Tag = email.Text;
-            Program_Combo_Box.Tag = Program_Combo_Box.SelectedIndex;
-            ID.Tag = ID.Text;
-            password_cr.Tag = password_cr.Text;
-            newpassword.Tag = newpassword.Text;
-            newpassword2.Tag = newpassword2.Text;
+            initialValues["first_name"] = first_name.Text;
+            initialValues["last_name"] = last_name.Text;
+            initialValues["email"] = email.Text;
+            initialValues["Program_Combo_Box"] = Program_Combo_Box.SelectedIndex.ToString();
+            initialValues["ID"] = ID.Text;
+            initialValues["password_cr"] = password_cr.Text;
+            initialValues["newpassword"] = newpassword.Text;
+            initialValues["newpassword2"] = newpassword2.Text;
         }
-
+        // nilagyan ko ng if statements para sa studentdashboard tsaka teacher dashboard kasi nagba-bak sa teacher dashboard kahit student ka
         private void HandleUnsavedChanges()
         {
             if (hasUnsavedChanges)
@@ -130,22 +131,50 @@ namespace Exam_Management_System.Designs
                 {
                     SaveBtn_Click(null, null);
                     // Get the user ID and user type from the database
-                    user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
-                    UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
+                    if (accounttype == "Student")
+                    {
+                        // Get the user ID and user type from the database
+                        user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
+                        UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
 
-                    this.Close();
-                    Designs.TeacherDashBoard teacherDashBoard = new Designs.TeacherDashBoard(user_ID, userType);
-                    teacherDashBoard.Show();
+                        this.Close();
+                        Designs.StudentDashboard SDBoard = new Designs.StudentDashboard(user_ID);
+                        SDBoard.Show();
+                    }
+                    else if (accounttype == "Teacher")
+                    {
+                        // Get the user ID and user type from the database
+                        user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
+                        UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
+
+                        this.Close();
+                        Designs.TeacherDashBoard teacherDashBoard = new Designs.TeacherDashBoard(user_ID, userType);
+                        teacherDashBoard.Show();
+                    }
                 }
                 else if (result == DialogResult.No)
                 {
                     // Get the user ID and user type from the database
-                    user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
-                    UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
+                    if (accounttype == "Student")
+                    {
+                        // Get the user ID and user type from the database
+                        user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
+                        UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
 
-                    this.Close();
-                    Designs.TeacherDashBoard teacherDashBoard = new Designs.TeacherDashBoard(user_ID, userType);
-                    teacherDashBoard.Show();
+                        this.Close();
+                        Designs.StudentDashboard SDBoard = new Designs.StudentDashboard(user_ID);
+                        SDBoard.Show();
+                    }
+                    else if (accounttype == "Teacher")
+                    {
+                        // Get the user ID and user type from the database
+                        user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
+                        UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
+
+                        this.Close();
+                        Designs.TeacherDashBoard teacherDashBoard = new Designs.TeacherDashBoard(user_ID, userType);
+                        teacherDashBoard.Show();
+                    }
                 }
                 else if (result == DialogResult.Cancel)
                 {
@@ -153,20 +182,23 @@ namespace Exam_Management_System.Designs
                 }
             }
         }
+        //pinalitan ko buo
         private void Control_Modified(object sender, EventArgs e)
         {
             Control control = sender as Control;
 
             if (control is KryptonTextBox)
             {
-                if (control.Text != control.Tag.ToString())
+                string controlName = control.Name;
+                if (initialValues.ContainsKey(controlName) && control.Text != initialValues[controlName])
                 {
                     hasUnsavedChanges = true;
                 }
             }
             else if (control is Krypton.Toolkit.KryptonComboBox)
             {
-                if ((control as Krypton.Toolkit.KryptonComboBox).SelectedIndex != (int)control.Tag)
+                string controlName = control.Name;
+                if (initialValues.ContainsKey(controlName) && (control as Krypton.Toolkit.KryptonComboBox).SelectedIndex.ToString() != initialValues[controlName])
                 {
                     hasUnsavedChanges = true;
                 }
@@ -180,13 +212,14 @@ namespace Exam_Management_System.Designs
             }
         }
 
+
         //100% Working
         private void timer1_Tick(object sender, EventArgs e)
         {
             timelabel.Text = $"{DateTime.Now.ToString("hh:mm tt")} — {DateTime.Now.ToString("ddd, MMM d")}";
         }
 
-        //to edit
+
         //100% Working
         private void SetLabels()
         {
@@ -283,7 +316,6 @@ namespace Exam_Management_System.Designs
 
                 // Display Program
                 object programObj = dtloggedin_User.Rows[0]["Program_Department"];
-
                 if (programObj != DBNull.Value) // Check if the value is not DBNull
                 {
                     string dbprogram = programObj.ToString();
@@ -300,7 +332,9 @@ namespace Exam_Management_System.Designs
 
                 //Display Profile
                 LoadImageFromDatabase();
-
+//nilipatdito yung nasa taas na storeinitial
+                // Store initial values for change tracking
+                StoreInitialValues();
             }
             else
             {
@@ -308,6 +342,7 @@ namespace Exam_Management_System.Designs
                 MessageBox.Show("No data found for the given User ID.");
             }
         }
+
         //100% Working
         private void MakePictureBoxCircular(PictureBox pictureBox)
         {
@@ -822,29 +857,39 @@ namespace Exam_Management_System.Designs
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show(
+            if (hasUnsavedChanges)
+            {
+                var result = MessageBox.Show(
                                 "You have unsaved changes on your Profile. Click yes to save?",
                                 "Unsaved Changes",
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Warning);
+//in-enclose ko sa if 
+                if (result == DialogResult.Yes)
+                {
+                    SaveBtn_Click(null, null);
+                    // Get the user ID and user type from the database
+                    user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
+                    UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
 
-            if (result == DialogResult.Yes)
+                    this.Close();
+                    LoginForm loginForm = new LoginForm();
+                    loginForm.Show();
+                }
+                else if (result == DialogResult.No)
+                {
+                    return;
+                }
+            }
+            else 
             {
-                SaveBtn_Click(null, null);
-                // Get the user ID and user type from the database
-                user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
-                UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
-
                 this.Close();
                 LoginForm loginForm = new LoginForm();
                 loginForm.Show();
             }
-            else if (result == DialogResult.No)
-            {
-                return;
-            }
+                
         }
-
+//nilagyan ko ng if student tsaka else if teacher para bumalik sa respective dashboards. tinangggal ko yung isang parameter ng studentdashboard since hindi naman na yun ginagamit sa sdboard
         private void backToDashboardBtn_Click(object sender, EventArgs e)
         {
             if (hasUnsavedChanges)
@@ -853,13 +898,26 @@ namespace Exam_Management_System.Designs
             }
             else
             {
-                // Get the user ID and user type from the database
-                user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
-                UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
+                if (accounttype == "Student")
+                {
+                    // Get the user ID and user type from the database
+                    user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
+                    UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
 
-                this.Close();
-                Designs.TeacherDashBoard teacherDashBoard = new Designs.TeacherDashBoard(user_ID, userType);
-                teacherDashBoard.Show();
+                    this.Close();
+                    Designs.StudentDashboard SDBoard = new Designs.StudentDashboard(user_ID);
+                    SDBoard.Show();
+                }
+                else if (accounttype == "Teacher")
+                {
+                    // Get the user ID and user type from the database
+                    user_ID = dtloggedin_User.Rows[0]["ID"].ToString();
+                    UserType userType = (UserType)Enum.Parse(typeof(UserType), dtloggedin_User.Rows[0]["User_Type"].ToString());
+
+                    this.Close();
+                    Designs.TeacherDashBoard teacherDashBoard = new Designs.TeacherDashBoard(user_ID, userType);
+                    teacherDashBoard.Show();
+                }
             }
         }
 

@@ -97,7 +97,7 @@ namespace Exam_Management_System.Designs
             this.user_id.AutoSize = false;
             this.user_id.Enabled = false;
             this.user_id.Location = new System.Drawing.Point(278, 82);
-            this.user_id.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.user_id.Margin = new System.Windows.Forms.Padding(2);
             this.user_id.Name = "user_id";
             this.user_id.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.user_id.Size = new System.Drawing.Size(190, 25);
@@ -109,13 +109,13 @@ namespace Exam_Management_System.Designs
             // timelabel
             // 
             this.timelabel.AutoSize = true;
-            this.timelabel.Font = new System.Drawing.Font("Inter", 12F);
+            this.timelabel.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timelabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.timelabel.Location = new System.Drawing.Point(945, 76);
+            this.timelabel.Location = new System.Drawing.Point(904, 82);
             this.timelabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.timelabel.Name = "timelabel";
-            this.timelabel.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.timelabel.Size = new System.Drawing.Size(188, 31);
+            this.timelabel.Padding = new System.Windows.Forms.Padding(6);
+            this.timelabel.Size = new System.Drawing.Size(157, 28);
             this.timelabel.TabIndex = 6;
             this.timelabel.Text = "11:44 pm - Tue, May 6";
             // 
@@ -128,7 +128,7 @@ namespace Exam_Management_System.Designs
             this.account_type.AutoSize = false;
             this.account_type.Enabled = false;
             this.account_type.Location = new System.Drawing.Point(533, 82);
-            this.account_type.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.account_type.Margin = new System.Windows.Forms.Padding(2);
             this.account_type.Name = "account_type";
             this.account_type.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.account_type.Size = new System.Drawing.Size(190, 25);
@@ -390,7 +390,7 @@ namespace Exam_Management_System.Designs
             this.profilePanel.Controls.Add(this.LastNameLabel);
             this.profilePanel.Controls.Add(this.FirstNameLabel);
             this.profilePanel.Controls.Add(this.StudentIdLabel);
-            this.profilePanel.Location = new System.Drawing.Point(257, 140);
+            this.profilePanel.Location = new System.Drawing.Point(325, 140);
             this.profilePanel.Margin = new System.Windows.Forms.Padding(2);
             this.profilePanel.Name = "profilePanel";
             this.profilePanel.PanelBackStyle = Krypton.Toolkit.PaletteBackStyle.FormCustom1;
@@ -588,7 +588,6 @@ namespace Exam_Management_System.Designs
             this.email.StateNormal.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.email.StateNormal.Content.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.email.TabIndex = 19;
-            this.email.Text = "youremail@gmail.com";
             // 
             // last_name
             // 
@@ -614,7 +613,6 @@ namespace Exam_Management_System.Designs
             this.last_name.StateNormal.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.last_name.StateNormal.Content.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.last_name.TabIndex = 18;
-            this.last_name.Text = "Last_Name";
             // 
             // first_name
             // 
@@ -640,7 +638,6 @@ namespace Exam_Management_System.Designs
             this.first_name.StateNormal.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.first_name.StateNormal.Content.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.first_name.TabIndex = 17;
-            this.first_name.Text = "First_Name";
             // 
             // ID
             // 
@@ -665,13 +662,12 @@ namespace Exam_Management_System.Designs
             this.ID.StateNormal.Border.Rounding = 10F;
             this.ID.StateNormal.Content.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ID.TabIndex = 16;
-            this.ID.Text = "Your ID";
             // 
             // newpassword2
             // 
             this.newpassword2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.newpassword2.Location = new System.Drawing.Point(450, 407);
-            this.newpassword2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newpassword2.Margin = new System.Windows.Forms.Padding(2);
             this.newpassword2.Name = "newpassword2";
             this.newpassword2.PasswordChar = '●';
             this.newpassword2.Size = new System.Drawing.Size(180, 26);
@@ -768,7 +764,7 @@ namespace Exam_Management_System.Designs
             // 
             this.logoutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.logoutBtn.Location = new System.Drawing.Point(72, 640);
-            this.logoutBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logoutBtn.Margin = new System.Windows.Forms.Padding(2);
             this.logoutBtn.Name = "logoutBtn";
             this.logoutBtn.Size = new System.Drawing.Size(153, 40);
             this.logoutBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
@@ -798,8 +794,8 @@ namespace Exam_Management_System.Designs
             // backToDashboardBtn
             // 
             this.backToDashboardBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.backToDashboardBtn.Location = new System.Drawing.Point(77, 121);
-            this.backToDashboardBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.backToDashboardBtn.Location = new System.Drawing.Point(76, 140);
+            this.backToDashboardBtn.Margin = new System.Windows.Forms.Padding(2);
             this.backToDashboardBtn.Name = "backToDashboardBtn";
             this.backToDashboardBtn.Size = new System.Drawing.Size(134, 36);
             this.backToDashboardBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
@@ -830,8 +826,8 @@ namespace Exam_Management_System.Designs
             // kryptonPictureBox4
             // 
             this.kryptonPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPictureBox4.Image")));
-            this.kryptonPictureBox4.Location = new System.Drawing.Point(179, 47);
-            this.kryptonPictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonPictureBox4.Location = new System.Drawing.Point(193, 54);
+            this.kryptonPictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonPictureBox4.Name = "kryptonPictureBox4";
             this.kryptonPictureBox4.Size = new System.Drawing.Size(409, 53);
             this.kryptonPictureBox4.TabIndex = 48;
@@ -841,7 +837,7 @@ namespace Exam_Management_System.Designs
             // 
             this.kryptonPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPictureBox1.Image")));
             this.kryptonPictureBox1.Location = new System.Drawing.Point(117, 132);
-            this.kryptonPictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonPictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonPictureBox1.Name = "kryptonPictureBox1";
             this.kryptonPictureBox1.Size = new System.Drawing.Size(532, 388);
             this.kryptonPictureBox1.TabIndex = 49;
@@ -851,7 +847,7 @@ namespace Exam_Management_System.Designs
             // 
             this.acrhiveTablePanel.Controls.Add(this.flowLayoutTablelistExam);
             this.acrhiveTablePanel.Location = new System.Drawing.Point(117, 132);
-            this.acrhiveTablePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.acrhiveTablePanel.Margin = new System.Windows.Forms.Padding(2);
             this.acrhiveTablePanel.Name = "acrhiveTablePanel";
             this.acrhiveTablePanel.Size = new System.Drawing.Size(532, 388);
             this.acrhiveTablePanel.StateCommon.Color1 = System.Drawing.Color.Transparent;
@@ -863,7 +859,7 @@ namespace Exam_Management_System.Designs
             // 
             this.flowLayoutTablelistExam.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutTablelistExam.Location = new System.Drawing.Point(2, 1);
-            this.flowLayoutTablelistExam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutTablelistExam.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutTablelistExam.Name = "flowLayoutTablelistExam";
             this.flowLayoutTablelistExam.Size = new System.Drawing.Size(530, 385);
             this.flowLayoutTablelistExam.TabIndex = 0;
@@ -873,7 +869,7 @@ namespace Exam_Management_System.Designs
             this.archivePanel.Controls.Add(this.acrhiveTablePanel);
             this.archivePanel.Controls.Add(this.kryptonPictureBox1);
             this.archivePanel.Controls.Add(this.kryptonPictureBox4);
-            this.archivePanel.Location = new System.Drawing.Point(238, 124);
+            this.archivePanel.Location = new System.Drawing.Point(292, 140);
             this.archivePanel.Margin = new System.Windows.Forms.Padding(2);
             this.archivePanel.Name = "archivePanel";
             this.archivePanel.PanelBackStyle = Krypton.Toolkit.PaletteBackStyle.FormCustom1;
@@ -892,8 +888,8 @@ namespace Exam_Management_System.Designs
             this.profileViewBtn.FlatAppearance.BorderSize = 0;
             this.profileViewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.profileViewBtn.Image = ((System.Drawing.Image)(resources.GetObject("profileViewBtn.Image")));
-            this.profileViewBtn.Location = new System.Drawing.Point(72, 166);
-            this.profileViewBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.profileViewBtn.Location = new System.Drawing.Point(71, 185);
+            this.profileViewBtn.Margin = new System.Windows.Forms.Padding(2);
             this.profileViewBtn.Name = "profileViewBtn";
             this.profileViewBtn.Size = new System.Drawing.Size(162, 44);
             this.profileViewBtn.TabIndex = 45;
@@ -906,8 +902,8 @@ namespace Exam_Management_System.Designs
             this.archiveViewBtn.FlatAppearance.BorderSize = 0;
             this.archiveViewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.archiveViewBtn.Image = ((System.Drawing.Image)(resources.GetObject("archiveViewBtn.Image")));
-            this.archiveViewBtn.Location = new System.Drawing.Point(73, 214);
-            this.archiveViewBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.archiveViewBtn.Location = new System.Drawing.Point(72, 233);
+            this.archiveViewBtn.Margin = new System.Windows.Forms.Padding(2);
             this.archiveViewBtn.Name = "archiveViewBtn";
             this.archiveViewBtn.Size = new System.Drawing.Size(161, 43);
             this.archiveViewBtn.TabIndex = 46;
@@ -919,8 +915,7 @@ namespace Exam_Management_System.Designs
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.ClientSize = new System.Drawing.Size(1200, 750);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(1162, 733);
             this.Controls.Add(this.archiveViewBtn);
             this.Controls.Add(this.profileViewBtn);
             this.Controls.Add(this.archivePanel);
@@ -931,10 +926,13 @@ namespace Exam_Management_System.Designs
             this.Controls.Add(this.timelabel);
             this.Controls.Add(this.profilePanel);
             this.Controls.Add(this.pictureBox2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormTitleAlign = Krypton.Toolkit.PaletteRelativeAlign.Inherit;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Profile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "7";
             this.Load += new System.EventHandler(this.Profile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profilePanel)).EndInit();
             this.profilePanel.ResumeLayout(false);

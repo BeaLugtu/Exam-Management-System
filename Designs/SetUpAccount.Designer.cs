@@ -53,7 +53,7 @@
             this.skipBtn.Size = new System.Drawing.Size(124, 35);
             this.skipBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.skipBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.skipBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("cancelBtn.StateCommon.Back.Image")));
+            this.skipBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("skipBtn.StateCommon.Back.Image")));
             this.skipBtn.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.skipBtn.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.skipBtn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -65,10 +65,10 @@
             this.skipBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.skipBtn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.skipBtn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.skipBtn.StatePressed.Back.Image = ((System.Drawing.Image)(resources.GetObject("cancelBtn.StatePressed.Back.Image")));
+            this.skipBtn.StatePressed.Back.Image = ((System.Drawing.Image)(resources.GetObject("skipBtn.StatePressed.Back.Image")));
             this.skipBtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.skipBtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.skipBtn.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("cancelBtn.StateTracking.Back.Image")));
+            this.skipBtn.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("skipBtn.StateTracking.Back.Image")));
             this.skipBtn.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.skipBtn.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.skipBtn.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -85,7 +85,7 @@
             this.goToProfileBtn.Name = "goToProfileBtn";
             this.goToProfileBtn.Size = new System.Drawing.Size(124, 35);
             this.goToProfileBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.goToProfileBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("confirmBtn.StateCommon.Back.Image")));
+            this.goToProfileBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("goToProfileBtn.StateCommon.Back.Image")));
             this.goToProfileBtn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -95,10 +95,10 @@
             this.goToProfileBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.goToProfileBtn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.goToProfileBtn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.goToProfileBtn.StatePressed.Back.Image = ((System.Drawing.Image)(resources.GetObject("confirmBtn.StatePressed.Back.Image")));
+            this.goToProfileBtn.StatePressed.Back.Image = ((System.Drawing.Image)(resources.GetObject("goToProfileBtn.StatePressed.Back.Image")));
             this.goToProfileBtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.goToProfileBtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.goToProfileBtn.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("confirmBtn.StateTracking.Back.Image")));
+            this.goToProfileBtn.StateTracking.Back.Image = ((System.Drawing.Image)(resources.GetObject("goToProfileBtn.StateTracking.Back.Image")));
             this.goToProfileBtn.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.goToProfileBtn.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.goToProfileBtn.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -115,6 +115,7 @@
             this.studentIDLbl.Size = new System.Drawing.Size(70, 20);
             this.studentIDLbl.TabIndex = 27;
             this.studentIDLbl.Values.Text = "studentID :";
+            this.studentIDLbl.Visible = false;
             // 
             // SetUpAccount
             // 
@@ -126,10 +127,12 @@
             this.Controls.Add(this.skipBtn);
             this.Controls.Add(this.goToProfileBtn);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SetUpAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SetUpAccount";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

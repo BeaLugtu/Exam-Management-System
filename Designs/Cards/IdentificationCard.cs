@@ -8,10 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Krypton.Toolkit;
+using System.Runtime.InteropServices;
 namespace Exam_Management_System.Designs
+
 {
     public partial class IdentificationCard : UserControl, IQuestionCard
     {
+        [DllImport("user32.dll")]
+        static extern bool HideCaret(IntPtr hWnd);
         private string questionText;
         private string answerText;
         private string pointValue;
@@ -60,10 +64,12 @@ namespace Exam_Management_System.Designs
                 answerText = value;
             }
         }
+        public bool iscorrect;
         private void AnswerTB_TextChanged(object sender, EventArgs e)
         {
             // Update the AnswerText property when the text in AnswerTB changes
             AnswerText = AnswerTB.Text;
+            iscorrect = false;
         }
         private string questionID;
         public string QuestionID
@@ -75,10 +81,29 @@ namespace Exam_Management_System.Designs
               
             }
         }
-
-        public (string QuestionID, string Answer) GetAnswerData()
+        private string correctAnswer;
+        public string CorrectAnswer
         {
-            return (questionID, AnswerText);
+            get => correctAnswer;
+            set
+            {
+                correctAnswer = value;
+            }
+        }
+        
+
+        public (string QuestionID, string Answer, string CorrectAnswer, string Point, bool iscorrect) GetAnswerData()
+        {
+            return (questionID, AnswerText, CorrectAnswer, Point, iscorrect);
+        }
+        private void QuestionPHP_Enter(object sender, EventArgs e)
+        {
+            HideCaret(QuestionPHP.Handle);
+        }
+
+        private void QuestionPHP_GotFocus(object sender, EventArgs e)
+        {
+            HideCaret(QuestionPHP.Handle);
         }
     }
 

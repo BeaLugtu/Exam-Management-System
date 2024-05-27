@@ -67,15 +67,15 @@ namespace Exam_Management_System.Designs
             profileShowBtn.MouseEnter += KryptonButton5_MouseEnter;
             profileShowBtn.MouseLeave += KryptonButton5_MouseLeave;
 
-            // Hover effect for notificationBtn
-            originalSizeNotificationBtn = notificationBtn.Size;
-            originalImageNotificationBtn = notificationBtn.Values.Image;
-            if (originalImageNotificationBtn != null)
-            {
-                originalImageSizeNotificationBtn = originalImageNotificationBtn.Size;
-            }
-            notificationBtn.MouseEnter += NotificationBtn_MouseEnter;
-            notificationBtn.MouseLeave += NotificationBtn_MouseLeave;
+            //// Hover effect for notificationBtn
+            //originalSizeNotificationBtn = notificationBtn.Size;
+            //originalImageNotificationBtn = notificationBtn.Values.Image;
+            //if (originalImageNotificationBtn != null)
+            //{
+            //    originalImageSizeNotificationBtn = originalImageNotificationBtn.Size;
+            //}
+            //notificationBtn.MouseEnter += NotificationBtn_MouseEnter;
+            //notificationBtn.MouseLeave += NotificationBtn_MouseLeave;
         }
 
         private void teacherDashBoard_Load(object sender, EventArgs e)
@@ -239,28 +239,28 @@ namespace Exam_Management_System.Designs
         }
 
         // Hover effect for notificationBtn
-        private void NotificationBtn_MouseEnter(object sender, EventArgs e)
-        {
-            if (originalImageNotificationBtn != null)
-            {
-                // Enlarge the button slightly on hover
-                notificationBtn.Size = new Size(originalSizeNotificationBtn.Width + 3, originalSizeNotificationBtn.Height + 3);
-                // Enlarge the image slightly on hover
-                notificationBtn.Values.Image = new Bitmap(originalImageNotificationBtn, new Size(originalImageSizeNotificationBtn.Width + 3, originalImageSizeNotificationBtn.Height + 3));
-            }
-        }
+        //private void NotificationBtn_MouseEnter(object sender, EventArgs e)
+        //{
+        //    if (originalImageNotificationBtn != null)
+        //    {
+        //        // Enlarge the button slightly on hover
+        //        notificationBtn.Size = new Size(originalSizeNotificationBtn.Width + 3, originalSizeNotificationBtn.Height + 3);
+        //        // Enlarge the image slightly on hover
+        //        notificationBtn.Values.Image = new Bitmap(originalImageNotificationBtn, new Size(originalImageSizeNotificationBtn.Width + 3, originalImageSizeNotificationBtn.Height + 3));
+        //    }
+        //}
 
-        // Mouse leave event handler for notificationBtn
-        private void NotificationBtn_MouseLeave(object sender, EventArgs e)
-        {
-            if (originalImageNotificationBtn != null)
-            {
-                // Restore the original size when the mouse leaves
-                notificationBtn.Size = originalSizeNotificationBtn;
-                // Restore the original image when the mouse leaves
-                notificationBtn.Values.Image = originalImageNotificationBtn;
-            }
-        }
+        //// Mouse leave event handler for notificationBtn
+        //private void NotificationBtn_MouseLeave(object sender, EventArgs e)
+        //{
+        //    if (originalImageNotificationBtn != null)
+        //    {
+        //        // Restore the original size when the mouse leaves
+        //        notificationBtn.Size = originalSizeNotificationBtn;
+        //        // Restore the original image when the mouse leaves
+        //        notificationBtn.Values.Image = originalImageNotificationBtn;
+        //    }
+        //}
 
         private void kryptonPictureBox1_Click(object sender, EventArgs e)
         {

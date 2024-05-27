@@ -28,85 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreviewForm));
             this.codePreviewForm_LBL = new Krypton.Toolkit.KryptonLabel();
             this.sh_FLP = new System.Windows.Forms.FlowLayoutPanel();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
             this.noOfQuestions_LBL = new Krypton.Toolkit.KryptonLabel();
-
-
             this.SuspendLayout();
             // 
             // codePreviewForm_LBL
             // 
-
-            this.codePreviewForm_LBL.Location = new System.Drawing.Point(421, 30);
-            this.codePreviewForm_LBL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-
+            this.codePreviewForm_LBL.Location = new System.Drawing.Point(414, 29);
+            this.codePreviewForm_LBL.Margin = new System.Windows.Forms.Padding(2);
             this.codePreviewForm_LBL.Name = "codePreviewForm_LBL";
             this.codePreviewForm_LBL.Size = new System.Drawing.Size(88, 20);
+            this.codePreviewForm_LBL.StateCommon.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.codePreviewForm_LBL.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.codePreviewForm_LBL.TabIndex = 0;
             this.codePreviewForm_LBL.Values.Text = "kryptonLabel1";
             // 
             // sh_FLP
             // 
             this.sh_FLP.AutoScroll = true;
-
-            this.sh_FLP.Location = new System.Drawing.Point(28, 84);
-            this.sh_FLP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sh_FLP.Location = new System.Drawing.Point(29, 84);
+            this.sh_FLP.Margin = new System.Windows.Forms.Padding(2);
             this.sh_FLP.Name = "sh_FLP";
             this.sh_FLP.Size = new System.Drawing.Size(474, 495);
-
             this.sh_FLP.TabIndex = 1;
             // 
             // kryptonLabel1
             // 
-
-            this.kryptonLabel1.Location = new System.Drawing.Point(348, 30);
-            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-
+            this.kryptonLabel1.Location = new System.Drawing.Point(330, 30);
+            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(74, 20);
+            this.kryptonLabel1.Size = new System.Drawing.Size(87, 20);
+            this.kryptonLabel1.StateCommon.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.kryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonLabel1.TabIndex = 2;
             this.kryptonLabel1.Values.Text = "Exam Code:";
             // 
             // kryptonLabel2
             // 
-
             this.kryptonLabel2.Location = new System.Drawing.Point(28, 30);
-            this.kryptonLabel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kryptonLabel2.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonLabel2.Name = "kryptonLabel2";
-            this.kryptonLabel2.Size = new System.Drawing.Size(105, 20);
-
+            this.kryptonLabel2.Size = new System.Drawing.Size(122, 20);
+            this.kryptonLabel2.StateCommon.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.kryptonLabel2.StateCommon.LongText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.kryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.kryptonLabel2.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.kryptonLabel2.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonLabel2.TabIndex = 3;
             this.kryptonLabel2.Values.Text = "Question Preview";
             // 
             // noOfQuestions_LBL
             // 
-
             this.noOfQuestions_LBL.Location = new System.Drawing.Point(28, 51);
-            this.noOfQuestions_LBL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.noOfQuestions_LBL.Margin = new System.Windows.Forms.Padding(2);
             this.noOfQuestions_LBL.Name = "noOfQuestions_LBL";
-            this.noOfQuestions_LBL.Size = new System.Drawing.Size(88, 20);
+            this.noOfQuestions_LBL.Size = new System.Drawing.Size(95, 19);
+            this.noOfQuestions_LBL.StateCommon.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.noOfQuestions_LBL.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.noOfQuestions_LBL.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.noOfQuestions_LBL.StateCommon.ShortText.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.noOfQuestions_LBL.TabIndex = 4;
             this.noOfQuestions_LBL.Values.Text = "kryptonLabel3";
             // 
-
             // PreviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.ClientSize = new System.Drawing.Size(534, 623);
-
             this.Controls.Add(this.noOfQuestions_LBL);
             this.Controls.Add(this.kryptonLabel2);
             this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.sh_FLP);
             this.Controls.Add(this.codePreviewForm_LBL);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PreviewForm";
-            this.Text = "PreviewForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 

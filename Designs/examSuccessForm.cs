@@ -1,5 +1,7 @@
 ﻿using Exam_Management_System.Designs;
+using MySql.Data.MySqlClient;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace TeacherDashboard
@@ -30,11 +32,51 @@ namespace TeacherDashboard
 
         private void backToDB_BTN_Click(object sender, EventArgs e)
         {
-            TeacherDashBoard dashboardForm = new TeacherDashBoard();
-            dashboardForm.Show();
+            // Fetch teacherID from examforms table based on examCode
+            string teacherID = GetTeacherIDFromDatabase(examCode);
+            if (teacherID == null)
+            {
+                MessageBox.Show("Teacher ID not found for the given exam code.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            // Close the current form
+            // Set userType to 1
+            UserType userType = UserType.Teacher;
+
             this.Close();
+            TeacherDashBoard teacherDashBoard = new TeacherDashBoard(teacherID, userType);
+            teacherDashBoard.Show();
+        }
+
+        // Method to fetch teacherID from examforms table based on examCode
+        private string GetTeacherIDFromDatabase(string examCode)
+        {
+            string connectionString = "Server=26.96.197.206;Database=exam.io;Uid=admin;Pwd=admin;";
+            string query = "SELECT teacherID FROM examforms WHERE examCode = @ExamCode";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ExamCode", examCode);
+
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            return result.ToString();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error accessing database: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
+            return null; // Return null if teacherID is not found
         }
     }
 }

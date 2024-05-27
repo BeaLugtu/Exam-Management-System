@@ -225,7 +225,7 @@ namespace Exam_Management_System
                     if (userType == 0)
                     {
                         // Open the homepage for students
-                        Designs.StudentDashboard studentDashboard = new Designs.StudentDashboard(userID, UserType.Student);
+                        Designs.StudentDashboard studentDashboard = new Designs.StudentDashboard(userID);
                         studentDashboard.Show();
                     }
                     else if (userType == 1)

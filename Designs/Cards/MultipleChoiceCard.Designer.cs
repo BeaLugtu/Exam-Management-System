@@ -143,7 +143,7 @@
             this.Item4.Palette = this.Program_DropButtonPalette;
             this.Item4.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
             this.Item4.ReadOnly = true;
-            this.Item4.Size = new System.Drawing.Size(96, 22);
+            this.Item4.Size = new System.Drawing.Size(244, 22);
             this.Item4.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.Item4.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
             this.Item4.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
@@ -181,7 +181,7 @@
             this.Item2.Palette = this.Program_DropButtonPalette;
             this.Item2.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
             this.Item2.ReadOnly = true;
-            this.Item2.Size = new System.Drawing.Size(96, 21);
+            this.Item2.Size = new System.Drawing.Size(244, 21);
             this.Item2.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.Item2.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
             this.Item2.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
@@ -219,7 +219,7 @@
             this.Item3.Palette = this.Program_DropButtonPalette;
             this.Item3.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
             this.Item3.ReadOnly = true;
-            this.Item3.Size = new System.Drawing.Size(97, 21);
+            this.Item3.Size = new System.Drawing.Size(249, 21);
             this.Item3.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.Item3.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
             this.Item3.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
@@ -241,7 +241,7 @@
             this.Item1.Palette = this.Program_DropButtonPalette;
             this.Item1.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
             this.Item1.ReadOnly = true;
-            this.Item1.Size = new System.Drawing.Size(97, 21);
+            this.Item1.Size = new System.Drawing.Size(249, 21);
             this.Item1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.Item1.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
             this.Item1.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;

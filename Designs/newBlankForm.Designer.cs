@@ -103,7 +103,7 @@
             this.timeDateLbl.Location = new System.Drawing.Point(939, 60);
             this.timeDateLbl.Margin = new System.Windows.Forms.Padding(0);
             this.timeDateLbl.Name = "timeDateLbl";
-            this.timeDateLbl.Size = new System.Drawing.Size(146, 16);
+            this.timeDateLbl.Size = new System.Drawing.Size(144, 16);
             this.timeDateLbl.TabIndex = 4;
             this.timeDateLbl.Text = "00:00 pm - Fri, May 11";
             // 
@@ -124,7 +124,7 @@
             this.label1.Location = new System.Drawing.Point(143, 213);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 19);
+            this.label1.Size = new System.Drawing.Size(103, 20);
             this.label1.TabIndex = 16;
             this.label1.Text = "Form Details";
             // 
@@ -188,13 +188,24 @@
             // 
             // view_BTN
             // 
-            this.view_BTN.Location = new System.Drawing.Point(289, 44);
+            this.view_BTN.Location = new System.Drawing.Point(212, 44);
             this.view_BTN.Margin = new System.Windows.Forms.Padding(2);
             this.view_BTN.Name = "view_BTN";
-            this.view_BTN.Size = new System.Drawing.Size(19, 20);
+            this.view_BTN.Size = new System.Drawing.Size(96, 21);
+            this.view_BTN.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.view_BTN.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.view_BTN.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.view_BTN.StateNormal.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.view_BTN.StateNormal.Border.Rounding = 10F;
+            this.view_BTN.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.view_BTN.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.view_BTN.StateTracking.Border.Rounding = 10F;
+            this.view_BTN.StateTracking.Border.Width = 0;
+            this.view_BTN.StateTracking.Content.ShortText.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.view_BTN.TabIndex = 48;
-            this.view_BTN.Values.Image = ((System.Drawing.Image)(resources.GetObject("view_BTN.Values.Image")));
-            this.view_BTN.Values.Text = "kryptonButton1";
+            this.view_BTN.Values.Text = "Check Preview";
             // 
             // discardBTN
             // 
@@ -288,7 +299,7 @@
             this.label7.Location = new System.Drawing.Point(272, 301);
             this.label7.Margin = new System.Windows.Forms.Padding(5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 15);
+            this.label7.Size = new System.Drawing.Size(36, 15);
             this.label7.TabIndex = 32;
             this.label7.Text = "Time";
             // 
@@ -541,7 +552,7 @@
             this.label8.Location = new System.Drawing.Point(528, 213);
             this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(132, 19);
+            this.label8.Size = new System.Drawing.Size(130, 20);
             this.label8.TabIndex = 23;
             this.label8.Text = "Create Question";
             // 
@@ -1370,7 +1381,7 @@
             this.backBtn.Size = new System.Drawing.Size(29, 24);
             this.backBtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.backBtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.backBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton1.StateCommon.Back.Image")));
+            this.backBtn.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.StateCommon.Back.Image")));
             this.backBtn.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
             this.backBtn.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.backBtn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -1475,7 +1486,6 @@
             this.Name = "newBlankForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "exam.io";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox3)).EndInit();

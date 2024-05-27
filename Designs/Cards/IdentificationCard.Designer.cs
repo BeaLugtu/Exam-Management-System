@@ -130,11 +130,19 @@
             this.QuestionPHP.StateCommon.Content.Padding = new System.Windows.Forms.Padding(25, 18, 25, 18);
             this.QuestionPHP.TabIndex = 5;
             this.QuestionPHP.Text = "Question";
+            this.QuestionPHP.TextChanged += new System.EventHandler(this.QuestionPHP_Enter);
+            this.QuestionPHP.Click += new System.EventHandler(this.QuestionPHP_Enter);
+            this.QuestionPHP.DoubleClick += new System.EventHandler(this.QuestionPHP_GotFocus);
+            this.QuestionPHP.Enter += new System.EventHandler(this.QuestionPHP_Enter);
             // 
             // AnswerTB
             // 
             this.AnswerTB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.AnswerTB.CornerRoundingRadius = 10F;
+            this.AnswerTB.CueHint.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.AnswerTB.CueHint.CueHintText = "Write your answer here.";
+            this.AnswerTB.CueHint.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AnswerTB.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.AnswerTB.Location = new System.Drawing.Point(10, 140);
             this.AnswerTB.Margin = new System.Windows.Forms.Padding(5);
             this.AnswerTB.MaxLength = 1000;

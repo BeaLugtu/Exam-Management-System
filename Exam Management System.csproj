@@ -62,37 +62,37 @@
     <Compile Include="Designs\Cards\ContextualCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Designs\Cards\ContextualCard.Designer.cs">
+    <Compile Include="Designs\Cards\ContextualCard.designer.cs">
       <DependentUpon>ContextualCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Designs\Cards\ContextualImageCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Designs\Cards\ContextualImageCard.Designer.cs">
+    <Compile Include="Designs\Cards\ContextualImageCard.designer.cs">
       <DependentUpon>ContextualImageCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Designs\Cards\ContextualImageParagraphCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Designs\Cards\ContextualImageParagraphCard.Designer.cs">
+    <Compile Include="Designs\Cards\ContextualImageParagraphCard.designer.cs">
       <DependentUpon>ContextualImageParagraphCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Designs\Cards\IdentificationCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Designs\Cards\IdentificationCard.Designer.cs">
+    <Compile Include="Designs\Cards\IdentificationCard.designer.cs">
       <DependentUpon>IdentificationCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Designs\Cards\MultipleChoiceCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Designs\Cards\MultipleChoiceCard.Designer.cs">
+    <Compile Include="Designs\Cards\MultipleChoiceCard.designer.cs">
       <DependentUpon>MultipleChoiceCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Designs\Cards\ParagraphCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Designs\Cards\ParagraphCard.Designer.cs">
+    <Compile Include="Designs\Cards\ParagraphCard.designer.cs">
       <DependentUpon>ParagraphCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Designs\CheckingPreview.cs">
@@ -112,6 +112,12 @@
     </Compile>
     <Compile Include="Designs\ExamForm.Designer.cs">
       <DependentUpon>ExamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\examSubmitSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designs\examSubmitSuccess.designer.cs">
+      <DependentUpon>examSubmitSuccess.cs</DependentUpon>
     </Compile>
     <Compile Include="Designs\examSuccessForm.cs">
       <SubType>Form</SubType>
@@ -148,6 +154,18 @@
     </Compile>
     <Compile Include="Designs\Profile.designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\RecentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designs\RecentForm.designer.cs">
+      <DependentUpon>RecentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\recentFormCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\recentFormCard.designer.cs">
+      <DependentUpon>recentFormCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Designs\SetUpAccount.cs">
       <SubType>Form</SubType>
@@ -197,8 +215,32 @@
     <Compile Include="Designs\teacherPreviewCard.Designer.cs">
       <DependentUpon>teacherPreviewCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Designs\ViewFormCards\studentMultipleChoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\ViewFormCards\studentMultipleChoice.designer.cs">
+      <DependentUpon>studentMultipleChoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\ViewFormCards\studentParagraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\ViewFormCards\studentParagraph.designer.cs">
+      <DependentUpon>studentParagraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\ViewFormCards\studentShortAnswer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designs\ViewFormCards\studentShortAnswer.designer.cs">
+      <DependentUpon>studentShortAnswer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForm.designer.cs">
+      <DependentUpon>ViewForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Designs\archiveCard.resx">
       <DependentUpon>archiveCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,6 +271,9 @@
     <EmbeddedResource Include="Designs\ExamForm.resx">
       <DependentUpon>ExamForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Designs\examSubmitSuccess.resx">
+      <DependentUpon>examSubmitSuccess.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Designs\examSuccessForm.resx">
       <DependentUpon>examSuccessForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +292,12 @@
     <EmbeddedResource Include="Designs\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Designs\RecentForm.resx">
+      <DependentUpon>RecentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\recentFormCard.resx">
+      <DependentUpon>recentFormCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Designs\SetUpAccount.resx">
       <DependentUpon>SetUpAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +309,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\StudentDashboard.resx">
       <DependentUpon>StudentDashboard.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Designs\TeacherCheckingCard.resx">
       <DependentUpon>TeacherCheckingCard.cs</DependentUpon>
@@ -271,6 +323,15 @@
     <EmbeddedResource Include="Designs\teacherPreviewCard.resx">
       <DependentUpon>teacherPreviewCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Designs\ViewFormCards\studentMultipleChoice.resx">
+      <DependentUpon>studentMultipleChoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\ViewFormCards\studentParagraph.resx">
+      <DependentUpon>studentParagraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designs\ViewFormCards\studentShortAnswer.resx">
+      <DependentUpon>studentShortAnswer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -281,6 +342,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ViewForm.resx">
+      <DependentUpon>ViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -302,6 +366,10 @@
     <Content Include="assets\Student Sign up Form.png" />
     <Content Include="assets\StudentAccountOption.png" />
     <Content Include="assets\TeacherAccountOption.png" />
+    <None Include="Resources\view form.png" />
+    <None Include="Resources\recentForm.png" />
+    <None Include="Resources\back button.png" />
+    <None Include="Resources\EXAMFORMSUBMITTED_IMAGE.png" />
     <None Include="Resources\studenDashboardPage1.png" />
     <None Include="Resources\Group 1751.png" />
     <None Include="Resources\Rectangle 415.png" />

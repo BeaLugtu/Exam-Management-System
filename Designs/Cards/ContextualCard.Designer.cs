@@ -83,6 +83,7 @@
             this.context.Name = "context";
             this.context.Palette = this.Program_DropButtonPalette;
             this.context.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
+            this.context.ReadOnly = true;
             this.context.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.context.Size = new System.Drawing.Size(670, 215);
             this.context.StateCommon.Back.Color1 = System.Drawing.Color.White;

@@ -7,6 +7,7 @@ using Exam_Management_System;
 using Exam_Management_System.Designs;
 using System.Drawing;
 using System.ComponentModel.Design;
+using System.Data;
 
 namespace TeacherDashboard
 {
@@ -589,11 +590,12 @@ namespace TeacherDashboard
                 return null;
             }
         }
+
         private void examConfirmBtn_Click(object sender, EventArgs e)
         {
             try
             {
-                DBAccess objDBAccess = new DBAccess(); // Instantiate DBAccess class
+                string connectionString = "Server=26.96.197.206;Database=exam.io;Uid=admin;Pwd=admin;";
 
                 string examCode = examCodeBox.Text;
                 string examTitle = examTitleBox.Text;
@@ -622,69 +624,94 @@ namespace TeacherDashboard
 
                 // Check if there are questions available for the current examCode
                 string checkQuery = "SELECT COUNT(*) FROM examquestions WHERE examCode = @examCode";
-                MySqlCommand checkCommand = new MySqlCommand(checkQuery);
-                checkCommand.Parameters.AddWithValue("@examCode", examCode);
-
-                int questionCount = Convert.ToInt32(objDBAccess.executeScalar(checkCommand));
-                if (questionCount == 0)
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
-                    MessageBox.Show("No questions found for the current exam. Please create a question before submitting the exam form.");
-                    return;
-                }
+                    connection.Open();
 
-                string examStatus = "On-going";
-                DateTime examCreated = DateTime.Now;
+                    MySqlCommand checkCommand = new MySqlCommand(checkQuery, connection);
+                    checkCommand.Parameters.AddWithValue("@examCode", examCode);
 
-                // Use parameterized query to insert data into the examforms table
-                string insertQuery = "INSERT INTO examforms (teacherID, examCode, examTitle, examCreated, examDeadlineDate, examDeadlineTime, examStatus, examTotalStudents) " +
-                                     "VALUES (@user_ID, @examCode, @examTitle, @examCreated, @examDeadlineDate, @examDeadlineTime, @examStatus, @examTotalStudents)";
-
-                MySqlCommand insertCommand = new MySqlCommand(insertQuery);
-                insertCommand.Parameters.AddWithValue("@user_ID", user_ID);
-                insertCommand.Parameters.AddWithValue("@examCode", examCode);
-                insertCommand.Parameters.AddWithValue("@examTitle", examTitle);
-                insertCommand.Parameters.AddWithValue("@examCreated", examCreated.ToString("yyyy-MM-dd HH:mm:ss"));
-                insertCommand.Parameters.AddWithValue("@examDeadlineDate", examDeadlineDate.ToString("yyyy-MM-dd"));
-                insertCommand.Parameters.AddWithValue("@examDeadlineTime", formattedTime);
-                insertCommand.Parameters.AddWithValue("@examStatus", examStatus);
-                insertCommand.Parameters.AddWithValue("@examTotalStudents", examTotalStudents);
-
-                // Execute the insert query
-                int rowsAffected = objDBAccess.executeQuery(insertCommand);
-
-                if (rowsAffected > 0)
-                {
-                    // Create the [examCode]_answers table
-                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    int questionCount = Convert.ToInt32(checkCommand.ExecuteScalar());
+                    if (questionCount == 0)
                     {
-                        connection.Open();
+                        MessageBox.Show("No questions found for the current exam. Please create a question before submitting the exam form.");
+                        return;
+                    }
 
+                    string examStatus = "On-going";
+                    DateTime examCreated = DateTime.Now;
+
+                    // Use parameterized query to insert data into the examforms table
+                    string insertQuery = "INSERT INTO examforms (teacherID, examCode, examTitle, examCreated, examDeadlineDate, examDeadlineTime, examStatus, examTotalStudents) " +
+                                         "VALUES (@user_ID, @examCode, @examTitle, @examCreated, @examDeadlineDate, @examDeadlineTime, @examStatus, @examTotalStudents)";
+
+                    MySqlCommand insertCommand = new MySqlCommand(insertQuery, connection);
+                    insertCommand.Parameters.AddWithValue("@user_ID", user_ID);
+                    insertCommand.Parameters.AddWithValue("@examCode", examCode);
+                    insertCommand.Parameters.AddWithValue("@examTitle", examTitle);
+                    insertCommand.Parameters.AddWithValue("@examCreated", examCreated.ToString("yyyy-MM-dd HH:mm:ss"));
+                    insertCommand.Parameters.AddWithValue("@examDeadlineDate", examDeadlineDate.ToString("yyyy-MM-dd"));
+                    insertCommand.Parameters.AddWithValue("@examDeadlineTime", formattedTime);
+                    insertCommand.Parameters.AddWithValue("@examStatus", examStatus);
+                    insertCommand.Parameters.AddWithValue("@examTotalStudents", examTotalStudents);
+
+                    // Execute the insert query
+                    int rowsAffected = insertCommand.ExecuteNonQuery();
+
+                    // After creating the [examCode]_answers table
+                    if (rowsAffected > 0)
+                    {
+                        // Retrieve questions and questionIDs from examquestions table
+                        string retrieveQuestionsQuery = "SELECT questionNumber, question FROM examquestions WHERE examCode = @examCode";
+                        MySqlCommand retrieveQuestionsCommand = new MySqlCommand(retrieveQuestionsQuery, connection);
+                        retrieveQuestionsCommand.Parameters.AddWithValue("@examCode", examCode);
+
+                        DataTable questionsTable = new DataTable();
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(retrieveQuestionsCommand))
+                        {
+                            adapter.Fill(questionsTable);
+                        }
+
+                        // Create the [examCode]_answers table
                         string tableName = $"{examCode}_answers";
                         string createTableQuery = $"CREATE TABLE IF NOT EXISTS `{tableName}` (" +
                                                    "id INT PRIMARY KEY AUTO_INCREMENT," +
                                                    "questionID INT," +
-                                                   "questions VARCHAR(255)" +
+                                                   "question LONGTEXT" +
                                                    ")";
 
                         MySqlCommand createTableCommand = new MySqlCommand(createTableQuery, connection);
                         createTableCommand.ExecuteNonQuery();
+
+                        // Insert questions and questionIDs into the [examCode]_answers table
+                        foreach (DataRow row in questionsTable.Rows)
+                        {
+                            int questionID = Convert.ToInt32(row["questionNumber"]);
+                            string questionText = row["question"].ToString();
+
+                            string insertQuestionQuery = $"INSERT INTO `{tableName}` (questionID, question) VALUES (@questionID, @questionText)";
+                            MySqlCommand insertQuestionCommand = new MySqlCommand(insertQuestionQuery, connection);
+                            insertQuestionCommand.Parameters.AddWithValue("@questionID", questionID);
+                            insertQuestionCommand.Parameters.AddWithValue("@questionText", questionText);
+                            insertQuestionCommand.ExecuteNonQuery();
+                        }
+
+                        MessageBox.Show("Exam form submitted successfully.");
+
+                        // Navigate to examSuccess form
+                        examSuccessForm examSuccessForm = new examSuccessForm(examCode); // Pass examCode to the constructor
+                        examSuccessForm.Show();
+
+                        // Close the current form
+                        this.Close();
+
+                        ClearFields();
+                        GenerateExamCode(); // Regenerate a new exam code for the next form
                     }
-
-                    MessageBox.Show("Exam form submitted successfully.");
-
-                    // Navigate to examSuccess form
-                    examSuccessForm examSuccessForm = new examSuccessForm(examCode); // Pass examCode to the constructor
-                    examSuccessForm.Show();
-
-                    // Close the current form
-                    this.Close();
-
-                    ClearFields();
-                    GenerateExamCode(); // Regenerate a new exam code for the next form
-                }
-                else
-                {
-                    MessageBox.Show("Failed to submit exam form.");
+                    else
+                    {
+                        MessageBox.Show("Failed to submit exam form.");
+                    }
                 }
             }
             catch (Exception ex)
